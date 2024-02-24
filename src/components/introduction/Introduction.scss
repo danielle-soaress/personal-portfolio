@@ -1,0 +1,98 @@
+$transparent-white: rgba(255, 255, 255, 0.5);
+$darker-purple: #594AEB;
+$lighter-purple: #9F72FF;
+$title_size: 50px;
+$paragraph_size: 18px;
+
+@mixin flexCenter () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes expand1 {
+    0% {
+        width: 30vw;
+    }
+
+    50% {
+        width: 33vw;
+    }
+
+    100% {
+        width: 30vw;
+    }
+}
+
+
+.introduction_container {
+    @include flexCenter;
+    justify-content: space-between;
+    width: 85vw;
+
+    .aside_nav {
+        @include flexCenter;
+        flex-direction: column;
+        gap: 30px;
+
+        .bi {
+            font-size: 18px;
+            color: $transparent-white;
+        }
+        
+        .bi-person {
+            font-size: 20px;
+        }
+    
+        .bi:hover {
+            transition: ease 0.3s;
+            color: white;
+        }
+
+        .aside_a:hover {
+            transform:scale(1.1);
+            transition: ease 0.3s;
+            color: white;
+        }
+    }
+
+    .main_content {
+        @include flexCenter;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 40vw;
+
+        h2 {
+            font-size: $title_size;
+            font-weight: 600;
+
+            .my_name {
+                color: $lighter-purple;
+                font-weight: inherit;
+            }
+        }
+
+        p {
+            font-size: $paragraph_size;
+            font-weight: 200;
+            margin-bottom: 20px
+        }
+
+        
+    }
+
+    .right_image {
+        @include flexCenter();
+        width: 33vw;
+    }
+    
+    .shape_background_image {
+        position: absolute;
+        width: 28vw;
+    }
+
+    .shape1 {
+        width: 30vw;
+        animation: expand1 ease-in-out 2s infinite;
+    }
+}

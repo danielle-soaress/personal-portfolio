@@ -1,0 +1,55 @@
+$background-dark-color: #181818;
+$darker-purple: #594AEB;
+$lighter-purple: #9F72FF;
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+}
+
+body {
+  background-color: white;
+}
+
+a, a:visited{
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+header {
+  position: fixed;
+  z-index: 1;
+}
+
+header, section {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+#introduction {
+  background: $background-dark-color;
+}
+
+#about_me {
+  background: white;
+}
+

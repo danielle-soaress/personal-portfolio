@@ -1,0 +1,62 @@
+$links_size: 14px;
+
+ @mixin flexCenter() {
+    display: flex;
+    justify-conent: center;
+    align-items: center;
+ }
+
+ @keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    
+    }
+ }
+
+ 
+ .navbar {
+    @include flexCenter;
+    justify-content: space-between;
+    display: flex;
+    height: 10vh;
+    width: 85vw;
+    color: transparent;
+    color: white;
+
+    .links {
+        @include flexCenter;
+        display: flex;
+        gap: 40px;
+        font-size: $links_size;
+
+        .bi-brightness-high-fill, .bi-moon-fill {
+            @include flexCenter;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .bi-brightness-high-fill:hover {
+            animation: spin ease-in-out 1.5s;
+        }
+
+        .dia {
+            color: pink;
+        }
+    }
+
+    a {
+        font-weight: 400;
+    }
+
+    a:hover {
+        transform:scale(1.1);
+        transition: ease 0.2s;
+        color:inherit;
+
+    }
+ }
+

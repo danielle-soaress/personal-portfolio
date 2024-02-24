@@ -1,0 +1,56 @@
+$darker-purple: #594AEB;
+$lighter-purple: #9F72FF;
+$title_size: 35px;
+$subtitle_size: 30px;
+$paragraph_size: 18px;
+
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes downUp {
+    0% {
+        opacity: 0;
+        transform:translateY(100px);
+    }
+
+    100% {
+        opacity: 100%;
+        transform:translateY(0px);
+    }
+}
+
+.about_me_container {
+    @include flexCenter;
+    flex-direction: column;
+    width: 85vw;
+    
+    h2 {
+        color: $darker-purple;
+        font-size: $title_size;
+        font-weight: 700;
+    }
+
+    h3 {
+        color: black;
+        font-size: $subtitle_size;
+    }
+
+    .habilities_container {
+        @include flexCenter;
+        flex-direction: row;
+        gap: 50px;
+        animation: downUp ease 1s;
+
+        .icon {
+            width: 100px;
+        }
+
+        .icon:hover {
+            transition: ease 0.2s;
+            transform: translateY(-10px);
+        }
+    }
+}

@@ -5,6 +5,7 @@ import './App.scss'
 import Navbar from './components/navbar/Navbar.jsx'
 import Introduction from './components/introduction/Introduction.jsx'
 import AboutMe from './components/aboutMe/AboutMe.jsx'
+import Portifolio from './components/portifolio/Portifolio.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,9 @@ function App() {
     </section>
     <section id="about_me">
       <AboutMe/>
+    </section>
+    <section id="portifolio">
+      <Portifolio/>
     </section>
   </div>
 }

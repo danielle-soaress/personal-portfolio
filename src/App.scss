@@ -26,6 +26,7 @@ a, a:visited{
 
 a:hover {
   cursor: pointer;
+  color: inherit;
 }
 
 header {
@@ -45,11 +46,12 @@ section {
   scroll-snap-align: center;
 }
 
-#introduction {
+#introduction, #portifolio{
   background: $background-dark-color;
 }
 
 #about_me {
   background: white;
 }
+
 

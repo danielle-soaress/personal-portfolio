@@ -1,15 +1,16 @@
-$width: 180px;
+
 $darker-purple: #594AEB;
 $lighter-purple: #9F72FF;
 
 @mixin bg-gradient() {
-    background: #594AEB;
-    background: linear-gradient(180deg, rgba(89,74,235,1) 0%, rgba(159,114,255,1) 100%);
+    background: $darker-purple;
+    background: linear-gradient(180deg, $darker-purple 0%, $lighter-purple 100%);
 }
 
 button {
     @include bg-gradient;
-    width: $width;
+    width: fit-content;
+    padding: 0px 30px !important;
     height: 45px;
     border: none!important;
     border-radius: 400px!important;
@@ -19,6 +20,7 @@ button {
     outline-style: none!important;
     box-shadow:  5px 5px 15px #0e0e0e,
                 -5px -5px 15px #222222;
+    font-weight: 600!important;
 }
 
 button:hover {

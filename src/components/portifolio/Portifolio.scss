@@ -1,0 +1,33 @@
+$background-dark-color: #181818;
+$darker-purple: #594AEB;
+$lighter-purple: #9F72FF;
+$title_size: 35px;
+$subtitle_size: 30px;
+$paragraph_size: 18px;
+
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portifolio_container {
+    @include flexCenter;
+    width: 85vw;
+    height: 80vh;
+    flex-direction: column;
+    gap: 70px;
+    
+    h2 {
+        font-size: $title_size;
+        font-weight: 700;
+    }
+
+    .cards_container {
+        @include flexCenter;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    
+}

@@ -1,0 +1,79 @@
+@mixin flexCenter() {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+}
+
+$border-radius: 20px;
+$darker-purple: #594AEB;
+
+.project_card_container {
+    @include flexCenter();
+    width: 380px;
+    height: 480px;
+    background-color: white;
+    border-radius: $border-radius;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: flex-start;
+    
+    .card_image {
+        width: 350px;
+        border-radius: $border-radius;
+    }
+
+    .card_text {
+        @include flexCenter();
+        flex-direction: column;
+        color: black;
+        text-align: center;
+        margin-top: 20px;
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .technologies_container {
+            margin: 15px 0px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+
+            .tech {
+                background-color: rgba(0, 0, 0, 0.144);
+                width: min-content;
+                padding: 4px 10px;
+                border-radius: 2px;
+                cursor: default;
+            }
+        }
+
+        .git_demo {
+            @include flexCenter;
+            gap: 40px;
+
+            .bi {
+                font-size: 28px;
+                margin-right: 3px;
+            }
+
+            .bi-github {
+                margin-right: 8px;
+            }
+
+            a:hover {
+                color:#594AEB;
+            }
+
+        }
+
+
+
+
+    }
+}

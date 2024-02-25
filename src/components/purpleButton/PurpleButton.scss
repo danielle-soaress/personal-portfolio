@@ -7,7 +7,7 @@ $lighter-purple: #9F72FF;
     background: linear-gradient(180deg, $darker-purple 0%, $lighter-purple 100%);
 }
 
-button {
+.purple_button {
     @include bg-gradient;
     width: fit-content;
     padding: 0px 30px !important;
@@ -23,7 +23,7 @@ button {
     font-weight: 600!important;
 }
 
-button:hover {
+.purple_button:hover {
     transform: scale(1.07);
     transition: ease-in-out 0.3s;
 }

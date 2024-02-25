@@ -1,0 +1,188 @@
+$background-dark-color: #181818;
+$darker-purple: #594AEB;
+$lighter-purple: #9B70FE;
+$title_size: 35px;
+$paragraph_size: 18px;
+
+
+@mixin flexCenter () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes rightMove {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes leftMove {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes downUp {
+    0% {
+        opacity: 0%;
+        transform: translateY(200px);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+.ContactMe_container {
+    width: 85vw;
+    @include flexCenter();
+
+    .ContactMe_main_container {
+        @include flexCenter();
+        flex-direction: column;
+
+        h2 {
+            font-size: $title_size;
+            font-weight: 600;
+        }
+
+        p {
+            text-align: center;
+            font-size: $paragraph_size;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        .inputs_container {
+            @include flexCenter();
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 30px;
+
+            label {
+                margin-bottom: 4px;
+            }
+
+            input {
+                font-size: $paragraph_size;
+                margin-bottom: 15px;
+                background-color: white;
+                outline: none;
+                border: none;
+                width: 350px;
+                height: 45px;
+                padding: 0px 20px;
+                border-radius: 18px;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.295);
+                color: black;
+            }
+        }
+
+        .submit_button {
+            color: white;
+            box-shadow: none;
+            background-color: #181818;
+            width: 200px;
+            border-radius: 25px;
+            outline: none !important;
+        }
+
+        .submit_button:hover {
+            background-color: #181818;
+            transition: .4s ease;
+            translate: scale(1.1);
+        }
+
+        .left_icons_container {
+            background-color: red;
+        }
+    }
+
+    .icons_container {
+        position: absolute;
+        animation: downUp 2s ease;
+
+    }
+
+    .left_icons_container {
+        left: 8%;
+        height: 90vh;
+        width: 25vw;
+
+        .left_icon {
+            position: absolute;
+            width: 50px;
+            animation: moving 2s ease infinite;
+        }
+    
+        .left_tel {
+            right: 80%;
+            top: 70%;
+            animation: leftMove 2s ease infinite;
+        }
+    
+        .left_ar {
+            right: 20%;
+            top: 90%;
+            animation: spin 6s linear infinite;
+        }
+        
+        .left_email {
+            right: 20%;
+            top: 58%;
+            animation: rightMove 2s ease infinite;
+        }
+
+        .left_cel {
+            right: 60%;
+            top: 40%;
+            animation: pulse 2s ease infinite;
+        }
+    
+    }
+}

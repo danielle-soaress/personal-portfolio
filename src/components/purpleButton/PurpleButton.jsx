@@ -2,7 +2,7 @@ import './PurpleButton.scss';
 
 function Button(props) {
     return (
-        <button>{props.content}</button>
+        <button class="purple_button">{props.content}</button>
     )
 }
 

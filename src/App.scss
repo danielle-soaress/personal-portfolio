@@ -1,6 +1,11 @@
 $background-dark-color: #181818;
 $darker-purple: #594AEB;
-$lighter-purple: #9F72FF;
+$lighter-purple: #9B70FE;
+
+@mixin bg-gradient() {
+  background: $darker-purple;
+  background: linear-gradient(135deg, $darker-purple 0%, $lighter-purple 100%);
+}
 
 html {
   scroll-behavior: smooth;
@@ -52,6 +57,10 @@ section {
 
 #about_me {
   background: white;
+}
+
+#contact_me {
+  @include bg-gradient();
 }
 
 

@@ -88,7 +88,7 @@ $paragraph_size: 18px;
 
         h2 {
             font-size: $title_size;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         p {
@@ -132,12 +132,6 @@ $paragraph_size: 18px;
             outline: none !important;
         }
 
-        .submit_button:hover {
-            background-color: #181818;
-            transition: .4s ease;
-            translate: scale(1.1);
-        }
-
         .left_icons_container {
             background-color: red;
         }
@@ -175,7 +169,7 @@ $paragraph_size: 18px;
         .left_email {
             right: 20%;
             top: 58%;
-            animation: rightMove 2s ease infinite;
+            animation: rightMove 5s ease infinite;
         }
 
         .left_cel {
@@ -183,6 +177,43 @@ $paragraph_size: 18px;
             top: 40%;
             animation: pulse 2s ease infinite;
         }
+    }
+
+    .right_icons_container {
+        right: 8%;
+        height: 90vh;
+        width: 25vw;
+
+        .right_icon {
+            position: absolute;
+            width: 50px;
+            animation: moving 2s ease infinite;
+        }
     
+        .right_tel {
+            right: 55%;
+            top: 40%;
+            animation: leftMove 3s ease infinite;
+        }
+    
+        .right_ar {
+            right: 10%;
+            top: 60%;
+            width: 65px;
+            animation: spin 6s linear infinite;
+        }
+        
+        .right_email {
+            right: 80%;
+            top: 70%;
+            width: 55px;
+            animation: rightMove 2s ease infinite;
+        }
+
+        .right_cel {
+            right: 20%;
+            top: 90%;
+            animation: pulse 2s ease infinite;
+        }
     }
 }

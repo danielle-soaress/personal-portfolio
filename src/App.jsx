@@ -7,6 +7,7 @@ import Introduction from './components/introduction/Introduction.jsx'
 import AboutMe from './components/aboutMe/AboutMe.jsx'
 import Portifolio from './components/portifolio/Portifolio.jsx'
 import ContactMe from './components/contactMe/ContactMe.jsx'
+import Footer from './components/footer/Footer.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,6 +27,9 @@ function App() {
     </section>
     <section id="contact_me">
       <ContactMe/>
+    </section>
+    <section id="footer">
+      <Footer/>
     </section>
   </div>
 }

@@ -51,7 +51,7 @@ section {
   scroll-snap-align: center;
 }
 
-#introduction, #portifolio{
+#introduction, #portifolio, #footer {
   background: $background-dark-color;
 }
 
@@ -61,6 +61,11 @@ section {
 
 #contact_me {
   @include bg-gradient();
+  height: 90vh;
+}
+
+#footer {
+  height: 10vh;
 }
 
 

@@ -2,6 +2,7 @@ import './Introduction.scss';
 import PurpleButton from '../purpleButton/PurpleButton.jsx'
 import ImageShape from '../../assets/images/Vector.png'
 import ImageShape2 from '../../assets/images/Vector2.png'
+import SocialMedias from '../socialMedias/SocialMedias';
 
 
 function Introduction() {
@@ -11,6 +12,7 @@ function Introduction() {
             <a className="aside_a"><i className="bi bi-house"></i></a>
             <a className="aside_a"><i className="bi bi-person"></i></a>
             <a className="aside_a"><i className="bi bi-grid"></i></a>
+            <a className="aside_a"><i class="bi bi-telephone"></i></a>
         </div>
         <div>
             <div className="main_content">
@@ -22,6 +24,8 @@ function Introduction() {
                     Universidade de Brasília (UnB) e entusiasta em programação 
                     full-stack.
                 </p>
+                <SocialMedias/>
+                <br></br>
                 <PurpleButton content="Fale comigo"/>
             </div>
         </div>

@@ -1,4 +1,4 @@
-$links_size: 14px;
+$links_size: 18px;
 
  @mixin flexCenter() {
     display: flex;
@@ -21,15 +21,17 @@ $links_size: 14px;
  .navbar {
     @include flexCenter;
     justify-content: space-between;
-    display: flex;
     height: 10vh;
     width: 85vw;
     color: transparent;
     color: white;
 
+    .logo {
+        width: 180px;
+    }
+
     .links {
         @include flexCenter;
-        display: flex;
         gap: 40px;
         font-size: $links_size;
 
@@ -49,6 +51,7 @@ $links_size: 14px;
     }
 
     a {
+        @include flexCenter;
         font-weight: 400;
     }
 

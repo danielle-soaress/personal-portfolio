@@ -5,15 +5,11 @@ import ImageShape2 from '../../assets/images/Vector2.png'
 import SocialMedias from '../socialMedias/SocialMedias';
 
 
+
 function Introduction() {
     return (
     <div className="introduction_container">
-        <div className="aside_nav">
-            <a className="aside_a"><i className="bi bi-house"></i></a>
-            <a className="aside_a"><i className="bi bi-person"></i></a>
-            <a className="aside_a"><i className="bi bi-grid"></i></a>
-            <a className="aside_a"><i class="bi bi-telephone"></i></a>
-        </div>
+        <div className="aside_nav_fake"></div>
         <div>
             <div className="main_content">
                 <h2 className="apresentation_title">
@@ -30,8 +26,11 @@ function Introduction() {
             </div>
         </div>
         <div className="right_image">
-            <img src={ImageShape} className="shape1 shape_background_image"></img>
-            <img src={ImageShape2} className="shape2 shape_background_image"></img>
+            <div className="shape1 shape_background_image">
+                <div className="shape2 shape_background_image">
+
+                </div>
+            </div>
         </div>
     </div>
     )

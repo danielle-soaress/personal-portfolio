@@ -12,15 +12,11 @@ $paragraph_size: 18px;
 
 @keyframes expand1 {
     0% {
-        width: 30vw;
-    }
-
-    50% {
-        width: 33vw;
+        width: 70%;
     }
 
     100% {
-        width: 30vw;
+        width: 90%;
     }
 }
 
@@ -30,30 +26,8 @@ $paragraph_size: 18px;
     justify-content: space-between;
     width: 85vw;
 
-    .aside_nav {
-        @include flexCenter;
-        flex-direction: column;
-        gap: 30px;
-
-        .bi {
-            font-size: 18px;
-            color: $transparent-white;
-        }
-        
-        .bi-person {
-            font-size: 20px;
-        }
-    
-        .bi:hover {
-            transition: ease 0.3s;
-            color: white;
-        }
-
-        .aside_a:hover {
-            transform:scale(1.1);
-            transition: ease 0.3s;
-            color: white;
-        }
+    .aside_nav_fake {
+        width: 50px;
     }
 
     .main_content {
@@ -84,15 +58,29 @@ $paragraph_size: 18px;
     .right_image {
         @include flexCenter();
         width: 33vw;
+        height: 80vh;
+        overflow: hidden;
+
     }
     
-    .shape_background_image {
-        position: absolute;
-        width: 28vw;
-    }
 
     .shape1 {
-        width: 30vw;
-        animation: expand1 ease-in-out 2s infinite;
+        @include flexCenter();
+        width: 90%;
+        height: 90%;
+        background-image: url("../../assets/images/Vector.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        animation: expand1 ease-in-out 1s;
+    }
+
+    .shape2 {
+        width: 90%;
+        height: 90%;
+        background-image: url("../../assets/images/Vector2.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }

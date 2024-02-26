@@ -1,0 +1,42 @@
+$transparent-white: #ffffff80;
+
+@mixin flexCenter () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aside_nav {
+    @include flexCenter;
+    position: fixed;
+    left: 8vw;
+    top: 50vh;
+    bottom: 50vw;
+    flex-direction: column;
+    gap: 30px;
+
+    .bi {
+        font-size: 22px;
+        color: $transparent-white;
+        font-weight: bolder;
+    }
+    
+    .bi-person {
+        font-size: 24px;
+    }
+
+    .bi:hover {
+        transition: ease 0.3s;
+        color: white;
+    }
+
+    .aside_a:hover {
+        transform:scale(1.1);
+        transition: ease 0.3s;
+        color: white;
+    }
+
+    .bi-house {
+        color: white;
+    }
+}

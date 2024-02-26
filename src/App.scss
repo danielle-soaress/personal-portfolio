@@ -8,8 +8,10 @@ $lighter-purple: #9B70FE;
 }
 
 html {
-  scroll-behavior: smooth;
   overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-behavior: smooth!important;
+  scroll-snap-type: y mandatory;
 }
 
 * {
@@ -18,6 +20,8 @@ html {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   font-weight: normal;
+  scroll-behavior: smooth!important;
+  
 }
 
 body {
@@ -34,9 +38,17 @@ a:hover {
   color: inherit;
 }
 
+.main_container {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 header {
   position: fixed;
   z-index: 1;
+  background-color: $background-dark-color;
 }
 
 header, section {
@@ -48,7 +60,6 @@ header, section {
 
 section {
   height: 100vh;
-  scroll-snap-align: center;
 }
 
 #introduction, #portifolio, #footer {
@@ -68,4 +79,7 @@ section {
   height: 10vh;
 }
 
+#portifolio {
+  height: 100vh;
+}
 

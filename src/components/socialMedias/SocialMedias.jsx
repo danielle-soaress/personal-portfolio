@@ -7,8 +7,8 @@ function SocialMedias(props) {
     return (
         <div class="social_medias_container">
             <div class="rectangle"></div>
-            <a href="https://github.com/danielle-soaress"><img src={GithubLogo} class="icon linkedin_icon"></img></a>
-            <a href="https://www.linkedin.com/in/danielle-soares-712910206/"><img src={LinkedinLogo} class="icon linkedin_icon"></img></a>
+            <a href="https://github.com/danielle-soaress" target="_blank"><img src={GithubLogo} class="icon linkedin_icon"></img></a>
+            <a href="https://www.linkedin.com/in/danielle-soares-712910206/" target="_blank"><img src={LinkedinLogo} class="icon linkedin_icon"></img></a>
             <a><img src={EmailIcon} class="icon email_icon"></img></a>
         </div>
     );

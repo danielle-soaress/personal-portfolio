@@ -1,4 +1,8 @@
 $links_size: 18px;
+$background-dark-color: #181818;
+$darker-purple: #594AEB;
+$lighter-purple: #9B70FE;
+
 
  @mixin flexCenter() {
     display: flex;
@@ -23,7 +27,6 @@ $links_size: 18px;
     justify-content: space-between;
     height: 10vh;
     width: 85vw;
-    color: transparent;
     color: white;
 
     .logo {

@@ -9,23 +9,26 @@ import Portifolio from './components/portifolio/Portifolio.jsx'
 import ContactMe from './components/contactMe/ContactMe.jsx'
 import Footer from './components/footer/Footer.jsx'
 
+import AsideNav from './components/asideNav/AsideNav.jsx'
+
 function App() {
   const [count, setCount] = useState(0)
 
   return <div class="main_container">
-    <header>
+    <header class="container">
       <Navbar/>
     </header>
-    <section id="introduction">
+    <AsideNav/>
+    <section id="introduction" class="container">
       <Introduction/>
     </section>
-    <section id="about_me">
+    <section id="about_me" class="container">
       <AboutMe/>
     </section>
-    <section id="portifolio">
+    <section id="portifolio" class="container">
       <Portifolio/>
     </section>
-    <section id="contact_me">
+    <section id="contact_me" class="container">
       <ContactMe/>
     </section>
     <section id="footer">

@@ -28,7 +28,9 @@ function Introduction() {
         <div className="right_image">
             <div className="shape1 shape_background_image">
                 <div className="shape2 shape_background_image">
-
+                    <div className= "shape3 shape_background_image">
+                        
+                    </div>
                 </div>
             </div>
         </div>

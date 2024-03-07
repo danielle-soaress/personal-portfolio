@@ -54,3 +54,14 @@ $paragraph_size: 18px;
         }
     }
 }
+
+@media (max-width: 1000px){
+    .about_me_container {
+        width: 70vw;
+
+        .habilities_container {
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+    }
+}

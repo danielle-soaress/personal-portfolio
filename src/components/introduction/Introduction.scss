@@ -76,9 +76,20 @@ $paragraph_size: 18px;
     }
 
     .shape2 {
+        @include flexCenter();
         width: 90%;
         height: 90%;
         background-image: url("../../assets/images/Vector2.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .shape3 {
+        @include flexCenter();
+        width: 90%;
+        height: 90%;
+        background-image: url("../../assets/images/personal_photo.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;

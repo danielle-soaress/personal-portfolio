@@ -1,6 +1,7 @@
 $background-dark-color: #181818;
 $darker-purple: #594AEB;
 $lighter-purple: #9F72FF;
+$transparent-white: #ffffff80;
 $title_size: 35px;
 $subtitle_size: 30px;
 $paragraph_size: 18px;
@@ -23,11 +24,78 @@ $paragraph_size: 18px;
         font-weight: 700;
     }
 
-    .cards_container {
-        @include flexCenter;
-        flex-wrap: wrap;
-        gap: 50px;
-    }
+    .carousel_container {
 
-    
+        .bi-caret-left-fill, .bi-caret-right-fill {
+            display: none;
+        }
+
+        .carousel_aux {
+
+            .cards_container {
+                @include flexCenter;
+                flex-direction: row;
+                gap: 30px;
+                cursor: grab;
+                flex-wrap:nowrap;
+            }
+
+        }
+    }  
+
+}
+
+@media (max-width: 1700px) {
+
+    .portifolio_container {
+        @include flexCenter;
+        justify-content: center;
+
+        .carousel_container {
+            @include flexCenter;
+            gap: 10px;
+
+            .bi-caret-left-fill, .bi-caret-right-fill {
+                @include flexCenter;
+                font-size: 50px;
+                color: $transparent-white;
+                width: 60px;
+                height: 480px;
+                border-radius: 5px;
+                cursor: pointer;
+                
+            }
+
+            .bi-caret-left-fill {
+                color: transparent;
+            }
+            
+            .carousel_aux {
+                @include flexCenter;
+                flex-direction: row;
+                width: 390px;
+                overflow-x: hidden;
+
+                .cards_container {
+                    @include flexCenter;
+                    justify-content: flex-start;
+                    flex-direction: row;
+                    width: 380px;
+                    
+                    .arrow {
+                        display: block;
+                    }
+        
+                    .translateRight{
+                        transform: translateX(-410px);
+                    }
+        
+                    .translateLeft{
+                        transform: translateX(410px);
+                    }
+                }
+            }
+        }
+
+    }
 }

@@ -12,15 +12,20 @@ function Portifolio() {
     const rightButton = useRef(null);
     const cardsContainerRef = useRef(null);
     
+    var [carouselWidth, setCarouselWidth] = useState((window.innerWidth < 1024)? 310:410)
     var [carouselStatus, setCarouselStatus] = useState(1);
     var [carouselDeslocation, setCarouselDeslocation] = useState(0);
+
+    window.onresize = () => {
+        setCarouselWidth((window.innerWidth < 1024)? 310:410);
+    }
 
 
 
     const toLeft = () => {
         if (carouselStatus == 2 || carouselStatus == 1) {
-                cardsContainerRef.current.style.transform = `translateX(${carouselDeslocation+410}px)`
-                setCarouselDeslocation(prev => prev + 410)
+                cardsContainerRef.current.style.transform = `translateX(${carouselDeslocation+carouselWidth}px)`
+                setCarouselDeslocation(prev => prev + carouselWidth)
 
                 rightButton.current.style.color = "#ffffff80";
         }
@@ -32,8 +37,8 @@ function Portifolio() {
 
     const toRight = () => {
         if (carouselStatus == 1 || carouselStatus == 2) {
-                cardsContainerRef.current.style.transform = `translateX(${carouselDeslocation-410}px)`
-                setCarouselDeslocation(prev => prev - 410)
+                cardsContainerRef.current.style.transform = `translateX(${carouselDeslocation-carouselWidth}px)`
+                setCarouselDeslocation(prev => prev - carouselWidth)
                 leftButton.current.style.color = "#ffffff80";
         }
 

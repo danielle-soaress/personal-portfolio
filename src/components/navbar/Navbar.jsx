@@ -1,11 +1,16 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import './navbar.scss'
-import Logo from '../../assets/images/Logo.png'
+import LogoWhite from '../../assets/images/logoBranca.png'
+import LogoBlack from '../../assets/images/logoPreta.png'
 
 
 const Navbar = () => {
     // ps: tenho que implementar essa função logo! (lightmode)
     const [light, setLight] = useState(true);
+    const linksRef = useRef(null);
+    const navbarRef = useRef(null)
+    const logoRef = useRef(null)
+    const [menu, setMenu] = useState(true);
 
     const actualSection = (e) => {
         let icons = document.querySelectorAll('.aside_nav_icon');
@@ -23,11 +28,18 @@ const Navbar = () => {
 
     }
 
+    const openMenu = (e) => {
+        linksRef.current.style.display = `${menu? 'flex': 'none'}`;
+        e.target.style.color = `${menu? '#594AEB': 'white'}`;
+        logoRef.current.setAttribute('src', `${menu? LogoBlack: LogoWhite}`)
+        setMenu(prev => !prev)
+    }
+
 
     return (
-    <div className="navbar">
-        <img className="logo" src={Logo} alt="logo"></img>
-        <nav className="links">
+    <div className="navbar" ref={navbarRef}>
+        <img className="logo" ref={logoRef} src={LogoWhite} alt="logo"></img>
+        <nav className="links" ref={linksRef}>
             <a className="header_nav_link " onClick={actualSection} el="home" href="#introduction">Home</a>
             <a className="header_nav_link " onClick={actualSection} el="about" href="#about_me">Sobre</a>
             <a className="header_nav_link " onClick={actualSection} el="portfolio" href="#portifolio">Portfolio</a>
@@ -35,6 +47,7 @@ const Navbar = () => {
             <i className="bi bi-brightness-high-fill" onClick={() => setLight(!light)}>
             </i>
         </nav>
+        <i class="bi bi-list" onClick={openMenu}></i>
     </div>
     )
 }

@@ -17,6 +17,7 @@ $darker-purple: #594AEB;
     padding: 30px;
     justify-content: flex-start;
     
+    
     .card_image {
         width: 350px;
         border-radius: $border-radius;
@@ -28,6 +29,9 @@ $darker-purple: #594AEB;
         color: black;
         text-align: center;
         margin-top: 20px;
+        height: 50vh;
+        justify-content: space-between;
+        
         h3 {
             font-size: 20px;
             font-weight: 600;
@@ -39,6 +43,8 @@ $darker-purple: #594AEB;
         }
 
         .technologies_container {
+            @include flexCenter();
+            justify-content: center;
             margin: 15px 0px;
             display: flex;
             gap: 10px;
@@ -75,5 +81,58 @@ $darker-purple: #594AEB;
 
 
 
+    }
+}
+
+@media (max-width: 1024px) {
+    .project_card_container {
+        width: 280px;
+        height: 400px;
+        padding: 20px;
+
+        .card_image {
+            width: 250px;
+        }
+
+        .card_text {
+            h3 {
+                font-size: 16px;
+                font-weight: 600;
+            }
+    
+            p {
+                font-size: 12px;
+                font-weight: 400;
+            }
+    
+            .technologies_container {
+                .tech {
+                    padding: 0px 10px;
+                    border-radius: 2px;
+                    cursor: default;
+                }
+            }
+    
+            .git_demo {
+                gap: 30px;
+                .bi {
+                    font-size: 16px;
+                    margin-right: 3px;
+                }
+    
+                .bi-github {
+                    margin-right: 8px;
+                }
+    
+                a:hover {
+                    color:#594AEB;
+                }
+    
+            }
+    
+    
+    
+    
+        }
     }
 }

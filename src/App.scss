@@ -83,3 +83,29 @@ section {
   height: 100vh;
 }
 
+
+@media (max-width:610px) {
+
+  html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth!important;
+    scroll-snap-type: y mandatory;
+  }
+
+  .main_container {
+    height: auto;
+    overflow-y: scroll;
+
+    section {
+      height: 100vh;
+    }
+    #portifolio {
+      height: auto;
+    }
+    #footer {
+      height: auto;
+    }
+  }
+
+}

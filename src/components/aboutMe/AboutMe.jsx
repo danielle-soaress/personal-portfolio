@@ -10,7 +10,7 @@ function AboutMe() {
     return (
         <div className="about_me_container">
             <h2>Sobre mim</h2>
-            <h3>Principais habilidades</h3>
+            <h3>Habilidades</h3>
             <div className="habilities_container">
                 <img src={htmlIcon} alt="HTML logo" className="icon html_icon"></img>
                 <img src={cssIcon} alt="CSS logo" className="icon css_icon"></img>

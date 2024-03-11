@@ -21,7 +21,7 @@
         }
 
         .cop_logo {
-            width: 100px
+            width: 100px;
         }
     }
 
@@ -32,3 +32,26 @@
 
     
 }
+
+@media (max-width:610px) {
+    .footer_container {
+        height: auto;
+        flex-direction: column;
+        padding: 20px 0px;
+        gap: 20px;
+        .footer_logo {
+            display: none;
+        }
+
+        .copyrights {
+            p {
+                font-size: 10px;
+            }
+    
+            .cop_logo {
+                width: 70px;
+            }
+        }
+    }
+}
+

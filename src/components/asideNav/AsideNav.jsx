@@ -1,7 +1,14 @@
 import './AsideNav.scss';
-
+import {useState} from 'react';
 
 function AsideNav() {
+
+    const [windowWidth, setwindowWidth] = useState(window.innerWidth);
+    
+    window.onresize = () => {
+       setwindowWidth(window.innerWidth)
+    }
+    
 
     const actualSection = (e) => {
         let icons = document.querySelectorAll('.aside_nav_icon');
@@ -19,20 +26,26 @@ function AsideNav() {
             }
             e.target.style.color= "white";
         }
+
+
+        if (windowWidth <= 1100 && e.target.getAttribute('el') == 'contact') {
+            console.log('oi')
+            e.target.style.gap= "12vh";
+        }
     }
 
     return (
         <div className="aside_nav">
-            <a href="#introduction" onClick={actualSection} className="aside_a">
+            <a el="homeIcon" href="#introduction" onClick={actualSection} className="aside_a">
                 <i el="home" className="home aside_nav_icon bi bi-house"></i>
                 </a>
-            <a href="#about_me" onClick={actualSection} className="aside_a">
+            <a el="aboutIcon" href="#about_me" onClick={actualSection} className="aside_a">
                 <i el="about" className="about aside_nav_icon bi bi-person"></i>
                 </a>
-            <a href="#portifolio" onClick={actualSection} className="aside_a">
+            <a el="portfolioIcon" href="#portifolio" onClick={actualSection} className="aside_a">
                 <i el="portfolio" className="portfolio aside_nav_icon bi bi-grid"></i>
                 </a>
-            <a href="#contact_me" onClick={actualSection} className="aside_a">
+            <a el="contactIcon" href="#contact_me" onClick={actualSection} className="aside_a">
                 <i el="contact" className="contact aside_nav_icon bi bi-telephone"></i>
                 </a>
         </div>

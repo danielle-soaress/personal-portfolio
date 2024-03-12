@@ -20,9 +20,8 @@ function Portifolio() {
         setCarouselWidth((window.innerWidth < 1024)? 310:410);
     }
 
-
-
     const toLeft = () => {
+        console.log(carouselStatus)
         if (carouselStatus == 2 || carouselStatus == 1) {
                 cardsContainerRef.current.style.transform = `translateX(${carouselDeslocation+carouselWidth}px)`
                 setCarouselDeslocation(prev => prev + carouselWidth)

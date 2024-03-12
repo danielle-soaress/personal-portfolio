@@ -1,12 +1,4 @@
 import './ContactMe.scss';
-import leftAr from '../../assets/images/contact me vectors/pattern_left/ar.png'
-import leftCel from '../../assets/images/contact me vectors/pattern_left/cel.png'
-import leftTel from '../../assets/images/contact me vectors/pattern_left/tel.png'
-import leftEmail from '../../assets/images/contact me vectors/pattern_left/email.png'
-import rightAr from '../../assets/images/contact me vectors/pattern_right/ar.png'
-import rightCel from '../../assets/images/contact me vectors/pattern_right/cel.png'
-import rightTel from '../../assets/images/contact me vectors/pattern_right/tel.png'
-import rightEmail from '../../assets/images/contact me vectors/pattern_right/email.png'
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
 import {useRef, useState, useEffect} from 'react';
@@ -58,12 +50,6 @@ function ContactMe() {
 
     return (
         <div className="ContactMe_container">
-            <div className="icons_container left_icons_container">
-                <img src={leftAr} class="left_ar left_icon"></img>
-                <img src={leftCel} class="left_cel left_icon"></img>
-                <img src={leftTel} class="left_tel left_icon"></img>
-                <img src={leftEmail} class="left_email left_icon"></img>
-            </div>
             <div className="ContactMe_main_container">
                 <h2 useRef={titleRef}>Entre em contato</h2>
                 <p useRef={paragraphRef}> 
@@ -72,23 +58,17 @@ function ContactMe() {
                 </p>
                 <form useRef={formRef} onSubmit={handleSubmit(onSubmit)} className="inputs_container">
                     <label className="field">Seu nome</label>
-                    <input type="text" {...register("name", { required: true })}/>
+                    <input className="input" type="text" {...register("name", { required: true })}/>
                     
                     <label className="field">Seu email</label>
-                    <input type="email" {...register("email", { required: true })}/>
+                    <input className="input" type="email" {...register("email", { required: true })}/>
                     
                     <label className="field">Mensagem</label>
-                    <textarea class="message_input" {...register("message", { required: true })}></textarea>
+                    <textarea className="input message_input" {...register("message", { required: true })}></textarea>
 
                     <button type="submit" className="submit_button">Enviar</button>
                 </form>
                 <button ref={newMessageButtonRef} onClick={newMessage} className="new_message_button submit_button">Enviar nova mensagem</button>
-            </div>
-            <div className="icons_container right_icons_container">
-                <img src={rightAr} class="right_ar right_icon"></img>
-                <img src={rightCel} class="right_cel right_icon"></img>
-                <img src={rightTel} class="right_tel right_icon"></img>
-                <img src={rightEmail} class="right_email right_icon"></img>
             </div>
         </div>
     );

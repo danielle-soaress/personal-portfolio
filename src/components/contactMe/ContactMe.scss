@@ -170,83 +170,8 @@ $paragraph_size: 18px;
     }
 
     .icons_container {
-        position: absolute;
+        position: relative;
         animation: downUp 2s ease;
-
-    }
-
-    .left_icons_container {
-        left: 8%;
-        height: 90vh;
-        width: 25vw;
-
-        .left_icon {
-            position: absolute;
-            width: 50px;
-            animation: moving 2s ease infinite;
-        }
-    
-        .left_tel {
-            right: 80%;
-            top: 70%;
-            animation: leftMove 2s ease infinite;
-        }
-    
-        .left_ar {
-            right: 20%;
-            top: 90%;
-            animation: spin 6s linear infinite;
-        }
-        
-        .left_email {
-            right: 20%;
-            top: 58%;
-            animation: rightMove 5s ease infinite;
-        }
-
-        .left_cel {
-            right: 60%;
-            top: 40%;
-            animation: pulse 2s ease infinite;
-        }
-    }
-
-    .right_icons_container {
-        right: 8%;
-        height: 90vh;
-        width: 25vw;
-
-        .right_icon {
-            position: absolute;
-            width: 50px;
-            animation: moving 2s ease infinite;
-        }
-    
-        .right_tel {
-            right: 55%;
-            top: 40%;
-            animation: leftMove 3s ease infinite;
-        }
-    
-        .right_ar {
-            right: 10%;
-            top: 60%;
-            width: 65px;
-            animation: spin 6s linear infinite;
-        }
-        
-        .right_email {
-            right: 80%;
-            top: 70%;
-            width: 55px;
-            animation: rightMove 2s ease infinite;
-        }
-
-        .right_cel {
-            right: 20%;
-            top: 90%;
-            animation: pulse 2s ease infinite;
-        }
     }
 }
 
@@ -257,3 +182,41 @@ $paragraph_size: 18px;
         }
     }
 }
+
+
+
+@media (max-width:390px) {
+    .ContactMe_container {
+        .ContactMe_main_container {
+            h2 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .inputs_container {
+                .field {
+                    font-size: 14px;
+                }
+
+                .input {
+                    width: 250px;
+                    height: 40px;
+                }
+
+                .message_input {
+                    height: 120px;
+                }
+
+                .submit_button {
+                    padding: 5px;
+                    width: 130px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+}
+

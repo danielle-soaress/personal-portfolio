@@ -101,10 +101,13 @@ $paragraph_size: 18px;
         .inputs_container {
             @include flexCenter();
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             margin: 30px;
 
             label {
+                @include flexCenter();
+                justify-content: flex-start;
+                width: 100%;
                 margin-bottom: 4px;
             }
 
@@ -121,16 +124,45 @@ $paragraph_size: 18px;
                 box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.295);
                 color: black;
             }
+
+            .message_input {
+                background-color: white;
+                width: 350px;
+                height: 160px;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 18px;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.295);
+                color: black;
+                margin-bottom: 20px;
+            }
+
+            .message_input:focus {
+                border: none;
+                outline: none;
+            }
+
+            .submit_button {
+                color: white;
+                box-shadow: none;
+                background-color: #181818;
+                width: 180px;
+                border-radius: 25px;
+                outline: none !important;
+            }
         }
 
-        .submit_button {
-            color: white;
-            box-shadow: none;
-            background-color: #181818;
-            width: 200px;
+        .new_message_button {
             border-radius: 25px;
-            outline: none !important;
+            padding: 10px 25px;
+            display: none;
         }
+
+        .new_message_button:focus {
+            outline: none;
+            border: none;
+        }
+
 
         .left_icons_container {
             background-color: red;

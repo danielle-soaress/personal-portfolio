@@ -36,7 +36,6 @@ $paragraph_size: 18px;
                 @include flexCenter;
                 flex-direction: row;
                 gap: 30px;
-                cursor: grab;
                 flex-wrap:nowrap;
             }
 
@@ -57,10 +56,11 @@ $paragraph_size: 18px;
 
             .bi-caret-left-fill, .bi-caret-right-fill {
                 @include flexCenter;
+                color: red;
                 font-size: 50px;
                 color: $transparent-white;
                 width: 60px;
-                height: 480px;
+                height: 60px;
                 border-radius: 5px;
                 cursor: pointer;
                 
@@ -69,7 +69,7 @@ $paragraph_size: 18px;
             .bi-caret-left-fill {
                 color: transparent;
             }
-            
+
             .carousel_aux {
                 @include flexCenter;
                 flex-direction: row;
@@ -113,7 +113,7 @@ $paragraph_size: 18px;
                 font-size: 50px;
                 color: $transparent-white;
                 width: 60px;
-                height: 480px;
+                height: 60px;
                 border-radius: 5px;
                 cursor: pointer;
                 

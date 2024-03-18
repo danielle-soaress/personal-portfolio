@@ -12,44 +12,49 @@ function Portifolio() {
     const rightButton = useRef(null);
     const cardsContainerRef = useRef(null);
     
+    const carouselSlides = 3;
     var [carouselWidth, setCarouselWidth] = useState((window.innerWidth < 1024)? 310:410)
-    var [carouselStatus, setCarouselStatus] = useState(1);
+    var [carouselStatus, setCarouselStatus] = useState(1)
     var [carouselDeslocation, setCarouselDeslocation] = useState(0);
+    
 
     window.onresize = () => {
         setCarouselWidth((window.innerWidth < 1024)? 310:410);
     }
 
     const toLeft = () => {
-        console.log(carouselStatus)
-        if (carouselStatus == 2 || carouselStatus == 1) {
-                cardsContainerRef.current.style.transform = `translateX(${carouselDeslocation+carouselWidth}px)`
-                setCarouselDeslocation(prev => prev + carouselWidth)
-
-                rightButton.current.style.color = "#ffffff80";
+        if (carouselStatus != 1) {
+            cardsContainerRef.current.style.transform = `translateX(${carouselDeslocation+carouselWidth}px)`
+            setCarouselDeslocation(prev => prev + carouselWidth)
+            setCarouselStatus(prev => prev - 1)
+            return
         }
-
-        leftButton.current.style.color = `${(carouselStatus == 1)? 'transparent': '#ffffff80'}`;
-
-        setCarouselStatus((prev) => (prev == 1)? 1: prev-1)
     }
 
     const toRight = () => {
-        if (carouselStatus == 1 || carouselStatus == 2) {
-                cardsContainerRef.current.style.transform = `translateX(${carouselDeslocation-carouselWidth}px)`
-                setCarouselDeslocation(prev => prev - carouselWidth)
-                leftButton.current.style.color = "#ffffff80";
+        if (carouselStatus != carouselSlides) {
+            cardsContainerRef.current.style.transform = `translateX(${carouselDeslocation-carouselWidth}px)`
+            setCarouselDeslocation(prev => prev - carouselWidth)
+            setCarouselStatus(prev => prev + 1)
+            return
         }
-
-        rightButton.current.style.color = `${(carouselStatus == 2)? 'transparent': '#ffffff80'}`;
-
-        setCarouselStatus((prev) => (prev == 2)? 2: prev+1)
     }
+
+    const hideStyle = {
+        color: 'transparent',
+        cursor: 'default',
+    }
+
+    const visibleStyle = {
+        color: "#ffffff80",
+        cursor: 'pointer',
+    }
+
     return (
         <div className="portifolio_container">
             <h2>Conheça alguns dos meus projetos</h2>
             <div className="carousel_container">
-                <i onClick={toLeft} ref={leftButton} className="bi bi-caret-left-fill"></i>
+                <i onClick={toLeft} ref={leftButton} style={carouselStatus == 1 ? hideStyle : visibleStyle} className="bi bi-caret-left-fill"></i>
                 <div className="carousel_aux">
                     <div ref={cardsContainerRef} className="cards_container">
                         <ProjectCard
@@ -84,7 +89,7 @@ function Portifolio() {
                             />
                     </div>
                 </div>
-                <i onClick={toRight} ref={rightButton} className="bi bi-caret-right-fill"></i>
+                <i onClick={toRight} ref={rightButton} style={carouselStatus == carouselSlides ? hideStyle : visibleStyle} className="bi bi-caret-right-fill"></i>
             </div>
             <a href=""><PurpleButton content="Ver mais projetos"></PurpleButton></a>
         </div>

@@ -1,0 +1,41 @@
+@use '../../base';
+
+.softSkill_container {
+    @include base.flexCenter;
+    flex-direction: column;
+    width: 380px;
+    height: 230px;
+    background-color: base.$darker-purple;
+    border-radius: 20px;
+    color: white;
+
+    .title_softSkill {
+        @include base.flexCenter;
+        flex-direction: row;
+        width: 80%;
+        height: auto;
+        gap: 10px;
+        
+        .icon {
+            @include base.flexCenter;
+            font-size: 22px;
+        }
+
+        h3 {    
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            color: white;
+            font-weight: 600;
+        }
+    }
+
+    p {
+        width: 80%;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        text-indent: 0px;
+        font-weight: 300;
+    }
+}

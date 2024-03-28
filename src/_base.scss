@@ -1,0 +1,30 @@
+$darker-purple: #594AEB;
+$lighter-purple: #9F72FF;
+$title_size: 38px;
+$subtitle_size: 28px;
+$sub_subtitle_size: 30px;
+$paragraph_size: 18px;
+
+
+@mixin flexCenter () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin title() {
+    font-size: $title_size;
+    font-weight: 800;
+    text-align: center;
+}
+
+@mixin subtitle() {
+    font-size: $subtitle_size;
+    font-weight: 700;
+    text-align: center;
+}
+
+@mixin paragraph() {
+    font-size: $paragraph_size;
+    font-weight: normal;
+}

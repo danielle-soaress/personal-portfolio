@@ -68,6 +68,9 @@ section {
 
 #about_me {
   background: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 #contact_me {

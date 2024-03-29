@@ -29,7 +29,6 @@ function AsideNav() {
 
 
         if (windowWidth <= 1100 && e.target.getAttribute('el') == 'contact') {
-            console.log('oi')
             e.target.style.gap= "12vh";
         }
     }

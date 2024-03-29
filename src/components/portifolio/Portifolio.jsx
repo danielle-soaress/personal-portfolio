@@ -91,7 +91,9 @@ function Portifolio() {
                 </div>
                 <i onClick={toRight} ref={rightButton} style={carouselStatus == carouselSlides ? hideStyle : visibleStyle} className="bi bi-caret-right-fill"></i>
             </div>
-            <a href=""><PurpleButton content="Ver mais projetos"></PurpleButton></a>
+            <a onClick={() => window.alert("Em breve esta página será desenvolvida! ;)")}>
+                <PurpleButton content="Ver mais projetos" >
+                    </PurpleButton></a>
         </div>
     );
 }

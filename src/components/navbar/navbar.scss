@@ -52,7 +52,7 @@ $lighter-purple: #9B70FE;
     color: white;
 
     .logo {
-        width: 180px;
+        height: 30%;
     }
 
     .links {
@@ -78,6 +78,7 @@ $lighter-purple: #9B70FE;
     a {
         @include flexCenter;
         font-weight: 400;
+        color: inherit;
     }
 
     a:hover {

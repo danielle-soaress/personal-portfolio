@@ -46,24 +46,6 @@ $transparent-white: #ffffff80;
 @media (max-width:1100px) {
 
     .aside_nav {
-        flex-direction: row;
-        align-items: flex-end;
-        left: 50vw;
-        right: 50vw;
-        bottom: 4vh;
-
-        .bi {
-            height: 40px;
-        }
-    }
-}
-
-
-@media (max-width:610px) {
-
-    .aside_nav {
         display: none;
     }
-
 }
-  

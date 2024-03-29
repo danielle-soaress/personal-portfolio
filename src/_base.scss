@@ -1,9 +1,12 @@
+
+$background-dark-color: #181818;
 $darker-purple: #594AEB;
 $lighter-purple: #9F72FF;
-$title_size: 38px;
-$subtitle_size: 28px;
+$opaque-white: #ffffff23;
+$title_size: 32px;
+$subtitle_size: 24px;
 $sub_subtitle_size: 30px;
-$paragraph_size: 18px;
+$paragraph_size: 16px;
 
 
 @mixin flexCenter () {

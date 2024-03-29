@@ -1,17 +1,14 @@
 @use '../../base';
 
-@mixin flexCenter() {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .about_me_container {
-    @include flexCenter;
-    position: relative;
+    @include base.flexCenter;
     flex-direction: column;
-    width: 55vw;
-    height: 100vh;
+    width: 100vw;
+    height: 90vh;
+    margin-top: 10vh;
+    padding: 30px 0px;
+    justify-content: center;
     
     h2 {
         @include base.title;
@@ -25,52 +22,148 @@
 
     p {
         @include base.paragraph;
-        margin-top: 20px;
-        text-align: justify;
-        text-indent: 2rem;
+        margin-top: 10px;
+        text-align: center;
+        font-weight: 400;
+        width: 45vw;
     }
 
     h3 {
         @include base.subtitle;
         margin-top: 60px;
         margin-bottom: 30px;
-
     }
 
-    .techs_container {
-        @include flexCenter;
-        flex-direction: row;
-        gap: 25px;
-        flex-wrap: wrap;
+    .techs_main_container, .soft_skills {
+        @include base.flexCenter;
+        flex-direction: column;
+        gap: 15px;
+        width: 45vw;
+        margin-top: 20px;
+        border-radius: 40px;
+        padding: 15px;
+        background-color: #594AEB;
 
-        .icon {
-            width: 100px;
+        .techs_container_title {
+            @include base.flexCenter;
+            gap: 10px;
+
+            .bi-chat, .bi-tools, h3 {
+                @include base.flexCenter;
+                color: white;
+                margin: 0;
+                padding: 0;
+            }   
+            .bi-chat, .bi-tools {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: base.$subtitle_size;
+            }
+        }
+    }
+
+
+    .techs_main_container {
+        .techs_container {
+            @include base.flexCenter;
+            flex-direction: row;
+            padding: 20px;
+            border-radius: 40px;
+            background-color: base.$opaque-white;
+            cursor: grab;
+            overflow-x: hidden;
+            
+            .swiper-slide {
+
+                width: auto;
+            }
+
+            .swiper-wrapper {
+                @include base.flexCenter;
+                justify-content: flex-start;
+                width: 100%;
+            }
+    
+            .icon {
+                width: 100px;
+            }
+    
+            .icon:hover {
+                transition: ease 0.2s;
+                transform: translateY(-10px);
+            }
         }
 
-        .icon:hover {
-            transition: ease 0.2s;
-            transform: translateY(-10px);
+        .techs_container:active {
+            cursor: grabbing;
         }
     }
 
     .soft_skills {
-        @include flexCenter;
-        gap: 10px;
+        margin-top: 20px;
+        width: 45vw;
+
+        .swiper-container {
+            cursor: grab;
+            width: 80%!important;
+
+            .swiper-slide {
+                @include base.flexCenter;
+                align-items: flex-start;
+            }
+        }
+
+        .swiper-container:active {
+            cursor: grabbing;
+        }
+
+        .swiper-pagination {
+            cursor: pointer;
+        }
+
+        .swiper-pagination-bullet-active, .swiper-pagination-bullet {
+            background-color: white;
+
+        }
+
     }
+
 }
 
 @media (max-width: 1100px){
     .about_me_container {
-        width: 80vw;
+        width: 100vw;
+        height: fit-content;
+        padding: 50px 0px;
+        margin-top: 0;
 
-        .techs_container {
-            margin-top: 50px;
-            flex-wrap: wrap;
+        .techs_main_container{
+            .techs_container {
+                flex-direction: row;
+            }
         }
+
+        .techs_main_container, .soft_skills, p {
+            width: 80vw;
+        }
+
+        
+    }
+}
+
+@media (max-height: 900px) and (min-width: 1100px) {
+    .about_me_container {
+        justify-content: flex-start;
+        overflow-y: auto;
     }
 }
 
 @media (max-width: 610px) {
+    .about_container {
+        margin-top: 0;
+    }
     .header_bottom {
         display: none;
     }
@@ -78,14 +171,13 @@
 
 @media (max-width: 360px){
     .about_me_container {
-        width: 70vw;
+        width: 80vw;
+        margin-top:0;
 
-        .habilities_container {
-            margin-top: 50px;
-            flex-wrap: wrap;
-
-            .icon {
-                width: 50px;
+        .techs_main_container{
+            .techs_container {
+                margin-top: 50px;
+                flex-direction: row;
             }
         }
     }

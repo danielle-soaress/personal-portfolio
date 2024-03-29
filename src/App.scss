@@ -1,11 +1,10 @@
-$background-dark-color: #181818;
-$darker-purple: #594AEB;
-$lighter-purple: #9B70FE;
+@use './base';
 
 @mixin bg-gradient() {
-  background: $darker-purple;
-  background: linear-gradient(135deg, $darker-purple 0%, $lighter-purple 100%);
+  background: base.$darker-purple;
+  background: linear-gradient(135deg, base.$darker-purple 0%, base.$lighter-purple 100%);
 }
+
 
 html {
   overflow-x: hidden;
@@ -48,14 +47,12 @@ a:hover {
 header {
   position: fixed;
   z-index: 1;
-  background-color: $background-dark-color;
+  background-color: base.$background-dark-color;
 }
 
 header, section {
+  @include base.flexCenter();
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 section {
@@ -63,14 +60,13 @@ section {
 }
 
 #introduction, #portifolio, #footer {
-  background: $background-dark-color;
+  background: base.$background-dark-color;
 }
 
 #about_me {
   background: white;
-  display: flex;
-  flex-direction: column;
   height: 100vh;
+  overflow: hidden;
 }
 
 #contact_me {
@@ -88,7 +84,7 @@ section {
 }
 
 
-@media (max-width:610px) {
+@media (max-width:1100px) {
 
   html {
     overflow-x: hidden;
@@ -104,12 +100,8 @@ section {
     section {
       height: 100vh;
     }
-    #portifolio {
+    #portifolio, #footer, #about_me {
       height: auto;
     }
-    #footer {
-      height: auto;
-    }
-  }
-
+}
 }

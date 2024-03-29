@@ -83,3 +83,18 @@
     }
 }
 }
+
+@media (max-width: 420px) {
+
+    .softSkill_container {
+        .title_softSkill {
+            h3 {    
+                font-size: 16px;
+            }
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+}

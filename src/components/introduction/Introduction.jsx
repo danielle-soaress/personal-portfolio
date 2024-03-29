@@ -1,9 +1,8 @@
 import './Introduction.scss';
-import PurpleButton from '../purpleButton/PurpleButton.jsx'
-import ImageShape from '../../assets/images/Vector.png'
-import ImageShape2 from '../../assets/images/Vector2.png'
+import PurpleButton from '../purpleButton/PurpleButton.jsx';
+import ImageShape from '../../assets/images/Vector.png';
+import ImageShape2 from '../../assets/images/Vector2.png';
 import SocialMedias from '../socialMedias/SocialMedias';
-
 
 
 function Introduction() {
@@ -22,7 +21,7 @@ function Introduction() {
                 </p>
                 <SocialMedias/>
                 <br></br>
-                <PurpleButton content="Fale comigo"/>
+                <a href="#contact_me"><PurpleButton content="Fale comigo"/></a>
             </div>
         </div>
         <div className="right_image">

@@ -8,9 +8,10 @@
     @include flexCenter();
     justify-content: space-between;
     width: 85vw;
+    padding: 6px 0px;
 
     .footer_logo {
-        width: 180px;
+        width: 14%;
     }
 
     .copyrights{
@@ -33,7 +34,26 @@
     
 }
 
-@media (max-width:610px) {
+@media (max-width:1100px) {
+    .footer_container {
+        flex-direction: row;
+        padding: 20px 0px;
+        gap: 20px;
+
+        .copyrights {
+            p {
+                font-size: 10px;
+                width: 175px;
+            }
+    
+            .cop_logo {
+                width: 70px;
+            }
+        }
+    }
+}
+
+@media (max-width:640px) {
     .footer_container {
         height: auto;
         flex-direction: column;

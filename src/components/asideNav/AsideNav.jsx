@@ -1,18 +1,12 @@
 import './AsideNav.scss';
 import {useState} from 'react';
 
-function AsideNav() {
 
-    const [windowWidth, setwindowWidth] = useState(window.innerWidth);
-    
-    window.onresize = () => {
-       setwindowWidth(window.innerWidth)
-    }
-    
+function AsideNav() {
 
     const actualSection = (e) => {
         let icons = document.querySelectorAll('.aside_nav_icon');
-
+    
         let ID = e.target.getAttribute('el');
         
         if (ID == "about") {
@@ -26,11 +20,17 @@ function AsideNav() {
             }
             e.target.style.color= "white";
         }
-
-
+    
+    
         if (windowWidth <= 1100 && e.target.getAttribute('el') == 'contact') {
             e.target.style.gap= "12vh";
         }
+    }
+
+    const [windowWidth, setwindowWidth] = useState(window.innerWidth);
+    
+    window.onresize = () => {
+       setwindowWidth(window.innerWidth)
     }
 
     return (

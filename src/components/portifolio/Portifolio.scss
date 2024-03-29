@@ -1,42 +1,54 @@
-$background-dark-color: #181818;
-$darker-purple: #594AEB;
-$lighter-purple: #9F72FF;
-$transparent-white: #ffffff80;
-$title_size: 35px;
-$subtitle_size: 30px;
-$paragraph_size: 18px;
+@use '../../base';
 
-@mixin flexCenter() {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+$transparent-white: #ffffff80;
 
 .portifolio_container {
-    @include flexCenter;
+    @include base.flexCenter;
     width: 85vw;
     height: 80vh;
     flex-direction: column;
-    gap: 70px;
+    gap: 40px;
     
     h2 {
-        font-size: $title_size;
+        font-size: base.$title_size;
         font-weight: 700;
+        text-align: center;
     }
 
     .carousel_container {
-
+        @include base.flexCenter;
         .bi-caret-left-fill, .bi-caret-right-fill {
             display: none;
         }
 
         .carousel_aux {
+            @include base.flexCenter;
+            flex-direction: row;
+            width: 50vw;
+
+            .swiper {
+                @include base.flexCenter;
+                height: 450px;
+            }
 
             .cards_container {
-                @include flexCenter;
+                @include base.flexCenter;
+                justify-content: center;
                 flex-direction: row;
                 gap: 30px;
                 flex-wrap:nowrap;
+
+                .swiper-pagination-bullet-active {
+                    background-color: white;
+                   }
+
+                   .swiper-pagination-bullet {
+                    opacity: 80%
+                   }
+
+                .swiper-slide {
+                    width: fit-content!important;
+                }
             }
 
         }
@@ -44,152 +56,38 @@ $paragraph_size: 18px;
 
 }
 
-@media (max-width: 1700px) {
-
-    .portifolio_container {
-        @include flexCenter;
-        justify-content: center;
-
-        .carousel_container {
-            @include flexCenter;
-            gap: 10px;
-
-            .bi-caret-left-fill, .bi-caret-right-fill {
-                @include flexCenter;
-                color: red;
-                font-size: 50px;
-                color: $transparent-white;
-                width: 60px;
-                height: 60px;
-                border-radius: 5px;
-                cursor: pointer;
-                
-            }
-
-            .bi-caret-left-fill {
-                color: transparent;
-            }
-
-            .carousel_aux {
-                @include flexCenter;
-                flex-direction: row;
-                width: 390px;
-                overflow-x: hidden;
-
-                .cards_container {
-                    @include flexCenter;
-                    justify-content: flex-start;
-                    flex-direction: row;
-                    width: 380px;
-    
-                }
-            }
-        }
-
+@media (max-width: 1890px) {
+    .swiper {
+        width: 640px;
     }
 }
 
-
-@media (max-width: 1024px) {
-
+@media (max-width: 1100px) {
     .portifolio_container {
-        @include flexCenter;
-        justify-content: center;
-        gap: 20px;
+        gap: 30px;
+        padding: 50px 0px;
         height: auto;
-        padding: 30px;
-
-        h2 {
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .carousel_container {
-            @include flexCenter;
-            gap: 10px;
-
-            .bi-caret-left-fill, .bi-caret-right-fill {
-                @include flexCenter;
-                font-size: 50px;
-                color: $transparent-white;
-                width: 60px;
-                height: 60px;
-                border-radius: 5px;
-                cursor: pointer;
-                
-            }
-
-            .bi-caret-left-fill {
-                color: transparent;
-            }
-            
-            .carousel_aux {
-                @include flexCenter;
-                flex-direction: row;
-                width: 290px;
-                overflow-x: hidden;
-
-                .cards_container {
-                    @include flexCenter;
-                    justify-content: flex-start;
-                    flex-direction: row;
-                    width: 280px;
-                }
-            }
-        }
-
     }
 }
 
-@media (max-width: 425px) {
-    .portifolio_container {
-        @include flexCenter;
-        justify-content: center;
-
-        .carousel_container {
-            @include flexCenter;
-            flex-direction: column;
-            gap: 0px;
-
-            .bi-caret-left-fill, .bi-caret-right-fill {
-                @include flexCenter;
-                font-size: 50px;
-                color: $transparent-white;
-                width: 60px;
-                height: auto;
-                margin: 10px 0px;
-                border-radius: 5px;
-                cursor: pointer;
-                
-            }
-
-            .bi-caret-left-fill {
-                margin-bottom: 10px;
-            }
-
-            .bi-caret-right-fill {
-                margin-top: 10px;
-            }
-
-            .bi-caret-left-fill {
-                color: transparent;
-            }
-            
-            .carousel_aux {
-                @include flexCenter;
-                flex-direction: row;
-                width: 290px;
-                overflow-x: hidden;
-
-                .cards_container {
-                    @include flexCenter;
-                    justify-content: flex-start;
-                    flex-direction: row;
-                    width: 280px;
-                }
-            }
-        }
-
+@media (max-width: 1250px) {
+    .swiper {
+        width: 300px;
     }
 }
+
+@media (max-width: 1020px) {
+    .swiper {
+        width: 280px;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel_aux {
+        width: 100%!important;
+    }
+}
+
+
+
 

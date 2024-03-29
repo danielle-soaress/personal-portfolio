@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 import './Portifolio.scss'
 import randomColorsImage from '../../assets/images/random_colors.png'
 import eletroLibrasImage from '../../assets/images/eletro_libras.png'
+import DrawingImage from '../../assets/images/drawing.png'
 import ProjectCard from '../projectCard/ProjectCard.jsx'
 import PurpleButton from '../purpleButton/PurpleButton.jsx'
 
@@ -47,13 +48,13 @@ function Portifolio() {
                         <SwiperSlide className="slide-item">
                            <ProjectCard
                             id="carousel_1"
-                            imgSrc={eletroLibrasImage} 
-                            imgAlt="Preview do site Eletro Libras"
-                            title="1 Random Colors"
-                            description="Crie uma paleta de cores aleatórias com apenas um clique."
-                            techs="HTML CSS JavaScript"
-                            gitLink="https://github.com/danielle-soaress/colors-generator"
-                            demoLink="https://danielle-soaress.github.io/colors-generator/"
+                            imgSrc={DrawingImage} 
+                            imgAlt="Preview do site Drawing"
+                            title="Draw.ing"
+                            description="Lousa interativa virtual"
+                            techs="JavaScript React SCSS HTML"
+                            gitLink="https://github.com/danielle-soaress/paint"
+                            demoLink="https://paint-green.vercel.app/"
                             />
                         </SwiperSlide>
                         <SwiperSlide className="slide-item">
@@ -61,9 +62,9 @@ function Portifolio() {
                             id="carousel_2"
                             imgSrc={randomColorsImage} 
                             imgAlt="Preview do site Random Colors"
-                            title="2 Random Colors"
+                            title="Random Colors"
                             description="Crie uma paleta de cores aleatórias com apenas um clique."
-                            techs="HTML CSS JavaScript"
+                            techs="JavaScript CSS HTML"
                             gitLink="https://github.com/danielle-soaress/colors-generator"
                             demoLink="https://danielle-soaress.github.io/colors-generator/"
                             />
@@ -71,13 +72,13 @@ function Portifolio() {
                         <SwiperSlide className="slide-item">    
                         <ProjectCard 
                             id="carousel_3"
-                            imgSrc={randomColorsImage} 
-                            imgAlt="Preview do site Random Colors"
-                            title="3 Random Colors"
-                            description="aaaaaa"
+                            imgSrc={eletroLibrasImage} 
+                            imgAlt="Preview do site Eletro Libras"
+                            title="Eletro Libras"
+                            description='O app "Eletro Libras" visa a inclusão de alunos surdos no curso de Eletrônica por meio de Libras.'
                             techs="HTML CSS JavaScript"
-                            gitLink="https://github.com/danielle-soaress/colors-generator"
-                            demoLink="https://danielle-soaress.github.io/colors-generator/"
+                            gitLink="https://github.com/danielle-soaress/eletro-libras-landingpage"
+                            demoLink="https://eletro-libras-landingpage.vercel.app/"
                             />
                         </SwiperSlide>
                     </Swiper>

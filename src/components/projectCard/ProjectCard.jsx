@@ -1,5 +1,4 @@
 import './ProjectCard.scss'
-import PurpleButton from '../purpleButton/PurpleButton'
 
 function ProjectCard(props) {
 

@@ -40,6 +40,10 @@
         padding: 20px 0px;
         gap: 20px;
 
+        .footer_logo {
+            display: none;
+        }
+
         .copyrights {
             p {
                 font-size: 10px;
@@ -59,9 +63,7 @@
         flex-direction: column;
         padding: 20px 0px;
         gap: 20px;
-        .footer_logo {
-            display: none;
-        }
+
 
         .copyrights {
             p {

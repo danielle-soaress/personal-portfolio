@@ -1,14 +1,8 @@
+@use '../../base';
+
 $links_size: 18px;
-$background-dark-color: #181818;
-$darker-purple: #594AEB;
-$lighter-purple: #9B70FE;
 
 
- @mixin flexCenter() {
-    display: flex;
-    justify-conent: center;
-    align-items: center;
- }
 
  @keyframes spin {
     0% {
@@ -38,14 +32,14 @@ $lighter-purple: #9B70FE;
     }
 
     100% {
-        color: $darker-purple;
+        color: base.$darker-purple;
         transform:scale(1.05);
     }
 
  }
  
  .navbar {
-    @include flexCenter;
+    @include base.flexCenter();
     justify-content: space-between;
     height: 10vh;
     width: 85vw;
@@ -56,12 +50,12 @@ $lighter-purple: #9B70FE;
     }
 
     .links {
-        @include flexCenter;
+        @include base.flexCenter();
         gap: 40px;
         font-size: $links_size;
 
         .bi-brightness-high-fill, .bi-moon-fill {
-            @include flexCenter;
+            @include base.flexCenter();
             font-size: 18px;
             cursor: pointer;
         }
@@ -76,7 +70,7 @@ $lighter-purple: #9B70FE;
     }
 
     a {
-        @include flexCenter;
+        @include base.flexCenter();
         font-weight: 400;
         color: inherit;
     }
@@ -107,12 +101,12 @@ $lighter-purple: #9B70FE;
             z-index: -1;
             gap: 15px;
             background-color: white;
-            color: $background-dark-color;
+            color: base.$background-dark-color;
             font-weight: 800;
             animation: opacity 0.7s ease;
 
             .header_nav_link {
-                @include flexCenter;
+                @include base.flexCenter();
                 justify-content: center;
                 border-bottom: 1px solid black;
             }
@@ -120,7 +114,7 @@ $lighter-purple: #9B70FE;
         }
 
         .bi-list {
-            @include flexCenter;
+            @include base.flexCenter();
             display: flex!important;
             font-size: 35px;
             cursor: pointer;

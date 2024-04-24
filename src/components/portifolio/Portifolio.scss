@@ -17,6 +17,7 @@ $transparent-white: #ffffff80;
 
     .carousel_container {
         @include base.flexCenter;
+
         .bi-caret-left-fill, .bi-caret-right-fill {
             display: none;
         }
@@ -28,7 +29,23 @@ $transparent-white: #ffffff80;
 
             .swiper {
                 @include base.flexCenter;
-                height: 450px;
+                height: 460px;
+
+                .swiper-pagination {
+                    @include base.flexCenter;
+                    padding: 4px;
+                    margin-top: 20px;
+                    border-radius: 10px;
+
+                    .swiper-pagination-bullet {
+                        opacity: 90%;
+                        background-color: white;
+                    }
+
+                    .swiper-pagination-bullet-active {
+                        background-color: base.$lighter-purple;
+                    }
+                }
             }
 
             .cards_container {
@@ -37,14 +54,6 @@ $transparent-white: #ffffff80;
                 flex-direction: row;
                 gap: 30px;
                 flex-wrap:nowrap;
-
-                .swiper-pagination-bullet-active {
-                    background-color: white;
-                   }
-
-                   .swiper-pagination-bullet {
-                    opacity: 80%
-                   }
 
                 .swiper-slide {
                     width: fit-content!important;

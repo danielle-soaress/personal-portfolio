@@ -14,11 +14,12 @@ import cssIcon from '../../assets/images/css_icon.png'
 import htmlIcon from '../../assets/images/html_icon.png'
 import scssIcon from '../../assets/images/scss_icon.png'
 import SoftSkill from '../softSkills/softSkill'
-
+import { useTranslation } from 'react-i18next';
+import "../../i18n";
 
 function AboutMe() {
 
-    
+    const {t} = useTranslation();
     const [slidesPerView, setSlidesPerView] = useState(2);
 
     window.addEventListener('resize', () => {
@@ -51,12 +52,8 @@ function AboutMe() {
 
     return (
         <div className="about_me_container">
-            <h2>Sobre mim</h2>
-            <p>Olá! Me chamo Danielle Soares e sou estudante de Engenharia de Software na 
-                Universidade de Brasília (UnB). Apaixonada por desenvolvimento de software, já
-                explorei áreas como o desenvolvimento web e mobile.
-                Como uma estudante assídua, estou sempre em busca de oportunidades para aprimorar meus conhecimentos e explorar novas áreas 
-                e tecnologias.</p>
+            <h2>{t('about.title')}</h2>
+            <p>{t('about.description')}</p>
             <div className="soft_skills">
                 <div className="techs_container_title">
                     <i className="bi bi-chat"></i>
@@ -74,38 +71,30 @@ function AboutMe() {
                     <SwiperSlide className="slide-item">
                         <SoftSkill
                         iconClass="icon bi-book"
-                        title="Aprendizado contínuo"
-                        desc="Diante do constante avanço das tecnologias, valorizo o estudo 
-                        contínuo, não só para aprender novas ferramentas, mas também aprimorar 
-                        habilidades adquiridas."
+                        title={t('about.softSkills.skill_1.title')}
+                        desc={t('about.softSkills.skill_1.description')}
                         />
                     </SwiperSlide>
                     <SwiperSlide className="slide-item">
                         <SoftSkill
                         iconClass="icon bi-card-checklist"
-                        title="Organização"
-                        desc="Um sistema bem estruturado é, sem dúvidas, mais eficiente. Por isso, 
-                        priorizo o planejamento e a organização durante todas as etapas 
-                        de desenvolvimento."
+                        title={t('about.softSkills.skill_2.title')}
+                        desc={t('about.softSkills.skill_2.description')}
                         />
                     </SwiperSlide>
                     
                     <SwiperSlide className="slide-item">
                         <SoftSkill
                         iconClass="icon bi-code-slash"
-                        title="Flexibilidade"
-                        desc="Estou preparada para lidar com  mudanças e novos desafios. Seja no 
-                        front-end ou back-end, sou capaz de me adaptar às necessidades de 
-                        cada projeto."
+                        title={t('about.softSkills.skill_3.title')}
+                        desc={t('about.softSkills.skill_3.description')}
                     />
                     </SwiperSlide>
                     <SwiperSlide className="slide-item">
                         <SoftSkill
                         iconClass="icon bi-chat-dots"
-                        title="Cooperatividade"
-                        desc="A cooperatividade e a comunicação são indispensáveis para o trabalho 
-                        colaborativo. Acredito que o trabalho em equipe promove o crescimento 
-                        mútuo.  "
+                        title={t('about.softSkills.skill_4.title')}
+                        desc={t('about.softSkills.skill_4.description')}
                         />
                     </SwiperSlide>
                 </Swiper>
@@ -113,7 +102,7 @@ function AboutMe() {
             <div className="techs_main_container">
                 <div className="techs_container_title">
                     <i className="bi bi-tools"></i>
-                    <h3>Tecnologias</h3>
+                    <h3>{t('about.techs')}</h3>
                 </div>
                 <Swiper 
                 className="techs_container"

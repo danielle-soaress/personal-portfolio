@@ -2,15 +2,16 @@ import React, {useState, useRef} from 'react'
 import './navbar.scss'
 import LogoWhite from '../../assets/images/logoBranca.png'
 import LogoBlack from '../../assets/images/logoPreta.png'
-
+import LanguageButton from '../languageButton/LanguageButton'
+import { useTranslation } from 'react-i18next';
+import "../../i18n";
 
 const Navbar = () => {
-    // ps: tenho que implementar essa função logo! (lightmode)
-    const [light, setLight] = useState(true);
     const linksRef = useRef(null);
     const navbarRef = useRef(null)
     const logoRef = useRef(null)
     const [menu, setMenu] = useState(true);
+    const {t} = useTranslation();
 
     const actualSection = (e) => {
         let icons = document.querySelectorAll('.aside_nav_icon');
@@ -41,11 +42,10 @@ const Navbar = () => {
         <img className="logo" ref={logoRef} src={LogoWhite} alt="logo"></img>
         <nav className="links" ref={linksRef}>
             <a className="header_nav_link " onClick={actualSection} el="home" href="#introduction">Home</a>
-            <a className="header_nav_link " onClick={actualSection} el="about" href="#about_me">Sobre</a>
-            <a className="header_nav_link " onClick={actualSection} el="portfolio" href="#portifolio">Portfolio</a>
-            <a className="header_nav_link " onClick={actualSection} el="contact" href="#contact_me">Contato</a>
-            <i className="bi bi-brightness-high-fill" onClick={() => setLight(!light)}>
-            </i>
+            <a className="header_nav_link " onClick={actualSection} el="about" href="#about_me">{t('nav.link_2')}</a>
+            <a className="header_nav_link " onClick={actualSection} el="portfolio" href="#portifolio">{t('nav.link_3')}</a>
+            <a className="header_nav_link " onClick={actualSection} el="contact" href="#contact_me">{t('nav.link_4')}</a>
+            <LanguageButton />
         </nav>
         <i class="bi bi-list" onClick={openMenu}></i>
     </div>

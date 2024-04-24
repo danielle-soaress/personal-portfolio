@@ -1,0 +1,71 @@
+{
+    "nav": {
+        "link_1": "Home",
+        "link_2": "Sobre",
+        "link_3": "Portfolio",
+        "link_4": "Contato"
+    },
+
+    "introduction": {
+        "title": "Olá, eu sou a",
+        "description": "Estudante de Engenharia de Software na Universidade de Brasília (UnB) e entusiasta em programação full-stack.",
+        "button": "Fale comigo"
+    },
+
+    "about": {
+        "title": "Sobre mim",
+        "description": "Olá! Me chamo Danielle Soares e sou estudante de Engenharia de Software na Universidade de Brasília (UnB). Apaixonada por desenvolvimento de software, já explorei áreas como o desenvolvimento web e mobile. Como uma estudante assídua, estou sempre em busca de oportunidades para aprimorar meus conhecimentos e explorar novas áreas e tecnologias.",
+        "softSkills": {
+            "skill_1": {
+                "title": "Aprendizado contínuo",
+                "description": "Diante do constante avanço das tecnologias, valorizo o estudo contínuo, não só para aprender novas ferramentas, mas também aprimorar habilidades adquiridas."
+            },
+            "skill_2": {
+                "title": "Organização",
+                "description": "Um sistema bem estruturado é, sem dúvidas, mais eficiente. Por isso, priorizo o planejamento e a organização durante todas as etapas de desenvolvimento."
+            },
+            "skill_3": {
+                "title": "Flexibilidade",
+                "description": "Estou preparada para lidar com  mudanças e novos desafios. Seja no front-end ou back-end, sou capaz de me adaptar às necessidades de cada projeto."
+            },
+            "skill_4": {
+                "title": "Cooperatividade",
+                "description": "A cooperatividade e a comunicação são indispensáveis para o trabalho colaborativo. Acredito que o trabalho em equipe promove o crescimento mútuo."
+            }
+        },
+        "techs": "Tecnologias"
+    },
+
+    "portfolio": {
+        "title": "Conheça alguns dos meus projetos",
+        "projects": {
+            "project_1": {
+                "title": "Draw.ing",
+                "description": "Lousa interativa virtual."
+            },
+            "project_2": {
+                "title": "Random Colors",
+                "description": "Crie uma paleta de cores aleatórias com apenas um clique."
+            },
+            "project_3": {
+                "title": "Eletro Libras",
+                "description": "O app Eletro Libras visa a inclusão de alunos surdos no curso de Eletrônica por meio de Libras."
+            }
+        },
+        "button": "Ver mais projetos"
+    },
+
+    "contact": {
+        "title": "Entre em contato",
+        "description": {
+            "pt1": "Vamos trabalhar juntos?",
+            "pt2": "Sinta-se livre para me mandar uma mensagem."
+        },
+        "labels": {
+            "name": "Seu nome",
+            "email": "Seu email",
+            "message": "Mensagem"
+        },
+        "button": "Enviar"
+    }
+}

@@ -2,12 +2,15 @@ import './ContactMe.scss';
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
 import {useRef, useState, useEffect} from 'react';
+import { useTranslation } from 'react-i18next';
+import "../../i18n";
 
 function ContactMe() {
     const formRef = useRef(null)
     const newMessageButtonRef = useRef(null)
     const paragraphRef = useRef(null)
     const titleRef = useRef(null)
+    const {t} = useTranslation();
 
     const {register, reset, handleSubmit} = useForm();
 
@@ -51,22 +54,22 @@ function ContactMe() {
     return (
         <div className="ContactMe_container">
             <div className="ContactMe_main_container">
-                <h2 useRef={titleRef}>Entre em contato</h2>
+                <h2 useRef={titleRef}>{t('contact.title')}</h2>
                 <p useRef={paragraphRef}> 
-                    Vamos trabalhar juntos? <br/>
-                    Sinta-se livre para me mandar uma mensagem.
+                {t('contact.description.pt1')} <br/>
+                {t('contact.description.pt2')} 
                 </p>
                 <form useRef={formRef} onSubmit={handleSubmit(onSubmit)} className="inputs_container">
-                    <label className="field">Seu nome</label>
+                    <label className="field">{t('contact.labels.name')} </label>
                     <input className="input" type="text" {...register("name", { required: true })}/>
                     
-                    <label className="field">Seu email</label>
+                    <label className="field">{t('contact.labels.email')}</label>
                     <input className="input" type="email" {...register("email", { required: true })}/>
                     
-                    <label className="field">Mensagem</label>
+                    <label className="field">{t('contact.labels.message')}</label>
                     <textarea className="input message_input" {...register("message", { required: true })}></textarea>
 
-                    <button type="submit" className="submit_button">Enviar</button>
+                    <button type="submit" className="submit_button">{t('contact.button')}</button>
                 </form>
                 <button ref={newMessageButtonRef} onClick={newMessage} className="new_message_button submit_button">Enviar nova mensagem</button>
             </div>

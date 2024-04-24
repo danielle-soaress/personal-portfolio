@@ -1,0 +1,71 @@
+{
+    "nav": {
+        "link_1": "Home",
+        "link_2": "About",
+        "link_3": "Portfolio",
+        "link_4": "Contact"
+    },
+
+    "introduction": {
+        "title": "Hello, I'm ",
+        "description": "Software Engineering student at the University of Brasília (UnB) and full-stack programming enthusiast.",
+        "button": "Contact me"
+    },
+
+    "about": {
+        "title": "About me",
+        "description": "Hello! My name is Danielle Soares and I am a Software Engineering student at the University of Brasília (UnB). Passionate about software development, I have explored areas such as web and mobile development. As an avid student, I am always looking for opportunities to improve my knowledge and explore new areas and technologies.",
+        "softSkills": {
+            "skill_1": {
+                "title": "Continuous learning",
+                "description": "With constant technological advancement, I value continuous study, not only to learn new tools, but also to improve acquired skills."
+            },
+            "skill_2": {
+                "title": "Organization",
+                "description": "A well-structured system is, without a doubt, more efficient. Therefore, I prioritize planning and organization during all stages of development."
+            },
+            "skill_3": {
+                "title": "Flexibility",
+                "description": "I am prepared to deal with changes and new challenges. Whether on the front-end or back-end, I am able to adapt to the needs of each project."
+            },
+            "skill_4": {
+                "title": "Cooperativity",
+                "description": "Cooperativeness and communication are essential for collaborative work. I believe that teamwork promotes mutual growth."
+            }
+        },
+        "techs": "Technologies"
+    },
+
+    "portfolio": {
+        "title": "Discover some of my projects",
+        "projects": {
+            "project_1": {
+                "title": "Draw.ing",
+                "description": "Virtual interactive whiteboard."
+            },
+            "project_2": {
+                "title": "Random Colors",
+                "description": "Create a random color palette with just one click."
+            },
+            "project_3": {
+                "title": "Eletro Libras",
+                "description": "The Eletro Libras app aims to include deaf students in the Electronics course through Libras."
+            }
+        },
+        "button": "More Projects"
+    },
+
+    "contact": {
+        "title": "Contact me",
+        "description": {
+            "pt1": "Let's work together?",
+            "pt2": "Feel free to send me a message."
+        },
+        "labels": {
+            "name": "Your name",
+            "email": "Your email",
+            "message": "Menssage"
+        },
+        "button": "Send"
+    }
+}

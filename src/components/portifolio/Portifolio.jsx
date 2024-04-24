@@ -10,12 +10,14 @@ import eletroLibrasImage from '../../assets/images/eletro_libras.png'
 import DrawingImage from '../../assets/images/drawing.png'
 import ProjectCard from '../projectCard/ProjectCard.jsx'
 import PurpleButton from '../purpleButton/PurpleButton.jsx'
+import { useTranslation } from 'react-i18next';
+import "../../i18n";
 
 
 function Portifolio() {
 
     const [slidesPerView, setSlidesPerView] = useState(3)
-
+    const {t, i18n} = useTranslation();
     window.addEventListener('resize', () => {
         slidesPerViewDefiner();
     })
@@ -37,7 +39,7 @@ function Portifolio() {
 
     return (
         <div className="portifolio_container">
-            <h2>Conheça alguns dos meus projetos</h2>
+            <h2>{t('portfolio.title')}</h2>
             <div className="carousel_container">
                 <div className="carousel_aux">
                     <Swiper className="cards_container"
@@ -51,7 +53,7 @@ function Portifolio() {
                             imgSrc={DrawingImage} 
                             imgAlt="Preview do site Drawing"
                             title="Draw.ing"
-                            description="Lousa interativa virtual"
+                            description={t('portfolio.projects.project_1.description')}
                             techs="JavaScript React SCSS HTML"
                             gitLink="https://github.com/danielle-soaress/paint"
                             demoLink="https://paint-green.vercel.app/"
@@ -63,7 +65,7 @@ function Portifolio() {
                             imgSrc={randomColorsImage} 
                             imgAlt="Preview do site Random Colors"
                             title="Random Colors"
-                            description="Crie uma paleta de cores aleatórias com apenas um clique."
+                            description={t('portfolio.projects.project_2.description')}
                             techs="JavaScript CSS HTML"
                             gitLink="https://github.com/danielle-soaress/colors-generator"
                             demoLink="https://danielle-soaress.github.io/colors-generator/"
@@ -75,7 +77,7 @@ function Portifolio() {
                             imgSrc={eletroLibrasImage} 
                             imgAlt="Preview do site Eletro Libras"
                             title="Eletro Libras"
-                            description='O app "Eletro Libras" visa a inclusão de alunos surdos no curso de Eletrônica por meio de Libras.'
+                            description={t('portfolio.projects.project_3.description')}
                             techs="HTML CSS JavaScript"
                             gitLink="https://github.com/danielle-soaress/eletro-libras-landingpage"
                             demoLink="https://eletro-libras-landingpage.vercel.app/"
@@ -85,7 +87,7 @@ function Portifolio() {
                 </div>
             </div>
             <a onClick={() => window.alert("Em breve esta página será desenvolvida! ;)")}>
-                <PurpleButton content="Ver mais projetos" >
+                <PurpleButton content={t('portfolio.button')} >
                     </PurpleButton></a>
         </div>
     );

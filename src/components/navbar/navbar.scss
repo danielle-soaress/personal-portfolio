@@ -4,17 +4,6 @@ $links_size: 18px;
 
 
 
- @keyframes spin {
-    0% {
-        transform: rotate(0);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    
-    }
- }
-
  @keyframes opacity {
     0% {
         opacity: 0%;
@@ -53,20 +42,6 @@ $links_size: 18px;
         @include base.flexCenter();
         gap: 40px;
         font-size: $links_size;
-
-        .bi-brightness-high-fill, .bi-moon-fill {
-            @include base.flexCenter();
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .bi-brightness-high-fill:hover {
-            animation: spin ease-in-out 1.5s;
-        }
-
-        .dia {
-            color: pink;
-        }
     }
 
     a {

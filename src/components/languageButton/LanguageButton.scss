@@ -1,0 +1,52 @@
+@use '../../base';
+
+
+.lang_button {
+    @include base.flexCenter();
+    flex-direction: column;
+    z-index: 15;
+    
+    .lang_img {
+        width: 33px;
+        cursor: pointer;
+    }
+    
+    .lang_img:hover {
+        transform: scale(1.08);
+        transition: ease 0.2s;
+    }
+
+    .lang_options {
+        @include base.flexCenter();
+        display: none;
+        flex-direction: column;
+        padding-top: 30px;
+        margin-top: 65px;
+        font-size: 14px;
+        gap: 8px;
+        position: absolute;
+        width: 38px;
+        border-radius: 4px;
+        height: 100px;
+        background-color: base.$darker-purple;
+        z-index: -1;
+    }
+
+    .lang_options_1, .lang_options_2 {
+        color: black;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .lang_options_1:hover, .lang_options_2:hover {
+        color: white;
+    }
+
+    .visible {
+        display: flex;
+    }
+
+    .selected {
+        color:white;
+    }
+}

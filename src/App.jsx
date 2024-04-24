@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.scss'
 import Navbar from './components/navbar/Navbar.jsx'
 import Introduction from './components/introduction/Introduction.jsx'
@@ -8,7 +6,6 @@ import AboutMe from './components/aboutMe/AboutMe.jsx'
 import Portifolio from './components/portifolio/Portifolio.jsx'
 import ContactMe from './components/contactMe/ContactMe.jsx'
 import Footer from './components/footer/Footer.jsx'
-
 import AsideNav from './components/asideNav/AsideNav.jsx'
 
 function App() {

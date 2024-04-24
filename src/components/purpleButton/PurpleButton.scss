@@ -21,6 +21,8 @@ $lighter-purple: #9F72FF;
     box-shadow:  5px 5px 15px #0e0e0e,
                 -5px -5px 15px #222222;
     font-weight: 600!important;
+    transform: scale(1);
+    transition: ease-in-out 0.3s;
 }
 
 .purple_button:hover {

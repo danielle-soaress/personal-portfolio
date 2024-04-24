@@ -48,6 +48,8 @@ $links_size: 18px;
         @include base.flexCenter();
         font-weight: 400;
         color: inherit;
+        transform:scale(1);
+        transition: ease 0.2s;
     }
 
     a:hover {

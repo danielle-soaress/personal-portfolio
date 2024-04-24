@@ -9,6 +9,8 @@
     .lang_img {
         width: 33px;
         cursor: pointer;
+        transition: ease 0.2s;
+        transform: scale(1);
     }
     
     .lang_img:hover {

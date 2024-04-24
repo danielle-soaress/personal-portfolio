@@ -98,9 +98,14 @@ section {
     overflow-y: scroll;
 
     section {
-      height: 100vh;
+      height: auto;
     }
-    #portifolio, #footer, #about_me {
+
+    #introduction {
+      padding: 50px 0px;
+    }
+
+    #contact_me, #intoduction, #portifolio, #footer, #about_me {
       height: auto;
     }
 }

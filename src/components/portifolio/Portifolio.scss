@@ -7,7 +7,8 @@ $transparent-white: #ffffff80;
     width: 85vw;
     height: 80vh;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
+    padding-top: 20px;
     
     h2 {
         font-size: base.$title_size;

@@ -52,3 +52,12 @@
         color:white;
     }
 }
+
+
+@media (max-width: 900px) {
+    .lang_button {
+        background-color: base.$darker-purple;
+        padding: 1px;
+        border-radius: 10px;
+    }
+}

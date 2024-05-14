@@ -86,7 +86,7 @@ function Portifolio() {
                     </Swiper>
                 </div>
             </div>
-            <a onClick={() => window.alert("Em breve esta página será desenvolvida! ;)")}>
+            <a class="button_anchor" onClick={() => window.alert("Em breve esta página será desenvolvida! ;)")}>
                 <PurpleButton content={t('portfolio.button')} >
                     </PurpleButton></a>
         </div>

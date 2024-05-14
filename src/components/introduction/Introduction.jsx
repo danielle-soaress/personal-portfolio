@@ -21,7 +21,7 @@ function Introduction() {
                 </p>
                 <SocialMedias/>
                 <br></br>
-                <a href="#contact_me"><PurpleButton content={t('introduction.button')}/></a>
+                <a class="button_anchor" href="#contact_me"><PurpleButton content={t('introduction.button')}/></a>
             </div>
         </div>
         <div className="right_image">

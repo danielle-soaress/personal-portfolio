@@ -64,9 +64,9 @@ $transparent-white: #ffffff80;
         }
     }  
 
-    a {
-        text-decoration: none;
-        color: white;
+    .button_anchor, .button_anchor:visited {
+        text-decoration: none!important;
+        color: white!important;
     }
 }
 

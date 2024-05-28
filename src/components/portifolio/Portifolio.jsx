@@ -54,7 +54,7 @@ function Portifolio() {
                             imgAlt="Preview do site Drawing"
                             title="Draw.ing"
                             description={t('portfolio.projects.project_1.description')}
-                            techs="JavaScript React SCSS HTML"
+                            techs="JavaScript React Sass HTML"
                             gitLink="https://github.com/danielle-soaress/paint"
                             demoLink="https://paint-green.vercel.app/"
                             />

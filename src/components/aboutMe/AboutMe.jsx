@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import './AboutMe.scss'
+import pythonIcon from '../../assets/images/python_icon.png'
 import javaIcon from '../../assets/images/java_icon.png'
 import figmaIcon from '../../assets/images/figma_icon.png'
 import reactIcon from '../../assets/images/react_icon.png'
@@ -112,6 +113,9 @@ function AboutMe() {
                 spaceBetween={10}
                 slidesPerView={'auto'}
                 >
+                    <SwiperSlide>
+                        <img src={pythonIcon} alt="Java logo" className="icon java_icon"></img>
+                    </SwiperSlide>
                     <SwiperSlide>
                         <img src={javaIcon} alt="Java logo" className="icon java_icon"></img>
                     </SwiperSlide>

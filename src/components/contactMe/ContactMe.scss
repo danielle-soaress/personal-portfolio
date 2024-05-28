@@ -1,7 +1,7 @@
 $background-dark-color: #181818;
 $darker-purple: #594AEB;
 $lighter-purple: #9B70FE;
-$title_size: 35px;
+$title_size: 32px;
 $paragraph_size: 18px;
 
 
@@ -220,3 +220,18 @@ $paragraph_size: 18px;
     }
 }
 
+@media (max-height: 800px) and (min-width: 1100px) {
+    .ContactMe_container {
+        padding-top: 30px;
+        align-items: flex-start;
+        height: 100%;
+        overflow-y: auto;
+        width: 100%;
+
+        .ContactMe_main_container {
+            width: 100%;
+            justify-content: flex-start;
+            overflow-y: auto;
+        }
+    }
+}

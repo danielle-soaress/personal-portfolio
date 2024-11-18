@@ -10,7 +10,7 @@ import PurpleButton from '../purpleButton/PurpleButton.jsx'
 import { useTranslation } from 'react-i18next';
 import "../../i18n";
 import data from '../../assets/data/projects.json'; 
-import {getProjectsRelevance} from '../PortifolioPage/PortifolioPage';
+import {getProjectsRelevance} from '../portifolioPage/PortifolioPage';
 
 function Portifolio() {
     const [slidesPerView, setSlidesPerView] = useState(3)

@@ -48,6 +48,18 @@ $paragraph_size: 18px;
             text-decoration: none;
             color: white;
         }
+
+        .button_anchor {
+            background: linear-gradient(180deg, $darker-purple 0%, $lighter-purple 100%);
+            padding: 8px 40px;
+            border-radius: 20px;
+            transition: 0.2s ease;
+        }
+
+        .button_anchor:hover {
+            transform: scale(1.04);
+            transition: 0.2s ease;
+        }
     }
 
     .right_image {

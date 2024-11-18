@@ -1,37 +1,20 @@
-import { useState } from 'react'
-import './App.scss'
-import Navbar from './components/navbar/Navbar.jsx'
-import Introduction from './components/introduction/Introduction.jsx'
-import AboutMe from './components/aboutMe/AboutMe.jsx'
-import Portifolio from './components/portifolio/Portifolio.jsx'
-import ContactMe from './components/contactMe/ContactMe.jsx'
-import Footer from './components/footer/Footer.jsx'
-import AsideNav from './components/asideNav/AsideNav.jsx'
+import Home from './components/home/Home.jsx'
+import PortifolioPage from './components/portifolioPage/PortifolioPage.jsx'
+
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return <div class="main_container">
-    <header class="container">
-      <Navbar/>
-    </header>
-    <AsideNav/>
-    <section id="introduction" class="container">
-      <Introduction/>
-    </section>
-    <section id="about_me" class="container">
-      <AboutMe/>
-    </section>
-    <section id="portifolio" class="container">
-      <Portifolio/>
-    </section>
-    <section id="contact_me" class="container">
-      <ContactMe/>
-    </section>
-    <section id="footer">
-      <Footer/>
-    </section>
-  </div>
+  return (
+    <Router>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/portifolio" element={<PortifolioPage/>} />
+        </Routes>
+    </Router>
+  )
 }
 
 export default App;

@@ -3,11 +3,11 @@ import PurpleButton from '../purpleButton/PurpleButton.jsx';
 import SocialMedias from '../socialMedias/SocialMedias';
 import { useTranslation } from 'react-i18next';
 import "../../i18n";
+import { actualSection } from '../navbar/Navbar.jsx';
 
 
 function Introduction() {
     const {t} = useTranslation();
-    console.log(t('nav'))
     return (
     <div className="introduction_container">
         <div className="aside_nav_fake"></div>
@@ -21,7 +21,7 @@ function Introduction() {
                 </p>
                 <SocialMedias/>
                 <br></br>
-                <a class="button_anchor" href="#contact_me"><PurpleButton content={t('introduction.button')}/></a>
+                <a class="button_anchor" onClick={actualSection} el="contact" href="/#contact_me"> {t('introduction.button')}</a>
             </div>
         </div>
         <div className="right_image">

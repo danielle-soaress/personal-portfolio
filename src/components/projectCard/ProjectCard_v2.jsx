@@ -1,6 +1,7 @@
-import './ProjectCard.scss'
+import {useEffect} from 'react'
+import './ProjectCard_v2.scss'
 
-function ProjectCard(props) {
+function ProjectCardV2(props) {
 
     let imgSrc = props.imgSrc ? props.imgSrc:null;
     let imgAlt = props.imgAlt ? props.imgAlt:null;
@@ -19,31 +20,34 @@ function ProjectCard(props) {
     }
 
     return (
-        <div className="project_card_container">
-            <img src={imgSrc} alt={imgAlt} class="card_image"></img>
-            <div className="card_text">
+        <div className="card_container">
+            <img src={imgSrc} alt={imgAlt} class="card_img"></img>
+            <div className="card_txt">
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <div className="technologies_container">
+                <div className="techs_container">
                     {technologies.map((tech) => addTech(tech))}
                 </div>
-                <div className="git_demo">
-                    <div className="link">
-                        <a href={gitLink} class="git_demo_text" target="_blank">
+                <div className="links">
+                    <div className="link_txt">
+                        <a href={gitLink} target="_blank">
                             <i class="bi bi-github"></i>
                             Código
                         </a>
                     </div>
-                    <div className="link">
-                        <a href={demoLink} class="git_demo_text" target="_blank">
-                            <i class="bi bi-link-45deg"></i>
-                            Live Demo
-                        </a>
-                    </div>
+                    {   demoLink? 
+                        <div className="link_txt">
+                            <a href={demoLink} target="_blank">
+                                <i class="bi bi-link-45deg"></i>
+                                Live Demo
+                            </a>
+                        </div>
+                        : <span></span>
+                        }
                 </div>
             </div>
         </div>
     );
 }
 
-export default ProjectCard;
+export default ProjectCardV2;

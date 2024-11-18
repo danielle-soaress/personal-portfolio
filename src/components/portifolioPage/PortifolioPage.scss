@@ -1,0 +1,102 @@
+@use '../../base';
+
+@mixin bg-gradient() {
+    background: base.$darker-purple;
+    background: linear-gradient(135deg, base.$darker-purple 0%, base.$lighter-purple 100%);
+}
+
+html {
+    overflow-x: hidden;
+    overflow-y: auto!important;
+    scroll-behavior: smooth!important;
+    scroll-snap-type: y mandatory;
+}
+  
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    scroll-behavior: smooth!important;
+}
+  
+body {
+    background-color: white;
+}
+  
+a, a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+  
+a:hover {
+    cursor: pointer;
+    color: inherit;
+}
+
+.main_portfolio_page_container {
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+header {
+    position: fixed;
+    z-index: 10;
+    background-color: base.$background-dark-color;
+}
+
+header, section, footer {
+    @include base.flexCenter();
+    width: 100vw;
+}
+  
+section {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+#all_projects {
+    @include bg-gradient();
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 10vh;
+    height: auto!important;
+}
+
+.section_container {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+
+    h1 {
+        text-align: center;
+    }
+}
+
+.cards_container {
+    width: 80vw;
+    flex-direction: column;
+    border-radius: 20px;
+    display: flex;
+    gap: 30px;
+    padding: 50px;
+}
+
+.cards_container h1 {
+    font-size: base.$title_size;
+    font-weight: 700;
+    margin: 20px 0px;
+}
+
+footer {
+    background-color: base.$background-dark-color;
+}
+
+
+
+
+  

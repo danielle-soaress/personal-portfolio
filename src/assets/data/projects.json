@@ -2,7 +2,7 @@
 
     {
         "id": 7,
-        "imgSrc": "src/assets/images/project_7_preview.png",
+        "imgSrc": "/images/project_7_preview.png",
         "imgAlt": "E-commerce (API RESTful)",
         "title": "E-commerce",
         "descriptionPT": "Aplicação de e-commerce desenvolvida com Spring Boot e MySQL. Permite a criação de produtos, cadastro de usuários, realização de ordens e gerenciamento do estoque em tempo real.",
@@ -16,7 +16,7 @@
     },
     {
         "id": 5,
-        "imgSrc": "src/assets/images/project_5_preview.png",
+        "imgSrc": "/images/project_5_preview.png",
         "imgAlt": "TuneWave Preview",
         "title": "TuneWave",
         "descriptionPT": "Uma aplicação web de e-commerce para venda de fones de ouvido, com funcionalidades de login, gerenciamento de produtos e finalização de pedidos.",
@@ -28,7 +28,7 @@
     },
     {
         "id": 1,
-        "imgSrc": "src/assets/images/project_1_preview.png",
+        "imgSrc": "/images/project_1_preview.png",
         "imgAlt": "Cartesian Plane Preview",
         "title": "Cartesian Plane",
         "descriptionPT": "Aplicação que permite a criação, modificação e gerenciamento de figuras geométricas, como pontos, linhas, segmentos de linha, triângulos, retângulos e círculos.",
@@ -42,7 +42,7 @@
     },
     {
         "id": 6,
-        "imgSrc": "src/assets/images/project_6_preview.png",
+        "imgSrc": "/images/project_6_preview.png",
         "imgAlt": "Blog com MongoDB (API RESTful)",
         "title": "Blog Simples",
         "descriptionPT": "Aplicação de blog simples desenvolvida com Spring Boot e MongoDB. Permite criar, editar e listar posts. Utiliza MongoDB para o armazenamento de dados.",
@@ -56,7 +56,7 @@
     },
     {
         "id": 4,
-        "imgSrc": "src/assets/images/project_4_preview.png",
+        "imgSrc": "/images/project_4_preview.png",
         "imgAlt": "Randow Colors Preview",
         "title": "Randow Colors",
         "descriptionPT": "Site interativo que oferece uma experiência única ao gerar cores aleatórias a cada clique, abrindo as portas para a criatividade e a expressão visual.",
@@ -70,7 +70,7 @@
     },
     {
         "id": 2,
-        "imgSrc": "src/assets/images/project_2_preview.png",
+        "imgSrc": "/images/project_2_preview.png",
         "imgAlt": "Draw.ing preview",
         "title": "Draw.ing",
         "descriptionPT": "Draw.ing é um quadro branco interativo online. Expresse sua criatividade e crie desenhos incríveis usando diferentes cores e formas.",
@@ -84,7 +84,7 @@
     },
     {
         "id": 3,
-        "imgSrc": "src/assets/images/project_3_preview.png",
+        "imgSrc": "/images/project_3_preview.png",
         "imgAlt": "Eletro Libras Landing Page preview",
         "title": "Eletro Libras landing page",
         "descriptionPT": "O aplicativo 'Eletro Libras' visa não apenas ensinar os conceitos fundamentais da eletrônica, mas também promover a inclusão e acessibilidade por meio do uso da Língua Brasileira de Sinais (Libras).",

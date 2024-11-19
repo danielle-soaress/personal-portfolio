@@ -15,6 +15,9 @@ import cssIcon from '../../assets/images/css_icon.png'
 import htmlIcon from '../../assets/images/html_icon.png'
 import scssIcon from '../../assets/images/scss_icon.png'
 import SoftSkill from '../softSkills/softSkill'
+import mongoIcon from '../../assets/images/mongodb.png'
+import sqlIcon from '../../assets/images/mysql.png'
+import sbIcon from '../../assets/images/spring.png'
 import { useTranslation } from 'react-i18next';
 import "../../i18n";
 
@@ -117,6 +120,15 @@ function AboutMe() {
                         <img src={pythonIcon} alt="Java logo" className="icon java_icon"></img>
                     </SwiperSlide>
                     <SwiperSlide>
+                        <img src={mongoIcon} alt="MongoDB logo" className="icon java_icon"></img>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={sqlIcon} alt="mySQL logo" className="icon java_icon"></img>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={sbIcon} alt="Spring Boot logo" className="icon java_icon"></img>
+                    </SwiperSlide>
+                    <SwiperSlide>
                         <img src={javaIcon} alt="Java logo" className="icon java_icon"></img>
                     </SwiperSlide>
                     <SwiperSlide className="slide-item">
@@ -137,6 +149,7 @@ function AboutMe() {
                     <SwiperSlide className="slide-item">
                         <img src={scssIcon} alt="Figma logo" className="icon figma_icon"></img>
                     </SwiperSlide>
+                    
                 </Swiper>
             </div>
         </div>

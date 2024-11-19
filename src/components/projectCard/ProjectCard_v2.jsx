@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+
 import './ProjectCard_v2.scss'
 
 function ProjectCardV2(props) {

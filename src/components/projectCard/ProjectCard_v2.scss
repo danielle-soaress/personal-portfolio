@@ -89,5 +89,11 @@
 @media (max-width: 950px) {
     .card_container {
         flex-direction: column;
+        width: 95vw;
+
+        img {
+            max-width: 95vw;
+        }
+    
     }
 }

@@ -74,7 +74,7 @@
 
         .left-experience-card, .right-experience-card {            
             border-radius: 10px;
-            height: 200px;
+            min-height: 200px;
             text-wrap: wrap;
             overflow-wrap: break-word;
 
@@ -181,8 +181,31 @@
     .right-experience-card {
         
         p {
-            font-size: 0.95em;
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            line-clamp: 6;
+            -webkit-line-clamp: 6;
+            font-size: clamp(0.78rem, 0.85vw, 0.95rem);
+            line-height: 1.45;
             margin-top: 0px!important;
+        }
+
+        @include base.device(xl) {
+            p {
+                line-clamp: 5;
+                -webkit-line-clamp: 5;
+                font-size: 0.82rem;
+            }
+        }
+
+        @include base.device(lg) {
+            p {
+                line-clamp: 4;
+                -webkit-line-clamp: 4;
+                font-size: 0.76rem;
+                line-height: 1.4;
+            }
         }
 
         @include base.device(sm) {
@@ -198,13 +221,16 @@
                 color: white;
                 margin-right: 5px;
                 margin-bottom: 5px;
-                font-size: 0.9em;
+                font-size: clamp(0.65rem, 0.75vw, 0.9rem);
                 width: fit-content;
-                padding: 4px 10px;
+                padding: 3px 8px;
                 border-radius: 2px;
 
-                @include base.device(md) {
-                    font-size: 0.7em;
+                @include base.device(lg) {
+                    font-size: 0.64rem;
+                    padding: 2px 7px;
+                    margin-right: 4px;
+                    margin-bottom: 4px;
                 }
 
             }

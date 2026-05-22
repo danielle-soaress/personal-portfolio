@@ -17,7 +17,7 @@ html {
 }
   
 body {
-    background-color: white;
+    background-color: base.$background-dark-color;
 }
   
 a, a:visited{
@@ -32,6 +32,8 @@ a:hover {
 
 .main_portfolio_page_container {
     width: 100vw;
+    min-height: 100vh;
+    background-color: base.$background-dark-color;
 }
 
 header {
@@ -52,10 +54,16 @@ section {
 }
 
 #all_projects {
-    @include bg-gradient();
+    position: relative;
+    background:
+        radial-gradient(circle at 85% 8%, rgba(159, 114, 255, 0.16), transparent 28%),
+        radial-gradient(circle at 10% 28%, rgba(89, 74, 235, 0.14), transparent 24%),
+        base.$background-dark-color;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 10vh;
+    margin-top: 0;
+    padding: 12vh 0 10vh;
+    min-height: 100vh;
     height: auto!important;
 }
 
@@ -70,22 +78,51 @@ section {
 }
 
 .cards_container {
-    width: 80vw;
+    width: min(1180px, 88vw);
     flex-direction: column;
-    border-radius: 20px;
     display: flex;
-    gap: 30px;
-    padding: 50px;
+    gap: 44px;
+    padding: 40px 0;
 }
 
 .cards_container h1 {
+    @include base.gradientTitle();
     font-size: base.$title_size;
     font-weight: 700;
-    margin: 20px 0px;
+    margin: 20px 0px 10px;
+    text-align: center;
+}
+
+.portfolio_page_cards_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 34px;
+    width: 100%;
+    justify-items: center;
+
+    .project_card_container {
+        width: min(900px, 100%);
+    }
 }
 
 footer {
     background-color: base.$background-dark-color;
+}
+
+@media (max-width: 768px) {
+    #all_projects {
+        padding-top: 10vh;
+    }
+
+    .cards_container {
+        width: 90vw;
+        gap: 30px;
+        padding: 24px 0;
+    }
+
+    .cards_container h1 {
+        font-size: base.$title_size_bp_sm;
+    }
 }
 
 

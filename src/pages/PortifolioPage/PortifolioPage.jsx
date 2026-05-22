@@ -4,6 +4,7 @@ import data from '../../assets/data/projects.json';
 import Footer from '../../components/footer/Footer.jsx'
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import ProjectCard from '../../components/projectCard/ProjectCard.jsx';
 
 export const getProjectsRelevance = () => {
     const jsonData = data
@@ -37,11 +38,6 @@ function PortifolioPage() {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        let projectsID_relevance = getProjectsRelevance();
-        console.log(projectsID_relevance);
-    }, []);
-
-    useEffect(() => {
         const updatedProjects = data.map((project) => ({
             ...project,
             description: i18n.language === 'en' ? project.descriptionEN : project.descriptionPT,
@@ -61,7 +57,20 @@ function PortifolioPage() {
             <section id="all_projects">
                 <div className="section_container cards_container">
                     <h1>{t('portfolioPage.title')}</h1>
-
+                    <div className="portfolio_page_cards_grid">
+                        {projects.map((project) => (
+                            <ProjectCard
+                                key={project.id}
+                                imgSrc={project.imgSrc}
+                                imgAlt={project.imgAlt}
+                                title={project.title}
+                                description={project.description}
+                                demoLink={project.demoLink}
+                                gitLink={project.gitLink}
+                                techs={project.techs}
+                            />
+                        ))}
+                    </div>
                 </div>
             </section>
             <footer>

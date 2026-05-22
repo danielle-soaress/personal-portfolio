@@ -2,73 +2,114 @@
 
 
 // project card styles
-$border-radius: 5px;
+$border-radius: 10px;
 
 .project_card_container {
     position: relative;
     @include base.flexCenter();
-    width: 800px;
-    height: 400px;
-    background: linear-gradient(30deg, #212121, #29254b);
-    box-shadow: 0px 0px 20px #20202089;
+    width: min(760px, 82vw);
+    height: 360px;
+    padding: 16px;
+    background: linear-gradient(135deg, #202020 0%, #25213f 100%);
+    border: 1px solid rgba(159, 114, 255, 0.18);
+    box-shadow: 0 0 24px rgba(32, 32, 32, 0.58);
     border-radius: $border-radius;
     flex-direction: row-reverse;
-    justify-content: flex-start;
+    justify-content: space-between;
+    gap: 22px;
     font-size: 0.9em;
+    overflow: hidden;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 6px;
+        height: 100%;
+        background: linear-gradient(180deg, base.$darker-purple, base.$lighter-purple);
+        opacity: 0.85;
+        pointer-events: none;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        border-color: rgba(159, 114, 255, 0.5);
+        box-shadow: 0 0 20px rgba(138, 84, 253, 0.26), 0 18px 38px rgba(0, 0, 0, 0.28);
+    }
 
     @include base.device(xl) {
-        width: 800px;
+        width: min(620px, 82vw);
+        height: 420px;
         flex-direction: column;
     }
 
     @include base.device(md) {
-        width: 70vw;
-        height: 370px;
+        width: min(680px, 86vw);
+        height: auto;
+        min-height: 390px;
     }
 
     @include base.device(sm) {
-        height: 400px;
+        min-height: 360px;
+        padding: 14px;
     }
 
 
     .card_image {
         object-fit: cover;
         object-position: 10% 0%;
-        width: 45%;
+        width: 44%;
         height: 100%;
-        border-radius: 0px $border-radius $border-radius 0px;
+        border-radius: 7px;
+        border: 1px solid rgba(159, 114, 255, 0.2);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+        z-index: 1;
     
         @include base.device(lg) {
-            width: 55%;
+            width: 48%;
             height: 100%;
         }
 
         @include base.device(xl) {
             width: 100%;
-            height: 160px;
-            border-radius: $border-radius $border-radius 0px 0px;
+            height: 170px;
+            border-radius: 7px;
         }
     }
 
 
     .card_text {
         @include base.flexCenter();
-        padding: 40px 15px;
+        position: relative;
+        z-index: 1;
+        padding: 12px 4px 12px 10px;
         flex-direction: column;
         color: white;
-        text-align: center;
+        text-align: start;
         height: 100%;
         justify-content: space-between;
+        align-items: flex-start;
+        flex: 1;
+        min-width: 0;
 
         @include base.device(lg) {
-            padding: 20px 15px;
+            padding: 8px 0;
+        }
+
+        @include base.device(xl) {
+            text-align: center;
+            align-items: center;
         }
 
         .title_description {
         
             h3 {
-                font-size: 1.7em;
+                font-size: clamp(1.25rem, 1.7vw, 1.65rem);
                 font-weight: 700;
+                color: white;
+                line-height: 1.05;
 
                 @include base.device(xxl) {
                     font-size: 1.3em;
@@ -80,9 +121,16 @@ $border-radius: 5px;
             }
 
             p {
-                font-size: 1em;
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                line-clamp: 4;
+                -webkit-line-clamp: 4;
+                font-size: clamp(0.82rem, 1vw, 0.95rem);
                 font-weight: 300;
-                margin-top: 1.3em;
+                margin-top: 1em;
+                line-height: 1.55;
+                color: rgba(255, 255, 255, 0.72);
 
                 @include base.device(xxl) {
                     font-size: 0.8em;
@@ -97,18 +145,23 @@ $border-radius: 5px;
 
         .technologies_container {
             @include base.flexCenter();
-            justify-content: center;
-            margin: 15px 0px;
+            justify-content: flex-start;
+            margin: 16px 0px 0;
             display: flex;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
 
+            @include base.device(xl) {
+                justify-content: center;
+            }
+
             .tech {
-                background: linear-gradient(30deg, #5047a1, #9772e9);
-                font-size: 0.9em;
+                background: linear-gradient(30deg, rgba(80, 71, 161, 0.88), rgba(151, 114, 233, 0.9));
+                border: none;
+                font-size: 0.76em;
                 width: min-content;
-                padding: 4px 10px;
-                border-radius: 2px;
+                padding: 4px 9px;
+                border-radius: 3px;
                 cursor: default;
                 color: white;
 
@@ -127,17 +180,19 @@ $border-radius: 5px;
         @include base.flexCenter();
         flex-direction: column;
         position: absolute;
-        top: 10px;
-        right: 10px;
-        gap: 10px;
+        top: 28px;
+        right: 28px;
+        gap: 8px;
+        z-index: 2;
  
         .link {
             @include base.flexCenter();
-            font-size: 1.8em!important;
+            font-size: 1.35em!important;
             color: white;
-            background-color: base.$background-dark-color;
-            width: 45px;
-            height: 45px;
+            background: base.$background-dark-color;
+            border: 1px solid rgba(159, 114, 255, 0.22);
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             transition: all 0.3s ease-in-out;
         }
@@ -145,6 +200,7 @@ $border-radius: 5px;
         .link:hover {
             transition: all 0.3s ease-in-out;
             background: linear-gradient(135deg, #9F72FF, #594AEB);
+            transform: translateY(-2px);
 
         }
 

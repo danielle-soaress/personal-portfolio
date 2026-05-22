@@ -3,17 +3,36 @@
         "link_1": "Home",
         "link_2": "Sobre",
         "link_3": "Portfolio",
-        "link_4": "Contato"
+        "link_4": "Contatos",
+        "logoAlt": "Ícone de flor",
+        "languageAlt": "Ícone de idioma"
+    },
+
+    "social": {
+        "copyEmailAria": "Copiar email"
+    },
+
+    "footer": {
+        "copyright": "Copyrights © 2024 - Desenvolvido por"
     },
 
     "introduction": {
         "title": "Olá, eu sou a",
+        "role": "Desenvolvedora de Software",
+        "education": "Estudante de Engenharia de Software",
         "description": "Estudante de Engenharia de Software na Universidade de Brasília (UnB) e entusiasta em programação full-stack.",
-        "button": "Fale comigo"
+        "button": "Fale comigo",
+        "scroll": "Role"
     },
 
     "about": {
         "title": "Sobre mim",
+        "homeTitle": "Olá, eu sou a Danielle!",
+        "paragraph_1": "Sou desenvolvedora Full-Stack e atualmente moro em Brasília (Brasil), onde estudo Engenharia de Software na UnB. Atuo na criação de soluções para Web e Mobile, mas também acumulo experiências em áreas como Arquitetura de Sistemas, Requisitos de Software, IoT e Integração de IA.",
+        "paragraph_2": "Minha trajetória é marcada pela flexibilidade e curiosidade, em que acredito que a boa engenharia vai além do código, é sobre solucionar problemas reais. Estou sempre aberta a novas conexões e oportunidades, então sinta-se à vontade para entrar em contato!",
+        "photoCategory": "Maratona de Programação",
+        "photoHeading": "Evento do Meninas.COMP, na UnB",
+        "photoAuthor": "Dani",
         "description": "Me chamo Danielle Soares e sou estudante de Engenharia de Software na Universidade de Brasília (UnB). Apaixonada por desenvolvimento de software, já explorei áreas como o desenvolvimento web e mobile. Como uma estudante assídua, estou sempre em busca de oportunidades para aprimorar meus conhecimentos e explorar novas áreas e tecnologias.",
         "softSkills": {
             "skill_1": {
@@ -37,7 +56,18 @@
     },
 
     "portfolio": {
-        "title": "Conheça alguns dos meus projetos",
+        "title": "Meus Projetos",
+        "subtitle": {
+            "pt1": "Explore minhas",
+            "highlight_1": "ideias",
+            "pt2": "e",
+            "highlight_2": "soluções"
+        },
+        "viewMore": {
+            "title": "Deseja ver mais?",
+            "description": "Explore mais projetos interessantes",
+            "button": "Ver mais"
+        },
         "projects": {
             "project_1": {
                 "title": "Draw.ing",
@@ -57,6 +87,15 @@
 
     "contact": {
         "title": "Entre em contato",
+        "searchTitle": "o que eu busco?",
+        "values": {
+            "purpose": "propósito",
+            "innovation": "inovação",
+            "growth": "crescimento"
+        },
+        "identified": "se identificou?",
+        "workTogether": "vamos trabalhar juntos.",
+        "emailCopied": "Email copiado!",
         "description": {
             "pt1": "Vamos trabalhar juntos?",
             "pt2": "Sinta-se livre para me mandar uma mensagem."
@@ -67,6 +106,15 @@
             "message": "Mensagem"
         },
         "button": "Enviar"
+    },
+
+    "experience": {
+        "title": "Experiência Profissional",
+        "subtitle": "Minha jornada até agora"
+    },
+
+    "skills": {
+        "title": "Habilidades"
     },
 
     "portfolioPage": {

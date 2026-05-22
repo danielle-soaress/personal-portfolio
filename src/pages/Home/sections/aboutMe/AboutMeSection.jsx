@@ -30,13 +30,12 @@ function AboutMe() {
             <motion.div ref={containerRef} className="about_me_container"style={{scale, opacity}}>
                 <div className="about_me_text">                 
                     <span>  
-                        <h2>Olá, eu sou a Danielle!</h2>
+                        <h2>{t('about.homeTitle')}</h2>
                         <p>
-                        Sou desenvolvedora Full-Stack e atualmente moro em Brasília (Brasil), onde estudo Engenharia de Software na UnB. Atuo na criação de soluções para Web e Mobile, mas também acumulo experiências em áreas como Arquitetura de Sistemas, Requisitos de Software, IoT e Integração de IA.
+                        {t('about.paragraph_1')}
                         </p>
                         <p>
-                        Minha trajetória é marcada pela flexibilidade e curiosidade, em que acredito que a boa engenharia vai além do código, é sobre solucionar problemas reais.
-                        Estou sempre aberta a novas conexões e oportunidades, então sinta-se à vontade para entrar em contato!
+                        {t('about.paragraph_2')}
                         </p>
                     </span>
                 </div>
@@ -44,9 +43,9 @@ function AboutMe() {
                     <div className="blur_abm"></div>
                     <div className="card">
                         <img className="card-image" src={personalPhoto}/>
-                        <div className="category">Maratona de Programação</div>
-                        <div className="heading">Evento do Meninas.COMP, na UnB
-                            <div className="author"><span className="name">Dani</span>, 2024</div>
+                        <div className="category">{t('about.photoCategory')}</div>
+                        <div className="heading">{t('about.photoHeading')}
+                            <div className="author"><span className="name">{t('about.photoAuthor')}</span>, 2024</div>
                         </div>
                     </div>  
                     <motion.div

@@ -17,7 +17,7 @@ function LanguageButton() {
 
     return (
     <div className="lang_button" onClick={() => setOpen(!open)}>
-        <img className="lang_img" src={langIcon} alt="Language icon"></img>
+        <img className="lang_img" src={langIcon} alt={t('nav.languageAlt')}></img>
         <div className={open? "lang_options visible" : "lang_options"}>
             <span onClick={() => changeLanguage('pt')} className={lang == "pt" ? "lang_options_1 .selected" : "lang_options_1"}>PT</span>
             <span onClick={() => changeLanguage('en')} className={lang == "en" ? "lang_options_2 .selected" : "lang_options_2"}>EN</span>

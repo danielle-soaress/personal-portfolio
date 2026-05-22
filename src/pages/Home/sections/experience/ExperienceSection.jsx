@@ -25,8 +25,8 @@ function ExperienceSection() {
 
     return <section ref={containerRef} className="timeline-section">
         <div className="section-header">
-            <h2>Experiência Profissional</h2>
-            <h3>Minha jornada até agora</h3>
+            <h2>{t('experience.title')}</h2>
+            <h3>{t('experience.subtitle')}</h3>
         </div>
         <div className="timeline-wrapper">
             <div className="left-experience-details"> 

@@ -1,8 +1,11 @@
 import './Footer.scss'
 import Logo from '../../assets/images/Logo.png'
 import SocialMedias from '../socialMedias/SocialMedias';
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
+    const { t } = useTranslation();
+
     return (
         <div className="footer_container">
             <div className="left_side">
@@ -10,7 +13,7 @@ function Footer() {
                 <SocialMedias showRectangle={true}/>
             </div>
             <div className="copyrights">
-                <p>Copyrights © 2024 - Developed by </p>
+                <p>{t('footer.copyright')} </p>
                 <img className="cop_logo" src={Logo}></img>
             </div>
         </div>

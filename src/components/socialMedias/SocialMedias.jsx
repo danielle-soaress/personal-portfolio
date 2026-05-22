@@ -4,6 +4,7 @@ import LinkedinLogo from '../../assets/images/linkedin_logo.png'
 import GithubLogo from '../../assets/images/github_logo.png'
 import { motion } from "motion/react"
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const EMAIL = 'silvasoaresdanielle2@gmail.com';
 
@@ -29,6 +30,7 @@ const iconVariants = {
 function SocialMedias({ showRectangle = true, onEmailClick }) {
     const [isEmailCopied, setIsEmailCopied] = useState(false);
     const timeoutRef = useRef(null);
+    const { t } = useTranslation();
 
     const copyEmail = async () => {
         try {
@@ -78,7 +80,7 @@ function SocialMedias({ showRectangle = true, onEmailClick }) {
                 type="button"
                 className="social_media_button"
                 onClick={copyEmail}
-                aria-label="Copiar email"
+                aria-label={t('social.copyEmailAria')}
             >
                 <img src={EmailIcon} className="icon" alt="Email" />
             </motion.button>
@@ -90,7 +92,7 @@ function SocialMedias({ showRectangle = true, onEmailClick }) {
                     animate={{ opacity: 1, x: 0, y: "-50%" }}
                     exit={{ opacity: 0, x: -8, y: "-50%" }}
                 >
-                    Email copiado!
+                    {t('contact.emailCopied')}
                 </motion.span>
             )}
         </motion.div>

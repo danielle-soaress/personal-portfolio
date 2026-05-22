@@ -40,8 +40,8 @@ function IntroductionSection() {
                 <span className="my_name">Danielle<br/>Soares</span>
             </h2>
             <p className="myself_description">
-            Desenvolvedora de Software <span>&</span><br/>
-            Estudante de Engenharia de Software
+            {t('introduction.role')} <span>&</span><br/>
+            {t('introduction.education')}
             </p>
             <SocialMedias showRectangle={true}/>
         </div>
@@ -101,17 +101,17 @@ function IntroductionSection() {
                 <img className="flowerImg6 flower" src={flowerImg}/>
             </motion.div>
             <motion.div
-            class="scroll-container"
+            className="scroll-container"
             initial={{ opacity: 0 }} 
             whileInView={{ opacity: 1}}
             transition={{ duration: 0.8, ease: "ease" }}
             exit={{ opacity: 0 }}
             style ={{opacity}}
             >
-                <div class="mouse">
-                    <div class="wheel"></div>
+                <div className="mouse">
+                    <div className="wheel"></div>
                 </div>
-                <span class="scroll-text">Scroll</span>
+                <span className="scroll-text">{t('introduction.scroll')}</span>
             </motion.div>
         
             {flowers.map((f, i) => (

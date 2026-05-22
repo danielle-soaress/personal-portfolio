@@ -98,7 +98,7 @@ function SkillsSection() {
         ref={ref} 
         className="portifolio_container"
       >
-        <h2 className="gradient_title">Habilidades</h2>
+        <h2 className="gradient_title">{t('skills.title')}</h2>
         <motion.div className="forest_container">
           {stackForest.map((tree, index) => (
             <TechTree key={index} data={tree} />

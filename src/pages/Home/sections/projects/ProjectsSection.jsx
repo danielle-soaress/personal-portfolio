@@ -61,15 +61,17 @@ function ProjectsSection() {
     <motion.div id="portifolio" exit={{opacity: 0}} ref={containerRef} className="projects-section">
         <div className="projects-container">
           <div className="projects-section-title">
-              <h2>Meus Projetos</h2>
-              <h3>Explore minhas <span>ideias</span> e <span>soluções</span></h3>
+              <h2>{t('portfolio.title')}</h2>
+              <h3>
+                {t('portfolio.subtitle.pt1')} <span>{t('portfolio.subtitle.highlight_1')}</span> {t('portfolio.subtitle.pt2')} <span>{t('portfolio.subtitle.highlight_2')}</span>
+              </h3>
           </div>
           <motion.div className="cards-container" style={ deviceWidth <= 1024 ? '' : {x}}>
             {LoadProjects()}
             <div className="view-more">
-              <h3>Deseja ver mais?</h3>
-              <p>Explore mais projetos interessantes</p>
-              <a href="/projects"><PurpleButton text="Ver mais" link="/home"></PurpleButton></a>
+              <h3>{t('portfolio.viewMore.title')}</h3>
+              <p>{t('portfolio.viewMore.description')}</p>
+              <a href="/projects"><PurpleButton text={t('portfolio.viewMore.button')} link="/home"></PurpleButton></a>
             </div>
           </motion.div>
         </div>

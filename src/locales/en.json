@@ -3,17 +3,36 @@
         "link_1": "Home",
         "link_2": "About",
         "link_3": "Portfolio",
-        "link_4": "Contact"
+        "link_4": "Contact",
+        "logoAlt": "Flower icon",
+        "languageAlt": "Language icon"
+    },
+
+    "social": {
+        "copyEmailAria": "Copy email"
+    },
+
+    "footer": {
+        "copyright": "Copyrights © 2024 - Developed by"
     },
 
     "introduction": {
         "title": "Hello, I'm ",
+        "role": "Software Developer",
+        "education": "Software Engineering Student",
         "description": "Software Engineering student at the University of Brasília (UnB) and full-stack programming enthusiast.",
-        "button": "Contact me"
+        "button": "Contact me",
+        "scroll": "Scroll"
     },
 
     "about": {
         "title": "About me",
+        "homeTitle": "Hi, I'm Danielle!",
+        "paragraph_1": "I'm a Full-Stack Developer currently based in Brasília, Brazil, where I study Software Engineering at UnB. I build solutions for Web and Mobile, and I also have experience in areas such as Systems Architecture, Software Requirements, IoT, and AI integration.",
+        "paragraph_2": "My journey is shaped by flexibility and curiosity. I believe good engineering goes beyond code: it is about solving real problems. I'm always open to new connections and opportunities, so feel free to get in touch!",
+        "photoCategory": "Programming Marathon",
+        "photoHeading": "Meninas.COMP event, at UnB",
+        "photoAuthor": "Dani",
         "description": "My name is Danielle Soares and I am a Software Engineering student at the University of Brasília (UnB). Passionate about software development, I have explored areas such as web and mobile development. As an avid student, I am always looking for opportunities to improve my knowledge and explore new areas and technologies.",
         "softSkills": {
             "skill_1": {
@@ -84,7 +103,18 @@
 
 
     "portfolio": {
-        "title": "Discover some of my projects",
+        "title": "My Projects",
+        "subtitle": {
+            "pt1": "Explore my",
+            "highlight_1": "ideas",
+            "pt2": "and",
+            "highlight_2": "solutions"
+        },
+        "viewMore": {
+            "title": "Want to see more?",
+            "description": "Explore more interesting projects",
+            "button": "See more"
+        },
         "projects": {
             "project_1": {
                 "title": "Draw.ing",
@@ -104,6 +134,15 @@
 
     "contact": {
         "title": "Contact me",
+        "searchTitle": "what am I looking for?",
+        "values": {
+            "purpose": "purpose",
+            "innovation": "innovation",
+            "growth": "growth"
+        },
+        "identified": "did you relate?",
+        "workTogether": "let's work together.",
+        "emailCopied": "Email copied!",
         "description": {
             "pt1": "Let's work together?",
             "pt2": "Feel free to send me a message."
@@ -111,9 +150,18 @@
         "labels": {
             "name": "Your name",
             "email": "Your email",
-            "message": "Menssage"
+            "message": "Message"
         },
         "button": "Send"
+    },
+
+    "experience": {
+        "title": "Professional Experience",
+        "subtitle": "My journey so far"
+    },
+
+    "skills": {
+        "title": "Skills"
     },
 
     "portfolioPage": {

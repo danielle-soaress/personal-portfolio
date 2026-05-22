@@ -1,12 +1,14 @@
 import './ContactMeSection.scss';
 import {useRef} from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import SocialMedias from '../../../../components/socialMedias/SocialMedias';
 import "../../../../i18n";
 
 function ContactMeSection() {
     const introRef = useRef(null);
     const contactRef = useRef(null);
+    const { t } = useTranslation();
 
     const { scrollYProgress } = useScroll({
         target: introRef,
@@ -58,11 +60,11 @@ function ContactMeSection() {
                             className="purple_blur purple_blur_two"
                             style={{ x: blurTwoX, y: blurTwoY, scale: blurTwoScale }}
                         />
-                        <span>o que eu busco?</span>
+                        <span>{t('contact.searchTitle')}</span>
                         <div className="rotating_words">
-                            <motion.h2 style={{ opacity: purposeOpacity, y: purposeY }}>propósito</motion.h2>
-                            <motion.h2 style={{ opacity: innovationOpacity, y: innovationY }}>inovação</motion.h2>
-                            <motion.h2 style={{ opacity: growthOpacity, y: growthY }}>crescimento</motion.h2>
+                            <motion.h2 style={{ opacity: purposeOpacity, y: purposeY }}>{t('contact.values.purpose')}</motion.h2>
+                            <motion.h2 style={{ opacity: innovationOpacity, y: innovationY }}>{t('contact.values.innovation')}</motion.h2>
+                            <motion.h2 style={{ opacity: growthOpacity, y: growthY }}>{t('contact.values.growth')}</motion.h2>
                         </div>
                     </motion.div>
                 </div>
@@ -75,12 +77,12 @@ function ContactMeSection() {
                     <motion.span
                         style={{ opacity: identifiedOpacity, y: identifiedY }}
                     >
-                        se identificou?
+                        {t('contact.identified')}
                     </motion.span>
                     <motion.span
                         style={{ opacity: workTogetherOpacity, y: workTogetherY }}
                     >
-                        vamos trabalhar juntos.
+                        {t('contact.workTogether')}
                     </motion.span>
                 </motion.div>
 
@@ -94,7 +96,7 @@ function ContactMeSection() {
                     style={{ opacity: socialsOpacity, y: socialsY }}
                 >
                     <SocialMedias showRectangle={false} />
-                    <p>Sinta-se livre para me mandar uma mensagem.</p>
+                    <p>{t('contact.description.pt2')}</p>
                 </motion.div>
             </section>
         </section>

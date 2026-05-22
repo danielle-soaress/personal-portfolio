@@ -9,10 +9,10 @@ import "../../i18n";
 
 
 const navItems = [
-    { id: "introduction", label: "Home", icon: "bi bi-house" },
-    { id: "about_me", label: "Sobre", icon: "bi bi-person" },
-    { id: "portifolio", label: "Portfolio", icon: "bi bi-grid" },
-    { id: "contact_me", label: "Contatos", icon: "bi bi-telephone" },
+    { id: "introduction", labelKey: "nav.link_1", icon: "bi bi-house" },
+    { id: "about_me", labelKey: "nav.link_2", icon: "bi bi-person" },
+    { id: "portifolio", labelKey: "nav.link_3", icon: "bi bi-grid" },
+    { id: "contact_me", labelKey: "nav.link_4", icon: "bi bi-telephone" },
 ];
 
 const Navbar = () => {
@@ -78,7 +78,7 @@ const Navbar = () => {
         <nav className="links" >
             <div className="icon-flood-container">
                 <div className="icon-fill" style={{ maskImage: `url(${FlowerIcon})`, WebkitMaskImage: `url(${FlowerIcon})` }}></div>
-                <img src={FlowerIcon} className="icon-base" alt="Flower Icon" />
+                <img src={FlowerIcon} className="icon-base" alt={t('nav.logoAlt')} />
             </div>
             <div className="nav_links">
                 {navItems.map((item) => (
@@ -87,7 +87,7 @@ const Navbar = () => {
                         className={`header_nav_link ${activeSection === item.id ? "active" : ""}`}
                         href={`#${item.id}`}
                         onClick={(event) => scrollToSection(event, item.id)}
-                        aria-label={item.label}
+                        aria-label={t(item.labelKey)}
                     >
                         <i className={`aside_nav_icon ${item.icon}`}></i>
                     </a>
@@ -105,7 +105,7 @@ const Navbar = () => {
                         href={`#${item.id}`}
                         onClick={(event) => scrollToSection(event, item.id)}
                     >
-                        {item.label}
+                        {t(item.labelKey)}
                     </a>
                 ))}
             </div>

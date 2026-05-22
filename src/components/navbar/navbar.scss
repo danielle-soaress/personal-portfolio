@@ -58,6 +58,7 @@ $links_size: 18px;
             position: relative;
             width: 40px;
             display: inline-block;
+            cursor: pointer;
 
             .icon-base {
                 width: 100%;
@@ -79,8 +80,13 @@ $links_size: 18px;
                 -webkit-mask-size: contain;
                 -webkit-mask-repeat: no-repeat;
                 -webkit-mask-position: center;
-                clip-path: inset(100% 0 0 0); 
-                animation: floodIcon 2s cubic-bezier(0.5, 1, 0.8, 0.4) forwards;
+                clip-path: inset(0% 0 0 0);
+                transition: clip-path 0.7s cubic-bezier(0.5, 1, 0.8, 0.4);
+                animation: navFlowerFill 1.2s cubic-bezier(0.5, 1, 0.8, 0.4);
+            }
+
+            &:hover .icon-fill {
+                clip-path: inset(100% 0 0 0);
             }
         }
         
@@ -162,14 +168,15 @@ $links_size: 18px;
     }
  }
 
-
-
-
-@keyframes floodIcon {
-    0% {
+@keyframes navFlowerFill {
+    from {
         clip-path: inset(100% 0 0 0);
     }
-    100% {
+
+    to {
         clip-path: inset(0% 0 0 0);
     }
 }
+
+
+

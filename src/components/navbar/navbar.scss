@@ -93,7 +93,7 @@ $links_size: 18px;
         a {
             @include base.flexCenter();
             font-weight: 400;
-            color: inherit;
+            color: rgba(255, 255, 255, 0.45);
             transition: all ease 0.4s;
             text-shadow: 2px 2px 40px white;
         }
@@ -102,6 +102,23 @@ $links_size: 18px;
             color: #a078f8;
             transition: all ease 0.4s;
             text-shadow: 40px 40px 40px white;
+        }
+
+        .header_nav_link {
+            .aside_nav_icon {
+                transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+            }
+        }
+
+        .header_nav_link.active {
+            color: white;
+
+            .aside_nav_icon {
+                opacity: 1;
+                transform: scale(1.22);
+                color: white;
+                filter: none;
+            }
         }
     }
 
@@ -136,6 +153,11 @@ $links_size: 18px;
         margin-top: 20px;
         a {
             font-weight: 200;
+        }
+
+        .header_nav_link.active {
+            color: base.$lighter-purple;
+            font-weight: 600;
         }
     }
  }

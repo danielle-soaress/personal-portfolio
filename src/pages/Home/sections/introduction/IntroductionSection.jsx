@@ -34,7 +34,7 @@ function IntroductionSection() {
 
 
     return (
-    <motion.div ref={containerRef} className="introduction_container" style={{filter}}>
+    <motion.div id="introduction" ref={containerRef} className="introduction_container" style={{filter}}>
         <div className="left_content">
             <h2 className="apresentation_title">
                 <span className="my_name">Danielle<br/>Soares</span>

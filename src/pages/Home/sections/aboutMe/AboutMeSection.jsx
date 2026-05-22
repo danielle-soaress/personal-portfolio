@@ -25,7 +25,7 @@ function AboutMe() {
     const rotate = useTransform(scrollYProgress, [0, 1], [0, -60]);
     
     return (
-        <section className="about_me_section">
+        <section id="about_me" className="about_me_section">
             <div className="blur_abm"></div>
             <motion.div ref={containerRef} className="about_me_container"style={{scale, opacity}}>
                 <div className="about_me_text">                 

@@ -68,7 +68,7 @@ function ContactMeSection() {
                 </div>
             </section>
 
-            <section ref={contactRef} className="form_panel">
+            <section id="contact_me" ref={contactRef} className="form_panel">
                 <motion.div
                     className="form_intro_text"
                 >

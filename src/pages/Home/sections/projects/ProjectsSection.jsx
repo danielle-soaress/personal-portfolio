@@ -58,7 +58,7 @@ function ProjectsSection() {
   const x = useTransform(scrollYProgress, [0, 1], ["10", "-40%"]);
 
   return (
-    <motion.div exit={{opacity: 0}} ref={containerRef} className="projects-section">
+    <motion.div id="portifolio" exit={{opacity: 0}} ref={containerRef} className="projects-section">
         <div className="projects-container">
           <div className="projects-section-title">
               <h2>Meus Projetos</h2>

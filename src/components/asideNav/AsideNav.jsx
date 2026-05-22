@@ -7,19 +7,11 @@ function AsideNav() {
     const actualSection = (e) => {
         let icons = document.querySelectorAll('.aside_nav_icon');
     
-        let ID = e.target.getAttribute('el');
         
-        if (ID == "about") {
-            for (let i = 0; i<icons.length; i++) {
-                icons[i].style.color = "black";
-            }
-            e.target.style.color= "#594AEB";
-        } else {
-            for (let i = 0; i<icons.length; i++) {
-                icons[i].style.color = "#ffffff80"
-            }
-            e.target.style.color= "white";
+        for (let i = 0; i<icons.length; i++) {
+            icons[i].style.color = "#ffffff80"
         }
+        e.target.style.color= "white";
     
     
         if (windowWidth <= 1100 && e.target.getAttribute('el') == 'contact') {

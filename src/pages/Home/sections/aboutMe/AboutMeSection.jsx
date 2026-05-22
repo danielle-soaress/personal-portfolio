@@ -37,6 +37,9 @@ function AboutMe() {
                         <p>
                         {t('about.paragraph_2')}
                         </p>
+                        <a className="about_contact_cta" href="#contact_me">
+                            {t('about.contactCta')} <span>→</span>
+                        </a>
                     </span>
                 </div>
                 <div className="photo_container">

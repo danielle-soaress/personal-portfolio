@@ -97,14 +97,78 @@
     }
 
     .form_panel {
+        position: relative;
         @include base.flexCenter();
         flex-direction: column;
         gap: clamp(24px, 4vh, 48px);
         min-height: 100vh;
         width: 100%;
         padding: clamp(40px, 6vw, 88px) clamp(24px, 5vw, 80px);
+        overflow: hidden;
+
+        .contact_flower {
+            position: absolute;
+            width: clamp(54px, 8vw, 110px);
+            opacity: 0.34;
+            filter: blur(0.6px);
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+        }
+
+        .contact_flower_left {
+            left: clamp(24px, 9vw, 150px);
+            top: 18%;
+        }
+
+        .contact_flower_right {
+            right: clamp(18px, 8vw, 130px);
+            top: 22%;
+            width: clamp(46px, 7vw, 92px);
+            opacity: 0.28;
+        }
+
+        .contact_flower_bottom {
+            left: 50%;
+            bottom: clamp(28px, 8vh, 80px);
+            width: clamp(40px, 6vw, 78px);
+            opacity: 0.2;
+        }
+
+        .contact_flower_top {
+            left: clamp(130px, 24vw, 390px);
+            top: 8%;
+            width: clamp(34px, 5vw, 66px);
+            opacity: 0.18;
+        }
+
+        .contact_flower_center {
+            right: clamp(160px, 22vw, 360px);
+            bottom: 18%;
+            width: clamp(36px, 5.5vw, 72px);
+            opacity: 0.2;
+            filter: blur(1px);
+        }
+
+        .contact_flower_small {
+            left: clamp(90px, 17vw, 280px);
+            bottom: 20%;
+            width: clamp(28px, 4vw, 50px);
+            opacity: 0.16;
+            filter: blur(1.2px);
+        }
+
+        .contact_flower_corner {
+            right: clamp(42%, 44vw, 48%);
+            top: clamp(28px, 8vh, 76px);
+            width: clamp(34px, 5vw, 68px);
+            opacity: 0.2;
+            filter: blur(0.8px);
+        }
 
         .form_intro_text {
+            position: relative;
+            z-index: 1;
             @include base.flexCenter();
             flex-direction: column;
             color: white;
@@ -123,6 +187,8 @@
         }
 
         .form_divider {
+            position: relative;
+            z-index: 1;
             width: min(420px, 70vw);
             height: 1px;
             background: linear-gradient(90deg, transparent 0%, rgba(159, 114, 255, 0.801) 50%, transparent 100%);
@@ -130,6 +196,8 @@
         }
 
         .contact_socials {
+            position: relative;
+            z-index: 1;
             @include base.flexCenter();
             flex-direction: column;
             gap: 12px;
@@ -330,6 +398,14 @@
             gap: 28px;
             padding: 64px 28px;
 
+            .contact_flower_left {
+                left: 4%;
+            }
+
+            .contact_flower_right {
+                right: 4%;
+            }
+
             .form_intro_text {
                 font-size: clamp(34px, 8vw, 56px);
             }
@@ -405,6 +481,57 @@
             gap: 22px;
             padding: 48px 20px;
 
+            .contact_flower {
+                opacity: 0.2;
+                filter: blur(0.8px);
+            }
+
+            .contact_flower_left {
+                left: -24px;
+                top: 12%;
+                width: 58px;
+            }
+
+            .contact_flower_right {
+                right: -20px;
+                top: 18%;
+                width: 52px;
+            }
+
+            .contact_flower_bottom {
+                bottom: 24px;
+                width: 42px;
+            }
+
+            .contact_flower_top,
+            .contact_flower_center,
+            .contact_flower_small {
+                width: 34px;
+                opacity: 0.12;
+            }
+
+            .contact_flower_top {
+                left: 18%;
+                top: 8%;
+            }
+
+            .contact_flower_center {
+                right: 10%;
+                bottom: 14%;
+            }
+
+            .contact_flower_small {
+                left: 16%;
+                bottom: 18%;
+            }
+
+            .contact_flower_corner {
+                right: 42%;
+                top: 7%;
+                width: 42px;
+                opacity: 0.16;
+            }
+
             .form_intro_text {
                 font-size: clamp(30px, 12vw, 44px);
                 line-height: 1.12;
@@ -452,6 +579,14 @@
         .form_panel {
             .form_intro_text {
                 font-size: 28px;
+            }
+
+            .contact_flower_bottom {
+                display: none;
+            }
+
+            .contact_flower_small {
+                display: none;
             }
         }
     }

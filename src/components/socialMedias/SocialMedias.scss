@@ -4,8 +4,18 @@ $darker-purple: #594AEB;
 $lighter-purple: #9F72FF;
 
 .social_medias_container {
+    position: relative;
     @include base.flexCenter();
+    align-items: center;
     gap: 30px;
+
+    a,
+    .social_media_button {
+        @include base.flexCenter();
+        width: 45px;
+        height: 45px;
+        line-height: 0;
+    }
 
     .rectangle {
         width: 6px;
@@ -18,14 +28,47 @@ $lighter-purple: #9F72FF;
     }
     
     .icon {
-        margin-top: 5px;
         width: 45px;
         cursor: pointer;
+        display: block;
     }
 
     .icon:hover {
         transform: scale(1.09);
         transition: linear 0.2s;
+    }
+
+    .social_media_button {
+        padding: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .social_media_button:hover {
+        border-color: transparent;
+    }
+
+    .social_media_button:focus,
+    .social_media_button:focus-visible {
+        outline: none;
+    }
+
+    .email_copy_notice {
+        position: absolute;
+        top: 50%;
+        left: calc(100% + 14px);
+        width: max-content;
+        padding: 6px 12px;
+        border: 1px solid rgba(159, 114, 255, 0.32);
+        border-radius: 999px;
+        background: rgba(24, 24, 24, 0.9);
+        color: white;
+        font-size: 12px;
+        font-weight: 600;
+        box-shadow: 0 8px 24px rgba(89, 74, 235, 0.22);
+        pointer-events: none;
+        z-index: 2;
     }
 }
 
@@ -42,6 +85,12 @@ $lighter-purple: #9F72FF;
         .icon {
             width: 35px;
         }  
+
+        a,
+        .social_media_button {
+            width: 35px;
+            height: 35px;
+        }
     }
 }
 
@@ -59,5 +108,11 @@ $lighter-purple: #9F72FF;
         .icon {
             width: 25px;
         }  
+
+        a,
+        .social_media_button {
+            width: 25px;
+            height: 25px;
+        }
     }
 }

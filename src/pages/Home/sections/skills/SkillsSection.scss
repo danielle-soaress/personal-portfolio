@@ -35,16 +35,18 @@ $transparent-white: #ffffff80;
     .forest_container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        width: min(1120px, 86vw);
 
         @include base.device(lg) {
             grid-template-columns: repeat(1, 1fr);
+            width: min(620px, 86vw);
         }
 
         flex-direction: row;
         justify-content: start;
         align-items: start;
-        row-gap: 60px;
-        column-gap: 100px;
+        row-gap: 56px;
+        column-gap: 80px;
 
         @include base.device(lg) {
             row-gap: 80px;

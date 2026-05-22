@@ -6,25 +6,38 @@
     flex-direction: column;
     
     .box {
+        position: relative;
+        isolation: isolate;
         font-size: 1em;
-        padding: 0em 0.8em;
-        border-radius: 8px;
-        background: rgb(39, 39, 39);
-        border: 0.2px solid #9F72FF;
-        -webkit-box-shadow:0px 0px 10px 0.1px rgba(138,84,253,0.9);
-        -moz-box-shadow: 0px 0px 10px 0.1px rgba(138,84,253,0.9);
-        box-shadow: 0px 0px 10px 0.1px rgba(138,84,253,0.9);
-        transition: transform 0.4s ease, background 0.4s ease;
+        padding: 0.8em 0.7em;
+        border-radius: 18px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.028));
+        border: 1px solid rgba(159, 114, 255, 0.28);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(10px);
+        transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
         width: 100%;
-        height: 100px;
+        height: 112px;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: -40%;
+            z-index: -1;
+            background: radial-gradient(circle, rgba(159, 114, 255, 0.2), transparent 48%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
 
         @include base.device(xl) {
-            height: 94px;
+            height: 104px;
         }
 
         @include base.device(sm) {
             font-size: 0.85em;
-            padding: 0em 0.6em;
+            height: 98px;
+            padding: 0.7em 0.6em;
         }
 
         @include base.device(xs) {
@@ -34,9 +47,14 @@
     }
 
     .box:hover {
-        transform: translateY(-4px);
-        background: rgb(46, 46, 46);
-        transition: transform 0.4s ease;
+        transform: translateY(-6px);
+        border-color: rgba(159, 114, 255, 0.72);
+        background: linear-gradient(180deg, rgba(159, 114, 255, 0.14), rgba(255, 255, 255, 0.035));
+        box-shadow: 0 20px 48px rgba(89, 74, 235, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+        &::before {
+            opacity: 1;
+        }
     }
 
     .tree_trunk {
@@ -61,24 +79,35 @@
     .branch_box {
         @include base.flexCenter;
         flex-direction: column;
-        gap: 15px;
+        gap: 9px;
 
         img {
-            width: 30px;
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            padding: 6px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
         }
 
         span {
-            font-size: 1em;    
+            font-size: 0.95em;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            line-height: 1.15;
         }
 
 
         @include base.device(xl) {
            img {
-                width: 24px;
+                width: 36px;
+                height: 36px;
            }
 
            span {
-                font-size: 0.9em;
+                font-size: 0.85em;
            }
         }
     }
@@ -98,16 +127,16 @@
 
 .progress_bar {
   width: 100%;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
   overflow: hidden;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .progress_fill {
   height: 100%;
-  background: linear-gradient(90deg, #9F72FF, #6C3BFF);
+  background: linear-gradient(90deg, base.$darker-purple, base.$lighter-purple);
   transition: width 0.6s ease;
 }
 

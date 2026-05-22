@@ -1,4 +1,5 @@
 import './ProjectCard.scss'
+import PurpleButton from '../purpleButton/PurpleButton.jsx'
 
 function ProjectCard(props) {
 
@@ -12,7 +13,7 @@ function ProjectCard(props) {
 
     function addTech (name) {
         return (
-            <div className="tech">
+            <div key={name} className="tech">
                 {name}
             </div>
         )
@@ -20,27 +21,23 @@ function ProjectCard(props) {
 
     return (
         <div className="project_card_container">
-            <img src={imgSrc} alt={imgAlt} class="card_image"></img>
+            <img src={imgSrc} alt={imgAlt} className="card_image"></img>
             <div className="card_text">
-                <h3>{title}</h3>
-                <p>{description}</p>
+                <div className="title_description">
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                </div>
                 <div className="technologies_container">
                     {technologies.map((tech) => addTech(tech))}
                 </div>
-                <div className="git_demo">
-                    <div className="link">
-                        <a href={gitLink} class="git_demo_text" target="_blank">
-                            <i class="bi bi-github"></i>
-                            Código
-                        </a>
-                    </div>
-                    <div className="link">
-                        <a href={demoLink} class="git_demo_text" target="_blank">
-                            <i class="bi bi-link-45deg"></i>
-                            Live Demo
-                        </a>
-                    </div>
-                </div>
+            </div>
+            <div className="git_demo">
+                <a href={gitLink} target="_blank" rel="noopener noreferrer">
+                    <i className="link bi bi-github"></i>
+                </a>
+                <a href={demoLink} target="_blank" rel="noopener noreferrer">
+                    <i className="link bi bi-link-45deg"></i>
+                </a>
             </div>
         </div>
     );

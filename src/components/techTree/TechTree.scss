@@ -1,0 +1,116 @@
+@use '../../base';
+
+
+.tree_wrapper {
+    @include base.flexCenter;
+    flex-direction: column;
+    
+    .box {
+        font-size: 1em;
+        padding: 0em 0.8em;
+        border-radius: 8px;
+        background: rgb(39, 39, 39);
+        border: 0.2px solid #9F72FF;
+        -webkit-box-shadow:0px 0px 10px 0.1px rgba(138,84,253,0.9);
+        -moz-box-shadow: 0px 0px 10px 0.1px rgba(138,84,253,0.9);
+        box-shadow: 0px 0px 10px 0.1px rgba(138,84,253,0.9);
+        transition: transform 0.4s ease, background 0.4s ease;
+        width: 100%;
+        height: 100px;
+
+        @include base.device(xl) {
+            height: 94px;
+        }
+
+        @include base.device(sm) {
+            font-size: 0.85em;
+            padding: 0em 0.6em;
+        }
+
+        @include base.device(xs) {
+            padding: 0em 1em;
+        }
+        
+    }
+
+    .box:hover {
+        transform: translateY(-4px);
+        background: rgb(46, 46, 46);
+        transition: transform 0.4s ease;
+    }
+
+    .tree_trunk {
+        font-size: 1.6em;
+        font-weight: 200;
+        color: white;
+        margin-bottom: 25px;
+
+        @include base.device(sm) {
+           font-size: 1.3em;
+        }
+
+    }
+
+    .tree_area {
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+
+    .branch_box {
+        @include base.flexCenter;
+        flex-direction: column;
+        gap: 15px;
+
+        img {
+            width: 30px;
+        }
+
+        span {
+            font-size: 1em;    
+        }
+
+
+        @include base.device(xl) {
+           img {
+                width: 24px;
+           }
+
+           span {
+                font-size: 0.9em;
+           }
+        }
+    }
+}
+
+.tree_branches {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+
+    @include base.device(xs) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+.progress_bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progress_fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9F72FF, #6C3BFF);
+  transition: width 0.6s ease;
+}
+
+
+
+

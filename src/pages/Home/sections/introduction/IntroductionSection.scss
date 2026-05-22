@@ -1,0 +1,450 @@
+@use '../../../../base';
+
+.introduction_container {
+    @include base.flexCenter;
+    width: 100vw;
+    height: 100vh;
+    gap: 30px;
+
+    @include base.device(md) {
+      flex-direction: column-reverse;
+      gap: 0.5em;
+    }
+
+    .left_content {
+      @include base.flexCenter;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @include base.device(md) {
+        align-items: center;
+      }
+
+      h2 {
+        @include base.gradientTitle();
+        font-weight: 600;
+        width: 100%;
+        color: white;
+
+        @include base.device(md) {
+          padding-left: 15px;
+        }
+
+      }
+
+      p {
+        text-align: start;
+        font-size: 1.7em;
+        font-weight: 200;
+        margin-bottom: 20px;
+        color: white;
+        span { font-weight: 400; }
+
+        @include base.device(xl) {
+          font-size: 1.4em;
+        }
+
+         @include base.device(md) {
+          font-size: 1.2em;
+        }
+
+        @include base.device(sm) {
+          font-size: 1em;
+        }
+
+        @include base.device(xs) {
+          font-size: 0.8em;
+        }
+      }
+
+      p, h2 {
+        @include base.device(md) {
+          text-align: center;
+        }
+      }
+      
+      .my_name {
+        color: base.$lighter-purple;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        font-weight: 600;
+      }
+    }
+
+    .right_image {
+      @include base.flexCenter();
+      width: 32vw;
+      height: 80vh;
+      z-index: 0;
+
+      @include base.device(md) {
+        width: 60vw;
+        height: 50vh;
+      }
+
+      @include base.device(sm) {
+        width: 90vw!important;
+        height: 40vh;
+      }
+    }
+
+    .shape1, .shape2, .shape3{
+      @include base.flexCenter();
+        width: 90%;
+        height: 90%;
+        background-image: url("../../../../assets/images/Vector.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+    .shape2 {
+      @include base.flexCenter();
+        background-image: url("../../../../assets/images/Vector2.png");
+      }
+
+    .shape3 {
+      @include base.flexCenter();
+        background-image: url("../../../../assets/images/personal_photo3.png");
+      }
+}
+
+.blur2 {
+  position: absolute;
+  top: -400px;
+  right: -400px;
+  width: 800px;
+  height: 800px;
+  filter: blur(300px);
+  background-color: #4133ba;
+  mix-blend-mode: screen;
+  box-shadow: 0px 0px 10px 10px rgb(249, 240, 255);
+
+  @include base.device(lg) {
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+  }
+
+  @include base.device(xs) {
+    background-color: #5141dd;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.flower {  position: absolute; animation: move 80s infinite alternate;}
+
+.flowerImg {
+  top: -400px;
+  right: -400px;
+  width: 1000px;
+  z-index: 999;
+
+  @include base.device-height(xl) {
+    width: 800px;
+    top: -320px;
+    right: -320px;
+  }
+
+  @include base.device-height(lg) {
+    width: 650px;
+    top: -240px;
+    right: -200px;
+  }
+
+  @include base.device-height(xs) {
+    width: 550px;
+    top: -240px;
+    right: -180px;
+  }
+
+  @include base.device(xl) {
+    width: 800px;
+    top: -320px;
+    right: -320px;
+  }
+
+  @include base.device(lg) {
+    width: 700px;
+    top: -240px;
+    right: -280px;
+  }
+
+  @include base.device(md) {
+    width: 650px;
+    top: -200px;
+    right: -260px;
+  }
+
+  @include base.device(sm) {
+    width: 500px;
+    top: -180px;
+    right: -200px;
+  }
+
+  @include base.device(xs) {
+    width: 50px;
+    top: 12vh;
+    right: 28vw;
+    filter:opacity(0.9);
+  }
+}
+
+.flowerImg2 {
+  top: 34vh;
+  right: 15px;
+  width: 150px;
+  filter: saturate(180%) contrast(120%);
+  z-index: 998;
+
+  @include base.device(lg) {
+    top: 30vh;
+  }
+
+  @include base.device(md) {
+    width: 120px
+  }
+
+  @include base.device(sm) {
+    width: 100px;
+    top: 25vh;
+  }
+
+  @include base.device(xs) {
+    width: 60px;
+    right: 10vw;
+    top: 20vh;
+  }
+
+  @include base.device-height(lg) {
+    width: 70px;
+  }
+}
+
+.flowerImg3 {
+  top: 0vh;
+  right: 22vw;
+  width: 150px;
+  filter: saturate(80%) contrast(120%);
+  z-index: 998;
+  
+  @include base.device-height(sm) {
+    width: 65px;
+  }
+  
+  @include base.device(xxl) {
+    right: 27vw;
+  }
+
+  @include base.device(md) {
+    width: 120px;
+    right: 30vw;
+  }
+
+  @include base.device(sm) {
+    width: 80px;
+    right: 50vw;
+    top: 10vh;
+  }
+
+  @include base.device(xs) {
+    top: 3vh;
+    display: block;
+  }
+
+}
+
+.flowerImg4 {
+  top: 25vh;
+  right: 12vw;
+  width: 170px;
+  z-index: 998;
+  filter: saturate(60%) contrast(120%);
+
+  @include base.device-height(xl) {
+    top: 25vh;
+    width: 110px;
+  }
+
+  @include base.device-height(sm) {
+    top: 30vh;
+    width: 90px;
+  }
+  @include base.device(xl) {
+    width: 150px;
+    right: 15vw;
+  }
+
+  @include base.device(md) {
+    width: 130px;
+  }
+
+  @include base.device(sm) {
+    width: 80px;
+    top: 20vh;
+    right: 12vw;
+  }
+
+  @include base.device(xs) {
+    width: 50px;
+    top: 22vh;
+    left: 6vw;
+  }
+}
+
+.flowerImg5 {
+  top: 47vh;
+  right: 8vw;
+  width: 120px;
+  z-index: 998;
+  filter: saturate(70%) contrast(120%);
+
+  @include base.device(lg) {
+    top: 40vh;
+    right: 10vw;
+  }
+
+  @include base.device(md) {
+    width: 90px
+  }
+
+  @include base.device(sm) {
+    width: 70px;
+    top: 35vh;
+  }
+
+  @include base.device(xs) {
+    left: 10vw;
+    top: 9vh;
+    width: 60px;
+    display: block;
+  }
+
+}
+
+.flowerImg6 {
+  top: 15vh;
+  right: 22vw;
+  width: 120px;
+  filter: saturate(90%) contrast(120%);
+
+  @include base.device-height(lg) {
+    right: 20vw;
+    width: 100px;
+  }
+
+  @include base.device(xl) {
+    right: 25vw;
+  }
+  
+  @include base.device(md) {
+    width: 90px;
+    right: 28vw;
+  }
+
+  @include base.device(sm) {
+    width: 70px;
+  }
+
+  @include base.device(xs) {
+    width: 55px;
+    top: 15vh;
+    left: 25vw;
+  }
+}
+
+.flowerImg7 {
+  top: 4vh;
+  right: 32vw;
+  width: 120px;
+  filter: saturate(60%) contrast(120%);
+
+  @include base.device(xxl) {
+    right: 37vw;
+  }
+
+  @include base.device(lg) {
+    right: 40vw;
+  }
+
+  @include base.device(md) {
+    top: 2vh;
+    right: 45vw;
+  }
+
+  @include base.device(md) {
+    width: 90px
+  }
+
+  @include base.device(sm) {
+    width: 70px;
+    right: 40vw;
+  }
+
+  @include base.device(xs) {
+    right: 2vw;
+    top: 7vh;
+  }
+
+}
+
+// scrollzinho que aparece no canto inferior direito
+.scroll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  margin-right: 50px;
+
+  @include base.device(sm) {
+    display: none;
+  }
+}
+
+.mouse {
+  width: 26px;
+  height: 42px;
+  border: 2px solid #ffffff51;
+  border-radius: 15px;
+  position: relative;
+
+  .wheel {
+    width: 4px;
+    height: 8px;
+    background-color: #ffffffc1;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollMove 2s infinite;
+  }
+}
+
+.scroll-text {
+  font-size: 12px;
+  color: #ffffffc1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+@keyframes scrollMove {
+  0% {
+    opacity: 0;
+    top: 8px;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 25px;
+  }
+}

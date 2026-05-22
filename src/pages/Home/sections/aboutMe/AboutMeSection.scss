@@ -1,0 +1,227 @@
+@use '../../../../base';
+
+.about_me_section {
+    position: relative;
+    height: 100vh!important;
+    width: 100vw;
+    margin: 10vh 0;
+
+    @include base.device(md) {
+        height: auto!important;
+    }
+
+    @include base.device-height(sm) {
+        margin: 30vh 0;
+    }
+}
+
+.about_me_container {
+    @include base.flexCenter;
+    width: 100%!important;
+    height: fit-content;
+    gap: 6em;
+
+    @include base.device(md) {
+        flex-direction: column-reverse;
+        gap: 4em;
+    }
+
+    @include base.device(xs) {
+        flex-direction: column;
+    }
+
+    .about_me_text {
+        display: flex;
+        width: 30vw;
+        gap: 2em;
+
+        @include base.device(md) {
+            @include base.flexCenter;
+            text-align: center;
+            width: 85vw;
+
+            span {
+                @include base.flexCenter;
+                flex-direction: column;
+            }
+        } 
+
+        
+        h2 {
+            @include base.gradientTitle;
+            font-size: 2.5em;
+            text-transform:none;
+
+            @include base.device(xxl) {
+                font-size: 2em;
+            }
+
+            @include base.device(lg) {
+                font-size: 2em;
+            }
+
+
+        }
+
+        p {
+            @include base.paragraph;
+            margin-top: 10px;
+            text-align: start;
+            font-weight: 400;
+            width: 30vw;
+            color: white;
+            line-height: 2em;
+            font-size: 1.2em;
+            
+            @include base.device(xs) {
+                text-align: justify!important;
+            }
+            
+        }
+
+        h2, p {
+            @include base.device(md) {
+                text-align: center;
+                width: 75%;
+            }
+
+        }
+    }
+
+    .photo_container {
+        position: relative;
+    }
+        
+    .card {
+        z-index: 2;
+        background: white;
+        padding: 0.5em;
+        border-radius: 6px;
+        transition: ease 0.4s;
+        transform: rotate(4deg);
+        width: 25vw;
+
+        @include base.device(md) {
+            width: 30vw;
+        }
+
+        @include base.device(sm) {
+            width: 40vw;
+        }
+
+        @include base.device(xs) {
+            width: 60vw;
+        }
+
+
+        .card-image {
+            background-color: rgb(236, 236, 236);
+            width: 100%;
+            border-radius: 6px 6px 0 0;
+        }
+
+
+        .category {
+            text-transform: uppercase;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: base.$darker-purple;
+            padding: 10px 7px 0;
+        }
+
+        .category:hover {
+            cursor: pointer;
+        }
+
+        .heading {
+            font-weight:500;
+            color: rgb(88, 87, 87);
+            padding: 7px;
+        }
+
+        .category, .heading {
+            @include base.device(lg) {
+                font-size: 0.8em;
+            }
+
+            @include base.device(sm) {
+                font-size: 0.6em;
+            }
+        }
+
+        .heading:hover {
+            cursor: pointer;
+        }
+
+
+        .name {
+            font-weight: 600;
+        }
+
+        .name:hover {
+            cursor: pointer;
+        }
+    }
+
+    .card:hover {
+        transition: ease 0.4s;
+        transform: scale(1.025);
+    }
+
+}
+
+
+.blur_abm  {
+    position: absolute;
+    right: 5vw;
+    top: 40vh!important;
+    background-color: #5929c9;
+    width: 350px;
+    height: 350px;
+    filter: blur(200px);
+    mix-blend-mode: screen;
+    box-shadow: 0px 0px 10px 10px rgb(249, 240, 255);
+    opacity: 0.5;
+
+    @include base.device(md) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.abm_flower {
+    position: absolute;
+    width: 60vw;
+    max-width: 400px;
+    top: -450px;
+    right: -250px;
+    z-index: 100;
+    transform: scale(0);
+    pointer-events: none;
+
+    img {
+        width: 100%;
+    }
+
+    @include base.device(xl) {
+        width: 300px;
+        top: -400px;
+        right: -180px;
+    }
+
+    @include base.device(md) {
+        width: 200px;
+        top: -380px;
+        right: -140px;
+    }
+
+    @include base.device(xs) {
+        width: 100px;
+        top: -330px;
+        right: -90px;
+    }
+}
+
+
+

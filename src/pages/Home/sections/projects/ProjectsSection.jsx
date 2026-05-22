@@ -1,0 +1,80 @@
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useRef, useState, useEffect} from "react";
+import { useTranslation } from 'react-i18next';
+import data from '../../../../assets/data/projects.json';
+import ProjectCard from '../../../../components/projectCard/ProjectCard.jsx'
+import PurpleButton from '../../../../components/purpleButton/PurpleButton.jsx';
+import "../../../../i18n.js";
+import "./ProjectsSection.scss";
+
+function ProjectsSection() {
+  const containerRef = useRef(null);
+
+  const { i18n } = useTranslation();
+  const { t } = useTranslation();
+  const [projects, setProjects] = useState([]);
+  const [deviceWidth, setdeviceWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const updatedProjects = data.slice(0,4).map((project) => ({
+    ...project,
+      description: i18n.language === 'en' ? project.descriptionEN : project.descriptionPT,
+    }));
+    setProjects(updatedProjects);
+  }, [i18n.language]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setdeviceWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
+  const LoadProjects = () => {
+    return projects.map((project) => (
+        <ProjectCard
+          key={project.id}
+          imgSrc={project.imgSrc}
+          imgAlt={project.imgAlt}
+          title={project.title}
+          description={project.description}
+          demoLink={project.demoLink}
+          gitLink={project.gitLink}
+          techs={project.techs}
+        />
+    ));
+  };
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["10", "-40%"]);
+
+  return (
+    <motion.div exit={{opacity: 0}} ref={containerRef} className="projects-section">
+        <div className="projects-container">
+          <div className="projects-section-title">
+              <h2>Meus Projetos</h2>
+              <h3>Explore minhas <span>ideias</span> e <span>soluções</span></h3>
+          </div>
+          <motion.div className="cards-container" style={ deviceWidth <= 1024 ? '' : {x}}>
+            {LoadProjects()}
+            <div className="view-more">
+              <h3>Deseja ver mais?</h3>
+              <p>Explore mais projetos interessantes</p>
+              <a href="/projects"><PurpleButton text="Ver mais" link="/home"></PurpleButton></a>
+            </div>
+          </motion.div>
+        </div>
+    </motion.div>
+  );
+}
+
+export default ProjectsSection;

@@ -1,20 +1,20 @@
+@use '../../base';
+
 $darker-purple: #594AEB;
 $lighter-purple: #9F72FF;
 
-@mixin flexCenter() {
-    display: flex;
-    justify-self: center;
-    align-items: center;
-}
-
 .social_medias_container {
-    @include flexCenter();
+    @include base.flexCenter();
     gap: 30px;
 
     .rectangle {
         width: 6px;
         background: linear-gradient(180deg, $darker-purple 0%, $lighter-purple 100%);
         height: 50px;
+
+        @include base.device(md) {
+          display: none;
+        }
     }
     
     .icon {
@@ -26,10 +26,6 @@ $lighter-purple: #9F72FF;
     .icon:hover {
         transform: scale(1.09);
         transition: linear 0.2s;
-    }
-
-    .email_icon {
-        
     }
 }
 

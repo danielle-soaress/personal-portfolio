@@ -14,7 +14,7 @@
 
     "about": {
         "title": "About me",
-        "description": "Hello! My name is Danielle Soares and I am a Software Engineering student at the University of Brasília (UnB). Passionate about software development, I have explored areas such as web and mobile development. As an avid student, I am always looking for opportunities to improve my knowledge and explore new areas and technologies.",
+        "description": "My name is Danielle Soares and I am a Software Engineering student at the University of Brasília (UnB). Passionate about software development, I have explored areas such as web and mobile development. As an avid student, I am always looking for opportunities to improve my knowledge and explore new areas and technologies.",
         "softSkills": {
             "skill_1": {
                 "title": "Continuous learning",
@@ -35,6 +35,53 @@
         },
         "techs": "Technologies"
     },
+
+    "experiences": {
+        "title": "Experience",
+        "items": {
+        "exp_1": {
+            "role": "AI Solutions Developer",
+            "company": "Center for Studies, Development, and Innovation in Software",
+            "period": "Oct 2025 — Present",
+            "type": "Remote",
+            "description": "Development of corporate Generative AI systems. Focused on LLM orchestration, dynamic model selection, and fine-tuning strategies. Implemented containerization for application scalability.",
+            "highlight": "Focused on model specialization for corporate contexts."
+        },
+        "exp_2": {
+            "role": "Mobile Developer",
+            "company": "MoveLab — UnB",
+            "period": "Apr 2025 — Present",
+            "type": "Hybrid",
+            "description": "Created a Flutter app for IMU sensor data acquisition and analysis via Bluetooth Classic (ESP32). The system enables real-time monitoring of gait and Body Center of Mass trajectory for physical therapy.",
+            "highlight": "Data export in .csv for clinical studies."
+        },
+        "exp_3": {
+            "role": "Mobile Developer (PIBIC)",
+            "company": "v-FES Cycling — UnB",
+            "period": "Feb 2025 — Nov 2025",
+            "type": "Scientific Initiation",
+            "description": "Developed a mobile interface for triggering tricycles via functional electrical stimulation (FES). Integrated assisted cycling with Virtual Reality for spinal cord injury rehabilitation.",
+            "highlight": "Assistive technology focused on mobility and inclusion."
+        },
+        "exp_4": {
+            "role": "Object-Oriented Programming Teaching Assistant",
+            "company": "University of Brasília (UnB)",
+            "period": "Sep 2024 — Present",
+            "type": "Academic",
+            "description": "Directly assisting students in learning OOP paradigms, design patterns, and advanced logic. Clarifying technical doubts and supporting programming labs.",
+            "highlight": "Focus on clean code and software architecture."
+        },
+        "exp_5": {
+            "role": "Developer and Co-creator",
+            "company": "Eletro Libras — IFB",
+            "period": "Jan 2021 — Mar 2024",
+            "type": "Inclusion Project",
+            "description": "Conceived and developed an accessibility solution for deaf students in an electronics technical course. Created academic materials in Libras and a UI focused on the deaf user experience.",
+            "highlight": "Award-winning project focused on social impact and inclusion."
+        }
+        }
+    },
+
 
     "portfolio": {
         "title": "Discover some of my projects",

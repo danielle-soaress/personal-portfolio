@@ -5,9 +5,9 @@ import SocialMedias from '../socialMedias/SocialMedias';
 function Footer() {
     return (
         <div className="footer_container">
-            <div class="left_side">
+            <div className="left_side">
                 <img className="footer_logo" src={Logo}></img>
-                <SocialMedias/>
+                <SocialMedias showRectangle={true}/>
             </div>
             <div className="copyrights">
                 <p>Copyrights © 2024 - Developed by </p>

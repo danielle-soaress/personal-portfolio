@@ -2,9 +2,7 @@
 
 $links_size: 18px;
 
-
-
- @keyframes opacity {
+@keyframes opacity {
     0% {
         opacity: 0%;
     }
@@ -29,78 +27,127 @@ $links_size: 18px;
  
  .navbar {
     @include base.flexCenter();
-    justify-content: space-between;
-    height: 10vh;
-    width: 85vw;
+    background-color: base.$background-dark-color;
+    flex-direction: column;
+    height: 100vh;
+    width: 5vw;
     color: white;
+    position: fixed;
+    align-items: center;
+    gap: 4em;
+    z-index: 100;
 
-    .logo {
-        height: 30%;
+    @include base.device(md) {
+        width: 0vw;
     }
 
     .links {
         @include base.flexCenter();
-        gap: 40px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 60px 0px;
+        height: 100vh;
         font-size: $links_size;
-    }
+        gap: 4em;
 
-    a {
-        @include base.flexCenter();
-        font-weight: 400;
-        color: inherit;
-        transform:scale(1);
-        transition: ease 0.2s;
-    }
+        @include base.device(md) {
+          display: none;
+        }
 
-    a:hover {
-        transform:scale(1.1);
-        transition: ease 0.2s;
-        color:inherit;
+         .icon-flood-container {
+            position: relative;
+            width: 40px;
+            display: inline-block;
 
-    }
-
-    .bi-list {
-        display: none;
-    }
- }
-
- @media (max-width: 900px) {
-    .navbar {
-        .links {
-            display: none;
-            position: fixed;
-            top: 0px;
-            right: 0;
-            width: 100vw;
-            flex-direction: column;
-            padding: 20px 0px;
-            padding-top: 80px;
-            z-index: -1;
-            gap: 15px;
-            background-color: white;
-            color: base.$background-dark-color;
-            font-weight: 800;
-            animation: opacity 0.7s ease;
-
-            .header_nav_link {
-                @include base.flexCenter();
-                justify-content: center;
-                border-bottom: 1px solid black;
+            .icon-base {
+                width: 100%;
+                height: 100%;
+                opacity: 0.1; 
+                display: block;
             }
+
+            .icon-fill {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to top, base.$darker-purple, base.$lighter-purple);
+                mask-size: contain;
+                mask-repeat: no-repeat;
+                mask-position: center;
+                -webkit-mask-size: contain;
+                -webkit-mask-repeat: no-repeat;
+                -webkit-mask-position: center;
+                clip-path: inset(100% 0 0 0); 
+                animation: floodIcon 2s cubic-bezier(0.5, 1, 0.8, 0.4) forwards;
+            }
+        }
         
-        }
-
-        .bi-list {
+        .nav_links {
             @include base.flexCenter();
-            display: flex!important;
-            font-size: 35px;
-            cursor: pointer;
+            flex-direction: column;
+            gap: 3em;
         }
 
-        .bi-list:hover {
-            color: #594AEB;
-            transform: scale(1.1);
-            transition: ease 0.5s;
+        a {
+            @include base.flexCenter();
+            font-weight: 400;
+            color: inherit;
+            transition: all ease 0.4s;
+            text-shadow: 2px 2px 40px white;
+        }
+
+        a:hover {
+            color: #a078f8;
+            transition: all ease 0.4s;
+            text-shadow: 40px 40px 40px white;
+        }
+    }
+
+    .menu_mobile {
+        @include base.flexCenter();
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        display: none;
+        background: transparent;
+        height: 100vh;
+        width: 40vw;
+
+        @include base.device(md) {
+            display: block;
+        }
+
+        .menu_mobile_icon {
+            @include base.device(md) {
+                font-size: 2em;
+                padding: 15px 15px;
+            }
+        }
+    }
+
+    .menu_mobile_links {
+        position: fixed;
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 20px;
+        margin-top: 20px;
+        a {
+            font-weight: 200;
         }
     }
  }
+
+
+
+
+@keyframes floodIcon {
+    0% {
+        clip-path: inset(100% 0 0 0);
+    }
+    100% {
+        clip-path: inset(0% 0 0 0);
+    }
+}

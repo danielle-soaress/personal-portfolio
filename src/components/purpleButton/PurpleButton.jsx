@@ -1,9 +1,12 @@
 import './PurpleButton.scss';
 
-function Button(props) {
-    return (
-        <button class="purple_button" onClick={props.click}>{props.content}</button>
-    )
+function Button({text, link}) {
+    // <!-- From Uiverse.io by adamgiebl --> 
+    return <a href={link}>
+        <button className="purple-button">
+            <span>{text}</span>
+        </button>
+    </a>
 }
 
 export default Button;

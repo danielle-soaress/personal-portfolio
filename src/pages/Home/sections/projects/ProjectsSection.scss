@@ -1,0 +1,105 @@
+@use '../../../../base';
+
+
+.projects-section {
+    padding: 10vh 0;
+    height: 300vh;
+    position: relative;
+    width: 160vw;
+    display: block !important;
+
+    @include base.device(md) {
+        height: auto;
+        width: 100vw!important;
+    }
+
+    .projects-container {
+        position: sticky; 
+        top: 0; 
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        overflow: hidden;
+
+        @include base.device(md) {
+            justify-content: start;
+            align-items: center;
+            overflow-x:hidden;
+            overflow-y:visible;
+            height: auto;
+            width: 100%;
+        }
+
+        .projects-section-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            margin-left: 10vw;
+            text-align: start;
+            padding-bottom: 40px;
+
+            @include base.device(md) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                margin-left: 0;
+            }
+
+            h2 {
+                @include base.gradientTitle();
+                @include base.flexCenter();   
+            }
+
+            h3 {
+                @include base.subtitle();
+                color: white;
+                word-wrap: break-word;
+            }
+
+        }
+
+        .cards-container {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            width: 100%;
+            margin-left: -6vw;
+
+            @include base.device(md) {
+                flex-direction: column;
+                margin-left: 0;
+                gap: 2em;
+            }
+
+            .view-more {
+                @include base.flexCenter();
+                flex-direction: column;
+                gap: 15px;
+                width: 800px;
+                color: white;
+
+
+                @include base.device(md) {
+                    height: 300px;
+                }
+
+
+
+                h3 {
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 0.9em;
+                    color: rgb(140, 140, 140);
+                    margin-bottom: 10px;
+                }
+            }    
+        }
+    }   
+}
+

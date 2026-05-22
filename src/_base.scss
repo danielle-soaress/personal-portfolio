@@ -2,31 +2,183 @@ $background-dark-color: #181818;
 $darker-purple: #594AEB;
 $lighter-purple: #9F72FF;
 $opaque-white: #ffffff23;
-$title_size: 32px;
+
+$title_size: 70px;
 $subtitle_size: 24px;
 $sub_subtitle_size: 30px;
-$paragraph_size: 16px;
+$paragraph_size: 18px;
 
+$title_size_bp_xs: 32px;
+$subtitle_size_bp_xs: 18px;
+
+$title_size_bp_sm: 40px;
+$subtitle_size_bp_sm: 20px;
+$sub_subtitle_size_bp_sm: 30px;
+$paragraph_size_bp_sm: 12px;
+
+$title_size_bp_lg: 50px;
+$subtitle_size_bp_lg: 22px;
+$sub_subtitle_size_bp_lg: 30px;
+$paragraph_size_bp_lg: 14px;
+
+$title_size_bp_xl: 50px;
+$subtitle_size_bp_xl: 22px;
+$sub_subtitle_size_bp_xl: 30px;
+$paragraph_size_bp_xl: 16px;
+
+$title_size_bp_xxl: 60px;
+$subtitle_size_bp_xxl: 24px;
+$sub_subtitle_size_bp_xxl: 30px;
+$paragraph_size_bp_xxl: 16px;
+
+@mixin device($size) {
+  @if $size == xs {
+    // smartphones pequenos/médios
+    @media (max-width: 480px) { @content; }
+  } @else if $size == sm {
+    // tablets (retrato)
+    @media (max-width: 768px) {@content;}
+  } @else if $size == md {
+    // tablets (paisagem)/laptops pequenos
+    @media (max-width: 1024px) {@content;}
+  } @else if $size == lg {
+    // desktops padrão
+    @media (max-width: 1200px) { @content; }
+  } @else if $size == xl {
+    // telas full hd
+    @media (max-width: 1440px) { @content; }
+  } @else if $size == xxl {
+    // ultra-wide
+    @media (max-width: 1600px) { @content; }
+  } 
+}
+
+@mixin device-height($size) {
+  @if $size == xs {
+    // celulares pequenos
+    @media (max-height: 600px) { @content; }
+  } @else if $size == sm {
+    // celulares maiores
+    @media (max-height: 720px) { @content; }
+  } @else if $size == md {
+    // notebooks pequenos
+    @media (max-height: 800px) { @content; }
+  } @else if $size == lg {
+    // notebooks padrão
+    @media (max-height: 900px) { @content; }
+  } @else if $size == xl {
+    // telas maiores
+    @media (max-height: 1080px) { @content; }
+  } @else if $size == xxl {
+    // monitores grandes
+    @media (max-height: 1200px) { @content; }
+  }
+}
+
+@mixin bg-gradient() {
+  background: $darker-purple;
+  background: linear-gradient(135deg, $darker-purple 0%, $lighter-purple 100%);
+}
 
 @mixin flexCenter () {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin title() {
-    font-size: $title_size;
-    font-weight: 800;
-    text-align: center;
+  font-size: $title_size;
+  font-weight: 600;
+  text-align: start;
+  text-transform: capitalize;
+
+  @include device(xl) {
+    font-size: $title_size_bp_xl;
+  }
+
+  @include device(lg) {
+    font-size: $title_size_bp_lg;
+  }
+
+  @include device(sm) {
+    font-size: $title_size_bp_sm;
+  }
+
+  @include device(xs) {
+    font-size: $title_size_bp_xs;
+  }
 }
 
 @mixin subtitle() {
-    font-size: $subtitle_size;
-    font-weight: 700;
-    text-align: center;
+  font-size: $subtitle_size;
+  font-weight: 200;
+  text-align: center;
+
+  @include device(xl) {
+    font-size: $subtitle_size_bp_xl;
+  }
+
+  @include device(lg) {
+    font-size: $subtitle_size_bp_lg;
+  }
+
+  @include device(sm) {
+    font-size: $subtitle_size_bp_sm;
+  }
+
+  @include device(xs) {
+    font-size: $subtitle_size_bp_xs;
+  }
 }
 
 @mixin paragraph() {
-    font-size: $paragraph_size;
-    font-weight: normal;
+  font-size: $paragraph_size;
+  font-weight: normal;
+
+  @include device(xl) {
+    font-size: $paragraph_size_bp_xl;
+  }
+
+  @include device(lg) {
+    font-size: $paragraph_size_bp_lg;
+  }
+
+  @include device(sm) {
+    font-size: $paragraph_size_bp_sm;
+  }
+}
+
+@mixin gradientTitle() {
+  @include title;
+  background: linear-gradient(130deg, $darker-purple 0%, $lighter-purple 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  color: transparent;
+}
+
+// must be used in a div or span with a text
+@mixin underline() {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    background: linear-gradient(to right, #6b46c1, #9f72ff);
+    border-radius: 2px;
+    transition: width 0.3s ease, left 0.4s ease;
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover::after {
+    transform: translateY(-3px);
+  }
 }

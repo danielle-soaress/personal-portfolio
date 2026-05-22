@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "company": "CEDIS",
+    "techs": ["OpenWebUI", "Docker", "LLMs", "Fine-tuning", "Python"],
+    "pt": {
+      "role": "Desenvolvedora de Soluções em IA",
+      "period": "Out 2025 - Momento",
+      "type": "Remoto",
+      "description": "Desenvolvimento de sistemas corporativos de IA Generativa. Foco em orquestração de LLMs, seleção dinâmica de modelos e estratégias de fine-tuning. Implementação de containerização para escalabilidade.",
+      "shortDescription": "Desenvolvimento de sistemas corporativos de IA Generativa.",
+      "highlight": "Foco em especialização de modelos para contextos corporativos."
+    },
+    "en": {
+      "role": "AI Solutions Developer",
+      "period": "Oct 2025 - Present",
+      "type": "Remote",
+      "description": "Development of corporate Generative AI systems. Focused on LLM orchestration, dynamic model selection, and fine-tuning strategies. Implemented containerization for application scalability.",
+      "shortDescription": "Development of corporate Generative AI systems.",
+      "highlight": "Focus on model specialization for corporate contexts."
+    }
+  },
+  {
+    "id": 2,
+    "company": "Plataforma Bem-te-vi (UnB)",
+    "techs": ["Flutter", "Java", "Android", "MVVM", "Bluetooth", "SQLite"],
+    "pt": {
+      "role": "Desenvolvedora Mobile & IoT",
+      "period": "Fev 2025 — Momento",
+      "type": "Híbrido",
+      "description": "Atuação em múltiplos projetos de tecnologia assistiva. No MoveLab, desenvolvi apps em Flutter para análise de marcha e Centro de Massa via sensores IMU (ESP32). No v-FES Cycling, integrei interfaces Java com eletroestimulação funcional e Realidade Virtual para reabilitação medular.",
+      "shortDescription": "Atuação em múltiplos projetos de tecnologia assistiva.",
+      "highlight": "Liderança técnica no desenvolvimento de interfaces para aquisição de dados em tempo real."
+    },
+    "en": {
+      "role": "Mobile & IoT Developer",
+      "period": "Feb 2025 — Present",
+      "type": "Hybrid",
+      "description": "Working on multiple assistive technology projects. In the MoveLab project, developed Flutter apps for gait and Center of Mass analysis using IMU sensors (ESP32). In v-FES Cycling, integrated Java interfaces with functional electrical stimulation and Virtual Reality for spinal cord injury rehabilitation.",
+      "shortDescription": "Working on multiple assistive technology projects.",
+      "highlight": "Technical lead in developing interfaces for real-time data acquisition."
+    }
+  },
+  {
+    "id": 3,
+    "company": "Universidade de Brasília (UnB)",
+    "techs": ["Java", "Python", "POO", "Software Design"],
+    "pt": {
+      "role": "Monitora de Orientação a Objetos",
+      "period": "Set 2024 - Dez 2024",
+      "type": "Presencial",
+      "description": "Auxílio direto a estudantes no aprendizado de paradigmas de POO, padrões de projeto e lógica avançada. Esclarecimento de dúvidas técnicas e suporte em laboratórios de programação.",
+      "shortDescription": "Auxílio direto a estudantes no aprendizado de paradigmas de POO, padrões de projeto e lógica avançada.",
+      "highlight": "Foco em clean code e arquitetura de software."
+    },
+    "en": {
+      "role": "OOP Teaching Assistant",
+      "period": "Sep 2024 - Dec 2024",
+      "type": "Presencial",
+      "description": "Directly assisting students in learning OOP paradigms, design patterns, and advanced logic. Clarifying technical doubts and supporting programming labs.",
+      "shortDescription": "Directly assisting students in learning OOP paradigms, design patterns, and advanced logic.",
+      "highlight": "Focus on clean code and software architecture."
+    }
+  },
+  {
+    "id": 4,
+    "company": "Eletro Libras - IFB",
+    "techs": ["UX Design", "Mobile Development", "Accessibility", "Education Tech"],
+    "pt": {
+      "role": "Desenvolvedora e Co-criadora",
+      "period": "Jan 2021 - Mar 2024",
+      "type": "Presencial",
+      "description": "Idealização e desenvolvimento de solução para acessibilidade de alunos surdos no curso técnico em eletrônica. Criação de materiais acadêmicos em Libras e interface focada na experiência do usuário.",
+      "shortDescription": "Idealização e desenvolvimento de solução para acessibilidade de alunos surdos no curso técnico em eletrônica.",
+      "highlight": "Projeto premiado focado em impacto social e inclusão."
+    },
+    "en": {
+      "role": "Developer and Co-creator",
+      "period": "Jan 2021 - Mar 2024",
+      "type": "Presencial",
+      "description": "Conceived and developed an accessibility solution for deaf students in an electronics technical course. Created academic materials in Libras and a UI focused on the user experience.",
+      "shortDescription": "Conceived and developed an accessibility solution for deaf students in an electronics technical course.",
+      "highlight": "Award-winning project focused on social impact and inclusion."
+    }
+  }
+]

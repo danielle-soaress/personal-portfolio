@@ -1,0 +1,65 @@
+@use '../../base';
+
+@mixin bg-gradient() {
+  background: base.$darker-purple;
+  background: linear-gradient(135deg, base.$darker-purple 0%, base.$lighter-purple 100%);
+}
+
+.main {
+  background-color: base.$background-dark-color;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+a, a:visited{
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  cursor: pointer;
+  color: inherit;
+}
+
+.main {
+  display: flex;
+}
+
+.main_container {
+  max-width: 100vw!important;
+  height: auto !important;
+}
+
+header {
+  max-width: 100vw!important;
+  position: fixed;
+  z-index: 10!important;
+  background-color: base.$background-dark-color;
+}
+
+header, section {
+  @include base.flexCenter();
+}
+
+#introduction, #portifolio, #about_me  {
+  background-color: base.$background-dark-color;
+  min-height: 100vh;
+}
+
+
+#footer {
+  background: base.$background-dark-color;
+  height: 10vh!important;
+}
+
+.flower_home {
+    position: absolute;
+    grid-template-columns: repeat(6, 40px)!important;
+    grid-template-rows: repeat(6, 40px)!important;
+}

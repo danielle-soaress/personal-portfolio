@@ -10,17 +10,19 @@ function LanguageButton() {
     const [lang, setLang] = useState('pt')
     const {t, i18n} = useTranslation();
     
-    const changeLanguage = (lng) => {
+    const changeLanguage = (event, lng) => {
+        event.stopPropagation();
         setLang(`${lng}`)
         i18n.changeLanguage(lng);
+        setOpen(false);
     }
 
     return (
     <div className="lang_button" onClick={() => setOpen(!open)}>
         <img className="lang_img" src={langIcon} alt={t('nav.languageAlt')}></img>
         <div className={open? "lang_options visible" : "lang_options"}>
-            <span onClick={() => changeLanguage('pt')} className={lang == "pt" ? "lang_options_1 .selected" : "lang_options_1"}>PT</span>
-            <span onClick={() => changeLanguage('en')} className={lang == "en" ? "lang_options_2 .selected" : "lang_options_2"}>EN</span>
+            <span onClick={(event) => changeLanguage(event, 'pt')} className={lang == "pt" ? "lang_options_1 selected" : "lang_options_1"}>PT</span>
+            <span onClick={(event) => changeLanguage(event, 'en')} className={lang == "en" ? "lang_options_2 selected" : "lang_options_2"}>EN</span>
         </div>
     </div>
     )

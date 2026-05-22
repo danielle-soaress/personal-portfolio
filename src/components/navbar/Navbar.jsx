@@ -97,6 +97,9 @@ const Navbar = () => {
         </nav>
         <div className="menu_mobile" ref={mobileMenuContainer}>
             <i className="menu_mobile_icon bi bi-list" onClick={openMenu}></i>
+            <div className="mobile_language_button">
+                <LanguageButton />
+            </div>
             <div className = "menu_mobile_links" ref={linksRef}>
                 {navItems.map((item) => (
                     <a

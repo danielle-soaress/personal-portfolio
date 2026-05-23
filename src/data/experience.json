@@ -1,6 +1,27 @@
 [
   {
     "id": 1,
+    "company": "V360",
+    "techs": ["Ruby on Rails", "PostgreSQL", "Sidekiq", "Full Stack", "Bug Fixing", "Integrations"],
+    "pt": {
+      "role": "Desenvolvedora Full Stack (Estágio)",
+      "period": "Fev 2026 - Momento",
+      "type": "Remoto",
+      "description": "Contribuição para a evolução e estabilidade da plataforma por meio da correção de bugs, suporte a integrações e implementação de melhorias. Desenvolvimento com Ruby on Rails, Sidekiq e PostgreSQL, em colaboração com clientes e equipes multidisciplinares na análise de problemas e melhoria contínua do produto.",
+      "shortDescription": "Desenvolvimento e manutenção de melhorias para plataforma corporativa.",
+      "highlight": "Experiência prática com sistemas corporativos em produção e integrações."
+    },
+    "en": {
+      "role": "Full Stack Developer Intern",
+      "period": "Feb 2026 - Present",
+      "type": "Remote",
+      "description": "Contributed to the platform's evolution and stability through bug fixing, integration support, and feature improvements. Developed solutions using Ruby on Rails, Sidekiq, and PostgreSQL, collaborating with clients and multidisciplinary teams to analyze issues and continuously improve the product.",
+      "shortDescription": "Development and maintenance of improvements for a corporate platform.",
+      "highlight": "Hands-on experience with production corporate systems and integrations."
+    }
+  },
+  {
+    "id": 2,
     "company": "CEDIS",
     "techs": ["OpenWebUI", "Docker", "LLMs", "Fine-tuning", "Python"],
     "pt": {
@@ -21,7 +42,7 @@
     }
   },
   {
-    "id": 2,
+    "id": 3,
     "company": "Plataforma Bem-te-vi (UnB)",
     "techs": ["Flutter", "Java", "Android", "MVVM", "Bluetooth", "SQLite"],
     "pt": {
@@ -42,7 +63,7 @@
     }
   },
   {
-    "id": 3,
+    "id": 4,
     "company": "Universidade de Brasília (UnB)",
     "techs": ["Java", "Python", "POO", "Software Design"],
     "pt": {
@@ -63,7 +84,7 @@
     }
   },
   {
-    "id": 4,
+    "id": 5,
     "company": "Eletro Libras - IFB",
     "techs": ["UX Design", "Mobile Development", "Accessibility", "Education Tech"],
     "pt": {

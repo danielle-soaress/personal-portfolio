@@ -24,6 +24,10 @@ import Spring from '../../../../assets/images/techs/Spring.svg';
 import SQLite from '../../../../assets/images/techs/SQLite.svg';
 import Ruby from '../../../../assets/images/techs/Ruby.svg';
 import Rails from '../../../../assets/images/techs/Rails.svg';
+import Angular from '../../../../assets/images/techs/Angular.svg';
+import MongoDB from '../../../../assets/images/techs/Mongodb.svg';
+import PostgreSQL from '../../../../assets/images/techs/Postgre.svg';
+import Docker from '../../../../assets/images/techs/Docker.svg';
 
 const techImages = {
   Flutter,
@@ -44,6 +48,10 @@ const techImages = {
   SQLite,
   Ruby,
   Rails,
+  Angular,
+  MongoDB,
+  PostgreSQL,
+  Docker,
 };
 
 const flowers = [

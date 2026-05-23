@@ -17,13 +17,6 @@
         "descriptionEN": "Modular styling with variables, mixins, and scalable organization"
       },
       {
-        "name": "CSS3",
-        "img": "CSS3",
-        "level": 90,
-        "descriptionPT": "Layouts responsivos, animações e componentização visual",
-        "descriptionEN": "Responsive layouts, animations, and visual componentization"
-      },
-      {
         "name": "JavaScript",
         "img": "JavaScript",
         "level": 75,

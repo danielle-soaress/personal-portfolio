@@ -57,27 +57,27 @@ $links_size: 18px;
          .icon-flood-container {
             position: relative;
             width: 40px;
+            aspect-ratio: 160 / 177;
             display: inline-block;
             cursor: pointer;
 
             .icon-base {
                 width: 100%;
-                height: 100%;
-                opacity: 0.1; 
+                height: auto;
+                opacity: 0.1;
                 display: block;
             }
 
             .icon-fill {
                 position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
+                inset: 0;
                 background: linear-gradient(to top, base.$darker-purple, base.$lighter-purple);
-                mask-size: contain;
+                mask-image: var(--flower-mask);
+                -webkit-mask-image: var(--flower-mask);
+                mask-size: 100% 100%;
                 mask-repeat: no-repeat;
                 mask-position: center;
-                -webkit-mask-size: contain;
+                -webkit-mask-size: 100% 100%;
                 -webkit-mask-repeat: no-repeat;
                 -webkit-mask-position: center;
                 clip-path: inset(0% 0 0 0);

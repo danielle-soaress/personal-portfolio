@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react'
 import './navbar.scss'
-import FlowerIcon from '../../assets/images/flower_icon.svg'
+import FlowerIcon from '../../assets/images/flower_icon.svg?url'
 import LogoWhite from '../../assets/images/logoBranca.png'
 import LogoBlack from '../../assets/images/logoPreta.png'
 import LanguageButton from '../languageButton/LanguageButton'
@@ -76,8 +76,11 @@ const Navbar = () => {
     return (
     <div className="navbar" ref={navbarRef}>
         <nav className="links" >
-            <div className="icon-flood-container">
-                <div className="icon-fill" style={{ maskImage: `url(${FlowerIcon})`, WebkitMaskImage: `url(${FlowerIcon})` }}></div>
+            <div
+                className="icon-flood-container"
+                style={{ '--flower-mask': `url("${FlowerIcon}")` }}
+            >
+                <div className="icon-fill" />
                 <img src={FlowerIcon} className="icon-base" alt={t('nav.logoAlt')} />
             </div>
             <div className="nav_links">

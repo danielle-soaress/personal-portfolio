@@ -115,7 +115,16 @@
     },
 
     "skills": {
-        "title": "Habilidades"
+        "title": "Caixa de Ferramentas.",
+        "subtitle": "Tecnologias e ferramentas que domino para entregar soluções de qualidade.",
+        "categories": {
+            "frontend": "Front-end & UI/UX",
+            "mobile": "Mobile",
+            "backend": "Back-end",
+            "databases": "Banco de Dados",
+            "automation": "Automação & Análise de Dados",
+            "tools": "Ferramentas & Outros"
+        }
     },
 
     "portfolioPage": {

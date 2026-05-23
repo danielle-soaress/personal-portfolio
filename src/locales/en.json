@@ -162,7 +162,16 @@
     },
 
     "skills": {
-        "title": "Skills"
+        "title": "Toolbox.",
+        "subtitle": "Technologies and tools I master to deliver quality solutions.",
+        "categories": {
+            "frontend": "Front-end & UI/UX",
+            "mobile": "Mobile",
+            "backend": "Back-end",
+            "databases": "Databases",
+            "automation": "Automation & Data Analysis",
+            "tools": "Tools & Others"
+        }
     },
 
     "portfolioPage": {

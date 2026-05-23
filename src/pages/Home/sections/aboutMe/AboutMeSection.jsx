@@ -30,7 +30,14 @@ function AboutMe() {
             <motion.div ref={containerRef} className="about_me_container"style={{scale, opacity}}>
                 <div className="about_me_text">                 
                     <span>  
-                        <h2>{t('about.homeTitle')}</h2>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            viewport={{ once: true, amount: 0.6 }}
+                            transition={{ duration: 0.7, ease: "easeOut" }}
+                        >
+                            {t('about.homeTitle')}
+                        </motion.h2>
                         <p>
                         {t('about.paragraph_1')}
                         </p>

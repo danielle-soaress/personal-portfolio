@@ -60,12 +60,18 @@ function ProjectsSection() {
   return (
     <motion.div id="portifolio" exit={{opacity: 0}} ref={containerRef} className="projects-section">
         <div className="projects-container">
-          <div className="projects-section-title">
+          <motion.div
+            className="projects-section-title"
+            initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, amount: 0.45 }}
+            transition={{ duration: 0.75, ease: "easeOut" }}
+          >
               <h2>{t('portfolio.title')}</h2>
               <h3>
                 {t('portfolio.subtitle.pt1')} <span>{t('portfolio.subtitle.highlight_1')}</span> {t('portfolio.subtitle.pt2')} <span>{t('portfolio.subtitle.highlight_2')}</span>
               </h3>
-          </div>
+          </motion.div>
           <motion.div className="cards-container" style={ deviceWidth <= 1024 ? '' : {x}}>
             {LoadProjects()}
             <div className="view-more">

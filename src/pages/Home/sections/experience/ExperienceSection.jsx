@@ -24,10 +24,16 @@ function ExperienceSection() {
     const rotate = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
     return <section ref={containerRef} className="timeline-section">
-        <div className="section-header">
+        <motion.div
+            className="section-header"
+            initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.75, ease: "easeOut" }}
+        >
             <h2>{t('experience.title')}</h2>
             <h3>{t('experience.subtitle')}</h3>
-        </div>
+        </motion.div>
         <div className="timeline-wrapper">
             <div className="left-experience-details"> 
                 {data.map((exp) => {

@@ -1,0 +1,53 @@
+[
+  {
+    "id": "frontend",
+    "skills": [
+      { "name": "React", "img": "React", "level": 60, "variant": "green", "descriptionPT": "Interfaces web reativas e componentes reutilizáveis", "descriptionEN": "Reactive web interfaces and reusable components" },
+      { "name": "JavaScript", "img": "JavaScript", "level": 60, "variant": "blue", "descriptionPT": "Lógica dinâmica e interatividade no front-end", "descriptionEN": "Dynamic logic and front-end interactivity" },
+      { "name": "HTML5", "img": "HTML5", "level": 100, "variant": "green", "descriptionPT": "Estrutura semântica e acessível para a web", "descriptionEN": "Semantic and accessible web structure" },
+      { "name": "Sass", "img": "Sass", "level": 100, "variant": "blue", "descriptionPT": "Estilização avançada com variáveis e mixins", "descriptionEN": "Advanced styling with variables and mixins" },
+      { "name": "Figma", "img": "Figma", "level": 100, "variant": "green", "descriptionPT": "Prototipação e design de interfaces", "descriptionEN": "Interface prototyping and design" }
+    ]
+  },
+  {
+    "id": "mobile",
+    "skills": [
+      { "name": "Flutter", "img": "Flutter", "level": 70, "variant": "green", "descriptionPT": "Apps multiplataforma com performance nativa", "descriptionEN": "Cross-platform apps with native performance" },
+      { "name": "Java (Android)", "img": "Java", "level": 80, "variant": "blue", "descriptionPT": "Desenvolvimento nativo para Android", "descriptionEN": "Native Android development" }
+    ]
+  },
+  {
+    "id": "backend",
+    "skills": [
+      { "name": "Python", "img": "Python", "level": 80, "variant": "green", "descriptionPT": "APIs, automações e lógica de servidor", "descriptionEN": "APIs, automation, and server-side logic" },
+      { "name": "Flask", "img": "Flask", "level": 60, "variant": "blue", "descriptionPT": "Microframework leve para APIs REST", "descriptionEN": "Lightweight microframework for REST APIs" },
+      { "name": "Java", "img": "Java", "level": 70, "variant": "green", "descriptionPT": "Aplicações robustas e orientadas a objetos", "descriptionEN": "Robust object-oriented applications" },
+      { "name": "Spring Boot", "img": "Spring", "level": 70, "variant": "blue", "descriptionPT": "Microsserviços e back-ends escaláveis", "descriptionEN": "Microservices and scalable backends" },
+      { "name": "Ruby", "img": "Ruby", "level": 40, "variant": "green", "descriptionPT": "Desenvolvimento ágil e sintaxe expressiva", "descriptionEN": "Agile development with expressive syntax" },
+      { "name": "Ruby on Rails", "img": "Rails", "level": 30, "variant": "blue", "descriptionPT": "Aplicações web completas com convenções", "descriptionEN": "Full web applications with conventions" }
+    ]
+  },
+  {
+    "id": "databases",
+    "skills": [
+      { "name": "MySQL", "img": "MySQL", "level": 90, "variant": "green", "descriptionPT": "Modelagem relacional e consultas SQL", "descriptionEN": "Relational modeling and SQL queries" },
+      { "name": "OracleDB", "img": "Oracle", "level": 50, "variant": "blue", "descriptionPT": "Bancos corporativos de alta disponibilidade", "descriptionEN": "Enterprise-grade high-availability databases" },
+      { "name": "SQLite", "img": "SQLite", "level": 80, "variant": "green", "descriptionPT": "Persistência leve para apps e protótipos", "descriptionEN": "Lightweight persistence for apps and prototypes" }
+    ]
+  },
+  {
+    "id": "automation",
+    "skills": [
+      { "name": "Python", "img": "Python", "level": 80, "variant": "green", "descriptionPT": "Scripts, análise de dados e automação", "descriptionEN": "Scripts, data analysis, and automation" },
+      { "name": "Postman", "img": "Postman", "level": 70, "variant": "blue", "descriptionPT": "Testes e documentação de APIs", "descriptionEN": "API testing and documentation" }
+    ]
+  },
+  {
+    "id": "tools",
+    "skills": [
+      { "name": "Git", "img": "Git", "level": 80, "variant": "green", "descriptionPT": "Controle de versão e fluxos colaborativos", "descriptionEN": "Version control and collaborative workflows" },
+      { "name": "GitHub", "img": "GitHub", "level": 90, "variant": "blue", "descriptionPT": "Repositórios, PRs e integração contínua", "descriptionEN": "Repositories, PRs, and continuous integration" },
+      { "name": "Postman", "img": "Postman", "level": 70, "variant": "green", "descriptionPT": "Validação e depuração de endpoints", "descriptionEN": "Endpoint validation and debugging" }
+    ]
+  }
+]

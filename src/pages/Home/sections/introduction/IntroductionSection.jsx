@@ -36,13 +36,23 @@ function IntroductionSection() {
     return (
     <motion.div id="introduction" ref={containerRef} className="introduction_container" style={{filter}}>
         <div className="left_content">
-            <h2 className="apresentation_title">
+            <motion.h2
+                className="apresentation_title"
+                initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
                 <span className="my_name">Danielle<br/>Soares</span>
-            </h2>
-            <p className="myself_description">
+            </motion.h2>
+            <motion.p
+                className="myself_description"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
+            >
             {t('introduction.role')} <span>&</span><br/>
             {t('introduction.education')}
-            </p>
+            </motion.p>
             <SocialMedias showRectangle={true}/>
         </div>
         <motion.div

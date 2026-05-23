@@ -1,6 +1,6 @@
 import './PortifolioPage.scss'
 import Navbar from '../../components/navbar/Navbar.jsx'
-import data from '../../assets/data/projects.json'; 
+import data from '../../data/projects.json'; 
 import Footer from '../../components/footer/Footer.jsx'
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';

@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform, useSpring} from "framer-motion";
 import { useRef, useState} from "react";
 import './ExperienceSection.scss';
-import data from '../../../../assets/data/experience.json';
+import data from '../../../../data/experience.json';
 import { useTranslation } from 'react-i18next';
 import "../../../../i18n";
 

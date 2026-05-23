@@ -1,7 +1,7 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef, useState, useEffect} from "react";
 import { useTranslation } from 'react-i18next';
-import data from '../../../../assets/data/projects.json';
+import data from '../../../../data/projects.json';
 import ProjectCard from '../../../../components/projectCard/ProjectCard.jsx'
 import PurpleButton from '../../../../components/purpleButton/PurpleButton.jsx';
 import "../../../../i18n.js";

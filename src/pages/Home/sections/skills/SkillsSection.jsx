@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import '../../../../i18n.js';
 import './SkillsSection.scss';
-import skillsData from '../../../../assets/data/skills.json';
+import skillsData from '../../../../data/skills.json';
 import flowerImg from '../../../../assets/images/flower_1.png';
 import Flutter from '../../../../assets/images/techs/Flutter.svg';
 import Javascript from '../../../../assets/images/techs/JavaScript.svg';

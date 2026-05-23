@@ -64,3 +64,18 @@ button:focus-visible {
   0% { transform: rotate(0); }
   100% { transform: rotate(280deg); }
 }
+
+[class*="flower" i],
+[class*="flower" i] img,
+.icon-flood-container,
+.icon-flood-container img {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  -webkit-touch-callout: none;
+}

@@ -6,6 +6,7 @@ import Navbar from '../../components/navbar/Navbar.jsx';
 import Footer from '../../components/footer/Footer.jsx';
 import ProjectCard from '../../components/projectCard/ProjectCard.jsx';
 import data from '../../data/projects.json';
+import { getProjectImage } from '../../data/projectImages.js';
 import '../../i18n';
 
 const CATEGORY_SLUGS = {
@@ -122,7 +123,8 @@ function PortifolioPage() {
                   transition={{ duration: 0.5, delay: index * 0.05, ease: 'easeOut' }}
                 >
                   <ProjectCard
-                    imgSrc={project.imgSrc}
+                    imgSrc={getProjectImage(project.imgKey)}
+                    isDefaultImage={!project.imgKey}
                     imgAlt={project.imgAlt}
                     title={project.title}
                     description={project.description}
@@ -130,6 +132,8 @@ function PortifolioPage() {
                     gitLink={project.gitLink}
                     techs={project.techs}
                     category={project.category}
+                    imageAlignRow={project.imageAlignRow}
+                    imageAlignColumn={project.imageAlignColumn}
                   />
                 </motion.div>
               ))}

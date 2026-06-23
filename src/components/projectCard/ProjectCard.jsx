@@ -10,9 +10,18 @@ const CATEGORY_SLUGS = {
   Frontend: 'frontend',
 };
 
+const IMAGE_ALIGN_MAP = {
+  left: 'left center',
+  center: 'center center',
+  right: 'right center',
+};
+
 function ProjectCard({
   imgSrc,
   imgAlt,
+  isDefaultImage = false,
+  imageAlignRow,
+  imageAlignColumn,
   title,
   description,
   demoLink,
@@ -22,10 +31,21 @@ function ProjectCard({
 }) {
   const { t } = useTranslation();
   const categorySlug = CATEGORY_SLUGS[category] ?? 'fullstack';
+  const imageStyle = isDefaultImage
+    ? undefined
+    : {
+        '--img-position-row': IMAGE_ALIGN_MAP[imageAlignRow] ?? '10% 0%',
+        '--img-position-column': IMAGE_ALIGN_MAP[imageAlignColumn] ?? '10% 0%',
+      };
 
   return (
     <div className="project_card_container">
-      <img src={imgSrc} alt={imgAlt} className="card_image" />
+      <img
+        src={imgSrc}
+        alt={imgAlt}
+        style={imageStyle}
+        className={`card_image${isDefaultImage ? ' card_image--default' : ''}`}
+      />
       <div className="card_text">
         <div className="title_description">
           <div className="card_meta">

@@ -2,6 +2,7 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef, useState, useEffect} from "react";
 import { useTranslation } from 'react-i18next';
 import data from '../../../../data/projects.json';
+import { getProjectImage } from '../../../../data/projectImages.js';
 import ProjectCard from '../../../../components/projectCard/ProjectCard.jsx'
 import PurpleButton from '../../../../components/purpleButton/PurpleButton.jsx';
 import "../../../../i18n.js";
@@ -45,7 +46,8 @@ function ProjectsSection() {
     return projects.map((project) => (
         <ProjectCard
           key={project.id}
-          imgSrc={project.imgSrc}
+          imgSrc={getProjectImage(project.imgKey)}
+          isDefaultImage={!project.imgKey}
           imgAlt={project.imgAlt}
           title={project.title}
           description={project.description}
@@ -54,6 +56,8 @@ function ProjectsSection() {
           techs={project.techs}
           category={project.category}
           complexity={project.complexity}
+          imageAlignRow={project.imageAlignRow}
+          imageAlignColumn={project.imageAlignColumn}
         />
     ));
   };

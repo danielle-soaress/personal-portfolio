@@ -63,27 +63,6 @@
     }
   },
   {
-    "id": 4,
-    "company": "Universidade de Brasília (UnB)",
-    "techs": ["Java", "Python", "POO", "Software Design"],
-    "pt": {
-      "role": "Monitora de Orientação a Objetos",
-      "period": "Set 2024 - Dez 2024",
-      "type": "Presencial",
-      "description": "Auxílio direto a estudantes no aprendizado de paradigmas de POO, padrões de projeto e lógica avançada. Esclarecimento de dúvidas técnicas e suporte em laboratórios de programação.",
-      "shortDescription": "Auxílio direto a estudantes no aprendizado de paradigmas de POO, padrões de projeto e lógica avançada.",
-      "highlight": "Foco em clean code e arquitetura de software."
-    },
-    "en": {
-      "role": "OOP Teaching Assistant",
-      "period": "Sep 2024 - Dec 2024",
-      "type": "Presencial",
-      "description": "Directly assisting students in learning OOP paradigms, design patterns, and advanced logic. Clarifying technical doubts and supporting programming labs.",
-      "shortDescription": "Directly assisting students in learning OOP paradigms, design patterns, and advanced logic.",
-      "highlight": "Focus on clean code and software architecture."
-    }
-  },
-  {
     "id": 5,
     "company": "Eletro Libras - IFB",
     "techs": ["UX Design", "Mobile Development", "Accessibility", "Education Tech"],

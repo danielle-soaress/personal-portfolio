@@ -51,6 +51,10 @@
     align-items: start;
     justify-content: center;
 
+    @include base.device(md) {
+        height: 135vh;
+    }
+
     @include base.device(sm) {
         flex-direction: row-reverse;
         justify-content: start;

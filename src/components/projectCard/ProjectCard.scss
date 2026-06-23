@@ -1,6 +1,5 @@
 @use '../../base';
 
-
 // project card styles
 $border-radius: 10px;
 
@@ -104,12 +103,47 @@ $border-radius: 10px;
         }
 
         .title_description {
+            width: 100%;
+
+            .card_meta {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 10px;
+            }
+
+            .project_category {
+                display: inline-flex;
+                align-items: center;
+                padding: 4px 10px;
+                border-radius: 999px;
+                font-size: 0.68rem;
+                font-weight: 600;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                color: white;
+                background: linear-gradient(30deg, base.$darker-purple, base.$lighter-purple);
+            }
+
+            .project_complexity {
+                display: inline-flex;
+                align-items: center;
+                padding: 3px 9px;
+                border-radius: 999px;
+                font-size: 0.65rem;
+                font-weight: 500;
+                color: base.$lighter-purple;
+                border: 1px solid rgba(159, 114, 255, 0.35);
+                background: rgba(89, 74, 235, 0.12);
+            }
         
             h3 {
                 font-size: clamp(1.25rem, 1.7vw, 1.65rem);
                 font-weight: 700;
                 color: white;
                 line-height: 1.05;
+                margin-top: 15px;
 
                 @include base.device(xxl) {
                     font-size: 1.3em;
@@ -143,10 +177,25 @@ $border-radius: 10px;
             }
         }
 
+        .stack_section {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        .stack_label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: base.$lighter-purple;
+            opacity: 0.9;
+        }
+
         .technologies_container {
             @include base.flexCenter();
             justify-content: flex-start;
-            margin: 16px 0px 0;
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
@@ -157,7 +206,6 @@ $border-radius: 10px;
 
             .tech {
                 background: linear-gradient(30deg, rgba(80, 71, 161, 0.88), rgba(151, 114, 233, 0.9));
-                border: none;
                 font-size: 0.76em;
                 width: min-content;
                 padding: 4px 9px;

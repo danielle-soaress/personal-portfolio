@@ -116,6 +116,20 @@
             "description": "Explore more interesting projects",
             "button": "See more"
         },
+        "stackLabel": "Stack",
+        "categories": {
+            "fullstack": "Fullstack",
+            "mobile": "Mobile",
+            "compilers": "Compilers",
+            "softwareEngineering": "Software Engineering",
+            "backend": "Back-end",
+            "frontend": "Front-end"
+        },
+        "complexity": {
+            "basic": "Basic",
+            "intermediate": "Intermediate",
+            "advanced": "Advanced"
+        },
         "projects": {
             "project_1": {
                 "title": "Draw.ing",
@@ -175,6 +189,11 @@
     },
 
     "portfolioPage": {
-        "title": "My Projects"
+        "title": "My Projects",
+        "subtitle": "A complete collection of solutions I've built, from idea to implementation.",
+        "backLink": "Back to home",
+        "allCategories": "All",
+        "projectCount": "{{count}} projects",
+        "emptyState": "No projects found in this category."
     }
 }

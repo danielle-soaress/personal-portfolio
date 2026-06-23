@@ -16,10 +16,15 @@ function ProjectsSection() {
   const [deviceWidth, setdeviceWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    const updatedProjects = data.slice(0,4).map((project) => ({
-    ...project,
-      description: i18n.language === 'en' ? project.descriptionEN : project.descriptionPT,
-    }));
+    const updatedProjects = [...data]
+      .sort((a, b) => b.relevance - a.relevance)
+      .slice(0, 4)
+      .map((project) => ({
+        ...project,
+        description: i18n.language === 'en'
+          ? project.shortDescriptionEN
+          : project.shortDescriptionPT,
+      }));
     setProjects(updatedProjects);
   }, [i18n.language]);
 
@@ -47,6 +52,8 @@ function ProjectsSection() {
           demoLink={project.demoLink}
           gitLink={project.gitLink}
           techs={project.techs}
+          category={project.category}
+          complexity={project.complexity}
         />
     ));
   };
@@ -77,7 +84,7 @@ function ProjectsSection() {
             <div className="view-more">
               <h3>{t('portfolio.viewMore.title')}</h3>
               <p>{t('portfolio.viewMore.description')}</p>
-              <a href="/projects"><PurpleButton text={t('portfolio.viewMore.button')} link="/home"></PurpleButton></a>
+              <a href="/portifolio"><PurpleButton text={t('portfolio.viewMore.button')} link="/portifolio"></PurpleButton></a>
             </div>
           </motion.div>
         </div>

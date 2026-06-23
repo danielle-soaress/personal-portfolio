@@ -1,131 +1,172 @@
 @use '../../base';
 
-@mixin bg-gradient() {
-    background: base.$darker-purple;
-    background: linear-gradient(135deg, base.$darker-purple 0%, base.$lighter-purple 100%);
-}
-
-html {
-    scroll-behavior: smooth!important;
-}
-  
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth!important;
-}
-  
-body {
-    background-color: base.$background-dark-color;
-}
-  
-a, a:visited{
-    text-decoration: none;
-    color: inherit;
-}
-  
-a:hover {
-    cursor: pointer;
-    color: inherit;
-}
-
 .main_portfolio_page_container {
-    width: 100vw;
-    min-height: 100vh;
-    background-color: base.$background-dark-color;
-}
+  width: 100%;
+  min-height: 100vh;
+  background-color: base.$background-dark-color;
 
-header {
+  header,
+  .portfolio_page_header_bar {
     position: fixed;
-    z-index: 10;
-    background-color: base.$background-dark-color;
-}
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    display: block;
+  }
 
-header, footer {
+  footer {
     @include base.flexCenter();
-    width: 100vw;
-}
-  
-section {
-    height: auto;
-    display: flex;
-    align-items: center;
+    width: 100%;
+    background-color: base.$background-dark-color;
+    padding: 2vh 0 4vh;
+  }
 }
 
 #all_projects {
-    position: relative;
-    background:
-        radial-gradient(circle at 85% 8%, rgba(159, 114, 255, 0.16), transparent 28%),
-        radial-gradient(circle at 10% 28%, rgba(89, 74, 235, 0.14), transparent 24%),
-        base.$background-dark-color;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 0;
-    padding: 12vh 0 10vh;
-    min-height: 100vh;
-    height: auto!important;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 85% 8%, rgba(159, 114, 255, 0.16), transparent 28%),
+    radial-gradient(circle at 10% 28%, rgba(89, 74, 235, 0.14), transparent 24%),
+    base.$background-dark-color;
+  min-height: 100vh;
+  padding: 100px 0 8vh;
+
+  @include base.device(md) {
+    padding-top: 88px;
+  }
 }
 
-.section_container {
-    width: 100vw;
-    display: flex;
-    align-items: center;
-
-    h1 {
-        text-align: center;
-    }
+.portfolio_page_blur {
+  position: absolute;
+  left: 50%;
+  top: 18%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  background-color: #5929c9;
+  filter: blur(200px);
+  mix-blend-mode: screen;
+  opacity: 0.35;
+  pointer-events: none;
 }
 
-.cards_container {
-    width: min(1180px, 88vw);
-    flex-direction: column;
-    display: flex;
-    gap: 44px;
-    padding: 40px 0;
+.portfolio_page_content {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, 88vw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
 }
 
-.cards_container h1 {
-    @include base.gradientTitle();
-    font-size: base.$title_size;
-    font-weight: 700;
-    margin: 20px 0px 10px;
-    text-align: center;
+.portfolio_page_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  max-width: 760px;
+}
+
+.portfolio_page_header h1 {
+  @include base.gradientTitle();
+  margin: 0;
+}
+
+.portfolio_page_header p {
+  @include base.subtitle();
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 300;
+  margin: 0;
+}
+
+.portfolio_page_count {
+  display: inline-flex;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(159, 114, 255, 0.25);
+  background: rgba(89, 74, 235, 0.12);
+  color: base.$lighter-purple;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.portfolio_page_filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.portfolio_page_filter {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(159, 114, 255, 0.18);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    border-color: rgba(159, 114, 255, 0.42);
+    color: white;
+  }
+
+  &--active {
+    background: linear-gradient(30deg, base.$darker-purple, base.$lighter-purple);
+    border-color: rgba(159, 114, 255, 0.5);
+    color: white;
+    box-shadow: 0 0 16px rgba(138, 84, 253, 0.2);
+  }
 }
 
 .portfolio_page_cards_grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 34px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 34px;
+  width: 100%;
+  justify-items: center;
+}
+
+.portfolio_page_card_wrapper {
+  width: min(900px, 100%);
+
+  .project_card_container {
     width: 100%;
-    justify-items: center;
-
-    .project_card_container {
-        width: min(900px, 100%);
-    }
+  }
 }
 
-footer {
-    background-color: base.$background-dark-color;
+.portfolio_page_empty {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  text-align: center;
+  padding: 48px 0;
 }
 
-@media (max-width: 768px) {
-    #all_projects {
-        padding-top: 10vh;
-    }
+@include base.device(md) {
+  .portfolio_page_content {
+    width: min(680px, 90vw);
+    gap: 28px;
+  }
 
-    .cards_container {
-        width: 90vw;
-        gap: 30px;
-        padding: 24px 0;
-    }
-
-    .cards_container h1 {
-        font-size: base.$title_size_bp_sm;
-    }
+  .portfolio_page_cards_grid {
+    gap: 28px;
+  }
 }
 
+@include base.device(xs) {
+  .portfolio_page_header h1 {
+    font-size: base.$title_size_bp_xs;
+  }
 
-
-
-  
+  .portfolio_page_header p {
+    font-size: base.$subtitle_size_bp_xs;
+  }
+}

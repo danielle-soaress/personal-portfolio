@@ -68,6 +68,10 @@
         gap: 50px;
         color: white;
 
+        @include base.device(xxl) {
+            width: 30vw;
+        }
+
         @include base.device(xl) {
             width: 35vw;
         }
@@ -195,6 +199,14 @@
             margin-top: 0px!important;
         }
 
+        @include base.device(xxl) {
+            p {
+                line-clamp: 5;
+                -webkit-line-clamp: 5;
+                font-size: 0.82rem;
+            }
+        }
+
         @include base.device(xl) {
             p {
                 line-clamp: 5;
@@ -225,9 +237,9 @@
                 color: white;
                 margin-right: 5px;
                 margin-bottom: 5px;
-                font-size: clamp(0.65rem, 0.75vw, 0.9rem);
+                font-size: clamp(0.65rem, 0.75vw, 0.8rem);
                 width: fit-content;
-                padding: 3px 8px;
+                padding: 2px 8px;
                 border-radius: 2px;
 
                 @include base.device(lg) {
@@ -236,6 +248,7 @@
                     margin-right: 4px;
                     margin-bottom: 4px;
                 }
+
 
             }
         }

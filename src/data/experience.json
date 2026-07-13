@@ -2,7 +2,7 @@
   {
     "id": 1,
     "company": "V360",
-    "techs": ["Ruby on Rails", "PostgreSQL", "Sidekiq", "Full Stack", "Bug Fixing", "Integrations"],
+    "techs": ["Ruby on Rails", "PostgreSQL", "Sidekiq", "ERP Integrations"],
     "pt": {
       "role": "Desenvolvedora Full Stack (Estágio)",
       "period": "Fev 2026 - Momento",

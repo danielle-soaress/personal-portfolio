@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import '../../../../i18n.js';
 import './SkillsSection.scss';
 import skillsData from '../../../../data/skills.json';
-import flowerImg from '../../../../assets/images/flower_1.png';
+import flowerImg from '../../../../assets/images/flower_1_reduced.webp'
 import Flutter from '../../../../assets/images/techs/Flutter.svg';
 import Javascript from '../../../../assets/images/techs/JavaScript.svg';
 import ReactIcon from '../../../../assets/images/techs/React.svg';

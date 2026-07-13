@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import "../../../../i18n";
 import { motion, useTransform, useScroll} from "motion/react"
 import {useRef} from 'react';
-import flowerImg from '../../../../assets/images/flower_1.png'
+import flowerImg from '../../../../assets/images/flower_1.webp'
+import flowerImgReduced from '../../../../assets/images/flower_1_reduced.webp'
 
 function IntroductionSection() {
     const containerRef = useRef(null);
@@ -85,30 +86,30 @@ function IntroductionSection() {
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}>
-                <img loading="lazy" alt="Flower Image" className="flowerImg2 flower" src={flowerImg}/>
+                <img loading="lazy" alt="Flower Image" className="flowerImg2 flower" src={flowerImgReduced}/>
             </motion.div>
             <motion.div 
             initial={{ opacity: 0}} 
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}>
-                <img loading="lazy" alt="Flower Image" className="flowerImg3 flower" src={flowerImg}/>
-                <img loading="lazy" alt="Flower Image" className="flowerImg7 flower" src={flowerImg}/>
+                <img loading="lazy" alt="Flower Image" className="flowerImg3 flower" src={flowerImgReduced}/>
+                <img loading="lazy" alt="Flower Image" className="flowerImg7 flower" src={flowerImgReduced}/>
             </motion.div>
             <motion.div 
             initial={{ opacity: 0}} 
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}>
-                <img loading="lazy" alt="Flower Image" className="flowerImg4 flower" src={flowerImg}/>
+                <img loading="lazy" alt="Flower Image" className="flowerImg4 flower" src={flowerImgReduced}/>
             </motion.div>
             <motion.div 
             initial={{ opacity: 0}} 
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}>
-                <img loading="lazy" alt="Flower Image" className="flowerImg5 flower" src={flowerImg}/>
-                <img loading="lazy" alt="Flower Image"className="flowerImg6 flower" src={flowerImg}/>
+                <img loading="lazy" alt="Flower Image" className="flowerImg5 flower" src={flowerImgReduced}/>
+                <img loading="lazy" alt="Flower Image"className="flowerImg6 flower" src={flowerImgReduced}/>
             </motion.div>
             <motion.div
             className="scroll-container"

@@ -1,7 +1,7 @@
 import './SocialMedias.scss'
-import EmailIcon from '../../assets/images/email_icon.png'
-import LinkedinLogo from '../../assets/images/linkedin_logo.png'
-import GithubLogo from '../../assets/images/github_logo.png'
+import EmailIcon from '../../assets/images/email_icon.webp'
+import LinkedinLogo from '../../assets/images/linkedin_logo.webp'
+import GithubLogo from '../../assets/images/github_logo.webp'
 import { motion } from "motion/react"
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';

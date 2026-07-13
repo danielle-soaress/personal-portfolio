@@ -3,9 +3,9 @@ import {useRef} from 'react';
 import 'swiper/css/pagination';
 
 import './AboutMeSection.scss'
-import flowerImg from '../../../../assets/images/flower_3.png'
+import flowerImg from '../../../../assets/images/flower_3.webp'
 
-import personalPhoto from '../../../../assets/images/about.jpg'
+import personalPhoto from '../../../../assets/images/about.webp'
 import { useTranslation } from 'react-i18next';
 import "../../../../i18n";
 import { motion, useTransform, useScroll} from "motion/react"

@@ -3,9 +3,9 @@ import {useRef} from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import SocialMedias from '../../../../components/socialMedias/SocialMedias';
-import flowerOne from '../../../../assets/images/flower_1.png';
-import flowerTwo from '../../../../assets/images/flower_2.png';
-import flowerThree from '../../../../assets/images/flower_3.png';
+import flowerOne from '../../../../assets/images/flower_1_reduced.webp'
+import flowerTwo from '../../../../assets/images/flower_2.webp';
+import flowerThree from '../../../../assets/images/flower_3.webp';
 import "../../../../i18n";
 
 function ContactMeSection() {

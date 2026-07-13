@@ -92,7 +92,7 @@
       @include base.flexCenter();
         width: 90%;
         height: 90%;
-        background-image: url("../../../../assets/images/Vector.png");
+        background-image: url("../../../../assets/images/Vector.webp");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -100,12 +100,12 @@
 
     .shape2 {
       @include base.flexCenter();
-        background-image: url("../../../../assets/images/Vector2.png");
+        background-image: url("../../../../assets/images/Vector2.webp");
       }
 
     .shape3 {
       @include base.flexCenter();
-        background-image: url("../../../../assets/images/personal_photo3.png");
+        background-image: url("../../../../assets/images/personal_photo3.webp");
       }
 }
 

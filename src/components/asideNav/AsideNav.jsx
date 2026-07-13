@@ -7,7 +7,6 @@ function AsideNav() {
     const actualSection = (e) => {
         let icons = document.querySelectorAll('.aside_nav_icon');
     
-        
         for (let i = 0; i<icons.length; i++) {
             icons[i].style.color = "#ffffff80"
         }

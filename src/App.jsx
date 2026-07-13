@@ -2,6 +2,7 @@ import HomePage from './pages/Home/HomePage.jsx'
 import PortifolioPage from './pages/PortifolioPage/PortifolioPage.jsx'
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { ReactLenis } from 'lenis/react'
+import 'lenis/dist/lenis.css'
 import { LazyMotion, domAnimation } from 'motion/react'
 
 function App() {

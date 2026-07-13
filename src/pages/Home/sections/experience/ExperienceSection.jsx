@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useSpring} from "framer-motion";
+import { motion, useScroll, useTransform} from "framer-motion";
 import { useRef, useState} from "react";
 import './ExperienceSection.scss';
 import data from '../../../../data/experience.json';
@@ -7,7 +7,6 @@ import "../../../../i18n";
 
 function ExperienceSection() {
     const containerRef = useRef(null);
-    const [experienceData, setExperienceData] = useState(data);
     const {t, i18n} = useTranslation();
 
 
@@ -19,9 +18,6 @@ function ExperienceSection() {
     });
 
     const scaleY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-    const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 0.9],[0, 1, 1, 0]);
-    const x = useTransform(scrollYProgress, [0, 0.3, 0.6, 0.9], ["30px", "-30px", "30px", "0px"]);
-    const rotate = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
     return <section ref={containerRef} className="timeline-section">
         <motion.div

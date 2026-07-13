@@ -1,6 +1,6 @@
 import './LanguageButton.scss';
 import langIcon from '../../assets/images/lang_icon.webp';
-import {useState, useRef} from 'react';
+import {useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import "../../i18n";
 

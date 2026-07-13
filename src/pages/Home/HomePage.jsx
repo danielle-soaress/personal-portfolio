@@ -11,7 +11,6 @@ import { useTranslation } from 'react-i18next';
 
 function HomePage() {
   const containerRef = useRef(null);
-  const {t} = useTranslation();
 
   return (
     <div ref={containerRef} className="main">

@@ -18,7 +18,7 @@ function TechTree ({ data }) {
           <div key={i} className="branch_item">
             <div className="box branch_box">
               {branch.img && (
-                <img src={branch.img} alt={branch.name} />
+                <img loading="lazy" src={branch.img} alt={branch.name} />
               )}
               <span>{branch.name}</span>
 

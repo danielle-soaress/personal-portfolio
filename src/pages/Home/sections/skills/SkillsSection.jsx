@@ -98,7 +98,7 @@ function SkillsSection() {
               pointerEvents: 'none',
             }}
           >
-            <img src={flowerImg} alt="Flower Image" style={{ width: '60px' }} />
+            <img loading="lazy" src={flowerImg} alt="Flower Image" style={{ width: '60px' }} />
           </motion.div>
         ))}
       </div>
@@ -149,7 +149,7 @@ function SkillsSection() {
               >
                 <div className="skill_card_top">
                   <div className="skill_icon">
-                    <img src={techImages[skill.img]} alt={skill.name} />
+                    <img loading="lazy" src={techImages[skill.img]} alt={skill.name} />
                   </div>
                   <div className="skill_progress">
                     <motion.div

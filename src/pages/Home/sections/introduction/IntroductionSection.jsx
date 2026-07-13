@@ -78,37 +78,37 @@ function IntroductionSection() {
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}>
-                <img alt="Flower Image" className="flowerImg flower" src={flowerImg}/>
+                <img loading="lazy" alt="Flower Image" className="flowerImg flower" src={flowerImg}/>
             </motion.div>
             <motion.div 
             initial={{ opacity: 0}} 
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}>
-                <img alt="Flower Image" className="flowerImg2 flower" src={flowerImg}/>
+                <img loading="lazy" alt="Flower Image" className="flowerImg2 flower" src={flowerImg}/>
             </motion.div>
             <motion.div 
             initial={{ opacity: 0}} 
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}>
-                <img alt="Flower Image" className="flowerImg3 flower" src={flowerImg}/>
-                <img alt="Flower Image" className="flowerImg7 flower" src={flowerImg}/>
+                <img loading="lazy" alt="Flower Image" className="flowerImg3 flower" src={flowerImg}/>
+                <img loading="lazy" alt="Flower Image" className="flowerImg7 flower" src={flowerImg}/>
             </motion.div>
             <motion.div 
             initial={{ opacity: 0}} 
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}>
-                <img alt="Flower Image" className="flowerImg4 flower" src={flowerImg}/>
+                <img loading="lazy" alt="Flower Image" className="flowerImg4 flower" src={flowerImg}/>
             </motion.div>
             <motion.div 
             initial={{ opacity: 0}} 
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}>
-                <img alt="Flower Image" className="flowerImg5 flower" src={flowerImg}/>
-                <img alt="Flower Image"className="flowerImg6 flower" src={flowerImg}/>
+                <img loading="lazy" alt="Flower Image" className="flowerImg5 flower" src={flowerImg}/>
+                <img loading="lazy" alt="Flower Image"className="flowerImg6 flower" src={flowerImg}/>
             </motion.div>
             <motion.div
             className="scroll-container"
@@ -149,7 +149,7 @@ function IntroductionSection() {
               pointerEvents: 'none'
               }}
           >
-              <img alt="Flower Image" className="flowerImg_experience_section flower" src={flowerImg} style={{ width: '60px' }} />
+              <img loading="lazy" alt="Flower Image" className="flowerImg_experience_section flower" src={flowerImg} style={{ width: '60px' }} />
           </motion.div>
           ))}
         </div>

@@ -94,6 +94,7 @@ function ContactMeSection() {
                     style={{ y: flowerLeftY, rotate: flowerLeftRotate }}
                     alt="Flower Image"
                     aria-hidden="true"
+                    loading="lazy"
                 />
                 <motion.img
                     src={flowerTwo}
@@ -101,6 +102,7 @@ function ContactMeSection() {
                     style={{ y: flowerRightY, rotate: flowerRightRotate }}
                     alt="Flower Image"
                     aria-hidden="true"
+                    loading="lazy"
                 />
                 <motion.img
                     src={flowerThree}
@@ -114,6 +116,7 @@ function ContactMeSection() {
                     className="contact_flower contact_flower_top"
                     style={{ y: flowerTopY, rotate: flowerTopRotate }}
                     alt="Flower Image"
+                    loading="lazy"
                     aria-hidden="true"
                 />
                 <motion.img
@@ -121,6 +124,7 @@ function ContactMeSection() {
                     className="contact_flower contact_flower_center"
                     style={{ y: flowerCenterY, rotate: flowerCenterRotate }}
                     alt="Flower Image"
+                    loading="lazy"
                     aria-hidden="true"
                 />
                 <motion.img
@@ -128,6 +132,7 @@ function ContactMeSection() {
                     className="contact_flower contact_flower_small"
                     style={{ y: flowerSmallY, rotate: flowerSmallRotate }}
                     alt="Flower Image"
+                    loading="lazy"
                     aria-hidden="true"
                 />
                 <motion.img
@@ -135,6 +140,7 @@ function ContactMeSection() {
                     className="contact_flower contact_flower_corner"
                     style={{ y: flowerCornerY, rotate: flowerCornerRotate }}
                     alt="Flower Image"
+                    loading="lazy"
                     aria-hidden="true"
                 />
                 <motion.div

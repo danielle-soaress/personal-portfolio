@@ -41,6 +41,7 @@ function ProjectCard({
   return (
     <div className="project_card_container">
       <img
+        loading="lazy"
         src={imgSrc}
         alt={imgAlt}
         style={imageStyle}

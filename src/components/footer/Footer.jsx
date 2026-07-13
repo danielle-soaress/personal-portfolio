@@ -9,12 +9,12 @@ function Footer() {
     return (
         <div className="footer_container">
             <div className="left_side">
-                <img alt ="Footer Logo" className="footer_logo" src={Logo}></img>
+                <img loading="lazy" alt ="Footer Logo" className="footer_logo" src={Logo}></img>
                 <SocialMedias showRectangle={true}/>
             </div>
             <div className="copyrights">
                 <p>{t('footer.copyright')} </p>
-                <img alt="Copyright Image" className="cop_logo" src={Logo}></img>
+                <img loading="lazy" alt="Copyright Image" className="cop_logo" src={Logo}></img>
             </div>
         </div>
     );

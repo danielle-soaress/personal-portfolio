@@ -1,4 +1,4 @@
-import { motion, useTransform, useScroll } from "framer-motion";
+import { m, useTransform, useScroll } from "motion/react";
 import { useRef, useState, useEffect} from "react";
 import { useTranslation } from 'react-i18next';
 import data from '../../../../data/projects.json';
@@ -69,9 +69,9 @@ function ProjectsSection() {
   const x = useTransform(scrollYProgress, [0, 1], ["10", "-40%"]);
 
   return (
-    <motion.div id="portifolio" exit={{opacity: 0}} ref={containerRef} className="projects-section">
+    <m.div id="portifolio" exit={{opacity: 0}} ref={containerRef} className="projects-section">
         <div className="projects-container">
-          <motion.div
+          <m.div
             className="projects-section-title"
             initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -82,17 +82,17 @@ function ProjectsSection() {
               <h3>
                 {t('portfolio.subtitle.pt1')} <span>{t('portfolio.subtitle.highlight_1')}</span> {t('portfolio.subtitle.pt2')} <span>{t('portfolio.subtitle.highlight_2')}</span>
               </h3>
-          </motion.div>
-          <motion.div className="cards-container" style={ deviceWidth <= 1024 ? '' : {x}}>
+          </m.div>
+          <m.div className="cards-container" style={ deviceWidth <= 1024 ? '' : {x}}>
             {LoadProjects()}
             <div className="view-more">
               <h3>{t('portfolio.viewMore.title')}</h3>
               <p>{t('portfolio.viewMore.description')}</p>
               <PurpleButton text={t('portfolio.viewMore.button')} link="/portifolio"></PurpleButton>
             </div>
-          </motion.div>
+          </m.div>
         </div>
-    </motion.div>
+    </m.div>
   );
 }
 

@@ -2,7 +2,7 @@ import './IntroductionSection.scss';
 import SocialMedias from '../../../../components/socialMedias/SocialMedias';
 import { useTranslation } from 'react-i18next';
 import "../../../../i18n";
-import { motion, useTransform, useScroll} from "motion/react"
+import { m, useTransform, useScroll} from "motion/react"
 import {useRef} from 'react';
 import flowerImg from '../../../../assets/images/flower_1.webp'
 import flowerImgReduced from '../../../../assets/images/flower_1_reduced.webp'
@@ -35,17 +35,17 @@ function IntroductionSection() {
 
 
     return (
-    <motion.div id="introduction" ref={containerRef} className="introduction_container" style={{filter}}>
+    <m.div id="introduction" ref={containerRef} className="introduction_container" style={{filter}}>
         <div className="left_content">
-            <motion.h2
+            <m.h2
                 className="apresentation_title"
                 initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
                 <span className="my_name">Danielle<br/>Soares</span>
-            </motion.h2>
-            <motion.p
+            </m.h2>
+            <m.p
                 className="myself_description"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -53,10 +53,10 @@ function IntroductionSection() {
             >
             {t('introduction.role')} <span>&</span><br/>
             {t('introduction.education')}
-            </motion.p>
+            </m.p>
             <SocialMedias showRectangle={true}/>
         </div>
-        <motion.div
+        <m.div
         initial={{ opacity: 0 }} 
         whileInView={{ opacity: 1}}
         viewport={{ once: true }}
@@ -71,47 +71,47 @@ function IntroductionSection() {
                     </div>
                 </div>
             </div>
-        </motion.div>
+        </m.div>
         <div className="decoration">
             <div className="blur2"></div>
-            <motion.div 
+            <m.div 
             initial={{ opacity: 0}} 
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}>
                 <img loading="lazy" alt="Flower Image" className="flowerImg flower" src={flowerImg}/>
-            </motion.div>
-            <motion.div 
+            </m.div>
+            <m.div 
             initial={{ opacity: 0}} 
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}>
                 <img loading="lazy" alt="Flower Image" className="flowerImg2 flower" src={flowerImgReduced}/>
-            </motion.div>
-            <motion.div 
+            </m.div>
+            <m.div 
             initial={{ opacity: 0}} 
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}>
                 <img loading="lazy" alt="Flower Image" className="flowerImg3 flower" src={flowerImgReduced}/>
                 <img loading="lazy" alt="Flower Image" className="flowerImg7 flower" src={flowerImgReduced}/>
-            </motion.div>
-            <motion.div 
+            </m.div>
+            <m.div 
             initial={{ opacity: 0}} 
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}>
                 <img loading="lazy" alt="Flower Image" className="flowerImg4 flower" src={flowerImgReduced}/>
-            </motion.div>
-            <motion.div 
+            </m.div>
+            <m.div 
             initial={{ opacity: 0}} 
             whileInView={{ opacity: 1}}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}>
                 <img loading="lazy" alt="Flower Image" className="flowerImg5 flower" src={flowerImgReduced}/>
                 <img loading="lazy" alt="Flower Image"className="flowerImg6 flower" src={flowerImgReduced}/>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
             className="scroll-container"
             initial={{ opacity: 0 }} 
             whileInView={{ opacity: 1}}
@@ -123,10 +123,10 @@ function IntroductionSection() {
                     <div className="wheel"></div>
                 </div>
                 <span className="scroll-text">{t('introduction.scroll')}</span>
-            </motion.div>
+            </m.div>
         
             {flowers.map((f, i) => (
-          <motion.div
+          <m.div
               key={i}
               initial={{ y: -100, opacity: 0, rotate: 0 }}
               animate={{ 
@@ -151,10 +151,10 @@ function IntroductionSection() {
               }}
           >
               <img loading="lazy" alt="Flower Image" className="flowerImg_experience_section flower" src={flowerImg} style={{ width: '60px' }} />
-          </motion.div>
+          </m.div>
           ))}
         </div>
-    </motion.div>
+    </m.div>
     )
 }
 

@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform} from "framer-motion";
+import { m, useScroll, useTransform} from "motion/react";
 import { useRef, useState} from "react";
 import './ExperienceSection.scss';
 import data from '../../../../data/experience.json';
@@ -20,7 +20,7 @@ function ExperienceSection() {
     const scaleY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
     return <section ref={containerRef} className="timeline-section">
-        <motion.div
+        <m.div
             className="section-header"
             initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -29,7 +29,7 @@ function ExperienceSection() {
         >
             <h2>{t('experience.title')}</h2>
             <h3>{t('experience.subtitle')}</h3>
-        </motion.div>
+        </m.div>
         <div className="timeline-wrapper">
             <div className="left-experience-details"> 
                 {data.map((exp) => {
@@ -41,7 +41,7 @@ function ExperienceSection() {
                     const desc = content.shortDescription || exp.en.shortDescription;
 
                     return (
-                    <motion.div 
+                    <m.div 
                     key={exp.id}
                     initial={{ opacity: 0, x: -40 }} 
                     transition={{ duration: 0.5 }} 
@@ -58,20 +58,20 @@ function ExperienceSection() {
                                 <span key={index} className="tech-badge">{tech}</span>
                             ))}
                         </div>
-                    </motion.div>
+                    </m.div>
                     
                     );
                 })}
             </div>
             <div className="timeline-line-bg">
-                <motion.div 
+                <m.div 
                 className="timeline-line-active" 
                 style={{ height: scaleY, }}>
-                    <motion.div 
+                    <m.div 
                     className="timeline-dot"
                     style={{ top: scaleY, }}
                     />
-                </motion.div>
+                </m.div>
             </div>
             <div className="right-experience-details"> 
                 {data.map((exp) => {
@@ -80,7 +80,7 @@ function ExperienceSection() {
                     const desc = content.description || exp.en.description;
 
                     return (
-                    <motion.div 
+                    <m.div 
                     key={exp.id}
                     initial={{ opacity: 0, x: 30 }} 
                     transition={{ duration: 0.5 }} 
@@ -94,7 +94,7 @@ function ExperienceSection() {
                             ))}
                         </div>
 
-                    </motion.div>
+                    </m.div>
                     );
                 })}
             </div>

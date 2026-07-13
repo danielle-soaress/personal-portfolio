@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import './PortifolioPage.scss';
 import Navbar from '../../components/navbar/Navbar.jsx';
@@ -68,7 +68,7 @@ function PortifolioPage() {
       <section id="all_projects">
         <div className="portfolio_page_blur" />
         <div className="portfolio_page_content">
-          <motion.div
+          <m.div
             className="portfolio_page_header"
             initial={{ opacity: 0, y: 28, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -79,7 +79,7 @@ function PortifolioPage() {
             <span className="portfolio_page_count">
               {t('portfolioPage.projectCount', { count: filteredProjects.length })}
             </span>
-          </motion.div>
+          </m.div>
 
           <div className="portfolio_page_filters">
             <button
@@ -106,7 +106,7 @@ function PortifolioPage() {
           </div>
 
           {filteredProjects.length > 0 ? (
-            <motion.div
+            <m.div
               key={activeCategory}
               className="portfolio_page_cards_grid"
               initial={{ opacity: 0, y: 16 }}
@@ -114,7 +114,7 @@ function PortifolioPage() {
               transition={{ duration: 0.35, ease: 'easeOut' }}
             >
               {filteredProjects.map((project, index) => (
-                <motion.div
+                <m.div
                   key={project.id}
                   className="portfolio_page_card_wrapper"
                   initial={{ opacity: 0, y: 24 }}
@@ -135,9 +135,9 @@ function PortifolioPage() {
                     imageAlignRow={project.imageAlignRow}
                     imageAlignColumn={project.imageAlignColumn}
                   />
-                </motion.div>
+                </m.div>
               ))}
-            </motion.div>
+            </m.div>
           ) : (
             <p className="portfolio_page_empty">{t('portfolioPage.emptyState')}</p>
           )}

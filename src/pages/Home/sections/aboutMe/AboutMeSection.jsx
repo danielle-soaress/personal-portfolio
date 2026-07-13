@@ -8,7 +8,7 @@ import flowerImg from '../../../../assets/images/flower_3.webp'
 import personalPhoto from '../../../../assets/images/about.webp'
 import { useTranslation } from 'react-i18next';
 import "../../../../i18n";
-import { motion, useTransform, useScroll} from "motion/react"
+import { m, useTransform, useScroll} from "motion/react"
 
 function AboutMe() {
     const containerRef = useRef(null);
@@ -27,17 +27,17 @@ function AboutMe() {
     return (
         <section id="about_me" className="about_me_section">
             <div className="blur_abm"></div>
-            <motion.div ref={containerRef} className="about_me_container"style={{scale, opacity}}>
+            <m.div ref={containerRef} className="about_me_container"style={{scale, opacity}}>
                 <div className="about_me_text">                 
                     <span>  
-                        <motion.h2
+                        <m.h2
                             initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
                             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                             viewport={{ once: true, amount: 0.6 }}
                             transition={{ duration: 0.7, ease: "easeOut" }}
                         >
                             {t('about.homeTitle')}
-                        </motion.h2>
+                        </m.h2>
                         <p>
                         {t('about.paragraph_1')}
                         </p>
@@ -58,7 +58,7 @@ function AboutMe() {
                             <div className="author"><span className="name">{t('about.photoAuthor')}</span>, 2024</div>
                         </div>
                     </div>  
-                    <motion.div
+                    <m.div
                         className="abm_flower"
                         initial={{ filter: "blur(10px)", opacity: 0, y: 290, x:-80}}
                         whileInView={{ filter: "blur(0px)", opacity: 1, y: 300, x:-40 }}
@@ -70,9 +70,9 @@ function AboutMe() {
                         }}
                     >
                         <img loading="lazy" alt="Flower Image" src={flowerImg}/>
-                    </motion.div>
+                    </m.div>
                 </div>
-            </motion.div>
+            </m.div>
 
         </section>
     )

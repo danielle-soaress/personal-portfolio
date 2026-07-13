@@ -1,6 +1,6 @@
 import './ContactMeSection.scss';
 import {useRef} from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import SocialMedias from '../../../../components/socialMedias/SocialMedias';
 import flowerOne from '../../../../assets/images/flower_1_reduced.webp'
@@ -68,27 +68,27 @@ function ContactMeSection() {
         <section className="ContactMe_container">
             <section ref={introRef} className="ContactMe_intro">
                 <div className="ContactMe_sticky">
-                    <motion.div className="sticky_phrase" style={{ opacity: stickyOpacity, filter: stickyBlur }}>
-                        <motion.div
+                    <m.div className="sticky_phrase" style={{ opacity: stickyOpacity, filter: stickyBlur }}>
+                        <m.div
                             className="purple_blur purple_blur_one"
                             style={{ x: blurOneX, y: blurOneY, scale: blurOneScale }}
                         />
-                        <motion.div
+                        <m.div
                             className="purple_blur purple_blur_two"
                             style={{ x: blurTwoX, y: blurTwoY, scale: blurTwoScale }}
                         />
                         <span>{t('contact.searchTitle')}</span>
                         <div className="rotating_words">
-                            <motion.h2 style={{ opacity: purposeOpacity, y: purposeY }}>{t('contact.values.purpose')}</motion.h2>
-                            <motion.h2 style={{ opacity: innovationOpacity, y: innovationY }}>{t('contact.values.innovation')}</motion.h2>
-                            <motion.h2 style={{ opacity: growthOpacity, y: growthY }}>{t('contact.values.growth')}</motion.h2>
+                            <m.h2 style={{ opacity: purposeOpacity, y: purposeY }}>{t('contact.values.purpose')}</m.h2>
+                            <m.h2 style={{ opacity: innovationOpacity, y: innovationY }}>{t('contact.values.innovation')}</m.h2>
+                            <m.h2 style={{ opacity: growthOpacity, y: growthY }}>{t('contact.values.growth')}</m.h2>
                         </div>
-                    </motion.div>
+                    </m.div>
                 </div>
             </section>
 
             <section id="contact_me" ref={contactRef} className="form_panel">
-                <motion.img
+                <m.img
                     src={flowerOne}
                     className="contact_flower contact_flower_left"
                     style={{ y: flowerLeftY, rotate: flowerLeftRotate }}
@@ -96,7 +96,7 @@ function ContactMeSection() {
                     aria-hidden="true"
                     loading="lazy"
                 />
-                <motion.img
+                <m.img
                     src={flowerTwo}
                     className="contact_flower contact_flower_right"
                     style={{ y: flowerRightY, rotate: flowerRightRotate }}
@@ -104,14 +104,14 @@ function ContactMeSection() {
                     aria-hidden="true"
                     loading="lazy"
                 />
-                <motion.img
+                <m.img
                     src={flowerThree}
                     className="contact_flower contact_flower_bottom"
                     style={{ y: flowerBottomY, rotate: flowerBottomRotate }}
                     alt="Flower Image"
                     aria-hidden="true"
                 />
-                <motion.img
+                <m.img
                     src={flowerTwo}
                     className="contact_flower contact_flower_top"
                     style={{ y: flowerTopY, rotate: flowerTopRotate }}
@@ -119,7 +119,7 @@ function ContactMeSection() {
                     loading="lazy"
                     aria-hidden="true"
                 />
-                <motion.img
+                <m.img
                     src={flowerOne}
                     className="contact_flower contact_flower_center"
                     style={{ y: flowerCenterY, rotate: flowerCenterRotate }}
@@ -127,7 +127,7 @@ function ContactMeSection() {
                     loading="lazy"
                     aria-hidden="true"
                 />
-                <motion.img
+                <m.img
                     src={flowerThree}
                     className="contact_flower contact_flower_small"
                     style={{ y: flowerSmallY, rotate: flowerSmallRotate }}
@@ -135,7 +135,7 @@ function ContactMeSection() {
                     loading="lazy"
                     aria-hidden="true"
                 />
-                <motion.img
+                <m.img
                     src={flowerOne}
                     className="contact_flower contact_flower_corner"
                     style={{ y: flowerCornerY, rotate: flowerCornerRotate }}
@@ -143,33 +143,33 @@ function ContactMeSection() {
                     loading="lazy"
                     aria-hidden="true"
                 />
-                <motion.div
+                <m.div
                     className="form_intro_text"
                 >
-                    <motion.span
+                    <m.span
                         style={{ opacity: identifiedOpacity, y: identifiedY }}
                     >
                         {t('contact.identified')}
-                    </motion.span>
-                    <motion.span
+                    </m.span>
+                    <m.span
                         style={{ opacity: workTogetherOpacity, y: workTogetherY }}
                     >
                         {t('contact.workTogether')}
-                    </motion.span>
-                </motion.div>
+                    </m.span>
+                </m.div>
 
-                <motion.div
+                <m.div
                     className="form_divider"
                     style={{ opacity: dividerOpacity, scaleX: dividerScaleX }}
-                ></motion.div>
+                ></m.div>
 
-                <motion.div
+                <m.div
                     className="contact_socials"
                     style={{ opacity: socialsOpacity, y: socialsY }}
                 >
                     <SocialMedias showRectangle={false} />
                     <p>{t('contact.description.pt2')}</p>
-                </motion.div>
+                </m.div>
             </section>
         </section>
     );

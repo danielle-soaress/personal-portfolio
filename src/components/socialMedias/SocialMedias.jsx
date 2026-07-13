@@ -2,7 +2,7 @@ import './SocialMedias.scss'
 import EmailIcon from '../../assets/images/email_icon.webp'
 import LinkedinLogo from '../../assets/images/linkedin_logo.webp'
 import GithubLogo from '../../assets/images/github_logo.webp'
-import { motion } from "motion/react"
+import { m } from "motion/react"
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -58,7 +58,7 @@ function SocialMedias({ showRectangle = true, onEmailClick }) {
     }, []);
 
     return (
-        <motion.div 
+        <m.div 
             className="social_medias_container"
             variants={containerVariants}
             initial="hidden"
@@ -67,15 +67,15 @@ function SocialMedias({ showRectangle = true, onEmailClick }) {
         >
             {showRectangle && <div className="rectangle"></div>}
             
-            <motion.a variants={iconVariants} href="https://github.com/danielle-soaress" target="_blank">
+            <m.a variants={iconVariants} href="https://github.com/danielle-soaress" target="_blank">
                 <img src={GithubLogo} className="icon" alt="Github" />
-            </motion.a>
+            </m.a>
 
-            <motion.a variants={iconVariants} href="https://www.linkedin.com/in/danielle-soares-712910206/" target="_blank">
+            <m.a variants={iconVariants} href="https://www.linkedin.com/in/danielle-soares-712910206/" target="_blank">
                 <img src={LinkedinLogo} className="icon" alt="Linkedin" />
-            </motion.a>
+            </m.a>
 
-            <motion.button
+            <m.button
                 variants={iconVariants}
                 type="button"
                 className="social_media_button"
@@ -83,19 +83,19 @@ function SocialMedias({ showRectangle = true, onEmailClick }) {
                 aria-label={t('social.copyEmailAria')}
             >
                 <img src={EmailIcon} className="icon" alt="Email" />
-            </motion.button>
+            </m.button>
 
             {isEmailCopied && (
-                <motion.span
+                <m.span
                     className="email_copy_notice"
                     initial={{ opacity: 0, x: -8, y: "-50%" }}
                     animate={{ opacity: 1, x: 0, y: "-50%" }}
                     exit={{ opacity: 0, x: -8, y: "-50%" }}
                 >
                     {t('contact.emailCopied')}
-                </motion.span>
+                </m.span>
             )}
-        </motion.div>
+        </m.div>
     );
 }
 

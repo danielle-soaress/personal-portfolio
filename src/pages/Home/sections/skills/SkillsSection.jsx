@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { m } from 'motion/react';
 
 import '../../../../i18n.js';
 import './SkillsSection.scss';
@@ -74,7 +74,7 @@ function SkillsSection() {
       <div className="skills_blur" />
       <div className="skills-flowers">
         {flowers.map((f, i) => (
-          <motion.div
+          <m.div
             key={i}
             initial={{ y: -100, opacity: 0, rotate: 0 }}
             animate={{
@@ -99,12 +99,12 @@ function SkillsSection() {
             }}
           >
             <img loading="lazy" src={flowerImg} alt="Flower Image" style={{ width: '60px' }} />
-          </motion.div>
+          </m.div>
         ))}
       </div>
 
       <div className="skills_container">
-        <motion.div
+        <m.div
           className="skills_header"
           initial={{ opacity: 0, y: 28, filter: 'blur(8px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -113,7 +113,7 @@ function SkillsSection() {
         >
           <h2>{t('skills.title')}</h2>
           <h3>{t('skills.subtitle')}</h3>
-        </motion.div>
+        </m.div>
 
         <div className="skills_tabs">
           {skillsData.map((category) => (
@@ -128,7 +128,7 @@ function SkillsSection() {
           ))}
         </div>
 
-        <motion.div
+        <m.div
           key={activeCategory}
           className="skills_grid"
           initial={{ opacity: 0, y: 16 }}
@@ -139,7 +139,7 @@ function SkillsSection() {
             const description = currentLang === 'en' ? skill.descriptionEN : skill.descriptionPT;
 
             return (
-              <motion.article
+              <m.article
                 key={skill.name}
                 className="skill_card"
                 initial={{ opacity: 0, y: 20 }}
@@ -152,7 +152,7 @@ function SkillsSection() {
                     <img loading="lazy" src={techImages[skill.img]} alt={skill.name} />
                   </div>
                   <div className="skill_progress">
-                    <motion.div
+                    <m.div
                       className="skill_progress_fill"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
@@ -163,10 +163,10 @@ function SkillsSection() {
                 </div>
                 <h3>{skill.name}</h3>
                 <p>{description}</p>
-              </motion.article>
+              </m.article>
             );
           })}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

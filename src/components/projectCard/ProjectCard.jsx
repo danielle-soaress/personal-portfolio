@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { BsGithub, BsLink45Deg } from 'react-icons/bs';
 import './ProjectCard.scss';
 
 const CATEGORY_SLUGS = {
@@ -70,12 +71,12 @@ function ProjectCard({
       <div className="git_demo">
         {gitLink && (
           <a href={gitLink} target="_blank" rel="noopener noreferrer">
-            <i className="link bi bi-github" />
+            <BsGithub className="link" />
           </a>
         )}
         {demoLink && (
           <a href={demoLink} target="_blank" rel="noopener noreferrer">
-            <i className="link bi bi-link-45deg" />
+            <BsLink45Deg className="link" />
           </a>
         )}
       </div>

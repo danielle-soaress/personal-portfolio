@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { BsHouse, BsPerson, BsGrid, BsTelephone, BsList, BsX } from 'react-icons/bs';
 
 import './navbar.scss';
 import FlowerIcon from '../../assets/images/flower_icon.svg?url';
@@ -8,10 +9,10 @@ import LanguageButton from '../languageButton/LanguageButton';
 import '../../i18n';
 
 const navItems = [
-  { id: 'introduction', labelKey: 'nav.link_1', icon: 'bi bi-house' },
-  { id: 'about_me', labelKey: 'nav.link_2', icon: 'bi bi-person' },
-  { id: 'portifolio', labelKey: 'nav.link_3', icon: 'bi bi-grid' },
-  { id: 'contact_me', labelKey: 'nav.link_4', icon: 'bi bi-telephone' },
+  { id: 'introduction', labelKey: 'nav.link_1', Icon: BsHouse },
+  { id: 'about_me', labelKey: 'nav.link_2', Icon: BsPerson },
+  { id: 'portifolio', labelKey: 'nav.link_3', Icon: BsGrid },
+  { id: 'contact_me', labelKey: 'nav.link_4', Icon: BsTelephone },
 ];
 
 function Navbar({ variant = 'vertical' }) {
@@ -101,11 +102,11 @@ function Navbar({ variant = 'vertical' }) {
       >
         {isHorizontal ? (
           <>
-            <i className={`aside_nav_icon ${item.icon}`} />
+            <item.Icon className="aside_nav_icon" />
             <span className="nav_link_label">{t(item.labelKey)}</span>
           </>
         ) : (
-          <i className={`aside_nav_icon ${item.icon}`} />
+          <item.Icon className="aside_nav_icon" />
         )}
       </Link>
     );
@@ -150,11 +151,13 @@ function Navbar({ variant = 'vertical' }) {
       <div className={`menu_mobile  ${menuOpen ? 'menu_mobile--open' : ''}`}>
           <button
             type="button"
-            className={`menu_mobile_icon bi ${menuOpen ? 'bi-x' : 'bi-list'} ${menuOpen ? 'menu_mobile_icon--open' : ''}`}
+            className={`menu_mobile_icon ${menuOpen ? 'menu_mobile_icon--open' : ''}`}
             onClick={toggleMenu}
             aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={menuOpen}
-          />
+          >
+            {menuOpen ? <BsX /> : <BsList />}
+          </button>
           <div className="mobile_language_button">
             <LanguageButton/>
           </div>

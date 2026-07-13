@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('src/locales/pt.json'\\)\\); JSON.parse\\(require\\('fs'\\).readFileSync\\('src/locales/en.json'\\)\\); console.log\\('JSON OK'\\)\")"
+    ]
+  }
+}

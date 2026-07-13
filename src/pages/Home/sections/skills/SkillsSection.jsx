@@ -98,7 +98,7 @@ function SkillsSection() {
               pointerEvents: 'none',
             }}
           >
-            <img src={flowerImg} alt="" style={{ width: '60px' }} />
+            <img src={flowerImg} alt="Flower Image" style={{ width: '60px' }} />
           </motion.div>
         ))}
       </div>

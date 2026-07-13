@@ -92,49 +92,49 @@ function ContactMeSection() {
                     src={flowerOne}
                     className="contact_flower contact_flower_left"
                     style={{ y: flowerLeftY, rotate: flowerLeftRotate }}
-                    alt=""
+                    alt="Flower Image"
                     aria-hidden="true"
                 />
                 <motion.img
                     src={flowerTwo}
                     className="contact_flower contact_flower_right"
                     style={{ y: flowerRightY, rotate: flowerRightRotate }}
-                    alt=""
+                    alt="Flower Image"
                     aria-hidden="true"
                 />
                 <motion.img
                     src={flowerThree}
                     className="contact_flower contact_flower_bottom"
                     style={{ y: flowerBottomY, rotate: flowerBottomRotate }}
-                    alt=""
+                    alt="Flower Image"
                     aria-hidden="true"
                 />
                 <motion.img
                     src={flowerTwo}
                     className="contact_flower contact_flower_top"
                     style={{ y: flowerTopY, rotate: flowerTopRotate }}
-                    alt=""
+                    alt="Flower Image"
                     aria-hidden="true"
                 />
                 <motion.img
                     src={flowerOne}
                     className="contact_flower contact_flower_center"
                     style={{ y: flowerCenterY, rotate: flowerCenterRotate }}
-                    alt=""
+                    alt="Flower Image"
                     aria-hidden="true"
                 />
                 <motion.img
                     src={flowerThree}
                     className="contact_flower contact_flower_small"
                     style={{ y: flowerSmallY, rotate: flowerSmallRotate }}
-                    alt=""
+                    alt="Flower Image"
                     aria-hidden="true"
                 />
                 <motion.img
                     src={flowerOne}
                     className="contact_flower contact_flower_corner"
                     style={{ y: flowerCornerY, rotate: flowerCornerRotate }}
-                    alt=""
+                    alt="Flower Image"
                     aria-hidden="true"
                 />
                 <motion.div

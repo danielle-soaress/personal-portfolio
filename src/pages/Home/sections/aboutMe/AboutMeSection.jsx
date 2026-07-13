@@ -52,7 +52,7 @@ function AboutMe() {
                 <div className="photo_container">
                     <div className="blur_abm"></div>
                     <div className="card">
-                        <img className="card-image" src={personalPhoto}/>
+                        <img alt="Personal Photo" className="card-image" src={personalPhoto}/>
                         <div className="category">{t('about.photoCategory')}</div>
                         <div className="heading">{t('about.photoHeading')}
                             <div className="author"><span className="name">{t('about.photoAuthor')}</span>, 2024</div>
@@ -69,7 +69,7 @@ function AboutMe() {
                         opacity,
                         }}
                     >
-                        <img src={flowerImg}/>
+                        <img alt="Flower Image" src={flowerImg}/>
                     </motion.div>
                 </div>
             </motion.div>

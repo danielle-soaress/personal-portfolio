@@ -88,7 +88,7 @@ function ProjectsSection() {
             <div className="view-more">
               <h3>{t('portfolio.viewMore.title')}</h3>
               <p>{t('portfolio.viewMore.description')}</p>
-              <a href="/portifolio"><PurpleButton text={t('portfolio.viewMore.button')} link="/portifolio"></PurpleButton></a>
+              <PurpleButton text={t('portfolio.viewMore.button')} link="/portifolio"></PurpleButton>
             </div>
           </motion.div>
         </div>

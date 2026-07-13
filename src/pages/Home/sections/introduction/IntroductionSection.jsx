@@ -41,6 +41,13 @@ function IntroductionSection() {
     { top: '45%', right: '2%', delay: 0.6, xMove: 15 },
     ];
 
+    const flowerReveal = (delay = 0) => isMobile ? {} : {
+        initial: { opacity: 0 },
+        whileInView: { opacity: 1 },
+        viewport: { once: true },
+        transition: { duration: 0.8, delay, ease: "easeOut" },
+    };
+
 
     return (
     <m.div id="introduction" ref={containerRef} className="introduction_container" style={{filter}}>
@@ -82,40 +89,20 @@ function IntroductionSection() {
         </m.div>
         <div className="decoration">
             <div className="blur2"></div>
-            <m.div 
-            initial={{ opacity: 0}} 
-            whileInView={{ opacity: 1}}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}>
+            <m.div {...flowerReveal(0)}>
                 <img loading="lazy" alt="Flower Image" className="flowerImg flower" src={flowerImg}/>
             </m.div>
-            <m.div 
-            initial={{ opacity: 0}} 
-            whileInView={{ opacity: 1}}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}>
+            <m.div {...flowerReveal(0.3)}>
                 <img loading="lazy" alt="Flower Image" className="flowerImg2 flower" src={flowerImgReduced}/>
             </m.div>
-            <m.div 
-            initial={{ opacity: 0}} 
-            whileInView={{ opacity: 1}}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}>
+            <m.div {...flowerReveal(0.6)}>
                 <img loading="lazy" alt="Flower Image" className="flowerImg3 flower" src={flowerImgReduced}/>
                 <img loading="lazy" alt="Flower Image" className="flowerImg7 flower" src={flowerImgReduced}/>
             </m.div>
-            <m.div 
-            initial={{ opacity: 0}} 
-            whileInView={{ opacity: 1}}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}>
+            <m.div {...flowerReveal(0.9)}>
                 <img loading="lazy" alt="Flower Image" className="flowerImg4 flower" src={flowerImgReduced}/>
             </m.div>
-            <m.div 
-            initial={{ opacity: 0}} 
-            whileInView={{ opacity: 1}}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}>
+            <m.div {...flowerReveal(1.2)}>
                 <img loading="lazy" alt="Flower Image" className="flowerImg5 flower" src={flowerImgReduced}/>
                 <img loading="lazy" alt="Flower Image"className="flowerImg6 flower" src={flowerImgReduced}/>
             </m.div>

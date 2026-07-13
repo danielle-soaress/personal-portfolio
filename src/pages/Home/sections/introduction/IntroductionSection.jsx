@@ -3,7 +3,7 @@ import SocialMedias from '../../../../components/socialMedias/SocialMedias';
 import { useTranslation } from 'react-i18next';
 import "../../../../i18n";
 import { m, useTransform, useScroll} from "motion/react"
-import {useRef} from 'react';
+import {useRef, useState, useEffect} from 'react';
 import flowerImg from '../../../../assets/images/flower_1.webp'
 import flowerImgReduced from '../../../../assets/images/flower_1_reduced.webp'
 
@@ -23,6 +23,14 @@ function IntroductionSection() {
         [0.2, 1],
         ["blur(0px)", "blur(6px)"]
     )
+
+    const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 1024);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 1024);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const flowers = [
     { top: '5%', right: '10%', delay: 0.1, xMove: 40 },
@@ -125,7 +133,7 @@ function IntroductionSection() {
                 <span className="scroll-text">{t('introduction.scroll')}</span>
             </m.div>
         
-            {flowers.map((f, i) => (
+            {!isMobile && flowers.map((f, i) => (
           <m.div
               key={i}
               initial={{ y: -100, opacity: 0, rotate: 0 }}

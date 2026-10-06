@@ -1,20 +1,29 @@
 import { m, useTransform, useScroll } from "motion/react";
-import { useRef, useState, useEffect} from "react";
+import { useRef, useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import data from '../../../../data/projects.json';
 import { getProjectImage } from '../../../../data/projectImages.js';
-import ProjectCard from '../../../../components/projectCard/ProjectCard.jsx'
+import ProjectCard from '../../../../components/projectCard/ProjectCard.jsx';
 import PurpleButton from '../../../../components/purpleButton/PurpleButton.jsx';
 import "../../../../i18n.js";
 import "./ProjectsSection.scss";
 
+import doodleSparkles from '../../../../assets/images/doodles/doodle_sparkles.svg';
+import doodleSquiggly from '../../../../assets/images/doodles/doodle_squiggly.svg';
+import doodleTape from '../../../../assets/images/doodles/doodle_washi_tape.svg';
+
 function ProjectsSection() {
   const containerRef = useRef(null);
+  const cardsRef = useRef(null);
 
-  const { i18n } = useTranslation();
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [projects, setProjects] = useState([]);
-  const [deviceWidth, setdeviceWidth] = useState(window.innerWidth);
+  const [deviceWidth, setDeviceWidth] = useState(() =>
+    typeof window !== 'undefined' ? window.innerWidth : 1200
+  );
+  const [scrollDistance, setScrollDistance] = useState(() =>
+    typeof window !== 'undefined' ? window.innerWidth * 1.8 : 2000
+  );
 
   useEffect(() => {
     const updatedProjects = [...data]
@@ -31,67 +40,121 @@ function ProjectsSection() {
 
   useEffect(() => {
     const handleResize = () => {
-      setdeviceWidth(window.innerWidth);
+      setDeviceWidth(window.innerWidth);
     };
 
     window.addEventListener('resize', handleResize);
-
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
+  const isEn = (i18n.language || 'pt').startsWith('en');
 
-  const LoadProjects = () => {
-    return projects.map((project) => (
-        <ProjectCard
-          key={project.id}
-          imgSrc={getProjectImage(project.imgKey)}
-          isDefaultImage={!project.imgKey}
-          imgAlt={project.imgAlt}
-          title={project.title}
-          description={project.description}
-          demoLink={project.demoLink}
-          gitLink={project.gitLink}
-          techs={project.techs}
-          category={project.category}
-          complexity={project.complexity}
-          imageAlignRow={project.imageAlignRow}
-          imageAlignColumn={project.imageAlignColumn}
-        />
-    ));
-  };
+  // Track the exact horizontal scroll distance needed to reveal the view-more card
+  useEffect(() => {
+    const updateDistance = () => {
+      if (cardsRef.current) {
+        const total = cardsRef.current.scrollWidth;
+        const viewport = window.innerWidth;
+        const diff = Math.max(0, total - viewport);
+        setScrollDistance(diff);
+      }
+    };
+
+    updateDistance();
+
+    let observer;
+    if (typeof ResizeObserver !== 'undefined' && cardsRef.current) {
+      observer = new ResizeObserver(() => {
+        updateDistance();
+      });
+      observer.observe(cardsRef.current);
+    }
+
+    window.addEventListener('resize', updateDistance);
+
+    return () => {
+      if (observer) observer.disconnect();
+      window.removeEventListener('resize', updateDistance);
+    };
+  }, [projects]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
+    offset: ["start start", "end end"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["10", "-40%"]);
+  // Reaches the view-more card at 0.88 scroll progress and stays resting there through 1.0
+  const x = useTransform(scrollYProgress, [0, 0.88], [0, -scrollDistance], {
+    clamp: true,
+  });
+
+  const LoadProjects = () => {
+    return projects.map((project) => (
+      <ProjectCard
+        key={project.id}
+        imgSrc={getProjectImage(project.imgKey)}
+        isDefaultImage={!project.imgKey}
+        imgAlt={project.imgAlt}
+        title={project.title}
+        description={project.description}
+        demoLink={project.demoLink}
+        gitLink={project.gitLink}
+        techs={project.techs}
+        category={project.category}
+        complexity={project.complexity}
+        imageAlignRow={project.imageAlignRow}
+        imageAlignColumn={project.imageAlignColumn}
+      />
+    ));
+  };
 
   return (
-    <m.div id="portifolio" exit={{opacity: 0}} ref={containerRef} className="projects-section">
-        <div className="projects-container">
-          <m.div
-            className="projects-section-title"
-            initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            viewport={{ once: true, amount: 0.45 }}
-            transition={{ duration: 0.75, ease: "easeOut" }}
-          >
-              <h2>{t('portfolio.title')}</h2>
-              <h3>
-                {t('portfolio.subtitle.pt1')} <span>{t('portfolio.subtitle.highlight_1')}</span> {t('portfolio.subtitle.pt2')} <span>{t('portfolio.subtitle.highlight_2')}</span>
-              </h3>
-          </m.div>
-          <m.div className="cards-container" style={ deviceWidth <= 1024 ? '' : {x}}>
-            {LoadProjects()}
-            <div className="view-more">
-              <h3>{t('portfolio.viewMore.title')}</h3>
-              <p>{t('portfolio.viewMore.description')}</p>
-              <PurpleButton text={t('portfolio.viewMore.button')} link="/portifolio"></PurpleButton>
+    <m.div id="portifolio" exit={{ opacity: 0 }} ref={containerRef} className="projects-section">
+      <div className="projects-container">
+        <m.div
+          className="projects-section-title"
+          initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.75, ease: "easeOut" }}
+        >
+          <div className="header-title-container">
+            <h2>{t('portfolio.title')}</h2>
+            <span className="header-sparkle-doodle" aria-hidden="true">
+              <img src={doodleSparkles} alt="" />
+            </span>
+          </div>
+
+          <div className="header-subtitle-container">
+            <h3>
+              {t('portfolio.subtitle.pt1')}{' '}
+              <span className="handdrawn-script">{t('portfolio.subtitle.highlight_1')}</span>{' '}
+              {t('portfolio.subtitle.pt2')}{' '}
+              <span className="handdrawn-script">{t('portfolio.subtitle.highlight_2')}</span>
+            </h3>
+            <span className="header-squiggly-doodle" aria-hidden="true">
+              <img src={doodleSquiggly} alt="" />
+            </span>
+          </div>
+        </m.div>
+
+        <m.div ref={cardsRef} className="cards-container" style={deviceWidth <= 1024 ? undefined : { x }}>
+          {LoadProjects()}
+          <div className="view-more">
+            <div className="view_more_washi_tape" aria-hidden="true">
+              <img src={doodleTape} alt="" />
             </div>
-          </m.div>
-        </div>
+            <span className="view-more-tag">
+              ✦ {isEn ? '// more projects' : '// mais criações'}
+            </span>
+            <h3>{t('portfolio.viewMore.title')}</h3>
+            <p>{t('portfolio.viewMore.description')}</p>
+            <PurpleButton text={t('portfolio.viewMore.button')} link="/portifolio" />
+          </div>
+        </m.div>
+      </div>
     </m.div>
   );
 }

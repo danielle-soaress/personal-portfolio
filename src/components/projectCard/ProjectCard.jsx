@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { BsGithub, BsLink45Deg } from 'react-icons/bs';
+import { LuGithub, LuExternalLink } from 'react-icons/lu';
 import './ProjectCard.scss';
 
 const CATEGORY_SLUGS = {
@@ -32,6 +32,7 @@ function ProjectCard({
 }) {
   const { t } = useTranslation();
   const categorySlug = CATEGORY_SLUGS[category] ?? 'fullstack';
+
   const imageStyle = isDefaultImage
     ? undefined
     : {
@@ -70,13 +71,29 @@ function ProjectCard({
       </div>
       <div className="git_demo">
         {gitLink && (
-          <a href={gitLink} target="_blank" rel="noopener noreferrer">
-            <BsGithub className="link" />
+          <a
+            href={gitLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card_action_btn"
+            aria-label="GitHub"
+            data-tooltip="GitHub"
+            title="GitHub"
+          >
+            <LuGithub className="action_icon" />
           </a>
         )}
         {demoLink && (
-          <a href={demoLink} target="_blank" rel="noopener noreferrer">
-            <BsLink45Deg className="link" />
+          <a
+            href={demoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card_action_btn"
+            aria-label="Live Demo"
+            data-tooltip="Live Demo"
+            title="Live Demo"
+          >
+            <LuExternalLink className="action_icon" />
           </a>
         )}
       </div>

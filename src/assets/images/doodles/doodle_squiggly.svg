@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 20" fill="none">
+  <!-- Hand-drawn undulating wavy stroke -->
+  <path
+    d="M 4 10 
+       C 16 3, 24 17, 36 10 
+       C 48 3, 56 17, 68 10 
+       C 80 3, 88 17, 100 10 
+       C 112 3, 120 17, 132 10 
+       C 142 4, 150 14, 156 9"
+    stroke="#c4b5fd"
+    stroke-width="2.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

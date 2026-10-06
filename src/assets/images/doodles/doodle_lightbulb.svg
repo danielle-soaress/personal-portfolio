@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 74" fill="none">
+  <!-- Hand-drawn Lightbulb glass body -->
+  <path
+    d="M 22 46 C 16 41, 13 33, 13 25 C 13 14, 22 6, 33 6 C 44 6, 53 14, 53 25 C 53 33, 50 41, 44 46 L 42 52 L 24 52 Z"
+    stroke="#ffffff"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Inner filament / AI neuron squiggle -->
+  <path
+    d="M 28 35 L 28 22 L 33 26 L 38 22 L 38 35"
+    stroke="#ffffff"
+    stroke-width="1.7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Bulb screw threads -->
+  <path d="M 25 57 L 41 57" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" />
+  <path d="M 27 62 L 39 62" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" />
+  <path d="M 30 67 L 36 67" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" />
+  <!-- Radiating innovation sparks -->
+  <path d="M 33 0 L 33 3" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+  <path d="M 9 9 L 12 12" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M 57 9 L 54 12" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M 4 25 L 7 25" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M 62 25 L 59 25" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+</svg>

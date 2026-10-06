@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 74" fill="none">
+  <!-- Hand-drawn 5-point star -->
+  <path
+    d="M 33 6 L 39 21 L 55 21 L 42 31 L 47 46 L 33 37 L 19 46 L 24 31 L 11 21 L 27 21 Z"
+    stroke="#ffffff"
+    stroke-width="2.3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Cute smiley in center -->
+  <circle cx="29" cy="25" r="1.5" fill="#ffffff" />
+  <circle cx="37" cy="25" r="1.5" fill="#ffffff" />
+  <path d="M 30 30 C 32 32.5, 34 32.5, 36 30" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" />
+  <!-- Award ribbon banner tails -->
+  <path d="M 23 44 L 16 67 L 27 61 L 31 46" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 43 44 L 50 67 L 39 61 L 35 46" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

@@ -4,6 +4,7 @@ import 'swiper/css/pagination';
 
 import './AboutMeSection.scss'
 import flowerImg from '../../../../assets/images/flower_3.webp'
+import doodleSmiley from '../../../../assets/images/doodles/doodle_smiley.svg'
 
 import personalPhoto from '../../../../assets/images/about.webp'
 import { useTranslation } from 'react-i18next';
@@ -36,7 +37,18 @@ function AboutMe() {
                             viewport={{ once: true, amount: 0.6 }}
                             transition={{ duration: 0.7, ease: "easeOut" }}
                         >
-                            {t('about.homeTitle')}
+                            <span className="saudation_text">{t('introduction.title').trim()} </span>
+                            <span className="saudation_name_lockup">
+                                <span className="saudation_personal_name">danielle</span>
+                                <span className="about_doodle_smiley_wrapper" aria-hidden="true">
+                                    <img
+                                        src={doodleSmiley}
+                                        alt=""
+                                        className="about_doodle_smiley_svg"
+                                        loading="lazy"
+                                    />
+                                </span>
+                            </span>
                         </m.h2>
                         <p>
                         {t('about.paragraph_1')}

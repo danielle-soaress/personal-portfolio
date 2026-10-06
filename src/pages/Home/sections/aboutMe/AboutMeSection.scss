@@ -40,7 +40,7 @@
             text-align: center;
             width: 85vw;
 
-            span {
+            > span {
                 @include base.flexCenter;
                 flex-direction: column;
             }
@@ -48,7 +48,6 @@
 
         
         h2 {
-            @include base.gradientTitle;
             font-size: 2.5em;
             text-transform:none;
 
@@ -60,7 +59,13 @@
                 font-size: 2em;
             }
 
-
+            @include base.device(md) {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: baseline;
+                gap: 0.2em;
+            }
         }
 
         p {
@@ -69,7 +74,7 @@
             text-align: start;
             font-weight: 400;
             width: 30vw;
-            color: white;
+            color: #cfdbec;
             line-height: 2em;
             font-size: 1.2em;
             
@@ -77,6 +82,47 @@
                 text-align: justify!important;
             }
             
+        }
+
+        .saudation_text {
+            font-weight: 400;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+
+        .saudation_name_lockup {
+            display: inline-flex;
+            align-items: baseline;
+            white-space: nowrap;
+        }
+
+        .saudation_personal_name {
+            font-weight: 400;
+            font-family: 'Alex Brush', 'Playfair Display', cursive, serif;
+            line-height: 0.75;
+            font-size: clamp(3.2rem, 3.8vw, 5.2rem);
+            color: base.$lighter-purple;
+        }
+
+        .about_doodle_smiley_wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            margin-left: 0.2em;
+            width: clamp(24px, 2.4vw, 34px);
+            height: clamp(26px, 2.6vw, 36px);
+            user-select: none;
+            pointer-events: none;
+            animation: doodleSmileyWiggle 4s infinite ease-in-out;
+            transform-origin: center center;
+
+            .about_doodle_smiley_svg {
+                width: 100%;
+                height: 100%;
+                display: block;
+                filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.25));
+            }
         }
 
         .about_contact_cta {
@@ -271,5 +317,14 @@
     }
 }
 
-
-
+@keyframes doodleSmileyWiggle {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(-6deg) scale(1.06);
+    }
+    75% {
+        transform: rotate(5deg) scale(0.96);
+    }
+}

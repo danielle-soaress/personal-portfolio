@@ -65,7 +65,7 @@
   {
     "id": 5,
     "company": "Eletro Libras - IFB",
-    "techs": ["UX Design", "Mobile Development", "Accessibility", "Education Tech"],
+    "techs": ["UI/UX", "Mobile", "Accessibility", "Education Tech"],
     "pt": {
       "role": "Desenvolvedora e Co-criadora",
       "period": "Jan 2021 - Mar 2024",
@@ -77,7 +77,7 @@
     "en": {
       "role": "Developer and Co-creator",
       "period": "Jan 2021 - Mar 2024",
-      "type": "Presencial",
+      "type": "In-person",
       "description": "Conceived and developed an accessibility solution for deaf students in an electronics technical course. Created academic materials in Libras and a UI focused on the user experience.",
       "shortDescription": "Conceived and developed an accessibility solution for deaf students in an electronics technical course.",
       "highlight": "Award-winning project focused on social impact and inclusion."

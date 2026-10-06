@@ -22,12 +22,13 @@
         "education": "Software Engineering Student",
         "description": "Software Engineering student at the University of Brasília (UnB) and full-stack programming enthusiast.",
         "button": "Contact me",
-        "scroll": "Scroll"
+        "scroll": "Scroll",
+        "email": "Email Copied!"
     },
 
     "about": {
         "title": "About me",
-        "homeTitle": "Hi, I'm Danielle!",
+        "homeTitle": "Hi, I'm ",
         "paragraph_1": "I'm a Full-Stack Developer currently based in Brasília, Brazil, where I study Software Engineering at UnB. I build solutions for Web and Mobile, and I also have experience in areas such as Systems Architecture, Software Requirements, IoT, and AI integration.",
         "paragraph_2": "My journey is shaped by flexibility and curiosity. I believe good engineering goes beyond code: it is about solving real problems. I'm always open to new connections and opportunities, so feel free to get in touch!",
         "contactCta": "contact me",

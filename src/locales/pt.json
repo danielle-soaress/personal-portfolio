@@ -22,12 +22,13 @@
         "education": "Estudante de Engenharia de Software",
         "description": "Estudante de Engenharia de Software na Universidade de Brasília (UnB) e entusiasta em programação full-stack.",
         "button": "Fale comigo",
-        "scroll": "Role"
+        "scroll": "Saiba mais",
+        "email": "Email Copiado!"
     },
 
     "about": {
         "title": "Sobre mim",
-        "homeTitle": "Olá, eu sou a Danielle!",
+        "homeTitle": "Olá, eu sou a ",
         "paragraph_1": "Sou desenvolvedora Full-Stack e atualmente moro em Brasília (Brasil), onde estudo Engenharia de Software na UnB. Atuo na criação de soluções para Web e Mobile, mas também acumulo experiências em áreas como Arquitetura de Sistemas, Requisitos de Software, IoT e Integração de IA.",
         "paragraph_2": "Minha trajetória é marcada pela flexibilidade e curiosidade, em que acredito que a boa engenharia vai além do código, é sobre solucionar problemas reais. Estou sempre aberta a novas conexões e oportunidades, então sinta-se à vontade para entrar em contato!",
         "contactCta": "contate-me",

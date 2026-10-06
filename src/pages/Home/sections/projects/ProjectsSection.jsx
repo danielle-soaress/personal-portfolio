@@ -10,7 +10,6 @@ import "./ProjectsSection.scss";
 
 import doodleSparkles from '../../../../assets/images/doodles/doodle_sparkles.svg';
 import doodleSquiggly from '../../../../assets/images/doodles/doodle_squiggly.svg';
-import doodleTape from '../../../../assets/images/doodles/doodle_washi_tape.svg';
 
 function ProjectsSection() {
   const containerRef = useRef(null);
@@ -143,9 +142,6 @@ function ProjectsSection() {
         <m.div ref={cardsRef} className="cards-container" style={deviceWidth <= 1024 ? undefined : { x }}>
           {LoadProjects()}
           <div className="view-more">
-            <div className="view_more_washi_tape" aria-hidden="true">
-              <img src={doodleTape} alt="" />
-            </div>
             <span className="view-more-tag">
               ✦ {isEn ? '// more projects' : '// mais criações'}
             </span>

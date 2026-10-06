@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { m } from 'motion/react';
+import { LuFolder, LuFolderOpen, LuFileCode2 } from 'react-icons/lu';
 
 import '../../../../i18n.js';
 import './SkillsSection.scss';
 import skillsData from '../../../../data/skills.json';
-import flowerImg from '../../../../assets/images/flower_1_reduced.webp'
+
+import doodleSparkles from '../../../../assets/images/doodles/doodle_sparkles.svg';
+import doodleSquiggly from '../../../../assets/images/doodles/doodle_squiggly.svg';
+
 import Flutter from '../../../../assets/images/techs/Flutter.svg';
 import Javascript from '../../../../assets/images/techs/JavaScript.svg';
 import ReactIcon from '../../../../assets/images/techs/React.svg';
@@ -54,56 +58,20 @@ const techImages = {
   Docker,
 };
 
-const flowers = [
-  { top: '5%', left: '10%', delay: 0.1 },
-  { top: '15%', right: '15%', delay: 0.4 },
-  { top: '30%', left: '30%', delay: 0.6 },
-  { top: '40%', right: '30%', delay: 0.5 },
-  { top: '20%', right: '50%', delay: 0.2 },
-];
-
 function SkillsSection() {
   const { t, i18n } = useTranslation();
   const [activeCategory, setActiveCategory] = useState(skillsData[0].id);
 
   const currentLang = i18n.language.split('-')[0];
+  const isEn = currentLang === 'en';
   const activeSkills = skillsData.find((category) => category.id === activeCategory)?.skills ?? [];
 
   return (
-    <section className="skills_section">
+    <section className="skills_section" id="skills">
       <div className="skills_blur" />
-      <div className="skills-flowers">
-        {flowers.map((f, i) => (
-          <m.div
-            key={i}
-            initial={{ y: -100, opacity: 0, rotate: 0 }}
-            animate={{
-              y: [0, 500, 1000],
-              x: [0, 50, -50, 0],
-              rotate: [0, 45, -45, 180],
-              opacity: [0, 0.9, 0.9, 0],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              delay: f.delay,
-              ease: 'linear',
-            }}
-            style={{
-              position: 'absolute',
-              top: f.top,
-              left: f.left,
-              right: f.right,
-              filter: 'blur(1px)',
-              pointerEvents: 'none',
-            }}
-          >
-            <img loading="lazy" src={flowerImg} alt="Flower Image" style={{ width: '60px' }} />
-          </m.div>
-        ))}
-      </div>
 
       <div className="skills_container">
+        {/* Section Header */}
         <m.div
           className="skills_header"
           initial={{ opacity: 0, y: 28, filter: 'blur(8px)' }}
@@ -111,62 +79,113 @@ function SkillsSection() {
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.75, ease: 'easeOut' }}
         >
-          <h2>{t('skills.title')}</h2>
-          <h3>{t('skills.subtitle')}</h3>
+          <div className="header-title-container">
+            <h2>{t('skills.title')}</h2>
+            <span className="header-sparkle-doodle" aria-hidden="true">
+              <img src={doodleSparkles} alt="" />
+            </span>
+          </div>
+
+          <div className="header-subtitle-container">
+            <h3>{t('skills.subtitle')}</h3>
+            <span className="header-squiggly-doodle" aria-hidden="true">
+              <img src={doodleSquiggly} alt="" />
+            </span>
+          </div>
         </m.div>
 
-        <div className="skills_tabs">
-          {skillsData.map((category) => (
-            <button
-              key={category.id}
-              type="button"
-              className={`skills_tab ${activeCategory === category.id ? 'skills_tab--active' : ''}`}
-              onClick={() => setActiveCategory(category.id)}
+        {/* Computer Folders System */}
+        <div className="folder_system">
+          {/* Folder Tabs (Styled like tabbed folders) */}
+          <div className="folder_tabs" role="tablist">
+            {skillsData.map((category) => {
+              const isActive = activeCategory === category.id;
+              const skillCount = category.skills.length;
+
+              return (
+                <button
+                  key={category.id}
+                  role="tab"
+                  aria-selected={isActive}
+                  type="button"
+                  className={`folder_tab ${isActive ? 'folder_tab--active' : ''}`}
+                  onClick={() => setActiveCategory(category.id)}
+                >
+                  <span className="folder_tab_icon" aria-hidden="true">
+                    {isActive ? <LuFolderOpen /> : <LuFolder />}
+                  </span>
+                  <span className="folder_tab_name">
+                    {t(`skills.categories.${category.id}`)}
+                  </span>
+                  <span className="folder_tab_count">{skillCount}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Folder Box Container (Contorno da pasta que guarda os arquivos) */}
+          <div className="folder_box">
+            {/* Folder Header Bar: Breadcrumb + Count */}
+            <div className="folder_bar">
+              <div className="folder_path_chip">
+                <LuFolderOpen className="path_icon" />
+                <span className="path_text">
+                  ~/danielle/ferramentas/<span className="path_current">{activeCategory}</span>/
+                </span>
+              </div>
+              <div className="folder_items_badge">
+                <LuFileCode2 className="badge_icon" />
+                <span>
+                  {activeSkills.length} {isEn ? 'technologies' : 'tecnologias'}
+                </span>
+              </div>
+            </div>
+
+            {/* Internal Skill Cards Grid */}
+            <m.div
+              key={activeCategory}
+              className="skills_cards_grid"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35, ease: 'easeOut' }}
             >
-              {t(`skills.categories.${category.id}`)}
-            </button>
-          ))}
+              {activeSkills.map((skill, index) => {
+                const description = currentLang === 'en' ? skill.descriptionEN : skill.descriptionPT;
+
+                return (
+                  <m.article
+                    key={skill.name}
+                    className="skill_card"
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.35, delay: index * 0.04, ease: 'easeOut' }}
+                  >
+                    <div className="skill_card_top">
+                      <div className="skill_icon_box">
+                        <img loading="lazy" src={techImages[skill.img]} alt={skill.name} />
+                      </div>
+                    </div>
+
+                    <div className="skill_card_body">
+                      <h3>{skill.name}</h3>
+
+                      <div className="skill_progress">
+                        <m.div
+                          className="skill_progress_fill"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${skill.level}%` }}
+                          transition={{ duration: 0.8, delay: 0.1 + index * 0.04, ease: 'easeOut' }}
+                        />
+                      </div>
+
+                      <p>{description}</p>
+                    </div>
+                  </m.article>
+                );
+              })}
+            </m.div>
+          </div>
         </div>
-
-        <m.div
-          key={activeCategory}
-          className="skills_grid"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: 'easeOut' }}
-        >
-          {activeSkills.map((skill, index) => {
-            const description = currentLang === 'en' ? skill.descriptionEN : skill.descriptionPT;
-
-            return (
-              <m.article
-                key={skill.name}
-                className="skill_card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: index * 0.06, ease: 'easeOut' }}
-              >
-                <div className="skill_card_top">
-                  <div className="skill_icon">
-                    <img loading="lazy" src={techImages[skill.img]} alt={skill.name} />
-                  </div>
-                  <div className="skill_progress">
-                    <m.div
-                      className="skill_progress_fill"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, ease: 'easeOut' }}
-                    />
-                  </div>
-                </div>
-                <h3>{skill.name}</h3>
-                <p>{description}</p>
-              </m.article>
-            );
-          })}
-        </m.div>
       </div>
     </section>
   );

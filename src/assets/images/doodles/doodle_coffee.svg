@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 110" fill="none">
+  <!-- Steam curls -->
+  <path d="M 43 28 C 41 20, 47 15, 44 8" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+  <path d="M 57 24 C 54 15, 62 11, 59 4" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" />
+  <path d="M 69 28 C 67 20, 73 15, 70 8" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+
+  <!-- Mug body -->
+  <path
+    d="M 34 35 L 78 35 C 77 64, 71 78, 56 78 C 41 78, 35 64, 34 35 Z"
+    stroke="#ffffff"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Mug rim -->
+  <ellipse cx="56" cy="35" rx="22" ry="5" stroke="#ffffff" stroke-width="2.2" />
+
+  <!-- Mug handle -->
+  <path
+    d="M 34 41 C 21 41, 21 62, 35 62"
+    stroke="#ffffff"
+    stroke-width="2.3"
+    stroke-linecap="round"
+  />
+
+  <!-- Cute heart on mug -->
+  <path
+    d="M 56 61 C 56 61, 50 55.5, 50 51 C 50 48, 53 46, 56 49 C 59 46, 62 48, 62 51 C 62 55.5, 56 61, 56 61 Z"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="1.9"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Playful sparkles & dots around the mug -->
+  <path
+    d="M 90 24 C 91 29, 94 31, 99 31.5 C 94 32, 91 34, 90 39 C 89 34, 86 32, 81 31.5 C 86 31, 89 29, 90 24 Z"
+    stroke="#ffffff"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="18" cy="26" r="1.5" fill="#ffffff" />
+  <circle cx="94" cy="56" r="1.5" fill="#ffffff" />
+</svg>

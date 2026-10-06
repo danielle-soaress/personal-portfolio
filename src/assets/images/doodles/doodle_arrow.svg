@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 95" fill="none">
+  <!-- Smooth arching curve -->
+  <path
+    d="M 16 80 C 28 22, 96 12, 152 48"
+    stroke="#ffffff"
+    stroke-width="2.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Perfectly centered symmetrical arrowhead -->
+  <path
+    d="M 144 30 L 152 48 L 132 50"
+    stroke="#ffffff"
+    stroke-width="2.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

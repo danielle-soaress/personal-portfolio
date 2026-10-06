@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 145" fill="none">
+  <!-- Bubble outline with pointer tail and subtle translucent fill -->
+  <path
+    d="M 36 68 
+       L 12 66 
+       L 32 82 
+       C 36 108, 68 124, 108 123 
+       C 146 122, 168 102, 167 76 
+       C 166 48, 142 22, 102 22 
+       C 66 22, 40 40, 36 68 Z"
+    fill="rgba(24, 24, 27, 0.55)"
+    stroke="#ffffff"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Sketched Laptop -->
+  <g class="doodle_laptop" transform="translate(14, 2)">
+    <!-- Screen outer frame -->
+    <path
+      d="M 64 36 L 94 33 L 90 62 L 59 65 Z"
+      stroke="#ffffff"
+      stroke-width="2.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Screen bezel -->
+    <path
+      d="M 67 40 L 90 37.5 L 87 58 L 63 60.5 Z"
+      stroke="#ffffff"
+      stroke-width="1.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Screen code icon: < / > -->
+    <path
+      d="M 72 47 L 69 49 L 72 51"
+      stroke="#ffffff"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M 75 52 L 78 46"
+      stroke="#ffffff"
+      stroke-width="1.6"
+      stroke-linecap="round"
+    />
+    <path
+      d="M 81 47 L 84 49 L 81 51"
+      stroke="#ffffff"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Laptop keyboard base -->
+    <path
+      d="M 59 65 L 90 62 L 108 77 L 72 80 Z"
+      stroke="#ffffff"
+      stroke-width="2.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Keyboard keys and trackpad -->
+    <path
+      d="M 68 70 L 98 67.5"
+      stroke="#ffffff"
+      stroke-width="1.5"
+      stroke-dasharray="2.5 2.5"
+      stroke-linecap="round"
+    />
+    <path
+      d="M 82 74 L 92 73"
+      stroke="#ffffff"
+      stroke-width="1.6"
+      stroke-linecap="round"
+    />
+  </g>
+
+  <!-- Hand-lettered "CODING..." -->
+  <g class="doodle_coding_text" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- C -->
+    <path d="M 58 97 C 49 97, 48 108, 58 109" />
+    <!-- O -->
+    <ellipse cx="68" cy="103" rx="4.5" ry="5.5" />
+    <!-- D -->
+    <path d="M 78 97 L 78 109 M 78 97 C 86 97, 86 109, 78 109" />
+    <!-- I -->
+    <path d="M 91 97 L 91 109" />
+    <!-- N -->
+    <path d="M 98 109 L 98 97 L 107 109 L 107 97" />
+    <!-- G -->
+    <path d="M 121 98 C 113 95, 112 109, 120 109 L 120 103 L 116 103" />
+    <!-- ... -->
+    <circle cx="127" cy="107" r="1.4" fill="#ffffff" stroke="none" />
+    <circle cx="132" cy="107" r="1.4" fill="#ffffff" stroke="none" />
+    <circle cx="137" cy="107" r="1.4" fill="#ffffff" stroke="none" />
+  </g>
+</svg>

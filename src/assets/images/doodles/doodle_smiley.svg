@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 58" fill="none">
+  <!-- Hand-drawn organic eye dots -->
+  <path
+    d="M 14 19.5 C 14 17.5, 17.5 17.5, 17.5 19.5 C 17.5 21.5, 14 21.5, 14 19.5 Z"
+    fill="#ffffff"
+  />
+  <path
+    d="M 14 35.5 C 14 33.5, 17.5 33.5, 17.5 35.5 C 17.5 37.5, 14 37.5, 14 35.5 Z"
+    fill="#ffffff"
+  />
+  <!-- Hand-drawn expressive curved smile -->
+  <path
+    d="M 27 12 C 45 20, 45 36, 27 44"
+    stroke="#ffffff"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

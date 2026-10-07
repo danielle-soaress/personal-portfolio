@@ -324,14 +324,14 @@
         }
 
         @include base.device(md) {
-          margin-left: -0.4em;
-          margin-bottom: -0.18em;
-          font-size: clamp(2.8rem, 8.5vw, 3.8rem);
+          margin-left: -0.25em;
+          margin-bottom: -0.16em;
+          font-size: clamp(3.8rem, 11vw, 5.2rem);
         }
 
         @include base.device(xs) {
-          margin-left: 0;
-          font-size: 2.6rem;
+          margin-left: -0.15em;
+          font-size: clamp(3.2rem, 12.5vw, 4.2rem);
         }
       }
 
@@ -358,11 +358,11 @@
         }
 
         @include base.device(md) {
-          font-size: clamp(3rem, 9.5vw, 4.2rem);
+          font-size: clamp(4.4rem, 13.5vw, 6.2rem);
         }
 
         @include base.device(xs) {
-          font-size: clamp(2.4rem, 10vw, 3rem);
+          font-size: clamp(3.8rem, 14.5vw, 5rem);
         }
 
         .doodle_sparkles_wrapper {
@@ -375,6 +375,13 @@
           -webkit-text-fill-color: initial;
           transform-origin: center center;
           z-index: 3;
+
+          @include base.device(md) {
+            top: -12px;
+            right: -36px;
+            width: clamp(36px, 8.5vw, 50px);
+            height: clamp(36px, 8.5vw, 50px);
+          }
 
           .doodle_sparkles_svg {
             width: 100%;

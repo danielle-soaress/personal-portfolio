@@ -13,7 +13,7 @@ function HomePage() {
   const containerRef = useRef(null);
 
   return (
-    <div ref={containerRef} className="main">
+    <main ref={containerRef} className="main">
     <Navbar/>
       <div className="main_container">
         <IntroductionSection/>
@@ -24,7 +24,7 @@ function HomePage() {
         <ContactMeSection/>
         {/* <Footer/> */}
       </div>
-    </div>
+    </main>
     
   )
 }

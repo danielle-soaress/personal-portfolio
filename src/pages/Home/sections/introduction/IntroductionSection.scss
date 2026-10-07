@@ -62,6 +62,14 @@
     }
   }
 
+  /* Ambient Background Flowers Layer */
+  .hero_bg_flowers_layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   /* Ambient Background Flowers - ContactMeSection inspired */
   .hero_bg_flower {
     position: absolute;
@@ -160,7 +168,6 @@
     width: clamp(80px, 7vw, 110px);
     pointer-events: none;
     z-index: 4;
-    animation: doodleFloatSoft 6s infinite ease-in-out;
 
     .doodle_coffee_svg {
       width: 100%;
@@ -169,6 +176,7 @@
       user-select: none;
       pointer-events: none;
       filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.22));
+      animation: doodleFloatSoft 6s infinite ease-in-out;
     }
 
     @include base.device-height(sm) {
@@ -327,6 +335,7 @@
         line-height: 0.85;
         text-transform: lowercase;
         position: relative;
+        display: inline-block;
         z-index: 1;
         background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
         -webkit-background-clip: text;
@@ -353,7 +362,6 @@
           height: clamp(44px, 5.5vw, 70px);
           pointer-events: none;
           -webkit-text-fill-color: initial;
-          animation: doodleTwinkle 4s infinite ease-in-out;
           transform-origin: center center;
           z-index: 3;
 
@@ -364,6 +372,7 @@
             user-select: none;
             pointer-events: none;
             filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.35));
+            animation: doodleTwinkle 4s infinite ease-in-out;
           }
 
           @include base.device(lg) {
@@ -491,7 +500,6 @@
       width: clamp(125px, 10.5vw, 160px);
       pointer-events: none;
       z-index: 4;
-      animation: doodleFloatSoft 5s infinite ease-in-out;
 
       .doodle_arrow_svg {
         width: 100%;
@@ -500,6 +508,7 @@
         user-select: none;
         pointer-events: none;
         filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.22));
+        animation: doodleFloatSoft 5s infinite ease-in-out;
       }
 
       @include base.device(lg) {
@@ -778,7 +787,6 @@
     width: clamp(130px, 12vw, 170px);
     pointer-events: none;
     z-index: 4;
-    animation: doodleFloatReverse 6s infinite ease-in-out;
 
     .doodle_coding_bubble_svg {
       width: 100%;
@@ -787,6 +795,7 @@
       user-select: none;
       pointer-events: none;
       filter: drop-shadow(0 2px 10px rgba(255, 255, 255, 0.25));
+      animation: doodleFloatReverse 6s infinite ease-in-out;
     }
 
     @include base.device(lg) {
@@ -813,6 +822,19 @@
 }
 
 /* Centered Scroll Indicator (ROLE + chevron) in bottom center of browser */
+.hero_center_scroll_wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 6;
+
+  .hero_center_scroll {
+    pointer-events: auto;
+  }
+}
+
 .hero_center_scroll {
   position: absolute;
   bottom: 22px;

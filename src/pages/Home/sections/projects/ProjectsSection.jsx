@@ -114,15 +114,15 @@ function ProjectsSection() {
       <div className="projects-container">
         <m.div
           className="projects-section-title"
-          initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.75, ease: "easeOut" }}
         >
           <div className="header-title-container">
             <h2>{t('portfolio.title')}</h2>
             <span className="header-sparkle-doodle" aria-hidden="true">
-              <img src={doodleSparkles} alt="" />
+              <img src={doodleSparkles} alt="" width="24" height="24" loading="lazy" decoding="async" />
             </span>
           </div>
 
@@ -134,7 +134,7 @@ function ProjectsSection() {
               <span className="handdrawn-script">{t('portfolio.subtitle.highlight_2')}</span>
             </h3>
             <span className="header-squiggly-doodle" aria-hidden="true">
-              <img src={doodleSquiggly} alt="" />
+              <img src={doodleSquiggly} alt="" width="120" height="15" loading="lazy" decoding="async" />
             </span>
           </div>
         </m.div>

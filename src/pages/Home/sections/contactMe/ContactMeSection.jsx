@@ -92,56 +92,78 @@ function ContactMeSection() {
                     src={flowerOne}
                     className="contact_flower contact_flower_left"
                     style={{ y: flowerLeftY, rotate: flowerLeftRotate }}
-                    alt="Flower Image"
+                    alt=""
                     aria-hidden="true"
+                    width="155"
+                    height="155"
                     loading="lazy"
+                    decoding="async"
                 />
                 <m.img
                     src={flowerTwo}
                     className="contact_flower contact_flower_right"
                     style={{ y: flowerRightY, rotate: flowerRightRotate }}
-                    alt="Flower Image"
+                    alt=""
                     aria-hidden="true"
+                    width="110"
+                    height="110"
                     loading="lazy"
+                    decoding="async"
                 />
                 <m.img
                     src={flowerThree}
                     className="contact_flower contact_flower_bottom"
                     style={{ y: flowerBottomY, rotate: flowerBottomRotate }}
-                    alt="Flower Image"
+                    alt=""
                     aria-hidden="true"
+                    width="88"
+                    height="88"
+                    loading="lazy"
+                    decoding="async"
                 />
                 <m.img
                     src={flowerTwo}
                     className="contact_flower contact_flower_top"
                     style={{ y: flowerTopY, rotate: flowerTopRotate }}
-                    alt="Flower Image"
-                    loading="lazy"
+                    alt=""
                     aria-hidden="true"
+                    width="110"
+                    height="110"
+                    loading="lazy"
+                    decoding="async"
                 />
                 <m.img
                     src={flowerOne}
                     className="contact_flower contact_flower_center"
                     style={{ y: flowerCenterY, rotate: flowerCenterRotate }}
-                    alt="Flower Image"
-                    loading="lazy"
+                    alt=""
                     aria-hidden="true"
+                    width="155"
+                    height="155"
+                    loading="lazy"
+                    decoding="async"
                 />
                 <m.img
                     src={flowerThree}
                     className="contact_flower contact_flower_small"
                     style={{ y: flowerSmallY, rotate: flowerSmallRotate }}
-                    alt="Flower Image"
-                    loading="lazy"
+                    alt=""
                     aria-hidden="true"
+                    width="68"
+                    height="68"
+                    loading="lazy"
+                    decoding="async"
                 />
                 <m.img
                     src={flowerOne}
                     className="contact_flower contact_flower_corner"
                     style={{ y: flowerCornerY, rotate: flowerCornerRotate }}
-                    alt="Flower Image"
-                    loading="lazy"
+                    alt=""
                     aria-hidden="true"
+                    width="155"
+                    height="155"
+                    loading="lazy"
+                    decoding="async"
                 />
                 <m.div
                     className="form_intro_text"

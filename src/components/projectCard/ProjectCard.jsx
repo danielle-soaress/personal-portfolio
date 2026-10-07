@@ -44,6 +44,9 @@ function ProjectCard({
     <div className="project_card_container">
       <img
         loading="lazy"
+        decoding="async"
+        width="324"
+        height="170"
         src={imgSrc}
         alt={imgAlt}
         style={imageStyle}
@@ -76,9 +79,9 @@ function ProjectCard({
             target="_blank"
             rel="noopener noreferrer"
             className="card_action_btn"
-            aria-label="GitHub"
+            aria-label={`GitHub - ${title}`}
             data-tooltip="GitHub"
-            title="GitHub"
+            title={`GitHub - ${title}`}
           >
             <LuGithub className="action_icon" />
           </a>
@@ -89,9 +92,9 @@ function ProjectCard({
             target="_blank"
             rel="noopener noreferrer"
             className="card_action_btn"
-            aria-label="Live Demo"
+            aria-label={`Live Demo - ${title}`}
             data-tooltip="Live Demo"
-            title="Live Demo"
+            title={`Live Demo - ${title}`}
           >
             <LuExternalLink className="action_icon" />
           </a>

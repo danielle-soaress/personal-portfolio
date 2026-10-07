@@ -79,21 +79,21 @@ function ExperienceSection() {
         <section ref={containerRef} className="timeline-section" id="experience">
             <m.div
                 className="section-header"
-                initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
-                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.75, ease: "easeOut" }}
             >
                 <div className="header-title-container">
                     <h2>{t('experience.title')}</h2>
                     <span className="header-sparkle-doodle" aria-hidden="true">
-                        <img src={doodleSparkles} alt="" />
+                        <img src={doodleSparkles} alt="" width="24" height="24" loading="lazy" decoding="async" />
                     </span>
                 </div>
                 <div className="header-subtitle-container">
                     <h3>{t('experience.subtitle')}</h3>
                     <span className="header-squiggly-doodle" aria-hidden="true">
-                        <img src={doodleSquiggly} alt="" />
+                        <img src={doodleSquiggly} alt="" width="130" height="16" loading="lazy" decoding="async" />
                     </span>
                 </div>
             </m.div>
@@ -192,11 +192,11 @@ function ExperienceSection() {
                                 className="right-experience-card"
                             >
                                 <div className="card-washi-tape washi-right" aria-hidden="true">
-                                    <img src={doodleTape} alt="" />
+                                    <img src={doodleTape} alt="" width="65" height="25" loading="lazy" decoding="async" />
                                 </div>
 
                                 <div className="card-corner-sticker" aria-hidden="true">
-                                    <img src={stickerIcon} alt="" />
+                                    <img src={stickerIcon} alt="" width="26" height="26" loading="lazy" decoding="async" />
                                 </div>
 
                                 <p className="experience-desc">{desc}</p>

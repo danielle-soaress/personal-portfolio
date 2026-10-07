@@ -32,8 +32,8 @@ function AboutMe() {
                 <div className="about_me_text">                 
                     <span>  
                         <m.h2
-                            initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
-                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.6 }}
                             transition={{ duration: 0.7, ease: "easeOut" }}
                         >
@@ -45,7 +45,10 @@ function AboutMe() {
                                         src={doodleSmiley}
                                         alt=""
                                         className="about_doodle_smiley_svg"
+                                        width="24"
+                                        height="24"
                                         loading="lazy"
+                                        decoding="async"
                                     />
                                 </span>
                             </span>
@@ -64,7 +67,7 @@ function AboutMe() {
                 <div className="photo_container">
                     <div className="blur_abm"></div>
                     <div className="card">
-                        <img loading="lazy" alt="Personal Photo" className="card-image" src={personalPhoto}/>
+                        <img loading="lazy" decoding="async" width="231" height="224" alt="Personal Photo" className="card-image" src={personalPhoto}/>
                         <div className="category">{t('about.photoCategory')}</div>
                         <div className="heading">{t('about.photoHeading')}
                             <div className="author"><span className="name">{t('about.photoAuthor')}</span>, 2024</div>
@@ -72,16 +75,16 @@ function AboutMe() {
                     </div>  
                     <m.div
                         className="abm_flower"
-                        initial={{ filter: "blur(10px)", opacity: 0, y: 290, x:-80}}
-                        whileInView={{ filter: "blur(0px)", opacity: 1, y: 300, x:-40 }}
-                        viewport={{ once: true, amount: 1}}
+                        initial={{ opacity: 0, y: 290, x: -80 }}
+                        whileInView={{ opacity: 1, y: 300, x: -40 }}
+                        viewport={{ once: true, amount: 1 }}
                         style={{
                         y,
                         rotate,
                         opacity,
                         }}
                     >
-                        <img loading="lazy" alt="Flower Image" src={flowerImg}/>
+                        <img loading="lazy" decoding="async" width="100" height="98" alt="Flower Image" src={flowerImg}/>
                     </m.div>
                 </div>
             </m.div>

@@ -140,7 +140,7 @@ function Navbar({ variant = 'vertical' }) {
           onClick={closeMenu}
         >
           <div className="icon-fill" />
-          <img src={FlowerIcon} className="icon-base" alt={t('nav.logoAlt')} />
+          <img src={FlowerIcon} className="icon-base" alt={t('nav.logoAlt')} width="32" height="32" decoding="async" />
         </Link>
         <div className={`nav_links ${isHorizontal ? 'nav_links--horizontal' : ''}`}>
           {navItems.map((item) => renderNavLink(item))}

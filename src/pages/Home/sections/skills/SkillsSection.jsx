@@ -74,22 +74,22 @@ function SkillsSection() {
         {/* Section Header */}
         <m.div
           className="skills_header"
-          initial={{ opacity: 0, y: 28, filter: 'blur(8px)' }}
-          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.75, ease: 'easeOut' }}
         >
           <div className="header-title-container">
             <h2>{t('skills.title')}</h2>
             <span className="header-sparkle-doodle" aria-hidden="true">
-              <img src={doodleSparkles} alt="" />
+              <img src={doodleSparkles} alt="" width="22" height="22" loading="lazy" decoding="async" />
             </span>
           </div>
 
           <div className="header-subtitle-container">
             <h3>{t('skills.subtitle')}</h3>
             <span className="header-squiggly-doodle" aria-hidden="true">
-              <img src={doodleSquiggly} alt="" />
+              <img src={doodleSquiggly} alt="" width="110" height="14" loading="lazy" decoding="async" />
             </span>
           </div>
         </m.div>
@@ -162,7 +162,7 @@ function SkillsSection() {
                   >
                     <div className="skill_card_top">
                       <div className="skill_icon_box">
-                        <img loading="lazy" src={techImages[skill.img]} alt={skill.name} />
+                        <img loading="lazy" decoding="async" width="30" height="30" src={techImages[skill.img]} alt={skill.name} />
                       </div>
                     </div>
 

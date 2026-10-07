@@ -67,12 +67,12 @@ function SocialMedias({ showRectangle = true, onEmailClick }) {
         >
             {showRectangle && <div className="rectangle"></div>}
             
-            <m.a variants={iconVariants} href="https://github.com/danielle-soaress" target="_blank">
-                <img src={GithubLogo} className="icon" alt="Github" />
+            <m.a variants={iconVariants} href="https://github.com/danielle-soaress" target="_blank" rel="noopener noreferrer" aria-label="GitHub - Danielle Soares">
+                <img src={GithubLogo} className="icon" alt="Github" width="30" height="30" loading="lazy" decoding="async" />
             </m.a>
 
-            <m.a variants={iconVariants} href="https://www.linkedin.com/in/danielle-soares-712910206/" target="_blank">
-                <img src={LinkedinLogo} className="icon" alt="Linkedin" />
+            <m.a variants={iconVariants} href="https://www.linkedin.com/in/danielle-soares-712910206/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn - Danielle Soares">
+                <img src={LinkedinLogo} className="icon" alt="Linkedin" width="30" height="30" loading="lazy" decoding="async" />
             </m.a>
 
             <m.button
@@ -80,9 +80,9 @@ function SocialMedias({ showRectangle = true, onEmailClick }) {
                 type="button"
                 className="social_media_button"
                 onClick={copyEmail}
-                aria-label={t('social.copyEmailAria')}
+                aria-label={t('social.copyEmailAria') || 'Copiar email'}
             >
-                <img src={EmailIcon} className="icon" alt="Email" />
+                <img src={EmailIcon} className="icon" alt="Email" width="30" height="30" loading="lazy" decoding="async" />
             </m.button>
 
             {isEmailCopied && (

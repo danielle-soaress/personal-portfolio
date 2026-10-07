@@ -46,7 +46,8 @@ function ExperienceSection() {
     });
 
     // Timeline line & dot scroll progress
-    const scaleY = useTransform(scrollYProgress, isMobile ? [0, 1] : [0.08, 0.92], ["0%", "100%"]);
+    const scaleYProgress = useTransform(scrollYProgress, isMobile ? [0, 1] : [0.08, 0.92], [0, 1]);
+    const dotTop = useTransform(scrollYProgress, isMobile ? [0, 1] : [0.08, 0.92], ["0%", "100%"]);
 
     // Progressive card reveals synchronized with timeline line growth (for desktop & tablet)
     const card0Opacity = useTransform(scrollYProgress, [0.02, 0.14], [0.35, 1]);
@@ -92,10 +93,12 @@ function ExperienceSection() {
                 transition={{ duration: 0.75, ease: "easeOut" }}
             >
                 <div className="header-title-container">
-                    <h2>{t('experience.title')}</h2>
-                    <span className="header-sparkle-doodle" aria-hidden="true">
-                        <img src={doodleSparkles} alt="" width="24" height="24" loading="lazy" decoding="async" />
-                    </span>
+                    <h2 className="header-title">
+                        <span className="title-text">{t('experience.title')}</span>
+                        <span className="header-sparkle-doodle" aria-hidden="true">
+                            <img src={doodleSparkles} alt="" width="24" height="24" loading="lazy" decoding="async" />
+                        </span>
+                    </h2>
                 </div>
                 <div className="header-subtitle-container">
                     <h3>{t('experience.subtitle')}</h3>
@@ -159,11 +162,11 @@ function ExperienceSection() {
                 <div className="timeline-line-bg">
                     <m.div
                         className="timeline-line-active"
-                        style={{ height: scaleY }}
+                        style={{ scaleY: scaleYProgress }}
                     />
                     <m.div
                         className="timeline-dot"
-                        style={{ top: scaleY }}
+                        style={{ top: dotTop }}
                     >
                         <span className="timeline-dot-inner" />
                         <span className="timeline-dot-halo" />

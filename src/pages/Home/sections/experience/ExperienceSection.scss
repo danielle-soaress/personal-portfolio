@@ -21,12 +21,17 @@
     opacity: 0.28;
     mix-blend-mode: screen;
     pointer-events: none;
-    z-index: 0;
+    @include base.device(md) {
+      width: 180px;
+      height: 180px;
+      filter: blur(35px);
+      opacity: 0.2;
+    }
   }
 
   @include base.device(md) {
     padding: 70px 16px;
-    min-height: 210vh;
+    min-height: auto;
   }
 
   @include base.device(lg) {

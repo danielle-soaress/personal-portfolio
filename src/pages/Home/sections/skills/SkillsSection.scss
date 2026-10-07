@@ -21,6 +21,13 @@
   opacity: 0.35;
   pointer-events: none;
   z-index: 0;
+
+  @include base.device(md) {
+    width: 180px;
+    height: 180px;
+    filter: blur(35px);
+    opacity: 0.22;
+  }
 }
 
 .skills_container {

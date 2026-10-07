@@ -141,8 +141,8 @@ function IntroductionSection() {
             src={flowerOne}
             className="hero_bg_flower hero_flower_top_left_large"
             alt=""
-            width="155"
-            height="155"
+            width="175"
+            height="150"
             loading="lazy"
             decoding="async"
           />
@@ -150,8 +150,8 @@ function IntroductionSection() {
             src={flowerTwo}
             className="hero_bg_flower hero_flower_yellow_mid"
             alt=""
-            width="95"
-            height="95"
+            width="700"
+            height="600"
             loading="lazy"
             decoding="async"
           />
@@ -159,8 +159,8 @@ function IntroductionSection() {
             src={flowerThree}
             className="hero_bg_flower hero_flower_top_left_tiny"
             alt=""
-            width="44"
-            height="44"
+            width="404"
+            height="396"
             loading="lazy"
             decoding="async"
           />
@@ -168,8 +168,8 @@ function IntroductionSection() {
             src={flowerTwo}
             className="hero_bg_flower hero_flower_top_right_large"
             alt=""
-            width="110"
-            height="110"
+            width="700"
+            height="600"
             loading="lazy"
             decoding="async"
           />
@@ -177,8 +177,8 @@ function IntroductionSection() {
             src={flowerOne}
             className="hero_bg_flower hero_flower_top_right_small"
             alt=""
-            width="42"
-            height="42"
+            width="175"
+            height="150"
             loading="lazy"
             decoding="async"
           />
@@ -186,8 +186,8 @@ function IntroductionSection() {
             src={flowerTwo}
             className="hero_bg_flower hero_flower_mid_left_small"
             alt=""
-            width="52"
-            height="52"
+            width="700"
+            height="600"
             loading="lazy"
             decoding="async"
           />
@@ -195,8 +195,8 @@ function IntroductionSection() {
             src={flowerThree}
             className="hero_bg_flower hero_flower_mid_right_medium"
             alt=""
-            width="68"
-            height="68"
+            width="404"
+            height="396"
             loading="lazy"
             decoding="async"
           />
@@ -204,8 +204,8 @@ function IntroductionSection() {
             src={flowerThree}
             className="hero_bg_flower hero_flower_bottom_left_medium"
             alt=""
-            width="88"
-            height="88"
+            width="404"
+            height="396"
             loading="lazy"
             decoding="async"
           />
@@ -213,8 +213,8 @@ function IntroductionSection() {
             src={flowerOne}
             className="hero_bg_flower hero_flower_bottom_right_medium"
             alt=""
-            width="82"
-            height="82"
+            width="175"
+            height="150"
             loading="lazy"
             decoding="async"
           />
@@ -222,8 +222,8 @@ function IntroductionSection() {
             src={flowerTwo}
             className="hero_bg_flower hero_flower_bottom_inner_micro"
             alt=""
-            width="32"
-            height="32"
+            width="700"
+            height="600"
             loading="lazy"
             decoding="async"
           />

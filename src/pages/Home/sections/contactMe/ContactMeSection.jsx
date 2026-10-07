@@ -94,8 +94,8 @@ function ContactMeSection() {
                     style={{ y: flowerLeftY, rotate: flowerLeftRotate }}
                     alt=""
                     aria-hidden="true"
-                    width="155"
-                    height="155"
+                    width="175"
+                    height="150"
                     loading="lazy"
                     decoding="async"
                 />
@@ -105,8 +105,8 @@ function ContactMeSection() {
                     style={{ y: flowerRightY, rotate: flowerRightRotate }}
                     alt=""
                     aria-hidden="true"
-                    width="110"
-                    height="110"
+                    width="700"
+                    height="600"
                     loading="lazy"
                     decoding="async"
                 />
@@ -116,8 +116,8 @@ function ContactMeSection() {
                     style={{ y: flowerBottomY, rotate: flowerBottomRotate }}
                     alt=""
                     aria-hidden="true"
-                    width="88"
-                    height="88"
+                    width="404"
+                    height="396"
                     loading="lazy"
                     decoding="async"
                 />
@@ -127,8 +127,8 @@ function ContactMeSection() {
                     style={{ y: flowerTopY, rotate: flowerTopRotate }}
                     alt=""
                     aria-hidden="true"
-                    width="110"
-                    height="110"
+                    width="700"
+                    height="600"
                     loading="lazy"
                     decoding="async"
                 />
@@ -138,8 +138,8 @@ function ContactMeSection() {
                     style={{ y: flowerCenterY, rotate: flowerCenterRotate }}
                     alt=""
                     aria-hidden="true"
-                    width="155"
-                    height="155"
+                    width="175"
+                    height="150"
                     loading="lazy"
                     decoding="async"
                 />
@@ -149,8 +149,8 @@ function ContactMeSection() {
                     style={{ y: flowerSmallY, rotate: flowerSmallRotate }}
                     alt=""
                     aria-hidden="true"
-                    width="68"
-                    height="68"
+                    width="404"
+                    height="396"
                     loading="lazy"
                     decoding="async"
                 />
@@ -160,8 +160,8 @@ function ContactMeSection() {
                     style={{ y: flowerCornerY, rotate: flowerCornerRotate }}
                     alt=""
                     aria-hidden="true"
-                    width="155"
-                    height="155"
+                    width="175"
+                    height="150"
                     loading="lazy"
                     decoding="async"
                 />

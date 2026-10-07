@@ -109,6 +109,8 @@
         .contact_flower {
             position: absolute;
             width: clamp(54px, 8vw, 110px);
+            height: auto;
+            object-fit: contain;
             opacity: 0.34;
             filter: blur(0.6px);
             pointer-events: none;

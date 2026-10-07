@@ -78,8 +78,10 @@ function ContactMeSection() {
         <section className="ContactMe_container">
             <section ref={introRef} className="ContactMe_intro">
                 <div className="ContactMe_sticky">
-                    <m.div className="sticky_phrase" style={isMobile ? undefined : { opacity: stickyOpacity, filter: stickyBlur }}>
-                        {!isMobile && (
+                    <m.div className="sticky_phrase" style={isMobile ? { opacity: stickyOpacity } : { opacity: stickyOpacity, filter: stickyBlur }}>
+                        {isMobile ? (
+                            <div className="purple_blur purple_blur_mobile" aria-hidden="true" />
+                        ) : (
                             <>
                                 <m.div
                                     className="purple_blur purple_blur_one"
@@ -92,19 +94,11 @@ function ContactMeSection() {
                             </>
                         )}
                         <span>{t('contact.searchTitle')}</span>
-                        {isMobile ? (
-                            <div className="rotating_words mobile_words">
-                                <h2>{t('contact.values.purpose')}</h2>
-                                <h2>{t('contact.values.innovation')}</h2>
-                                <h2>{t('contact.values.growth')}</h2>
-                            </div>
-                        ) : (
-                            <div className="rotating_words">
-                                <m.h2 style={{ opacity: purposeOpacity, y: purposeY }}>{t('contact.values.purpose')}</m.h2>
-                                <m.h2 style={{ opacity: innovationOpacity, y: innovationY }}>{t('contact.values.innovation')}</m.h2>
-                                <m.h2 style={{ opacity: growthOpacity, y: growthY }}>{t('contact.values.growth')}</m.h2>
-                            </div>
-                        )}
+                        <div className="rotating_words">
+                            <m.h2 style={{ opacity: purposeOpacity, y: purposeY }}>{t('contact.values.purpose')}</m.h2>
+                            <m.h2 style={{ opacity: innovationOpacity, y: innovationY }}>{t('contact.values.innovation')}</m.h2>
+                            <m.h2 style={{ opacity: growthOpacity, y: growthY }}>{t('contact.values.growth')}</m.h2>
+                        </div>
                     </m.div>
                 </div>
             </section>

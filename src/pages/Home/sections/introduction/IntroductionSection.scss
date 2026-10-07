@@ -36,7 +36,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 75px 16px 45px;
+    padding: 75px 16px clamp(90px, 14vh, 120px);
     gap: 18px;
     text-align: center;
     overflow-x: hidden;
@@ -705,6 +705,7 @@
       align-items: center;
       width: 100%;
       order: 4;
+      margin-bottom: clamp(32px, 5vh, 48px);
     }
 
     .hero_pill_stack {
@@ -887,7 +888,7 @@
   }
 
   @include base.device(md) {
-    bottom: 14px;
+    bottom: clamp(16px, 3vh, 24px);
   }
 
   &:hover {

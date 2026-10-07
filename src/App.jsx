@@ -11,7 +11,7 @@ function App() {
   return (
     <LazyMotion features={domAnimation}>
       <MotionConfig reducedMotion="user">
-        <ReactLenis root options={{ lerp: 0.1, duration: 1.2, smoothWheel: true, syncTouch: true }} />
+        <ReactLenis root options={{ lerp: 0.1, duration: 1.2, smoothWheel: true, syncTouch: false }} />
         <Router>
           <Suspense fallback={null}>
             <Routes>

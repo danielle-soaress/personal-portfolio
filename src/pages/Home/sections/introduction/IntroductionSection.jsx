@@ -25,71 +25,74 @@ const EMAIL = 'silvasoaresdanielle2@gmail.com';
 const GITHUB_URL = 'https://github.com/danielle-soaress';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/danielle-soares-712910206/';
 
-// Snappy and refined easing curves
-const easeOutQuart = [0.16, 1, 0.3, 1];
-const easePop = [0.34, 1.56, 0.64, 1]; // gentle bouncy spring overshoot for hand-drawn doodles
+// Velvety, cinematic easing curves (deliberate deceleration, theatrical quality)
+const cinematicEase = [0.22, 1, 0.36, 1];
+const cinematicSoftEase = [0.25, 1, 0.5, 1];
+const cinematicPop = [0.34, 1.25, 0.64, 1]; // gentle, high-end artistic flourish
 
-// Staggered variants for left panel narrative
+// Left panel narrative: deliberate, cinematic storytelling reveal
 const leftPanelVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.28,
-      staggerChildren: 0.08
+      delayChildren: 1.35,
+      staggerChildren: 0.18
     }
   }
 };
 
 const leftItemVariants = {
-  hidden: { opacity: 0, y: 18, filter: 'blur(5px)' },
+  hidden: { opacity: 0, y: 28, filter: 'blur(8px)' },
   visible: {
     opacity: 1,
     y: 0,
     filter: 'blur(0px)',
-    transition: { duration: 0.55, ease: easeOutQuart }
+    transition: { duration: 0.95, ease: cinematicEase }
   }
 };
 
 const ctaVariants = {
-  hidden: { opacity: 0, y: 16, scale: 0.94 },
+  hidden: { opacity: 0, y: 22, scale: 0.92 },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.5, ease: easeOutQuart }
+    transition: { duration: 0.85, ease: cinematicEase }
   }
 };
 
 const arrowVariants = {
-  hidden: { opacity: 0, scale: 0, rotate: -15 },
+  hidden: { opacity: 0, scale: 0.4, rotate: -18, filter: 'blur(6px)' },
   visible: {
     opacity: 1,
     scale: 1,
     rotate: 0,
-    transition: { duration: 0.55, ease: easePop }
+    filter: 'blur(0px)',
+    transition: { duration: 0.9, ease: cinematicPop }
   }
 };
 
-// Cascading variants for right panel social pills
+// Right panel social pills: cascading connection links
 const rightPanelVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.38,
-      staggerChildren: 0.08
+      delayChildren: 1.6,
+      staggerChildren: 0.15
     }
   }
 };
 
 const pillVariants = {
-  hidden: { opacity: 0, y: 16, scale: 0.92 },
+  hidden: { opacity: 0, y: 24, scale: 0.92, filter: 'blur(6px)' },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.45, ease: easeOutQuart }
+    filter: 'blur(0px)',
+    transition: { duration: 0.85, ease: cinematicEase }
   }
 };
 
@@ -120,21 +123,21 @@ function IntroductionSection() {
   return (
     <section id="introduction" ref={containerRef} className="hero_stage_wrapper">
       <div className="hero_stage_container">
-        {/* 1. Ambient Center Glow */}
+        {/* 1. Act I: Ambient Center Glow awakening */}
         <m.div
           className="hero_backdrop_glow"
-          initial={{ opacity: 0, scale: 0.75 }}
+          initial={{ opacity: 0, scale: 0.55 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.0, ease: easeOutQuart }}
+          transition={{ duration: 2.0, ease: cinematicSoftEase }}
           aria-hidden="true"
         />
 
-        {/* 2. Ambient Floating Flowers Layer (gradual soft fade-in) */}
+        {/* 2. Act I: Atmospheric Floating Flowers Layer (blooming out of mist) */}
         <m.div
           className="hero_bg_flowers_layer"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.9, delay: 0.1, ease: 'easeOut' }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.6, delay: 0.35, ease: cinematicSoftEase }}
           aria-hidden="true"
         >
           <img
@@ -199,12 +202,12 @@ function IntroductionSection() {
           />
         </m.div>
 
-        {/* 3. Hand-drawn Coffee Mug Doodle */}
+        {/* 3. Act V: Hand-drawn Coffee Mug Doodle */}
         <m.div
           className="doodle_coffee_wrapper"
-          initial={{ opacity: 0, scale: 0, rotate: -18 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ delay: 0.44, duration: 0.55, ease: easePop }}
+          initial={{ opacity: 0, scale: 0.4, rotate: -20, filter: 'blur(6px)' }}
+          animate={{ opacity: 1, scale: 1, rotate: 0, filter: 'blur(0px)' }}
+          transition={{ delay: 1.85, duration: 0.95, ease: cinematicPop }}
           aria-hidden="true"
         >
           <img
@@ -215,29 +218,29 @@ function IntroductionSection() {
           />
         </m.div>
 
-        {/* 4. Giant Typography Backdrop: "danielle" + "soares" + sparkles */}
+        {/* 4. Act II: Giant Monogram / Title Reveal ("danielle" + "soares" + sparkles) */}
         <div className="hero_name_backdrop" aria-hidden="true">
           <div className="name_lockup">
             <m.span
               className="script_first_name"
-              initial={{ opacity: 0, y: -26, rotate: -7, filter: 'blur(7px)' }}
+              initial={{ opacity: 0, y: -42, rotate: -8, filter: 'blur(16px)' }}
               animate={{ opacity: 1, y: 0, rotate: -3, filter: 'blur(0px)' }}
-              transition={{ duration: 0.65, delay: 0.08, ease: easeOutQuart }}
+              transition={{ duration: 1.35, delay: 0.4, ease: cinematicEase }}
             >
               danielle
             </m.span>
             <m.span
               className="bold_last_name"
-              initial={{ opacity: 0, y: 34, scale: 0.94, filter: 'blur(8px)' }}
+              initial={{ opacity: 0, y: 60, scale: 0.9, filter: 'blur(18px)' }}
               animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
-              transition={{ duration: 0.72, delay: 0.15, ease: easeOutQuart }}
+              transition={{ duration: 1.45, delay: 0.6, ease: cinematicEase }}
             >
               soares
               <m.span
                 className="doodle_sparkles_wrapper"
-                initial={{ opacity: 0, scale: 0, rotate: -15 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{ delay: 0.4, duration: 0.5, ease: easePop }}
+                initial={{ opacity: 0, scale: 0.2, rotate: -25, filter: 'blur(6px)' }}
+                animate={{ opacity: 1, scale: 1, rotate: 0, filter: 'blur(0px)' }}
+                transition={{ delay: 1.4, duration: 0.9, ease: cinematicPop }}
                 aria-hidden="true"
               >
                 <img
@@ -251,18 +254,18 @@ function IntroductionSection() {
           </div>
         </div>
 
-        {/* 5. Center Portrait Anchor: rises gracefully */}
+        {/* 5. Act III: The Centerpiece — Danielle Takes Center Stage */}
         <m.div
           className="hero_portrait_anchor"
-          initial={{ opacity: 0, y: 46, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.78, delay: 0.18, ease: easeOutQuart }}
+          initial={{ opacity: 0, y: 70, scale: 0.91, filter: 'blur(12px)' }}
+          animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1.5, delay: 0.85, ease: cinematicEase }}
         >
           <m.div
             className="portrait_glow_halo"
-            initial={{ opacity: 0, scale: 0.75, x: '-50%', y: '-50%' }}
+            initial={{ opacity: 0, scale: 0.65, x: '-50%', y: '-50%' }}
             animate={{ opacity: 1, scale: 1, x: '-50%', y: '-50%' }}
-            transition={{ duration: 0.9, delay: 0.22, ease: easeOutQuart }}
+            transition={{ duration: 1.7, delay: 0.95, ease: cinematicSoftEase }}
             aria-hidden="true"
           />
           <img
@@ -273,12 +276,12 @@ function IntroductionSection() {
           />
         </m.div>
 
-        {/* 6. Hand-drawn Coding Speech Bubble Doodle */}
+        {/* 6. Act V: Hand-drawn Coding Speech Bubble Doodle */}
         <m.div
           className="doodle_coding_bubble_wrapper"
-          initial={{ opacity: 0, scale: 0, rotate: 16 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ delay: 0.52, duration: 0.55, ease: easePop }}
+          initial={{ opacity: 0, scale: 0.4, rotate: 18, filter: 'blur(6px)' }}
+          animate={{ opacity: 1, scale: 1, rotate: 0, filter: 'blur(0px)' }}
+          transition={{ delay: 2.05, duration: 0.95, ease: cinematicPop }}
           aria-hidden="true"
         >
           <img
@@ -289,7 +292,7 @@ function IntroductionSection() {
           />
         </m.div>
 
-        {/* 7. Left Panel: Heading, Description, CTA Pill Button & Doodle Arrow */}
+        {/* 7. Act IV: Left Panel — Narrative Storytelling Reveal */}
         <m.div
           className="hero_left_panel"
           variants={leftPanelVariants}
@@ -327,7 +330,7 @@ function IntroductionSection() {
           </m.div>
         </m.div>
 
-        {/* 8. Right Panel: Cascading Social Pills */}
+        {/* 8. Act V: Right Panel — Cascading Social Connection Pills */}
         <m.div
           className="hero_right_panel"
           variants={rightPanelVariants}
@@ -375,7 +378,7 @@ function IntroductionSection() {
         </m.div>
       </div>
 
-      {/* 9. Scroll Indicator with scroll progress fade */}
+      {/* 9. Act VI: Scroll Indicator with scroll progress fade */}
       <m.div
         className="hero_center_scroll_wrapper"
         style={{ opacity: scrollOpacity }}
@@ -383,9 +386,9 @@ function IntroductionSection() {
         <m.a
           href="#about_me"
           className="hero_center_scroll"
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.68, duration: 0.5, ease: easeOutQuart }}
+          transition={{ delay: 2.35, duration: 1.0, ease: cinematicEase }}
           aria-label={t('introduction.scroll') || 'Rolar'}
         >
           <span className="scroll_label">{t('introduction.scroll')}</span>

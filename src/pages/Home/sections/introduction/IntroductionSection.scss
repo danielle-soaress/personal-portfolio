@@ -304,10 +304,10 @@
         line-height: 0.75;
         margin-bottom: -0.28em;
         margin-left: -1.1em;
-        transform: rotate(-3deg);
         display: inline-block;
         letter-spacing: 0.02em;
         z-index: 2;
+        will-change: transform, opacity, filter;
 
         @include base.device-height(sm) {
           font-size: clamp(2.8rem, 8vh, 4.6rem);
@@ -337,6 +337,7 @@
         position: relative;
         display: inline-block;
         z-index: 1;
+        will-change: transform, opacity, filter;
         background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
         -webkit-background-clip: text;
         background-clip: text;
@@ -403,6 +404,7 @@
     justify-content: center;
     pointer-events: none;
     z-index: 2;
+    will-change: transform, opacity, filter;
 
     @include base.device(lg) {
       height: min(70vh, 600px);

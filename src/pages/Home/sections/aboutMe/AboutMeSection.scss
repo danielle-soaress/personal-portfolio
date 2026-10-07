@@ -8,10 +8,16 @@
 
     @include base.device(md) {
         height: auto!important;
+        margin: 30px 0 0;
+        padding-bottom: 30px;
     }
 
     @include base.device-height(sm) {
         margin: 30vh 0;
+
+        @include base.device(md) {
+            margin: 30px 0 0;
+        }
     }
 }
 
@@ -289,12 +295,25 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 180px;
-        height: 180px;
-        filter: blur(35px);
+        width: min(340px, 85vw);
+        height: min(340px, 85vw);
+        filter: blur(65px);
         box-shadow: none;
-        opacity: 0.25;
+        opacity: 0.28;
     }
+}
+
+.about_me_bottom_glow {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(650px, 95vw);
+    height: 240px;
+    background: radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.22) 0%, rgba(89, 41, 201, 0.1) 45%, transparent 75%);
+    filter: blur(55px);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .abm_flower {
@@ -304,7 +323,7 @@
     top: -450px;
     right: -250px;
     z-index: 100;
-    transform: scale(0);
+    will-change: transform;
     pointer-events: none;
 
     img {

@@ -195,6 +195,14 @@
   }
 
   @include base.device(md) {
+    .hero_bg_flower,
+    .doodle_coffee_svg,
+    .doodle_sparkles_svg,
+    .doodle_arrow_svg,
+    .doodle_coding_svg {
+      animation: none !important;
+    }
+
     .hero_flower_top_left_large {
       top: clamp(25px, 4vh, 60px);
       left: clamp(15px, 3.5vw, 40px);

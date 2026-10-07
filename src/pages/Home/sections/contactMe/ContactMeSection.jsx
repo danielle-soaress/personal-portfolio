@@ -1,5 +1,5 @@
 import './ContactMeSection.scss';
-import {useRef} from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { m, useScroll, useTransform } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import SocialMedias from '../../../../components/socialMedias/SocialMedias';
@@ -12,6 +12,16 @@ function ContactMeSection() {
     const introRef = useRef(null);
     const contactRef = useRef(null);
     const { t } = useTranslation();
+
+    const [isMobile, setIsMobile] = useState(() =>
+        typeof window !== 'undefined' ? window.innerWidth <= 768 : false
+    );
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const { scrollYProgress } = useScroll({
         target: introRef,
@@ -68,21 +78,33 @@ function ContactMeSection() {
         <section className="ContactMe_container">
             <section ref={introRef} className="ContactMe_intro">
                 <div className="ContactMe_sticky">
-                    <m.div className="sticky_phrase" style={{ opacity: stickyOpacity, filter: stickyBlur }}>
-                        <m.div
-                            className="purple_blur purple_blur_one"
-                            style={{ x: blurOneX, y: blurOneY, scale: blurOneScale }}
-                        />
-                        <m.div
-                            className="purple_blur purple_blur_two"
-                            style={{ x: blurTwoX, y: blurTwoY, scale: blurTwoScale }}
-                        />
+                    <m.div className="sticky_phrase" style={isMobile ? undefined : { opacity: stickyOpacity, filter: stickyBlur }}>
+                        {!isMobile && (
+                            <>
+                                <m.div
+                                    className="purple_blur purple_blur_one"
+                                    style={{ x: blurOneX, y: blurOneY, scale: blurOneScale }}
+                                />
+                                <m.div
+                                    className="purple_blur purple_blur_two"
+                                    style={{ x: blurTwoX, y: blurTwoY, scale: blurTwoScale }}
+                                />
+                            </>
+                        )}
                         <span>{t('contact.searchTitle')}</span>
-                        <div className="rotating_words">
-                            <m.h2 style={{ opacity: purposeOpacity, y: purposeY }}>{t('contact.values.purpose')}</m.h2>
-                            <m.h2 style={{ opacity: innovationOpacity, y: innovationY }}>{t('contact.values.innovation')}</m.h2>
-                            <m.h2 style={{ opacity: growthOpacity, y: growthY }}>{t('contact.values.growth')}</m.h2>
-                        </div>
+                        {isMobile ? (
+                            <div className="rotating_words mobile_words">
+                                <h2>{t('contact.values.purpose')}</h2>
+                                <h2>{t('contact.values.innovation')}</h2>
+                                <h2>{t('contact.values.growth')}</h2>
+                            </div>
+                        ) : (
+                            <div className="rotating_words">
+                                <m.h2 style={{ opacity: purposeOpacity, y: purposeY }}>{t('contact.values.purpose')}</m.h2>
+                                <m.h2 style={{ opacity: innovationOpacity, y: innovationY }}>{t('contact.values.innovation')}</m.h2>
+                                <m.h2 style={{ opacity: growthOpacity, y: growthY }}>{t('contact.values.growth')}</m.h2>
+                            </div>
+                        )}
                     </m.div>
                 </div>
             </section>
@@ -91,7 +113,7 @@ function ContactMeSection() {
                 <m.img
                     src={flowerOne}
                     className="contact_flower contact_flower_left"
-                    style={{ y: flowerLeftY, rotate: flowerLeftRotate }}
+                    style={isMobile ? undefined : { y: flowerLeftY, rotate: flowerLeftRotate }}
                     alt=""
                     aria-hidden="true"
                     width="175"
@@ -102,7 +124,7 @@ function ContactMeSection() {
                 <m.img
                     src={flowerTwo}
                     className="contact_flower contact_flower_right"
-                    style={{ y: flowerRightY, rotate: flowerRightRotate }}
+                    style={isMobile ? undefined : { y: flowerRightY, rotate: flowerRightRotate }}
                     alt=""
                     aria-hidden="true"
                     width="700"
@@ -113,7 +135,7 @@ function ContactMeSection() {
                 <m.img
                     src={flowerThree}
                     className="contact_flower contact_flower_bottom"
-                    style={{ y: flowerBottomY, rotate: flowerBottomRotate }}
+                    style={isMobile ? undefined : { y: flowerBottomY, rotate: flowerBottomRotate }}
                     alt=""
                     aria-hidden="true"
                     width="404"
@@ -124,7 +146,7 @@ function ContactMeSection() {
                 <m.img
                     src={flowerTwo}
                     className="contact_flower contact_flower_top"
-                    style={{ y: flowerTopY, rotate: flowerTopRotate }}
+                    style={isMobile ? undefined : { y: flowerTopY, rotate: flowerTopRotate }}
                     alt=""
                     aria-hidden="true"
                     width="700"
@@ -135,7 +157,7 @@ function ContactMeSection() {
                 <m.img
                     src={flowerOne}
                     className="contact_flower contact_flower_center"
-                    style={{ y: flowerCenterY, rotate: flowerCenterRotate }}
+                    style={isMobile ? undefined : { y: flowerCenterY, rotate: flowerCenterRotate }}
                     alt=""
                     aria-hidden="true"
                     width="175"
@@ -146,7 +168,7 @@ function ContactMeSection() {
                 <m.img
                     src={flowerThree}
                     className="contact_flower contact_flower_small"
-                    style={{ y: flowerSmallY, rotate: flowerSmallRotate }}
+                    style={isMobile ? undefined : { y: flowerSmallY, rotate: flowerSmallRotate }}
                     alt=""
                     aria-hidden="true"
                     width="404"
@@ -157,7 +179,7 @@ function ContactMeSection() {
                 <m.img
                     src={flowerOne}
                     className="contact_flower contact_flower_corner"
-                    style={{ y: flowerCornerY, rotate: flowerCornerRotate }}
+                    style={isMobile ? undefined : { y: flowerCornerY, rotate: flowerCornerRotate }}
                     alt=""
                     aria-hidden="true"
                     width="175"
@@ -169,12 +191,12 @@ function ContactMeSection() {
                     className="form_intro_text"
                 >
                     <m.span
-                        style={{ opacity: identifiedOpacity, y: identifiedY }}
+                        style={isMobile ? undefined : { opacity: identifiedOpacity, y: identifiedY }}
                     >
                         {t('contact.identified')}
                     </m.span>
                     <m.span
-                        style={{ opacity: workTogetherOpacity, y: workTogetherY }}
+                        style={isMobile ? undefined : { opacity: workTogetherOpacity, y: workTogetherY }}
                     >
                         {t('contact.workTogether')}
                     </m.span>
@@ -182,12 +204,12 @@ function ContactMeSection() {
 
                 <m.div
                     className="form_divider"
-                    style={{ opacity: dividerOpacity, scaleX: dividerScaleX }}
+                    style={isMobile ? undefined : { opacity: dividerOpacity, scaleX: dividerScaleX }}
                 ></m.div>
 
                 <m.div
                     className="contact_socials"
-                    style={{ opacity: socialsOpacity, y: socialsY }}
+                    style={isMobile ? undefined : { opacity: socialsOpacity, y: socialsY }}
                 >
                     <SocialMedias showRectangle={false} />
                     <p>{t('contact.description.pt2')}</p>

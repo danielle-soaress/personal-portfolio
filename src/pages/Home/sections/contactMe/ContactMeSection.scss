@@ -452,107 +452,93 @@
 
 
 
-@media (max-width: 610px) {
+@media (max-width: 768px) {
     .ContactMe_container {
         .ContactMe_intro {
-            height: 340vh;
+            height: auto !important;
+            min-height: auto;
+            padding: 64px 20px 20px;
+        }
+
+        .ContactMe_sticky {
+            position: relative;
+            top: auto;
+            height: auto;
+            overflow: visible;
         }
 
         .sticky_phrase {
-            padding: 32px 20px;
+            height: auto;
+            padding: 0;
+            filter: none !important;
+            opacity: 1 !important;
             font-size: 1em;
 
             .purple_blur {
-                filter: blur(52px);
-            }
-
-            .purple_blur_one {
-                width: 260px;
-                height: 260px;
-                top: 20%;
-                left: -28%;
-            }
-
-            .purple_blur_two {
-                width: 230px;
-                height: 230px;
-                right: -30%;
-                bottom: 20%;
+                display: none;
             }
 
             span {
-                max-width: 280px;
-                font-size: clamp(34px, 11vw, 48px);
-                line-height: 1.08;
+                font-size: clamp(32px, 8vw, 46px);
+                line-height: 1.1;
+                max-width: 320px;
             }
         }
 
         .rotating_words {
-            min-height: 96px;
+            min-height: auto;
+            margin-top: 14px;
 
-            h2 {
-                font-size: clamp(44px, 16vw, 72px);
+            &.mobile_words {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                align-items: center;
+
+                h2 {
+                    position: relative;
+                    font-size: clamp(38px, 12vw, 56px);
+                    line-height: 1.08;
+                    opacity: 1 !important;
+                    transform: none !important;
+                }
             }
         }
 
         .form_panel {
+            min-height: auto;
             justify-content: center;
-            gap: 22px;
-            padding: 48px 20px;
+            gap: 24px;
+            padding: 36px 20px 60px;
 
             .contact_flower {
-                opacity: 0.2;
-                filter: blur(0.8px);
+                opacity: 0.16;
+                filter: none !important;
+                transform: none !important;
             }
 
             .contact_flower_left {
-                left: -24px;
+                left: -20px;
                 top: 12%;
-                width: 58px;
+                width: 54px;
             }
 
             .contact_flower_right {
-                right: -20px;
+                right: -16px;
                 top: 18%;
-                width: 52px;
+                width: 48px;
             }
 
-            .contact_flower_bottom {
-                bottom: 24px;
-                width: 42px;
-            }
-
+            .contact_flower_bottom,
             .contact_flower_top,
             .contact_flower_center,
-            .contact_flower_small {
-                width: 34px;
-                opacity: 0.12;
-            }
-
-            .contact_flower_top {
-                left: 18%;
-                top: 8%;
-            }
-
-            .contact_flower_center {
-                right: 10%;
-                bottom: 14%;
-            }
-
-            .contact_flower_small {
-                left: 16%;
-                bottom: 18%;
-            }
-
+            .contact_flower_small,
             .contact_flower_corner {
-                right: 42%;
-                top: 7%;
-                width: 42px;
-                opacity: 0.16;
+                display: none;
             }
 
             .form_intro_text {
-                font-size: clamp(30px, 12vw, 44px);
+                font-size: clamp(30px, 11vw, 44px);
                 line-height: 1.12;
             }
 
@@ -583,37 +569,6 @@
                         aspect-ratio: 1 / 1;
                     }
                 }
-            }
-        }
-    }
-}
-
-@media (max-width: 390px) {
-    .ContactMe_container {
-        .sticky_phrase {
-            span {
-                max-width: 230px;
-                font-size: 30px;
-            }
-        }
-
-        .rotating_words {
-            h2 {
-                font-size: clamp(38px, 15vw, 56px);
-            }
-        }
-
-        .form_panel {
-            .form_intro_text {
-                font-size: 28px;
-            }
-
-            .contact_flower_bottom {
-                display: none;
-            }
-
-            .contact_flower_small {
-                display: none;
             }
         }
     }

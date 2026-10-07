@@ -14,9 +14,10 @@ import doodleStarBadge from '../../../../assets/images/doodles/doodle_star_badge
 import doodleSquiggly from '../../../../assets/images/doodles/doodle_squiggly.svg';
 
 const STICKERS_BY_ID = {
-    1: doodleGem,
+    1: doodleMobile,
     2: doodleBulb,
-    3: doodleMobile,
+    3: doodleGem,
+    4: doodleSparkles,
     5: doodleStarBadge,
 };
 
@@ -48,31 +49,37 @@ function ExperienceSection() {
     const scaleY = useTransform(scrollYProgress, isMobile ? [0, 1] : [0.08, 0.92], ["0%", "100%"]);
 
     // Progressive card reveals synchronized with timeline line growth (for desktop & tablet)
-    const card0Opacity = useTransform(scrollYProgress, [0.02, 0.16], [0.35, 1]);
-    const card0LeftX = useTransform(scrollYProgress, [0.02, 0.16], [-24, 0]);
-    const card0RightX = useTransform(scrollYProgress, [0.02, 0.16], [24, 0]);
-    const card0Scale = useTransform(scrollYProgress, [0.02, 0.16], [0.97, 1]);
+    const card0Opacity = useTransform(scrollYProgress, [0.02, 0.14], [0.35, 1]);
+    const card0LeftX = useTransform(scrollYProgress, [0.02, 0.14], [-24, 0]);
+    const card0RightX = useTransform(scrollYProgress, [0.02, 0.14], [24, 0]);
+    const card0Scale = useTransform(scrollYProgress, [0.02, 0.14], [0.97, 1]);
 
-    const card1Opacity = useTransform(scrollYProgress, [0.22, 0.38], [0, 1]);
-    const card1LeftX = useTransform(scrollYProgress, [0.22, 0.38], [-24, 0]);
-    const card1RightX = useTransform(scrollYProgress, [0.22, 0.38], [24, 0]);
-    const card1Scale = useTransform(scrollYProgress, [0.22, 0.38], [0.97, 1]);
+    const card1Opacity = useTransform(scrollYProgress, [0.18, 0.32], [0, 1]);
+    const card1LeftX = useTransform(scrollYProgress, [0.18, 0.32], [-24, 0]);
+    const card1RightX = useTransform(scrollYProgress, [0.18, 0.32], [24, 0]);
+    const card1Scale = useTransform(scrollYProgress, [0.18, 0.32], [0.97, 1]);
 
-    const card2Opacity = useTransform(scrollYProgress, [0.46, 0.62], [0, 1]);
-    const card2LeftX = useTransform(scrollYProgress, [0.46, 0.62], [-24, 0]);
-    const card2RightX = useTransform(scrollYProgress, [0.46, 0.62], [24, 0]);
-    const card2Scale = useTransform(scrollYProgress, [0.46, 0.62], [0.97, 1]);
+    const card2Opacity = useTransform(scrollYProgress, [0.36, 0.50], [0, 1]);
+    const card2LeftX = useTransform(scrollYProgress, [0.36, 0.50], [-24, 0]);
+    const card2RightX = useTransform(scrollYProgress, [0.36, 0.50], [24, 0]);
+    const card2Scale = useTransform(scrollYProgress, [0.36, 0.50], [0.97, 1]);
 
-    const card3Opacity = useTransform(scrollYProgress, [0.70, 0.86], [0, 1]);
-    const card3LeftX = useTransform(scrollYProgress, [0.70, 0.86], [-24, 0]);
-    const card3RightX = useTransform(scrollYProgress, [0.70, 0.86], [24, 0]);
-    const card3Scale = useTransform(scrollYProgress, [0.70, 0.86], [0.97, 1]);
+    const card3Opacity = useTransform(scrollYProgress, [0.54, 0.68], [0, 1]);
+    const card3LeftX = useTransform(scrollYProgress, [0.54, 0.68], [-24, 0]);
+    const card3RightX = useTransform(scrollYProgress, [0.54, 0.68], [24, 0]);
+    const card3Scale = useTransform(scrollYProgress, [0.54, 0.68], [0.97, 1]);
+
+    const card4Opacity = useTransform(scrollYProgress, [0.72, 0.88], [0, 1]);
+    const card4LeftX = useTransform(scrollYProgress, [0.72, 0.88], [-24, 0]);
+    const card4RightX = useTransform(scrollYProgress, [0.72, 0.88], [24, 0]);
+    const card4Scale = useTransform(scrollYProgress, [0.72, 0.88], [0.97, 1]);
 
     const cardAnimConfigs = [
         { opacity: card0Opacity, leftX: card0LeftX, rightX: card0RightX, scale: card0Scale },
         { opacity: card1Opacity, leftX: card1LeftX, rightX: card1RightX, scale: card1Scale },
         { opacity: card2Opacity, leftX: card2LeftX, rightX: card2RightX, scale: card2Scale },
         { opacity: card3Opacity, leftX: card3LeftX, rightX: card3RightX, scale: card3Scale },
+        { opacity: card4Opacity, leftX: card4LeftX, rightX: card4RightX, scale: card4Scale },
     ];
 
     return (

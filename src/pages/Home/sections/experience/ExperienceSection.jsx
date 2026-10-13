@@ -13,6 +13,20 @@ import doodleMobile from '../../../../assets/images/doodles/doodle_mobile.svg';
 import doodleStarBadge from '../../../../assets/images/doodles/doodle_star_badge.svg';
 import doodleSquiggly from '../../../../assets/images/doodles/doodle_squiggly.svg';
 
+import totvsLogo from '../../../../assets/images/companies/totvs.svg';
+import cedisLogo from '../../../../assets/images/companies/cedis.svg';
+import v360Logo from '../../../../assets/images/companies/v360_full.png';
+import unbLogo from '../../../../assets/images/companies/unb.svg';
+import ifbLogo from '../../../../assets/images/companies/ifb.svg';
+
+const COMPANY_LOGOS_BY_ID = {
+    1: totvsLogo,
+    2: cedisLogo,
+    3: v360Logo,
+    4: unbLogo,
+    5: ifbLogo,
+};
+
 const STICKERS_BY_ID = {
     1: doodleMobile,
     2: doodleBulb,
@@ -38,7 +52,6 @@ function ExperienceSection() {
     }, []);
 
     const currentLang = (i18n.language || 'pt').split('-')[0];
-    const isEn = currentLang === 'en';
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -46,11 +59,10 @@ function ExperienceSection() {
     });
 
     // Timeline line & dot scroll progress
-    const scaleYProgress = useTransform(scrollYProgress, isMobile ? [0, 1] : [0.08, 0.92], [0, 1]);
-    const dotTop = useTransform(scrollYProgress, isMobile ? [0, 1] : [0.08, 0.92], ["0%", "100%"]);
+    const scaleY = useTransform(scrollYProgress, isMobile ? [0, 1] : [0.08, 0.92], ["0%", "100%"]);
 
     // Progressive card reveals synchronized with timeline line growth (for desktop & tablet)
-    const card0Opacity = useTransform(scrollYProgress, [0.02, 0.14], [0.35, 1]);
+    const card0Opacity = useTransform(scrollYProgress, [0.02, 0.14], [0.4, 1]);
     const card0LeftX = useTransform(scrollYProgress, [0.02, 0.14], [-24, 0]);
     const card0RightX = useTransform(scrollYProgress, [0.02, 0.14], [24, 0]);
     const card0Scale = useTransform(scrollYProgress, [0.02, 0.14], [0.97, 1]);
@@ -117,6 +129,7 @@ function ExperienceSection() {
                         const role = content.role || exp.en.role;
                         const company = exp.company;
                         const desc = content.description || exp.en.description;
+                        const logo = COMPANY_LOGOS_BY_ID[exp.id];
                         const anim = cardAnimConfigs[index] || cardAnimConfigs[cardAnimConfigs.length - 1];
 
                         const motionProps = isMobile
@@ -140,13 +153,30 @@ function ExperienceSection() {
                                 {...motionProps}
                                 className="left-experience-card"
                             >
-                                <div className="experience-top-meta">
-                                    <span className="experience-period">{period}</span>
-                                </div>
-                                <h2 className="experience-company">{company}</h2>
-                                <p className="experience-role">{role}</p>
-                                <div className="experience-type">
-                                    <span>{type}</span>
+                                <div className="experience-card-main">
+                                    {logo && (
+                                        <div className="company-logo-container">
+                                            <div className="company-logo-box">
+                                                <img
+                                                    src={logo}
+                                                    alt={`${company} logo`}
+                                                    className="company-logo-img"
+                                                    loading="lazy"
+                                                    decoding="async"
+                                                />
+                                            </div>
+                                        </div>
+                                    )}
+                                    <div className="experience-card-info">
+                                        <div className="experience-top-meta">
+                                            <span className="experience-period">{period}</span>
+                                        </div>
+                                        <h2 className="experience-company">{company}</h2>
+                                        <p className="experience-role">{role}</p>
+                                        <div className="experience-type">
+                                            <span>{type}</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <p className="experience-desc-mobile">{desc}</p>
                                 <div className="tech-stack-mobile">
@@ -162,11 +192,11 @@ function ExperienceSection() {
                 <div className="timeline-line-bg">
                     <m.div
                         className="timeline-line-active"
-                        style={{ scaleY: scaleYProgress }}
+                        style={{ height: scaleY }}
                     />
                     <m.div
                         className="timeline-dot"
-                        style={{ top: dotTop }}
+                        style={{ top: scaleY }}
                     >
                         <span className="timeline-dot-inner" />
                         <span className="timeline-dot-halo" />

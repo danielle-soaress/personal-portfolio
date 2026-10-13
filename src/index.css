@@ -86,3 +86,10 @@ button:focus-visible {
   -o-user-drag: none;
   -webkit-touch-callout: none;
 }
+
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}

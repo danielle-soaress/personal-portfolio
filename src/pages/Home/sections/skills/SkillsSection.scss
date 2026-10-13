@@ -11,22 +11,37 @@
 .skills_blur {
   position: absolute;
   left: 50%;
-  top: 35%;
+  top: 38%;
   transform: translate(-50%, -50%);
-  background-color: #5929c9;
-  width: 400px;
-  height: 400px;
-  filter: blur(220px);
+  width: clamp(480px, 52vw, 780px);
+  height: clamp(340px, 40vw, 500px);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(147, 51, 234, 0.35) 0%,
+    rgba(89, 41, 201, 0.22) 40%,
+    rgba(89, 74, 235, 0.08) 65%,
+    transparent 80%
+  );
+  filter: blur(40px);
   mix-blend-mode: screen;
-  opacity: 0.35;
   pointer-events: none;
   z-index: 0;
 
   @include base.device(md) {
-    width: 180px;
-    height: 180px;
-    filter: blur(35px);
-    opacity: 0.22;
+    top: 36%;
+    width: clamp(320px, 70vw, 500px);
+    height: clamp(260px, 52vw, 360px);
+    filter: blur(30px);
+    opacity: 0.85;
+  }
+
+  @include base.device(sm) {
+    top: 32%;
+    width: 88vw;
+    height: 280px;
+    filter: blur(24px);
+    opacity: 0.8;
   }
 }
 

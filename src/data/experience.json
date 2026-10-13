@@ -6,7 +6,7 @@
     "pt": {
       "role": "Desenvolvedora de Software Júnior",
       "period": "Out 2026 - Momento",
-      "type": "Híbrido",
+      "type": "Remoto",
       "description": "Atuação no desenvolvimento e evolução de soluções mobile escaláveis com Flutter na TOTVS. Foco na construção de aplicativos móveis corporativos, integração entre dispositivos periféricos e comunicação com recursos e funções nativas de hardware, como Bluetooth Classic e BLE.",
       "shortDescription": "Desenvolvimento de soluções mobile em Flutter e integração de hardware nativo na TOTVS.",
       "highlight": "Soluções mobile corporativas com Flutter e comunicação nativa entre dispositivos via Bluetooth."
@@ -14,7 +14,7 @@
     "en": {
       "role": "Junior Software Developer",
       "period": "Oct 2026 - Present",
-      "type": "Hybrid",
+      "type": "Remote",
       "description": "Development and advancement of scalable mobile solutions using Flutter at TOTVS. Focused on building enterprise mobile applications, device-to-device peripheral integrations, and direct communication with native hardware features, such as Bluetooth Classic and BLE.",
       "shortDescription": "Development of enterprise mobile solutions in Flutter and native hardware integration at TOTVS.",
       "highlight": "Enterprise mobile solutions with Flutter and native device communication via Bluetooth."

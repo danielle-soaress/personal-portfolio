@@ -75,7 +75,7 @@ function Navbar({ variant = 'vertical' }) {
     if (!section) return;
 
     setActiveSection(sectionId);
-    section.scrollIntoView({ behavior: 'auto', block: 'start' });
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     setMenuOpen(false);
   };
 

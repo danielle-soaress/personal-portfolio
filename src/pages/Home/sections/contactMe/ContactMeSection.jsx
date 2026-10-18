@@ -1,6 +1,7 @@
 import './ContactMeSection.scss';
 import { useRef, useState, useEffect } from 'react';
-import { m, useScroll, useTransform } from 'motion/react';
+import { m, useTransform } from 'motion/react';
+import { useSmoothScroll } from '../../../../hooks/useSmoothScroll';
 import { useTranslation } from 'react-i18next';
 import SocialMedias from '../../../../components/socialMedias/SocialMedias';
 import flowerOne from '../../../../assets/images/flower_1_reduced.webp'
@@ -23,12 +24,12 @@ function ContactMeSection() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const { scrollYProgress } = useScroll({
+    const { scrollYProgress } = useSmoothScroll({
         target: introRef,
         offset: ["start start", "end end"],
     });
 
-    const { scrollYProgress: contactScrollProgress } = useScroll({
+    const { scrollYProgress: contactScrollProgress } = useSmoothScroll({
         target: contactRef,
         offset: ["start 85%", "start start"],
     });

@@ -1,4 +1,5 @@
-import { m, useTransform, useScroll } from "motion/react";
+import { m, useTransform } from "motion/react";
+import { useSmoothScroll } from "../../../../hooks/useSmoothScroll";
 import { useRef, useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import data from '../../../../data/projects.json';
@@ -79,7 +80,7 @@ function ProjectsSection() {
     };
   }, [projects]);
 
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress } = useSmoothScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });

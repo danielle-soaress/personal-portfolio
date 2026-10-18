@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { m, useScroll, useTransform } from 'motion/react';
+import { m, useTransform } from 'motion/react';
+import { useSmoothScroll } from '../../../../hooks/useSmoothScroll';
 import {
   BsArrowUpRight,
   BsArrowRight,
@@ -98,7 +99,7 @@ function IntroductionSection() {
   const { t, i18n } = useTranslation();
   const [copied, setCopied] = useState(false);
 
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress } = useSmoothScroll({
     target: containerRef,
     offset: ['start start', 'end start']
   });

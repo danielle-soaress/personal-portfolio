@@ -9,7 +9,8 @@ import doodleSmiley from '../../../../assets/images/doodles/doodle_smiley.svg'
 import personalPhoto from '../../../../assets/images/about.webp'
 import { useTranslation } from 'react-i18next';
 import "../../../../i18n";
-import { m, useTransform, useScroll } from "motion/react"
+import { m, useTransform } from "motion/react";
+import { useSmoothScroll } from "../../../../hooks/useSmoothScroll";
 
 function AboutMe() {
     const containerRef = useRef(null);
@@ -25,7 +26,7 @@ function AboutMe() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const { scrollYProgress } = useScroll({
+    const { scrollYProgress } = useSmoothScroll({
         target: containerRef,
         offset: ["start end", "end start"]
     });

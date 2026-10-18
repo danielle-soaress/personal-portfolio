@@ -1,4 +1,5 @@
-import { m, useScroll, useTransform } from "motion/react";
+import { m, useTransform } from "motion/react";
+import { useSmoothScroll } from "../../../../hooks/useSmoothScroll";
 import { useRef, useState, useEffect } from "react";
 import './ExperienceSection.scss';
 import data from '../../../../data/experience.json';
@@ -53,7 +54,7 @@ function ExperienceSection() {
 
     const currentLang = (i18n.language || 'pt').split('-')[0];
 
-    const { scrollYProgress } = useScroll({
+    const { scrollYProgress } = useSmoothScroll({
         target: containerRef,
         offset: isMobile ? ["start 80%", "end 80%"] : ["start center", "end end"]
     });

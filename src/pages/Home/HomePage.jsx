@@ -7,6 +7,7 @@ import ContactMeSection from './sections/contactMe/ContactMeSection.jsx'
 import ProjectsSection from './sections/projects/ProjectsSection.jsx' 
 import ExperienceSection from './sections/experience/ExperienceSection.jsx'
 import EducationSection from './sections/education/EducationSection.jsx'
+import AchievementsSection from './sections/achievements/AchievementsSection.jsx'
 import {useRef} from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -21,6 +22,7 @@ function HomePage() {
         <AboutMeSection/>
         <ExperienceSection/>
         <EducationSection/>
+        <AchievementsSection/>
         <ProjectsSection/>
         <SkillsSection/>
         <ContactMeSection/>

@@ -1,0 +1,169 @@
+{
+  "posts": [
+    {
+      "id": "vfes-inpi",
+      "type": "software",
+      "year": "2026",
+      "slides": [
+        "vfes-app"
+      ],
+      "url": "",
+      "pt": {
+        "venue": "INPI · Universidade de Brasília",
+        "title": "v-FES Cycling App registrado no INPI",
+        "caption": "O aplicativo que desenvolvi para acionar o triciclo do projeto v-FES Cycling foi registrado como software no INPI, junto com a equipe da UnB."
+      },
+      "en": {
+        "venue": "INPI · University of Brasília",
+        "title": "v-FES Cycling App registered with INPI",
+        "caption": "The app I built to control the v-FES Cycling tricycle was registered as software with INPI, together with the UnB team."
+      }
+    },
+    {
+      "id": "seb-paper",
+      "type": "paper",
+      "year": "2025",
+      "slides": [
+        "seb-com-trajectory",
+        "seb-app",
+        "seb-sensor"
+      ],
+      "url": "https://doi.org/10.5281/zenodo.17363496",
+      "pt": {
+        "venue": "SEB 2025 · Uberlândia (MG)",
+        "title": "Artigo no Simpósio de Engenharia Biomédica",
+        "caption": "Sou coautora do sistema que mede a trajetória do centro de massa corporal com sensores inerciais e um app em Flutter conectado via Bluetooth."
+      },
+      "en": {
+        "venue": "SEB 2025 · Uberlândia (MG)",
+        "title": "Paper at the Biomedical Engineering Symposium",
+        "caption": "I co-authored a system that tracks the body center of mass with inertial sensors and a Flutter app connected over Bluetooth."
+      }
+    },
+    {
+      "id": "cic-honorable-mention",
+      "type": "award",
+      "year": "2025",
+      "slides": [
+        "cic-poster"
+      ],
+      "url": "https://www.plic.app.br/evento/cicdf/edicao/cicdf25/publicacoes/4187",
+      "pt": {
+        "venue": "31º CIC UnB · 22º CIC DF",
+        "title": "Menção Honrosa no meu PIBIC",
+        "caption": "Apresentei o app de acionamento do triciclo assistido por FES no Congresso de Iniciação Científica, e o trabalho recebeu Menção Honrosa."
+      },
+      "en": {
+        "venue": "31st UnB · 22nd DF Research Congress",
+        "title": "Honorable Mention for my undergraduate research",
+        "caption": "I presented the app that controls the FES-assisted tricycle at the Undergraduate Research Congress, and the work received an Honorable Mention."
+      }
+    },
+    {
+      "id": "eletro-libras-media",
+      "type": "press",
+      "year": "2022",
+      "slides": [
+        "tv-report",
+        "ifb-news",
+        "eletro-libras-glossary"
+      ],
+      "url": "https://www.youtube.com/watch?v=M5Seb0krTF4",
+      "pt": {
+        "venue": "TV Brasil · Record TV · Correio Braziliense",
+        "title": "Eletro Libras na TV e no jornal",
+        "caption": "O app que criamos para estudantes surdos do curso de Eletrônica do IFB virou reportagem na TV Brasil e na Record TV e saiu no Correio Braziliense."
+      },
+      "en": {
+        "venue": "TV Brasil · Record TV · Correio Braziliense",
+        "title": "Eletro Libras on TV and in the newspaper",
+        "caption": "The app we built for deaf students in IFB’s Electronics course was featured on TV Brasil and Record TV and in the Correio Braziliense newspaper."
+      }
+    },
+    {
+      "id": "silicti-para",
+      "type": "event",
+      "year": "2024",
+      "slides": [
+        "silicti-eletro-libras",
+        "eletro-libras-prototype"
+      ],
+      "url": "",
+      "pt": {
+        "venue": "III SILICTI · Castanhal (PA)",
+        "title": "Do DF ao Pará para apresentar o Eletro Libras",
+        "caption": "Viajamos de Brasília até Castanhal, no Pará, para apresentar o relato de experiência do Eletro Libras em um seminário internacional sobre inclusão."
+      },
+      "en": {
+        "venue": "III SILICTI · Castanhal (PA)",
+        "title": "From Brasília to Pará to present Eletro Libras",
+        "caption": "We traveled from Brasília to Castanhal, in Pará, to present the Eletro Libras experience report at an international seminar on inclusion."
+      }
+    },
+    {
+      "id": "eda2-challenge",
+      "type": "challenge",
+      "year": "2025",
+      "slides": [
+        {
+          "tile": {
+            "badge": "1º"
+          }
+        }
+      ],
+      "url": "",
+      "pt": {
+        "venue": "Estruturas de Dados 2 · UnB",
+        "title": "1º lugar no desafio FCTE Delivery",
+        "caption": "Em dupla, criamos o algoritmo de rotas que fazia o entregador cumprir o maior número de pedidos pelo menor caminho e terminamos no topo do ranking da turma."
+      },
+      "en": {
+        "venue": "Data Structures 2 · UnB",
+        "title": "1st place in the FCTE Delivery challenge",
+        "caption": "With my teammate, I built the routing algorithm that let the courier deliver the most orders on the shortest path, finishing first in the class ranking."
+      }
+    },
+    {
+      "id": "ceinepe-workshop",
+      "type": "workshop",
+      "year": "2023",
+      "slides": [
+        {
+          "tile": {
+            "logo": "ifb"
+          }
+        }
+      ],
+      "url": "",
+      "pt": {
+        "venue": "VI Ceinepe · IFB Ceilândia",
+        "title": "Ministrei uma oficina de criação de apps",
+        "caption": "Conduzi uma oficina sobre como tirar uma ideia de aplicativo do papel, na Jornada Ceilândia Integrando Ensino, Pesquisa e Extensão."
+      },
+      "en": {
+        "venue": "VI Ceinepe · IFB Ceilândia",
+        "title": "I taught an app-building workshop",
+        "caption": "I led a workshop on turning an app idea into a working prototype at IFB Ceilândia’s teaching, research and outreach conference."
+      }
+    },
+    {
+      "id": "programming-marathons",
+      "type": "competition",
+      "year": "",
+      "slides": [
+        "marathon"
+      ],
+      "url": "",
+      "pt": {
+        "venue": "Meninas.comp · UnB",
+        "title": "Maratonas de programação",
+        "caption": "Participo de maratonas de programação para treinar algoritmos sob pressão e resolver problemas em equipe."
+      },
+      "en": {
+        "venue": "Meninas.comp · UnB",
+        "title": "Programming marathons",
+        "caption": "I take part in programming marathons to practice algorithms under pressure and solve problems as a team."
+      }
+    }
+  ]
+}

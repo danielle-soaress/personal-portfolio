@@ -118,6 +118,30 @@
         "viewCertificate": "Verificar certificado",
         "lattes": "Mais no meu currículo Lattes"
     },
+    "achievements": {
+        "title": "Conquistas",
+        "subtitle": "Do laboratório para a TV",
+        "like": "Curtir",
+        "unlike": "Descurtir",
+        "previous": "Post anterior",
+        "next": "Próximo post",
+        "goTo": "Ir para o post {{index}}",
+        "readPaper": "Ler artigo",
+        "watchReport": "Assistir reportagem",
+        "readWork": "Ler trabalho",
+        "more": "mais",
+        "less": "menos",
+        "types": {
+            "software": "Registro de software",
+            "award": "Prêmio",
+            "paper": "Artigo",
+            "event": "Seminário",
+            "press": "Na mídia",
+            "workshop": "Oficina",
+            "challenge": "Desafio",
+            "competition": "Competição"
+        }
+    },
 
     "skills": {
         "title": "Ferramentas",

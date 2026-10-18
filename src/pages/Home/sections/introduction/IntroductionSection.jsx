@@ -12,7 +12,7 @@ import {
 } from 'react-icons/bs';
 
 import './IntroductionSection.scss';
-import personalPhoto from '../../../../assets/images/hero_danielle.webp';
+import personalPhoto from '../../../../assets/images/hero_danielle_profile.webp';
 import flowerOne from '../../../../assets/images/flower_1_reduced.webp';
 import flowerTwo from '../../../../assets/images/flower_2.webp';
 import flowerThree from '../../../../assets/images/flower_3.webp';
@@ -306,8 +306,8 @@ function IntroductionSection() {
             src={personalPhoto}
             alt="Danielle Soares"
             className="portrait_image"
-            width="444"
-            height="561"
+            width="682"
+            height="1100"
             loading="eager"
             decoding="async"
           />

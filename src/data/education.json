@@ -1,0 +1,121 @@
+{
+  "timeline": {
+    "start": "2020-01",
+    "end": "2028-01"
+  },
+  "degrees": [
+    {
+      "id": "unb",
+      "main": true,
+      "institution": "Universidade de Brasília (UnB)",
+      "start": "2023-03",
+      "end": "2027-12",
+      "pt": {
+        "course": "Bacharelado em Engenharia de Software",
+        "period": "Mar 2023 — Dez 2027",
+        "short": "Engenharia de Software",
+        "periodShort": "2023 — 2027"
+      },
+      "en": {
+        "course": "Bachelor of Software Engineering",
+        "period": "Mar 2023 — Dec 2027",
+        "short": "Software Engineering",
+        "periodShort": "2023 — 2027"
+      },
+      "campus": "Campus Gama"
+    },
+    {
+      "id": "ifb",
+      "institution": "Instituto Federal de Brasília (IFB)",
+      "start": "2020-03",
+      "end": "2022-12",
+      "pt": {
+        "course": "Técnico em Eletrônica",
+        "period": "Mar 2020 — Dez 2022",
+        "short": "Técnico em Eletrônica",
+        "periodShort": "2020 — 2022"
+      },
+      "en": {
+        "course": "Electronics Technician",
+        "period": "Mar 2020 — Dec 2022",
+        "short": "Electronics Technician",
+        "periodShort": "2020 — 2022"
+      }
+    }
+  ],
+  "courses": [
+    {
+      "id": "google-ai-essentials",
+      "issuer": "Google · Coursera",
+      "year": "2025",
+      "url": "https://coursera.org/verify/8Z0THUNMZ5MH",
+      "pt": {
+        "title": "Google AI Essentials"
+      },
+      "en": {
+        "title": "Google AI Essentials"
+      }
+    },
+    {
+      "id": "cisco-networking",
+      "issuer": "Cisco Networking Academy",
+      "year": "2025",
+      "url": "",
+      "pt": {
+        "title": "Conceitos Básicos de Redes"
+      },
+      "en": {
+        "title": "Networking Basics"
+      }
+    },
+    {
+      "id": "ai-for-devs",
+      "issuer": "Santander · DIO",
+      "year": "2024",
+      "url": "",
+      "pt": {
+        "title": "Fundamentos de IA para Devs"
+      },
+      "en": {
+        "title": "AI Fundamentals for Developers"
+      }
+    },
+    {
+      "id": "java-oop",
+      "issuer": "Udemy",
+      "year": "2024",
+      "url": "https://ude.my/UC-fbaafea2-dbbc-4938-8f56-120d0095b0e0",
+      "pt": {
+        "title": "Java: Programação Orientada a Objetos"
+      },
+      "en": {
+        "title": "Java: Object-Oriented Programming"
+      }
+    },
+    {
+      "id": "javascript",
+      "issuer": "B7Web",
+      "year": "2023",
+      "url": "",
+      "pt": {
+        "title": "JavaScript"
+      },
+      "en": {
+        "title": "JavaScript"
+      }
+    },
+    {
+      "id": "cilt-english",
+      "issuer": "CILT",
+      "year": "2022",
+      "url": "",
+      "pt": {
+        "title": "Inglês · curso completo (631h)"
+      },
+      "en": {
+        "title": "English · full program (631h)"
+      }
+    }
+  ],
+  "lattesUrl": "http://lattes.cnpq.br/1802518791476876"
+}

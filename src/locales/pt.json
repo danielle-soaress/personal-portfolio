@@ -111,6 +111,14 @@
         "subtitle": "Minha jornada até agora"
     },
 
+    "education": {
+        "title": "Formação",
+        "subtitle": "Minha trilha até a engenharia",
+        "coursesLabel": "Cursos complementares",
+        "viewCertificate": "Verificar certificado",
+        "lattes": "Mais no meu currículo Lattes"
+    },
+
     "skills": {
         "title": "Ferramentas",
         "subtitle": "Tecnologias e ferramentas que domino para entregar soluções de qualidade.",

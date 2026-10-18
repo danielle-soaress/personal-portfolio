@@ -158,6 +158,14 @@
         "subtitle": "My journey so far"
     },
 
+    "education": {
+        "title": "Education",
+        "subtitle": "My path to engineering",
+        "coursesLabel": "Additional courses",
+        "viewCertificate": "Verify certificate",
+        "lattes": "More on my Lattes CV"
+    },
+
     "skills": {
         "title": "Tools",
         "subtitle": "Technologies and tools I master to deliver quality solutions.",

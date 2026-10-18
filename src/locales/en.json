@@ -18,9 +18,9 @@
 
     "introduction": {
         "title": "Hello, I'm ",
-        "role": "Software Developer",
+        "role": "Software Engineer",
         "education": "Software Engineering Student",
-        "description": "Software Engineering student at the University of Brasília (UnB) and full-stack programming enthusiast.",
+        "description": "Software Engineering student at the University of Brasília (UnB), focused on full-stack mobile development and applied AI research.",
         "button": "Contact me",
         "scroll": "Scroll",
         "email": "Email Copied!"
@@ -29,7 +29,7 @@
     "about": {
         "title": "About me",
         "homeTitle": "Hi, I'm ",
-        "paragraph_1": "I'm a Full-Stack Developer currently based in Brasília, Brazil, where I study Software Engineering at UnB. I build solutions for Web and Mobile, and I also have experience in areas such as Systems Architecture, Software Requirements, IoT, and AI integration.",
+        "paragraph_1": "I'm a future software engineer based in Brasília, Brazil, where I study Software Engineering at UnB. I work on full-stack mobile development and research on applying AI to software systems, with experience in Systems Architecture, Software Requirements, and IoT.",
         "paragraph_2": "My journey is shaped by flexibility and curiosity. I believe good engineering goes beyond code: it is about solving real problems. I'm always open to new connections and opportunities, so feel free to get in touch!",
         "contactCta": "contact me",
         "photoCategory": "Programming Marathon",

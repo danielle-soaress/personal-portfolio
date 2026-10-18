@@ -17,14 +17,14 @@ import doodleSquiggly from '../../../../assets/images/doodles/doodle_squiggly.sv
 import totvsLogo from '../../../../assets/images/companies/totvs.svg';
 import cedisLogo from '../../../../assets/images/companies/cedis.svg';
 import v360Logo from '../../../../assets/images/companies/v360_full.png';
-import unbLogo from '../../../../assets/images/companies/unb.svg';
+import bemteviLogo from '../../../../assets/images/companies/bemtevi.png';
 import ifbLogo from '../../../../assets/images/companies/ifb.svg';
 
 const COMPANY_LOGOS_BY_ID = {
     1: totvsLogo,
     2: cedisLogo,
     3: v360Logo,
-    4: unbLogo,
+    4: bemteviLogo,
     5: ifbLogo,
 };
 

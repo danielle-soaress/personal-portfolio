@@ -2,22 +2,22 @@
   {
     "id": 1,
     "company": "TOTVS",
-    "techs": ["Flutter", "Dart", "Mobile", "Bluetooth", "Integração Hardware", "APIs Nativas"],
+    "techs": ["Flutter", "Dart", "Mobile", "Integração APIs"],
     "pt": {
-      "role": "Desenvolvedora de Software Júnior",
+      "role": "Engenheira de Software Júnior",
       "period": "Out 2026 - Momento",
       "type": "Remoto",
-      "description": "Atuação no desenvolvimento e evolução de soluções mobile escaláveis com Flutter na TOTVS. Foco na construção de aplicativos móveis corporativos, integração entre dispositivos periféricos e comunicação com recursos e funções nativas de hardware, como Bluetooth Classic e BLE.",
-      "shortDescription": "Desenvolvimento de soluções mobile em Flutter e integração de hardware nativo na TOTVS.",
-      "highlight": "Soluções mobile corporativas com Flutter e comunicação nativa entre dispositivos via Bluetooth."
+      "description": "Desenvolvimento mobile fullstack na TOTVS Hospitalidade, criando apps em Flutter para hotéis e foodservice com princípios de DDD e SOLID e integração com recursos nativos de hardware.",
+      "shortDescription": "Apps mobile em Flutter para hotéis e foodservice na TOTVS Hospitalidade, com DDD e SOLID.",
+      "highlight": "Desenvolvimento mobile fullstack com Flutter, DDD e SOLID para os segmentos de hotelaria e foodservice."
     },
     "en": {
-      "role": "Junior Software Developer",
+      "role": "Junior Software Engineer",
       "period": "Oct 2026 - Present",
       "type": "Remote",
-      "description": "Development and advancement of scalable mobile solutions using Flutter at TOTVS. Focused on building enterprise mobile applications, device-to-device peripheral integrations, and direct communication with native hardware features, such as Bluetooth Classic and BLE.",
-      "shortDescription": "Development of enterprise mobile solutions in Flutter and native hardware integration at TOTVS.",
-      "highlight": "Enterprise mobile solutions with Flutter and native device communication via Bluetooth."
+      "description": "Full-stack mobile development at TOTVS Hospitalidade, building Flutter apps for hotels and foodservice with DDD and SOLID principles and integration with native hardware features.",
+      "shortDescription": "Flutter mobile apps for hotels and foodservice at TOTVS Hospitalidade, built with DDD and SOLID.",
+      "highlight": "Full-stack mobile development with Flutter, DDD, and SOLID for the hotel and foodservice segments."
     }
   },
   {
@@ -25,20 +25,20 @@
     "company": "CEDIS",
     "techs": ["OpenWebUI", "Docker", "LLMs", "Fine-tuning", "Python"],
     "pt": {
-      "role": "Desenvolvedora de Soluções em IA",
+      "role": "Pesquisadora e Desenvolvedora (P&D)",
       "period": "Out 2025 - Momento",
       "type": "Remoto",
-      "description": "Atuação no desenvolvimento de um sistema corporativo de IA Generativa, com foco em orquestração de LLMs e containerização da aplicação. Pontos principais: seleção dinâmica de modelos, integração de múltiplas fontes de dados e pesquisa e implementação de estratégias de fine-tuning para especialização de LLMs em contextos corporativos.",
-      "shortDescription": "Desenvolvimento de sistemas corporativos de IA Generativa.",
-      "highlight": "Orquestração de LLMs e estratégias de fine-tuning para contextos corporativos."
+      "description": "Pesquisa sobre a aplicação de Inteligência Artificial em sistemas de software no laboratório de P&D da UnB, explorando orquestração de LLMs, fine-tuning e integração de IA em soluções reais.",
+      "shortDescription": "Pesquisa sobre aplicação de IA em sistemas de software.",
+      "highlight": "P&D em IA aplicada, com foco em LLMs e integração em sistemas."
     },
     "en": {
-      "role": "AI Solutions Developer",
+      "role": "R&D Researcher & Developer",
       "period": "Oct 2025 - Present",
       "type": "Remote",
-      "description": "Development of an enterprise Generative AI system focused on LLM orchestration and application containerization. Key responsibilities: dynamic model routing, multi-source data integration, and research and implementation of fine-tuning strategies for domain-specific LLMs in corporate environments.",
-      "shortDescription": "Development of enterprise Generative AI systems.",
-      "highlight": "LLM orchestration and fine-tuning strategies for enterprise specialization."
+      "description": "Research on applying Artificial Intelligence to software systems at UnB's R&D lab, exploring LLM orchestration, fine-tuning, and the integration of AI into real-world solutions.",
+      "shortDescription": "Research on applying AI to software systems.",
+      "highlight": "Applied AI R&D focused on LLMs and system integration."
     }
   },
   {
@@ -46,18 +46,18 @@
     "company": "V360",
     "techs": ["Ruby on Rails", "PostgreSQL", "Sidekiq", "APIs REST", "Integrações ERP"],
     "pt": {
-      "role": "Desenvolvedora Full Stack",
+      "role": "Estagiária em Engenharia de Software",
       "period": "Fev 2026 - Set 2026",
       "type": "Remoto",
-      "description": "Contribuição para a evolução e estabilidade do produto por meio da correção de bugs, suporte a integrações e implementação de melhorias. Atuação com Ruby on Rails, Sidekiq e PostgreSQL, em colaboração com clientes e times multidisciplinares na análise e resolução de problemas e na melhoria contínua da plataforma.",
+      "description": "Evolução e estabilidade da plataforma com correção de bugs, suporte a integrações e melhorias. Atuação com Ruby on Rails, Sidekiq e PostgreSQL, junto a clientes e times multidisciplinares.",
       "shortDescription": "Evolução e estabilidade de plataforma corporativa com Ruby on Rails e PostgreSQL.",
       "highlight": "Manutenção e suporte a integrações em sistemas corporativos de alta demanda."
     },
     "en": {
-      "role": "Full Stack Developer",
+      "role": "Software Engineer Intern",
       "period": "Feb 2026 - Sep 2026",
       "type": "Remote",
-      "description": "Contributed to platform evolution and stability through bug fixing, integration support, and feature improvements. Worked with Ruby on Rails, Sidekiq, and PostgreSQL, collaborating with clients and multidisciplinary teams to analyze issues and drive continuous product enhancements.",
+      "description": "Improved platform stability through bug fixes, integration support, and new features with Ruby on Rails, Sidekiq, and PostgreSQL, alongside clients and multidisciplinary teams.",
       "shortDescription": "Evolution and stability of enterprise platform with Ruby on Rails and PostgreSQL.",
       "highlight": "Maintenance and integration support for high-demand enterprise systems."
     }
@@ -67,18 +67,18 @@
     "company": "Plataforma BEM-TE-VI (UnB)",
     "techs": ["Flutter", "Java", "ESP32", "Bluetooth Classic", "Sensores IMU", "FES / VR"],
     "pt": {
-      "role": "Desenvolvedora Mobile & IoT",
+      "role": "Desenvolvedora Mobile em P&D",
       "period": "Jan 2025 - Fev 2026",
       "type": "Híbrido",
-      "description": "Desenvolvimento de aplicativo móvel em Flutter no projeto MoveLab para aquisição, visualização e armazenamento em tempo real de dados de sensores IMU via Bluetooth (ESP32) para análise de marcha e fisioterapia. Atuação também no projeto v-FES Cycling no desenvolvimento de app mobile para acionamento de triciclo com eletroestimulação funcional e Realidade Virtual para reabilitação medular.",
+      "description": "No time de apps da plataforma, desenvolvi em Flutter o MoveLab (sensores IMU via Bluetooth) e o app do v-FES Cycling, além de participar de artigos científicos.",
       "shortDescription": "Aplicativos móveis em Flutter e Java para tecnologia assistiva e sensores biomédicos via Bluetooth.",
       "highlight": "Integração entre sensores biomédicos via Bluetooth e análise de dados em tempo real."
     },
     "en": {
-      "role": "Mobile & IoT Developer",
+      "role": "R&D Mobile Developer",
       "period": "Jan 2025 - Feb 2026",
       "type": "Hybrid",
-      "description": "Developed a Flutter mobile application in the MoveLab project for real-time acquisition, visualization, and storage of IMU sensor data connected to ESP32 modules via Bluetooth Classic for physical therapy and Center of Mass (CoM) analysis. Also contributed to the v-FES Cycling research project developing a mobile app to control functional electrical stimulation tricycles with Virtual Reality for spinal cord rehabilitation.",
+      "description": "On the platform's app team, I built MoveLab (IMU sensors via Bluetooth) and the v-FES Cycling app in Flutter, and contributed to scientific papers.",
       "shortDescription": "Flutter and Java mobile apps for assistive tech and biomedical sensors via Bluetooth.",
       "highlight": "Integration between biomedical sensors via Bluetooth and real-time data analysis."
     }
@@ -91,7 +91,7 @@
       "role": "Desenvolvedora e Co-criadora",
       "period": "Jan 2021 - Mar 2024",
       "type": "Presencial",
-      "description": "Co-criação e desenvolvimento do aplicativo Eletro Libras durante o curso técnico em eletrônica no IFB para inclusão de alunos surdos. Idealização da solução para facilitar o acesso aos materiais acadêmicos em Libras e desenvolvimento de interface acessível e centrada na experiência do usuário.",
+      "description": "Co-criação do app Eletro Libras no curso técnico em eletrônica do IFB, para incluir alunos surdos. Idealização da solução de acesso a materiais acadêmicos em Libras e desenvolvimento de uma interface acessível.",
       "shortDescription": "Solução mobile de acessibilidade e materiais acadêmicos em Libras para alunos surdos.",
       "highlight": "Projeto premiado de impacto social e inclusão educacional."
     },
@@ -99,7 +99,7 @@
       "role": "Developer and Co-creator",
       "period": "Jan 2021 - Mar 2024",
       "type": "In-person",
-      "description": "Co-created and developed the Eletro Libras application during the electronics technical course at IFB to include deaf students. Conceived the solution to facilitate access to academic materials in Brazilian Sign Language (Libras) and built an accessible, user-centered interface.",
+      "description": "Co-created the Eletro Libras app during the electronics technical course at IFB to include deaf students. Conceived a way to access academic materials in Brazilian Sign Language and built an accessible interface.",
       "shortDescription": "Mobile accessibility solution and academic materials in Libras for deaf students.",
       "highlight": "Award-winning project focused on social impact and educational inclusion."
     }

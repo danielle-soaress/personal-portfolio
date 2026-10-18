@@ -278,7 +278,7 @@
       }
 
       @include base.device(md) {
-        height: clamp(120px, 14vh, 144px);
+        height: clamp(132px, 15.2vh, 144px);
         padding: 11px 15px;
       }
 
@@ -643,8 +643,8 @@
           display: -webkit-box;
           -webkit-box-orient: vertical;
           overflow: hidden;
-          line-clamp: 2;
-          -webkit-line-clamp: 2;
+          line-clamp: 4;
+          -webkit-line-clamp: 4;
           flex-shrink: 0;
         }
 

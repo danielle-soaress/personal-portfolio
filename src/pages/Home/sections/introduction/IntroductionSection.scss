@@ -455,6 +455,21 @@
       z-index: 0;
     }
 
+    /* Carries the drop shadow so the image mask below does not clip it to a rectangle */
+    .portrait_frame {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.7));
+
+      @include base.device(md) {
+        height: auto;
+        display: block;
+      }
+    }
+
     .portrait_image {
       position: relative;
       height: 100%;
@@ -463,7 +478,6 @@
       object-fit: contain;
       object-position: bottom center;
       display: block;
-      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.7));
       /* Soft fade out at bottom edge into background */
       mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 98%);
       -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 98%);

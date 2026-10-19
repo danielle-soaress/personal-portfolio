@@ -302,15 +302,18 @@ function IntroductionSection() {
             transition={{ duration: 1.3, delay: 0.24, ease: cinematicSoftEase }}
             aria-hidden="true"
           />
-          <img
-            src={personalPhoto}
-            alt="Danielle Soares"
-            className="portrait_image"
-            width="682"
-            height="1100"
-            loading="eager"
-            decoding="async"
-          />
+          {/* The shadow lives on this wrapper: a filter on the masked <img> would be clipped to its box */}
+          <div className="portrait_frame">
+            <img
+              src={personalPhoto}
+              alt="Danielle Soares"
+              className="portrait_image"
+              width="682"
+              height="1100"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
         </m.div>
 
         {/* 6. Hand-drawn Coding Speech Bubble Doodle */}

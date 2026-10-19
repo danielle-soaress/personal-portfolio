@@ -1,7 +1,4 @@
 
-import { useRef, useState, useEffect } from 'react';
-import 'swiper/css/pagination';
-
 import './AboutMeSection.scss'
 import flowerImg from '../../../../assets/images/flower_3.webp'
 import doodleSmiley from '../../../../assets/images/doodles/doodle_smiley.svg'
@@ -10,38 +7,16 @@ import personalPhoto from '../../../../assets/images/about.webp'
 import personalPhotoSmall from '../../../../assets/images/about-360.webp'
 import { useTranslation } from 'react-i18next';
 import "../../../../i18n";
-import { m, useTransform } from "motion/react";
-import { useSmoothScroll } from "../../../../hooks/useSmoothScroll";
+import { m } from "motion/react";
 
 function AboutMe() {
-    const containerRef = useRef(null);
     const { t } = useTranslation();
-
-    const [isMobile, setIsMobile] = useState(() =>
-        typeof window !== 'undefined' ? window.innerWidth <= 768 : false
-    );
-
-    useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth <= 768);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    const { scrollYProgress } = useSmoothScroll({
-        target: containerRef,
-        offset: ["start end", "end start"]
-    });
-
-    const scale = useTransform(scrollYProgress, [0, 0.5], isMobile ? [1, 1] : [0.8, 1]);
-    const opacity = useTransform(scrollYProgress, [0, 0.3], isMobile ? [1, 1] : [0, 1]);
-    const y = useTransform(scrollYProgress, [0, 1], isMobile ? [0, 320] : [0, 600]);
-    const rotate = useTransform(scrollYProgress, [0, 1], isMobile ? [0, -35] : [0, -60]);
 
     return (
         <section id="about_me" className="about_me_section">
             <div className="blur_abm"></div>
             <div className="about_me_bottom_glow" aria-hidden="true" />
-            <m.div ref={containerRef} className="about_me_container" style={{ scale, opacity }}>
+            <div className="about_me_container">
                 <div className="about_me_text">                 
                     <span>  
                         <m.h2
@@ -86,18 +61,12 @@ function AboutMe() {
                             <div className="author"><span className="name">{t('about.photoAuthor')}</span>, 2024</div>
                         </div>
                     </div>  
-                    <m.div
-                        className="abm_flower"
-                        style={{
-                            y,
-                            rotate,
-                            opacity,
-                        }}
-                    >
-                        <img loading="lazy" decoding="async" width="100" height="98" alt="Flower Image" src={flowerImg}/>
-                    </m.div>
+                    {/* Static sticker on the card corner (no scroll-linked motion: too costly on phones) */}
+                    <div className="abm_flower" aria-hidden="true">
+                        <img loading="lazy" decoding="async" width="100" height="98" alt="" src={flowerImg}/>
+                    </div>
                 </div>
-            </m.div>
+            </div>
 
         </section>
     )

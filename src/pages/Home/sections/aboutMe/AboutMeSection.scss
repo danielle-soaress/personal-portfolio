@@ -316,14 +316,14 @@
     z-index: 0;
 }
 
+// Pinned to the card's top-right corner like a sticker, half outside the photo
 .abm_flower {
     position: absolute;
-    width: 60vw;
-    max-width: 400px;
-    top: -450px;
-    right: -250px;
-    z-index: 100;
-    will-change: transform;
+    width: clamp(110px, 10vw, 170px);
+    top: 0;
+    right: 0;
+    z-index: 3;
+    transform: translate(38%, -42%) rotate(-14deg);
     pointer-events: none;
 
     img {
@@ -332,22 +332,12 @@
         object-fit: contain;
     }
 
-    @include base.device(xl) {
-        width: 300px;
-        top: -400px;
-        right: -180px;
-    }
-
     @include base.device(md) {
-        width: 200px;
-        top: -380px;
-        right: -140px;
+        width: 100px;
     }
 
     @include base.device(xs) {
-        width: 100px;
-        top: -330px;
-        right: -90px;
+        width: 80px;
     }
 }
 

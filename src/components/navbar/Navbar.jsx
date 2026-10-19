@@ -6,6 +6,7 @@ import { BsHouse, BsPerson, BsGrid, BsTelephone, BsList, BsX } from 'react-icons
 import './navbar.scss';
 import FlowerIcon from '../../assets/images/flower_icon.svg?url';
 import LanguageButton from '../languageButton/LanguageButton';
+import { scrollToSection as scrollToPageSection } from '../../utils/scrollToSection';
 import '../../i18n';
 
 const navItems = [
@@ -71,11 +72,10 @@ function Navbar({ variant = 'vertical' }) {
 
   const scrollToSection = (event, sectionId) => {
     event.preventDefault();
-    const section = document.getElementById(sectionId);
-    if (!section) return;
+    if (!document.getElementById(sectionId)) return;
 
     setActiveSection(sectionId);
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    scrollToPageSection(sectionId);
     setMenuOpen(false);
   };
 

@@ -3,8 +3,11 @@ import Navbar from '../../components/navbar/Navbar.jsx'
 import DeferredSection from '../../components/deferredSection/DeferredSection.jsx'
 import IntroductionSection from './sections/introduction/IntroductionSection.jsx'
 import { deferredHomeSections, IDLE_MOUNT_STEP_MS } from './homeSections.js'
+import { useInPageAnchors } from '../../hooks/useInPageAnchors.js'
 
 function HomePage() {
+  useInPageAnchors();
+
   return (
     <main className="main">
       <Navbar/>

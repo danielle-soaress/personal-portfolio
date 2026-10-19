@@ -1,35 +1,27 @@
 import './HomePage.scss'
 import Navbar from '../../components/navbar/Navbar.jsx'
+import DeferredSection from '../../components/deferredSection/DeferredSection.jsx'
 import IntroductionSection from './sections/introduction/IntroductionSection.jsx'
-import AboutMeSection from './sections/aboutMe/AboutMeSection.jsx';
-import SkillsSection from './sections/skills/SkillsSection.jsx'
-import ContactMeSection from './sections/contactMe/ContactMeSection.jsx'
-import ProjectsSection from './sections/projects/ProjectsSection.jsx' 
-import ExperienceSection from './sections/experience/ExperienceSection.jsx'
-import EducationSection from './sections/education/EducationSection.jsx'
-import AchievementsSection from './sections/achievements/AchievementsSection.jsx'
-import {useRef} from 'react';
-import { useTranslation } from 'react-i18next';
+import { deferredHomeSections, IDLE_MOUNT_STEP_MS } from './homeSections.js'
 
 function HomePage() {
-  const containerRef = useRef(null);
-
   return (
-    <main ref={containerRef} className="main">
-    <Navbar/>
+    <main className="main">
+      <Navbar/>
       <div className="main_container">
+        {/* The hero renders immediately; everything below it loads on demand */}
         <IntroductionSection/>
-        <AboutMeSection/>
-        <ExperienceSection/>
-        <EducationSection/>
-        <AchievementsSection/>
-        <ProjectsSection/>
-        <SkillsSection/>
-        <ContactMeSection/>
-        {/* <Footer/> */}
+        {deferredHomeSections.map(({ id, component, minHeight }, index) => (
+          <DeferredSection
+            key={id}
+            id={id}
+            component={component}
+            minHeight={minHeight}
+            idleDelay={(index + 1) * IDLE_MOUNT_STEP_MS}
+          />
+        ))}
       </div>
     </main>
-    
   )
 }
 

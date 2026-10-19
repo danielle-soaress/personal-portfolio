@@ -2,7 +2,9 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { LazyMotion, domAnimation, MotionConfig } from 'motion/react'
 
-const HomePage = lazy(() => import('./pages/Home/HomePage.jsx'))
+import HomePage from './pages/Home/HomePage.jsx'
+
+// The landing page ships in the entry bundle (no extra round trip before the hero); other routes load on demand
 const PortifolioPage = lazy(() => import('./pages/PortifolioPage/PortifolioPage.jsx'))
 
 function App() {

@@ -1,7 +1,10 @@
 import './ContactMeSection.scss';
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { m, useTransform } from 'motion/react';
 import { useSmoothScroll } from '../../../../hooks/useSmoothScroll';
+import { useMediaQuery } from '../../../../hooks/useMediaQuery';
+import ValuesScrollStory from './ValuesScrollStory';
+import ValuesList from './ValuesList';
 import { useTranslation } from 'react-i18next';
 import SocialMedias from '../../../../components/socialMedias/SocialMedias';
 import flowerOne from '../../../../assets/images/flower_1_reduced.webp'
@@ -10,47 +13,15 @@ import flowerThree from '../../../../assets/images/flower_3.webp';
 import "../../../../i18n";
 
 function ContactMeSection() {
-    const introRef = useRef(null);
     const contactRef = useRef(null);
     const { t } = useTranslation();
-
-    const [isMobile, setIsMobile] = useState(() =>
-        typeof window !== 'undefined' ? window.innerWidth <= 768 : false
-    );
-
-    useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth <= 768);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    const { scrollYProgress } = useSmoothScroll({
-        target: introRef,
-        offset: ["start start", "end end"],
-    });
+    // Phones get the static values list and static flowers: no per-frame scroll work
+    const isMobile = useMediaQuery('(max-width: 768px)');
 
     const { scrollYProgress: contactScrollProgress } = useSmoothScroll({
         target: contactRef,
         offset: ["start 85%", "start start"],
     });
-
-    const purposeOpacity = useTransform(scrollYProgress, [0, 0.24, 0.34], [1, 1, 0]);
-    const innovationOpacity = useTransform(scrollYProgress, [0.28, 0.38, 0.58, 0.68], [0, 1, 1, 0]);
-    const growthOpacity = useTransform(scrollYProgress, [0.62, 0.72, 1], [0, 1, 1]);
-
-    const purposeY = useTransform(scrollYProgress, [0, 0.24, 0.34], [0, 0, -45]);
-    const innovationY = useTransform(scrollYProgress, [0.28, 0.38, 0.58, 0.68], [45, 0, 0, -45]);
-    const growthY = useTransform(scrollYProgress, [0.62, 0.72, 1], [45, 0, 0]);
-
-    const stickyOpacity = useTransform(scrollYProgress, [0, 0.12, 0.86, 1], [0, 1, 1, 0]);
-    const stickyBlur = useTransform(scrollYProgress, [0, 0.12, 0.86, 1], ["blur(18px)", "blur(0px)", "blur(0px)", "blur(18px)"]);
-
-    const blurOneX = useTransform(scrollYProgress, [0, 1], [-70, 120]);
-    const blurOneY = useTransform(scrollYProgress, [0, 1], [-40, 80]);
-    const blurOneScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1.15, 1]);
-    const blurTwoX = useTransform(scrollYProgress, [0, 1], [80, -130]);
-    const blurTwoY = useTransform(scrollYProgress, [0, 1], [70, -90]);
-    const blurTwoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.08, 0.92, 1.12]);
 
     const identifiedOpacity = useTransform(contactScrollProgress, [0.05, 0.2], [0, 1]);
     const identifiedY = useTransform(contactScrollProgress, [0.05, 0.2], [34, 0]);
@@ -77,32 +48,7 @@ function ContactMeSection() {
 
     return (
         <section className="ContactMe_container">
-            <section ref={introRef} className="ContactMe_intro">
-                <div className="ContactMe_sticky">
-                    <m.div className="sticky_phrase" style={isMobile ? { opacity: stickyOpacity } : { opacity: stickyOpacity, filter: stickyBlur }}>
-                        {isMobile ? (
-                            <div className="purple_blur purple_blur_mobile" aria-hidden="true" />
-                        ) : (
-                            <>
-                                <m.div
-                                    className="purple_blur purple_blur_one"
-                                    style={{ x: blurOneX, y: blurOneY, scale: blurOneScale }}
-                                />
-                                <m.div
-                                    className="purple_blur purple_blur_two"
-                                    style={{ x: blurTwoX, y: blurTwoY, scale: blurTwoScale }}
-                                />
-                            </>
-                        )}
-                        <span>{t('contact.searchTitle')}</span>
-                        <div className="rotating_words">
-                            <m.h2 style={{ opacity: purposeOpacity, y: purposeY }}>{t('contact.values.purpose')}</m.h2>
-                            <m.h2 style={{ opacity: innovationOpacity, y: innovationY }}>{t('contact.values.innovation')}</m.h2>
-                            <m.h2 style={{ opacity: growthOpacity, y: growthY }}>{t('contact.values.growth')}</m.h2>
-                        </div>
-                    </m.div>
-                </div>
-            </section>
+            {isMobile ? <ValuesList /> : <ValuesScrollStory />}
 
             <section id="contact_me" ref={contactRef} className="form_panel">
                 <m.img

@@ -13,6 +13,7 @@ import {
 
 import './IntroductionSection.scss';
 import personalPhoto from '../../../../assets/images/hero_danielle_profile.webp';
+import personalPhotoSmall from '../../../../assets/images/hero_danielle_profile-480.webp';
 import flowerOne from '../../../../assets/images/flower_1_reduced.webp';
 import flowerTwo from '../../../../assets/images/flower_2.webp';
 import flowerThree from '../../../../assets/images/flower_3.webp';
@@ -306,11 +307,14 @@ function IntroductionSection() {
           <div className="portrait_frame">
             <img
               src={personalPhoto}
+              srcSet={`${personalPhotoSmall} 480w, ${personalPhoto} 682w`}
+              sizes="(max-width: 1024px) 240px, 430px"
               alt="Danielle Soares"
               className="portrait_image"
               width="682"
               height="1100"
               loading="eager"
+              fetchpriority="high"
               decoding="async"
             />
           </div>

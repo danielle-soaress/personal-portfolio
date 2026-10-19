@@ -7,6 +7,7 @@ import flowerImg from '../../../../assets/images/flower_3.webp'
 import doodleSmiley from '../../../../assets/images/doodles/doodle_smiley.svg'
 
 import personalPhoto from '../../../../assets/images/about.webp'
+import personalPhotoSmall from '../../../../assets/images/about-360.webp'
 import { useTranslation } from 'react-i18next';
 import "../../../../i18n";
 import { m, useTransform } from "motion/react";
@@ -79,7 +80,7 @@ function AboutMe() {
                 <div className="photo_container">
                     <div className="blur_abm"></div>
                     <div className="card">
-                        <img loading="lazy" decoding="async" width="700" height="678" alt="Personal Photo" className="card-image" src={personalPhoto}/>
+                        <img loading="lazy" decoding="async" width="700" height="678" alt="Personal Photo" className="card-image" src={personalPhoto} srcSet={`${personalPhotoSmall} 360w, ${personalPhoto} 700w`} sizes="(max-width: 480px) 60vw, (max-width: 768px) 40vw, (max-width: 1024px) 30vw, 25vw"/>
                         <div className="category">{t('about.photoCategory')}</div>
                         <div className="heading">{t('about.photoHeading')}
                             <div className="author"><span className="name">{t('about.photoAuthor')}</span>, 2024</div>

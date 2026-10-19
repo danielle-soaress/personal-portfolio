@@ -34,11 +34,12 @@ const cinematicPop = [0.34, 1.25, 0.64, 1];
 
 // Left panel narrative: progressive reveal without delaying LCP
 const leftPanelVariants = {
+  // The pitch paragraph is the mobile LCP element: start the cascade right away instead of after a pause
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.32,
+      delayChildren: 0.05,
       staggerChildren: 0.09
     }
   }

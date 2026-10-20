@@ -752,3 +752,75 @@
     transform: rotate(360deg);
   }
 }
+
+/* Phones: static timeline (see ExperienceMobile). Same cards; the line is drawn in full and each
+   card carries its own dot, so nothing is tied to scroll. Heavy layers are swapped for flat ones. */
+.timeline-section--static {
+  // 100vw counts the scrollbar and pushed cards past the right edge; keep room for the corner stickers
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 22px;
+  overflow-x: clip;
+
+  // Plain radial gradient in place of the blurred blob behind the section
+  &::before {
+    width: 320px;
+    height: 320px;
+    filter: none;
+    mix-blend-mode: normal;
+    opacity: 1;
+    background: radial-gradient(circle, rgba(89, 41, 201, 0.22) 0%, transparent 70%);
+  }
+
+  .section-header::before {
+    filter: none;
+  }
+
+  .section-header .header-title-container .header-title .header-sparkle-doodle {
+    animation: none;
+
+    img {
+      filter: none;
+    }
+  }
+
+  .timeline-wrapper .left-experience-card .card-corner-sticker {
+    animation: none;
+    right: -8px;
+  }
+
+  .timeline-wrapper {
+    .left-experience-card {
+      transition: none;
+
+      .card-washi-tape,
+      .card-corner-sticker {
+        filter: none;
+      }
+
+      .company-logo-container .company-logo-box {
+        transition: none;
+      }
+    }
+
+    .timeline-line-bg .timeline-line-active {
+      height: 100%;
+      background: linear-gradient(to bottom, #9f72ff 0%, rgba(159, 114, 255, 0.25) 100%);
+    }
+  }
+
+  // Dot centred on the timeline line: line sits 6px from the edge (3px wide), cards start 25px in
+  .timeline-static-dot {
+    position: absolute;
+    top: 26px;
+    left: -24.5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #c4b5fd;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 4px rgba(159, 114, 255, 0.18);
+    box-sizing: border-box;
+    z-index: 5;
+  }
+}

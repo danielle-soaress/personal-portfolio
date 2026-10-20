@@ -1,6 +1,7 @@
 import { m, useTransform } from "motion/react";
 import { useSmoothScroll } from "../../../../hooks/useSmoothScroll";
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
+import { useMediaQuery } from "../../../../hooks/useMediaQuery";
 import './ExperienceSection.scss';
 import data from '../../../../data/experience.json';
 import { useTranslation } from 'react-i18next';
@@ -36,33 +37,115 @@ const STICKERS_BY_ID = {
     5: doodleStarBadge,
 };
 
-function ExperienceSection() {
-    const containerRef = useRef(null);
-    const { t, i18n } = useTranslation();
+const MOBILE_QUERY = '(max-width: 768px)';
 
-    const [isMobile, setIsMobile] = useState(() =>
-        typeof window !== 'undefined' ? window.innerWidth <= 768 : false
+function SectionHeader() {
+    const { t } = useTranslation();
+    return (
+        <>
+            <div className="header-title-container">
+                <h2 className="header-title">
+                    <span className="title-text">{t('experience.title')}</span>
+                    <span className="header-sparkle-doodle" aria-hidden="true">
+                        <img src={doodleSparkles} alt="" width="24" height="24" loading="lazy" decoding="async" />
+                    </span>
+                </h2>
+            </div>
+            <div className="header-subtitle-container">
+                <h3>{t('experience.subtitle')}</h3>
+                <span className="header-squiggly-doodle" aria-hidden="true">
+                    <img src={doodleSquiggly} alt="" width="130" height="16" loading="lazy" decoding="async" />
+                </span>
+            </div>
+        </>
     );
+}
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+// Phones: same cards, but a static timeline (full line, one dot per job) instead of the
+// scroll-driven line and card reveals, so scrolling never recalculates styles per frame
+function ExperienceMobile() {
+    const { i18n } = useTranslation();
+    const currentLang = (i18n.language || 'pt').split('-')[0];
+
+    return (
+        <section className="timeline-section timeline-section--static" id="experience">
+            <div className="section-header">
+                <SectionHeader />
+            </div>
+
+            <div className="timeline-wrapper">
+                <div className="left-experience-details">
+                    {data.map((exp) => {
+                        const content = exp[currentLang] || exp.en;
+                        const logo = COMPANY_LOGOS_BY_ID[exp.id];
+
+                        return (
+                            <div key={exp.id} className="left-experience-card">
+                                <span className="timeline-static-dot" aria-hidden="true" />
+                                <div className="card-washi-tape" aria-hidden="true">
+                                    <img src={doodleTape} alt="" width="65" height="25" loading="lazy" decoding="async" />
+                                </div>
+                                <div className="card-corner-sticker mobile-only" aria-hidden="true">
+                                    <img src={STICKERS_BY_ID[exp.id] || doodleSparkles} alt="" width="26" height="26" loading="lazy" decoding="async" />
+                                </div>
+                                <div className="experience-card-main">
+                                    {logo && (
+                                        <div className="company-logo-container">
+                                            <div className="company-logo-box">
+                                                <img src={logo} alt={`${exp.company} logo`} className="company-logo-img" loading="lazy" decoding="async" />
+                                            </div>
+                                        </div>
+                                    )}
+                                    <div className="experience-card-info">
+                                        <div className="experience-top-meta">
+                                            <span className="experience-period">{content.period || exp.en.period}</span>
+                                        </div>
+                                        <h2 className="experience-company">{exp.company}</h2>
+                                        <p className="experience-role">{content.role || exp.en.role}</p>
+                                        <div className="experience-type">
+                                            <span>{content.type || exp.en.type}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p className="experience-desc-mobile">{content.description || exp.en.description}</p>
+                                <div className="tech-stack-mobile">
+                                    {exp.techs.map((tech) => (
+                                        <span key={tech} className="tech-badge">{tech}</span>
+                                    ))}
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+
+                <div className="timeline-line-bg">
+                    <div className="timeline-line-active" />
+                </div>
+            </div>
+        </section>
+    );
+}
+
+function ExperienceSection() {
+    const isMobile = useMediaQuery(MOBILE_QUERY);
+    return isMobile ? <ExperienceMobile /> : <ExperienceDesktop />;
+}
+
+function ExperienceDesktop() {
+    const containerRef = useRef(null);
+    const { i18n } = useTranslation();
 
     const currentLang = (i18n.language || 'pt').split('-')[0];
 
     const { scrollYProgress } = useSmoothScroll({
         target: containerRef,
-        offset: isMobile ? ["start 80%", "end 80%"] : ["start center", "end end"]
+        offset: ["start center", "end end"]
     });
 
     // Timeline line & dot scroll progress
-    const scaleY = useTransform(scrollYProgress, isMobile ? [0, 1] : [0.08, 0.92], ["0%", "100%"]);
+    const scaleY = useTransform(scrollYProgress, [0.08, 0.92], ["0%", "100%"]);
 
-    // Progressive card reveals synchronized with timeline line growth (for desktop & tablet)
+    // Progressive card reveals synchronized with timeline line growth
     const card0Opacity = useTransform(scrollYProgress, [0.02, 0.14], [0.4, 1]);
     const card0LeftX = useTransform(scrollYProgress, [0.02, 0.14], [-24, 0]);
     const card0RightX = useTransform(scrollYProgress, [0.02, 0.14], [24, 0]);
@@ -105,20 +188,7 @@ function ExperienceSection() {
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.75, ease: "easeOut" }}
             >
-                <div className="header-title-container">
-                    <h2 className="header-title">
-                        <span className="title-text">{t('experience.title')}</span>
-                        <span className="header-sparkle-doodle" aria-hidden="true">
-                            <img src={doodleSparkles} alt="" width="24" height="24" loading="lazy" decoding="async" />
-                        </span>
-                    </h2>
-                </div>
-                <div className="header-subtitle-container">
-                    <h3>{t('experience.subtitle')}</h3>
-                    <span className="header-squiggly-doodle" aria-hidden="true">
-                        <img src={doodleSquiggly} alt="" width="130" height="16" loading="lazy" decoding="async" />
-                    </span>
-                </div>
+                <SectionHeader />
             </m.div>
 
             <div className="timeline-wrapper">
@@ -133,20 +203,13 @@ function ExperienceSection() {
                         const logo = COMPANY_LOGOS_BY_ID[exp.id];
                         const anim = cardAnimConfigs[index] || cardAnimConfigs[cardAnimConfigs.length - 1];
 
-                        const motionProps = isMobile
-                            ? {
-                                initial: { opacity: 0, y: 24 },
-                                whileInView: { opacity: 1, y: 0 },
-                                viewport: { once: true, amount: 0.2 },
-                                transition: { duration: 0.5, ease: "easeOut" }
+                        const motionProps = {
+                            style: {
+                                opacity: anim.opacity,
+                                x: anim.leftX,
+                                scale: anim.scale
                             }
-                            : {
-                                style: {
-                                    opacity: anim.opacity,
-                                    x: anim.leftX,
-                                    scale: anim.scale
-                                }
-                            };
+                        };
 
                         return (
                             <m.div
@@ -211,20 +274,13 @@ function ExperienceSection() {
                         const stickerIcon = STICKERS_BY_ID[exp.id] || doodleSparkles;
                         const anim = cardAnimConfigs[index] || cardAnimConfigs[cardAnimConfigs.length - 1];
 
-                        const motionProps = isMobile
-                            ? {
-                                initial: { opacity: 0, y: 24 },
-                                whileInView: { opacity: 1, y: 0 },
-                                viewport: { once: true, amount: 0.2 },
-                                transition: { duration: 0.5, ease: "easeOut" }
+                        const motionProps = {
+                            style: {
+                                opacity: anim.opacity,
+                                x: anim.rightX,
+                                scale: anim.scale
                             }
-                            : {
-                                style: {
-                                    opacity: anim.opacity,
-                                    x: anim.rightX,
-                                    scale: anim.scale
-                                }
-                            };
+                        };
 
                         return (
                             <m.div

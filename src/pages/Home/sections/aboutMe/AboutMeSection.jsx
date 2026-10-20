@@ -7,13 +7,37 @@ import personalPhoto from '../../../../assets/images/about.webp'
 import personalPhotoSmall from '../../../../assets/images/about-360.webp'
 import { useTranslation } from 'react-i18next';
 import "../../../../i18n";
-import { m } from "motion/react";
+import { useRef } from 'react';
+import { m, useTransform } from "motion/react";
+import { useSmoothScroll } from "../../../../hooks/useSmoothScroll";
+import { useMediaQuery } from "../../../../hooks/useMediaQuery";
+
+// Larger screens: the flower drops and spins past the photo as the section scrolls by
+function FallingFlower({ sectionRef }) {
+    const { scrollYProgress } = useSmoothScroll({
+        target: sectionRef,
+        offset: ["start end", "end start"]
+    });
+
+    const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+    const y = useTransform(scrollYProgress, [0, 1], [0, 600]);
+    const rotate = useTransform(scrollYProgress, [0, 1], [0, -60]);
+
+    return (
+        <m.div className="abm_flower abm_flower--falling" style={{ y, rotate, opacity }} aria-hidden="true">
+            <img loading="lazy" decoding="async" width="100" height="98" alt="" src={flowerImg}/>
+        </m.div>
+    );
+}
 
 function AboutMe() {
     const { t } = useTranslation();
+    const sectionRef = useRef(null);
+    // Phones keep the static sticker: scroll-linked motion is too costly there
+    const isPhone = useMediaQuery('(max-width: 768px)');
 
     return (
-        <section id="about_me" className="about_me_section">
+        <section id="about_me" ref={sectionRef} className="about_me_section">
             <div className="blur_abm"></div>
             <div className="about_me_bottom_glow" aria-hidden="true" />
             <div className="about_me_container">
@@ -61,10 +85,13 @@ function AboutMe() {
                             <div className="author"><span className="name">{t('about.photoAuthor')}</span>, 2024</div>
                         </div>
                     </div>  
-                    {/* Static sticker on the card corner (no scroll-linked motion: too costly on phones) */}
-                    <div className="abm_flower" aria-hidden="true">
-                        <img loading="lazy" decoding="async" width="100" height="98" alt="" src={flowerImg}/>
-                    </div>
+                    {isPhone ? (
+                        <div className="abm_flower" aria-hidden="true">
+                            <img loading="lazy" decoding="async" width="100" height="98" alt="" src={flowerImg}/>
+                        </div>
+                    ) : (
+                        <FallingFlower sectionRef={sectionRef} />
+                    )}
                 </div>
             </div>
 

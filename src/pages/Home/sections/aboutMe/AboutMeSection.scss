@@ -339,6 +339,29 @@
     @include base.device(xs) {
         width: 80px;
     }
+
+    // Larger screens: starts above the card and falls past it with the scroll (see FallingFlower)
+    &--falling {
+        width: 60vw;
+        max-width: 400px;
+        top: -450px;
+        right: -250px;
+        z-index: 100;
+        transform: none;
+        will-change: transform;
+
+        @include base.device(xl) {
+            width: 300px;
+            top: -400px;
+            right: -180px;
+        }
+
+        @include base.device(md) {
+            width: 200px;
+            top: -380px;
+            right: -140px;
+        }
+    }
 }
 
 @keyframes doodleSmileyWiggle {

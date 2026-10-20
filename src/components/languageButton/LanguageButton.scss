@@ -1,69 +1,89 @@
 @use '../../base';
 
-
-.lang_button {
-    @include base.flexCenter();
-    position: relative;
-    flex-direction: row;
+.lang_switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
     z-index: 15;
-    
-    .lang_img {
-        width: 33px;
-        cursor: pointer;
-        transition: ease 0.2s;
-        transform: scale(1);
-    }
-    
-    .lang_img:hover {
-        transform: scale(1.08);
-        transition: ease 0.2s;
-    }
 
-    .lang_options {
-        @include base.flexCenter();
-        display: none;
-        flex-direction: row;
-        padding: 7px 10px 7px 16px;
-        font-size: 14px;
-        gap: 9px;
-        position: absolute;
-        left: calc(100% + 8px);
-        top: 50%;
-        transform: translateY(-50%);
-        width: auto;
-        min-width: 74px;
-        border-radius: 4px;
-        height: auto;
-        background-color: base.$darker-purple;
-        box-shadow: none;
-        z-index: -1;
-    }
+    &--vertical {
+        flex-direction: column;
+        gap: 0;
 
-    .lang_options_1, .lang_options_2 {
-        color: black;
-        font-weight: 600;
-        cursor: pointer;
-        transition: color 0.2s ease;
-    }
-
-    .lang_options_1:hover, .lang_options_2:hover {
-        color: white;
-    }
-
-    .visible {
-        display: flex;
-    }
-
-    .selected {
-        color: white;
+        // A short dash reads better than a slash when the options are stacked
+        .lang_switch_divider {
+            width: 10px;
+            height: 1px;
+            margin: 2px 0;
+            overflow: hidden;
+            color: transparent;
+            background: rgba(255, 255, 255, 0.2);
+        }
     }
 }
 
+.lang_switch_divider {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.2);
+    user-select: none;
+}
 
-@media (max-width: 900px) {
-    .lang_button {
-        background-color: base.$darker-purple;
-        padding: 1px;
-        border-radius: 10px;
+// Reset the global button look from index.css
+.lang_switch .lang_switch_option {
+    position: relative;
+    padding: 8px 6px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    color: #64748b;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    // Thin purple underline under the active language
+    &::after {
+        content: '';
+        position: absolute;
+        left: 6px;
+        right: 6px;
+        bottom: 3px;
+        height: 2px;
+        border-radius: 2px;
+        background: base.$lighter-purple;
+        opacity: 0;
+    }
+
+    &:hover {
+        color: #e2e8f0;
+        border-color: transparent;
+    }
+
+    &.is-active {
+        color: #ffffff;
+        cursor: default;
+
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:focus-visible {
+        outline: 2px solid #c4b5fd;
+        outline-offset: 2px;
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lang_switch .lang_switch_option {
+        transition: none;
     }
 }

@@ -1,31 +1,38 @@
 import './LanguageButton.scss';
-import langIcon from '../../assets/images/lang_icon.webp';
-import {useState} from 'react';
+import { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 import "../../i18n";
 
+const LANGUAGES = ['pt', 'en'];
 
-function LanguageButton() {
-    const [open, setOpen] = useState(false)
-    const [lang, setLang] = useState('pt')
-    const {t, i18n} = useTranslation();
-    
-    const changeLanguage = (event, lng) => {
-        event.stopPropagation();
-        setLang(`${lng}`)
-        i18n.changeLanguage(lng);
-        setOpen(false);
-    }
+// Plain-text switch: "PT / EN", the active language lit and underlined, one tap to change.
+// Reads the language from i18n, so every instance (sidebar, mobile bar) stays in sync.
+function LanguageButton({ orientation = 'horizontal' }) {
+    const { i18n } = useTranslation();
+    const current = (i18n.language || 'pt').startsWith('en') ? 'en' : 'pt';
 
     return (
-    <div className="lang_button" onClick={() => setOpen(!open)}>
-        <img className="lang_img" src={langIcon} width="28" height="28" alt={t('nav.languageAlt')} loading="lazy" decoding="async" />
-        <div className={open? "lang_options visible" : "lang_options"}>
-            <span onClick={(event) => changeLanguage(event, 'pt')} className={lang == "pt" ? "lang_options_1 selected" : "lang_options_1"}>PT</span>
-            <span onClick={(event) => changeLanguage(event, 'en')} className={lang == "en" ? "lang_options_2 selected" : "lang_options_2"}>EN</span>
+        <div
+            className={`lang_switch lang_switch--${orientation}`}
+            role="group"
+            aria-label={current === 'en' ? 'Language' : 'Idioma'}
+        >
+            {LANGUAGES.map((lng, index) => (
+                <Fragment key={lng}>
+                    {index > 0 && <span className="lang_switch_divider" aria-hidden="true">/</span>}
+                    <button
+                        type="button"
+                        className={`lang_switch_option ${current === lng ? 'is-active' : ''}`}
+                        aria-pressed={current === lng}
+                        lang={lng}
+                        onClick={() => i18n.changeLanguage(lng)}
+                    >
+                        {lng.toUpperCase()}
+                    </button>
+                </Fragment>
+            ))}
         </div>
-    </div>
-    )
+    );
 }
 
 export default LanguageButton;

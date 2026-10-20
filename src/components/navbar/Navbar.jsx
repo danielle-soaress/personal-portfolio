@@ -145,7 +145,7 @@ function Navbar({ variant = 'vertical' }) {
         <div className={`nav_links ${isHorizontal ? 'nav_links--horizontal' : ''}`}>
           {navItems.map((item) => renderNavLink(item))}
         </div>
-        <LanguageButton />
+        <LanguageButton orientation={isHorizontal ? 'horizontal' : 'vertical'} />
       </nav>
 
       <div className={`menu_mobile  ${menuOpen ? 'menu_mobile--open' : ''}`}>

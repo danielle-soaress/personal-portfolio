@@ -1,0 +1,63 @@
+// Phone-only render budget. Mobile Safari keeps every blurred, backdrop-filtered or `will-change`
+// layer in GPU memory; added up across the page they made the tab reload before the site showed.
+// Same look, cheaper means: blurred blobs become plain radial gradients, glass effects become a
+// solid tint, and looping decorative animations stop. `!important` because these override
+// section styles that load later, only inside this query.
+@media (max-width: 768px) {
+  // Blurred glow blobs -> radial gradients of the same colour
+  .blur_abm,
+  .achievements-section::before,
+  .education-section::before {
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    box-shadow: none !important;
+    background: radial-gradient(circle, #5929c9 0%, rgba(89, 41, 201, 0.35) 35%, transparent 70%) !important;
+  }
+
+  .about_me_bottom_glow,
+  .hero_portrait_anchor .portrait_glow_halo,
+  .timeline-section .section-header::before {
+    filter: none !important;
+  }
+
+  // Glass effects -> solid tint (no backdrop-filter)
+  .menu_mobile--open {
+    backdrop-filter: none !important;
+    background: rgba(24, 24, 24, 0.94) !important;
+  }
+
+  .navbar--horizontal,
+  .hero_social_pill,
+  .card_action_btn {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  // Hero: drop the sub-pixel blur on the ten flowers and the big shadow filter on the portrait
+  .hero_bg_flower,
+  .hero_portrait_anchor .portrait_frame {
+    filter: none !important;
+  }
+
+  // Looping decorative animations
+  .hero_bg_flower,
+  .doodle_coffee_svg,
+  .doodle_sparkles_svg,
+  .doodle_arrow_svg,
+  .doodle_coding_bubble_svg,
+  .scroll_chevron,
+  .about_doodle_smiley_wrapper,
+  .header-sparkle-doodle,
+  .card-corner-sticker,
+  .timeline-dot-halo {
+    animation: none !important;
+  }
+
+  // Permanent compositor layers
+  .feed-slide,
+  .script_first_name,
+  .bold_last_name,
+  .hero_portrait_anchor {
+    will-change: auto !important;
+  }
+}

@@ -31,13 +31,6 @@
         "descriptionEN": "Componentization, hooks, and modern application structuring"
       },
       {
-        "name": "Angular",
-        "img": "Angular",
-        "level": 20,
-        "descriptionPT": "Conhecimento introdutório sobre arquitetura e componentes",
-        "descriptionEN": "Introductory knowledge of architecture and components"
-      },
-      {
         "name": "Figma",
         "img": "Figma",
         "level": 90,
@@ -76,13 +69,6 @@
         "descriptionEN": "Automation, REST APIs, scripts, and rapid solution development"
       },
       {
-        "name": "Flask",
-        "img": "Flask",
-        "level": 45,
-        "descriptionPT": "Construção de APIs leves e serviços backend",
-        "descriptionEN": "Lightweight API and backend service development"
-      },
-      {
         "name": "Java",
         "img": "Java",
         "level": 80,
@@ -92,7 +78,7 @@
       {
         "name": "Spring Boot",
         "img": "Spring",
-        "level": 75,
+        "level": 50,
         "descriptionPT": "APIs REST com arquitetura MVC, services, repositories e segurança",
         "descriptionEN": "REST APIs with MVC architecture, services, repositories, and security"
       },
@@ -139,14 +125,14 @@
       {
         "name": "OracleDB",
         "img": "Oracle",
-        "level": 45,
+        "level": 30,
         "descriptionPT": "Conhecimento introdutório em bancos corporativos relacionais",
         "descriptionEN": "Introductory knowledge of enterprise relational databases"
       },
       {
         "name": "MongoDB",
         "img": "MongoDB",
-        "level": 30,
+        "level": 20,
         "descriptionPT": "Conhecimento básico em modelagem não relacional",
         "descriptionEN": "Basic knowledge of non-relational modeling"
       }

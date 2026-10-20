@@ -22,13 +22,11 @@ import MySQL from '../../../../assets/images/techs/MySQL.svg';
 import Oracle from '../../../../assets/images/techs/Oracle.svg';
 import Postman from '../../../../assets/images/techs/Postman.svg';
 import Python from '../../../../assets/images/techs/Python.svg';
-import Flask from '../../../../assets/images/techs/Flask.svg';
 import Sass from '../../../../assets/images/techs/Sass.svg';
 import Spring from '../../../../assets/images/techs/Spring.svg';
 import SQLite from '../../../../assets/images/techs/SQLite.svg';
 import Ruby from '../../../../assets/images/techs/Ruby.svg';
 import Rails from '../../../../assets/images/techs/Rails.svg';
-import Angular from '../../../../assets/images/techs/Angular.svg';
 import MongoDB from '../../../../assets/images/techs/Mongodb.svg';
 import PostgreSQL from '../../../../assets/images/techs/Postgre.svg';
 import Docker from '../../../../assets/images/techs/Docker.svg';
@@ -46,13 +44,11 @@ const techImages = {
   Oracle,
   Postman,
   Python,
-  Flask,
   Sass,
   Spring,
   SQLite,
   Ruby,
   Rails,
-  Angular,
   MongoDB,
   PostgreSQL,
   Docker,

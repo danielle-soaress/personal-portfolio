@@ -88,7 +88,7 @@
         h2 {
             position: absolute;
             @include base.gradientTitle();
-            font-size: clamp(54px, 10vw, 150px);
+            font-size: clamp(54px, 10vw, 150px) !important; // beats the fixed sizes inside gradientTitle
             font-weight: 700;
             line-height: 1;
             text-transform: lowercase;
@@ -401,7 +401,7 @@
             min-height: 120px;
 
             h2 {
-                font-size: clamp(58px, 13vw, 110px);
+                font-size: clamp(58px, 13vw, 110px) !important;
             }
         }
 
@@ -621,7 +621,7 @@
             min-height: 90px;
 
             h2 {
-                font-size: clamp(42px, 12vw, 96px);
+                font-size: clamp(42px, 12vw, 96px) !important;
             }
         }
 

@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { m, useTransform } from 'motion/react';
 import { useSmoothScroll } from '../../../../hooks/useSmoothScroll';
+import { useMediaQuery } from '../../../../hooks/useMediaQuery';
 import {
   BsArrowUpRight,
   BsArrowRight,
@@ -106,6 +107,8 @@ function IntroductionSection() {
     offset: ['start start', 'end start']
   });
   const scrollOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+  // Phones keep the scroll hint static instead of fading it on every scroll frame
+  const isPhone = useMediaQuery('(max-width: 768px)');
 
   const isEn = Boolean(i18n.language && i18n.language.startsWith('en'));
   const emailCopiedText = isEn ? 'Email copied!' : 'Email copiado!';
@@ -434,7 +437,7 @@ function IntroductionSection() {
       {/* 9. Scroll Indicator with scroll progress fade */}
       <m.div
         className="hero_center_scroll_wrapper"
-        style={{ opacity: scrollOpacity }}
+        style={isPhone ? undefined : { opacity: scrollOpacity }}
       >
         <m.a
           href="#about_me"

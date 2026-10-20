@@ -454,15 +454,13 @@
 
 @media (max-width: 768px) {
     .ContactMe_container {
-        // Phones: the values sit together in a normal block (no pinned scroll story)
+        // Phones: a handwritten question over a short list of the values (no pinned scroll story)
         .values_list {
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 18px;
-            padding: 72px 20px 24px;
-            text-align: center;
+            padding: 72px 24px 32px;
 
             // Soft glow from a plain gradient: same look as the old blurred blob, no filter cost
             &::before {
@@ -474,57 +472,65 @@
                 height: min(380px, 90vw);
                 transform: translate(-50%, -50%);
                 border-radius: 50%;
-                background: radial-gradient(circle, rgba(159, 114, 255, 0.2) 0%, rgba(89, 74, 235, 0.08) 45%, transparent 70%);
+                background: radial-gradient(circle, rgba(159, 114, 255, 0.16) 0%, rgba(89, 74, 235, 0.06) 45%, transparent 70%);
                 pointer-events: none;
             }
 
+            // Margin-note voice, like the other handwritten touches on the site
             .values_list_title {
                 position: relative;
                 z-index: 1;
-                font-size: clamp(30px, 8.5vw, 44px);
-                font-weight: 600;
-                line-height: 1.15;
-                color: white;
-                max-width: 320px;
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    left: -8%;
-                    right: -8%;
-                    bottom: 8%;
-                    z-index: -1;
-                    height: 42%;
-                    border-radius: 6px;
-                    background: rgba(159, 114, 255, 0.38);
-                    transform: rotate(-1deg);
-                }
+                align-self: flex-start;
+                margin: 0 0 14px 2px;
+                font-family: 'Caveat', cursive;
+                font-size: clamp(30px, 8.6vw, 38px);
+                font-weight: 700;
+                line-height: 1;
+                color: #c4b5fd;
+                transform: rotate(-3deg);
+                transform-origin: left center;
             }
 
-            ul {
+            .values_rows {
                 position: relative;
                 z-index: 1;
                 list-style: none;
                 margin: 0;
                 padding: 0;
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-            }
+                width: 100%;
+                max-width: 360px;
+                border-top: 1px solid rgba(196, 181, 253, 0.16);
 
-            li {
-                @include base.gradientTitle();
-                font-size: clamp(40px, 12vw, 64px) !important;
-                font-weight: 700;
-                line-height: 1.08;
-                text-align: center !important;
-                text-transform: lowercase;
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 16px;
+                    padding: 18px 2px;
+                    border-bottom: 1px solid rgba(196, 181, 253, 0.16);
+
+                    span {
+                        font-size: clamp(30px, 9vw, 40px);
+                        font-weight: 700;
+                        letter-spacing: -0.03em;
+                        line-height: 1.05;
+                        text-transform: lowercase;
+                        color: #ffffff;
+                    }
+
+                    img {
+                        flex-shrink: 0;
+                        width: 30px;
+                        height: 30px;
+                        opacity: 0.9;
+                    }
+                }
             }
         }
 
+        // Content height instead of a full screen, so no empty gap follows the values list
         .form_panel {
-            min-height: 100vh;
-            min-height: 100dvh;
+            min-height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
